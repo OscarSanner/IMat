@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="projectbackend">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/projectbackend.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../JavaLibs/openjfx-14_windows-x64_bin-sdk/javafx-sdk-14/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../JavaLibs/openjfx-14_windows-x64_bin-sdk/javafx-sdk-14/lib" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../../../JavaLibs/openjfx-14_windows-x64_bin-sdk/javafx-sdk-14/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../JavaLibs/openjfx-14_windows-x64_bin-sdk/javafx-sdk-14/lib" recursive="false" type="SOURCES" />
+  </library>
+</component>
