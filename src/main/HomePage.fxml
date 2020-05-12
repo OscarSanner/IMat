@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" stylesheets="@styles.css">
@@ -151,9 +150,6 @@
                         </Pane>
                         <Pane layoutX="23.0" layoutY="101.0" prefHeight="416.0" prefWidth="781.0">
                            <children>
-                              <StackPane layoutY="1.0" prefHeight="416.0" prefWidth="781.0" />
-                              <StackPane layoutY="1.0" prefHeight="416.0" prefWidth="781.0" />
-                              <StackPane layoutY="1.0" prefHeight="416.0" prefWidth="781.0" />
                               <StackPane layoutY="1.0" prefHeight="416.0" prefWidth="781.0" style="-fx-background-color: white;">
                                  <children>
                                     <ScrollPane prefHeight="200.0" prefWidth="200.0">
@@ -175,6 +171,9 @@
                                     </ScrollPane>
                                  </children>
                               </StackPane>
+                              <StackPane layoutY="1.0" prefHeight="416.0" prefWidth="781.0" style="-fx-background-color: yellow;" />
+                              <StackPane layoutY="1.0" prefHeight="416.0" prefWidth="781.0" style="-fx-background-color: red;" />
+                              <StackPane layoutY="1.0" prefHeight="416.0" prefWidth="781.0" style="-fx-background-color: blue;" />
                            </children>
                         </Pane>
                         <Pane layoutX="31.0" layoutY="529.0" prefHeight="52.0" prefWidth="763.0" style="-fx-background-color: white;">
