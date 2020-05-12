@@ -82,7 +82,6 @@
                            <children>
                               <StackPane prefHeight="541.0" prefWidth="569.0" />
                               <StackPane prefHeight="541.0" prefWidth="569.0" />
-                              <StackPane prefHeight="541.0" prefWidth="569.0" />
                               <StackPane prefHeight="541.0" prefWidth="569.0">
                                  <children>
                                     <SplitPane dividerPositions="0.10204081632653061" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
@@ -118,6 +117,7 @@
                                           </Pane>
                                        </children>
                                     </StackPane>
+                                    <StackPane prefHeight="541.0" prefWidth="569.0" />
                                  </children>
                               </StackPane>
                            </children>
@@ -172,8 +172,30 @@
                                  </children>
                               </StackPane>
                               <StackPane layoutY="1.0" prefHeight="416.0" prefWidth="781.0" style="-fx-background-color: yellow;" />
-                              <StackPane layoutY="1.0" prefHeight="416.0" prefWidth="781.0" style="-fx-background-color: red;" />
                               <StackPane layoutY="1.0" prefHeight="416.0" prefWidth="781.0" style="-fx-background-color: blue;" />
+                              <StackPane layoutY="1.0" prefHeight="416.0" prefWidth="781.0" style="-fx-background-color: red;">
+                                 <children>
+                                    <Pane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="38.0" layoutY="32.0" prefHeight="17.0" prefWidth="200.0" text="Förnamn:" />
+                                          <Label layoutX="38.0" layoutY="104.0" prefHeight="17.0" prefWidth="200.0" text="Efternamn:" />
+                                          <Label layoutX="38.0" layoutY="176.0" prefHeight="17.0" prefWidth="200.0" text="Gatuadrress:" />
+                                          <Label layoutX="38.0" layoutY="248.0" prefHeight="17.0" prefWidth="200.0" text="Postnummer:" />
+                                          <Label layoutX="38.0" layoutY="320.0" prefHeight="17.0" prefWidth="200.0" text="Postort:" />
+                                          <Label layoutX="312.0" layoutY="32.0" prefHeight="17.0" prefWidth="200.0" text="Mobilnummer:" />
+                                          <Label layoutX="312.0" layoutY="104.0" prefHeight="17.0" prefWidth="200.0" text="E-mail adress: (Valbart)" />
+                                          <Label layoutX="312.0" layoutY="176.0" prefHeight="17.0" prefWidth="200.0" text="Övrig adressinformation: (Valbart)" />
+                                          <TextField fx:id="nameLbl" layoutX="38.0" layoutY="62.0" prefHeight="27.0" prefWidth="200.0" />
+                                          <TextField fx:id="surnameLbl" layoutX="38.0" layoutY="134.0" prefHeight="27.0" prefWidth="200.0" />
+                                          <TextField fx:id="adressLbl" layoutX="38.0" layoutY="208.0" prefHeight="27.0" prefWidth="200.0" />
+                                          <TextField fx:id="postcodeLbl" layoutX="38.0" layoutY="278.0" prefHeight="27.0" prefWidth="200.0" />
+                                          <TextField fx:id="areaLbl" layoutX="38.0" layoutY="353.0" prefHeight="27.0" prefWidth="200.0" />
+                                          <TextField fx:id="mobilLbl" layoutX="312.0" layoutY="62.0" prefHeight="27.0" prefWidth="200.0" />
+                                          <TextField fx:id="emailLbl" layoutX="312.0" layoutY="134.0" prefHeight="27.0" prefWidth="200.0" />
+                                          <TextField fx:id="extrainfLabl" layoutX="312.0" layoutY="208.0" prefHeight="27.0" prefWidth="200.0" />
+                                       </children>
+                                    </Pane>
+                                 </children></StackPane>
                            </children>
                         </Pane>
                         <Pane layoutX="31.0" layoutY="529.0" prefHeight="52.0" prefWidth="763.0" style="-fx-background-color: white;">
