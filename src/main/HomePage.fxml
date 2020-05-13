@@ -146,7 +146,7 @@
                <children>
                   <Pane layoutX="5.0" layoutY="30.0" prefHeight="578.0" prefWidth="155.0" styleClass="border">
                      <children>
-                        <Button layoutX="23.0" layoutY="82.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
+                        <Button layoutX="22.0" layoutY="82.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
                         <Button layoutX="22.0" layoutY="126.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
                         <Button layoutX="22.0" layoutY="219.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
                         <Button layoutX="22.0" layoutY="263.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
@@ -282,7 +282,7 @@
                                        <panes>
                                           <TitledPane animated="false" text=" ">
                                              <content>
-                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="382.0" prefWidth="575.0">
                                                    <children>
                                                       <FlowPane layoutX="16.0" prefHeight="451.0" prefWidth="536.0" style="-fx-background-color: gray;" />
                                                    </children>
