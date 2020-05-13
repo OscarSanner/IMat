@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -177,22 +178,54 @@
                                  <children>
                                     <Pane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <Label layoutX="38.0" layoutY="32.0" prefHeight="17.0" prefWidth="200.0" text="Förnamn:" />
-                                          <Label layoutX="38.0" layoutY="104.0" prefHeight="17.0" prefWidth="200.0" text="Efternamn:" />
-                                          <Label layoutX="38.0" layoutY="176.0" prefHeight="17.0" prefWidth="200.0" text="Gatuadrress:" />
-                                          <Label layoutX="38.0" layoutY="248.0" prefHeight="17.0" prefWidth="200.0" text="Postnummer:" />
-                                          <Label layoutX="38.0" layoutY="320.0" prefHeight="17.0" prefWidth="200.0" text="Postort:" />
-                                          <Label layoutX="312.0" layoutY="32.0" prefHeight="17.0" prefWidth="200.0" text="Mobilnummer:" />
-                                          <Label layoutX="312.0" layoutY="104.0" prefHeight="17.0" prefWidth="200.0" text="E-mail adress: (Valbart)" />
-                                          <Label layoutX="312.0" layoutY="176.0" prefHeight="17.0" prefWidth="200.0" text="Övrig adressinformation: (Valbart)" />
-                                          <TextField fx:id="nameLbl" layoutX="38.0" layoutY="62.0" prefHeight="27.0" prefWidth="200.0" />
-                                          <TextField fx:id="surnameLbl" layoutX="38.0" layoutY="134.0" prefHeight="27.0" prefWidth="200.0" />
-                                          <TextField fx:id="adressLbl" layoutX="38.0" layoutY="208.0" prefHeight="27.0" prefWidth="200.0" />
-                                          <TextField fx:id="postcodeLbl" layoutX="38.0" layoutY="278.0" prefHeight="27.0" prefWidth="200.0" />
-                                          <TextField fx:id="areaLbl" layoutX="38.0" layoutY="353.0" prefHeight="27.0" prefWidth="200.0" />
-                                          <TextField fx:id="mobilLbl" layoutX="312.0" layoutY="62.0" prefHeight="27.0" prefWidth="200.0" />
-                                          <TextField fx:id="emailLbl" layoutX="312.0" layoutY="134.0" prefHeight="27.0" prefWidth="200.0" />
-                                          <TextField fx:id="extrainfLabl" layoutX="312.0" layoutY="208.0" prefHeight="27.0" prefWidth="200.0" />
+                                          <Label layoutX="38.0" layoutY="32.0" prefHeight="17.0" prefWidth="200.0" text="Förnamn:">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font></Label>
+                                          <Label layoutX="38.0" layoutY="110.0" prefHeight="17.0" prefWidth="200.0" text="Efternamn:">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font></Label>
+                                          <Label layoutX="38.0" layoutY="182.0" prefHeight="17.0" prefWidth="200.0" text="Gatuadrress:">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font></Label>
+                                          <Label layoutX="38.0" layoutY="254.0" prefHeight="17.0" prefWidth="200.0" text="Postnummer:">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font></Label>
+                                          <Label layoutX="38.0" layoutY="326.0" prefHeight="17.0" prefWidth="200.0" text="Postort:">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font></Label>
+                                          <Label layoutX="412.0" layoutY="32.0" prefHeight="22.0" prefWidth="245.0" text="Mobilnummer:">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font></Label>
+                                          <Label layoutX="412.0" layoutY="110.0" prefHeight="22.0" prefWidth="245.0" text="E-mail adress: (Valbart)">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font></Label>
+                                          <Label layoutX="412.0" layoutY="182.0" prefHeight="22.0" prefWidth="245.0" text="Övrig adressinformation: (Valbart)">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font></Label>
+                                          <TextField fx:id="nameLbl" layoutX="38.0" layoutY="62.0" prefHeight="35.0" prefWidth="245.0" promptText="Nicklas" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="surnameLbl" layoutX="38.0" layoutY="140.0" prefHeight="35.0" prefWidth="245.0" promptText="Börjesson" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="adressLbl" layoutX="38.0" layoutY="214.0" prefHeight="35.0" prefWidth="245.0" promptText="Kantarellslingan 24" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="postcodeLbl" layoutX="38.0" layoutY="284.0" prefHeight="35.0" prefWidth="245.0" promptText="42011" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="areaLbl" layoutX="38.0" layoutY="356.0" prefHeight="35.0" prefWidth="245.0" promptText="Göteborg" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="mobilLbl" layoutX="412.0" layoutY="62.0" prefHeight="35.0" prefWidth="245.0" promptText="+46 ..." style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="emailLbl" layoutX="412.0" layoutY="140.0" prefHeight="35.0" prefWidth="245.0" promptText="börjesson@exempel.nu" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="extrainfLabl" layoutX="412.0" layoutY="214.0" prefHeight="35.0" prefWidth="245.0" promptText="Exempelvis våning, vägbeskrivning..." style="-fx-background-radius: 20;" />
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="640.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="640.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Button layoutX="400.0" layoutY="357.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="14.0" text="Button" />
+                                          <Label layoutX="438.0" layoutY="359.0" prefHeight="22.0" prefWidth="298.0" text="Spara mina personuppgifter till nästa köp">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font>
+                                          </Label>
                                        </children>
                                     </Pane>
                                  </children></StackPane>
