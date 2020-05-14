@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="26.0" layoutY="14.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="97.0" text="Button" />
+            <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="123.0" text="Button" />
+            <ImageView fitHeight="81.0" fitWidth="423.0" layoutX="247.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <Pane prefHeight="573.0" prefWidth="960.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="72.0" layoutY="23.0" prefHeight="590.0" prefWidth="826.0" style="-fx-background-color: #B1D5F6;">
+               <children>
+                  <Pane layoutX="23.0" layoutY="24.0" prefHeight="43.0" prefWidth="778.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label fx:id="pageNameLabel" layoutX="370.0" layoutY="13.0" text="Delsida" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="31.0" layoutY="529.0" prefHeight="52.0" prefWidth="763.0" style="-fx-background-color: white;">
+                     <children>
+                        <ImageView fx:id="previousImage" fitHeight="32.0" fitWidth="88.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="nextImage" fitHeight="32.0" fitWidth="88.0" layoutX="661.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <AnchorPane layoutX="23.0" layoutY="101.0" prefHeight="416.0" prefWidth="781.0">
+                     <children>
+                        <Pane prefHeight="416.0" prefWidth="781.0" style="-fx-background-color: white;">
+                           <children>
+                              <Label layoutX="16.0" layoutY="81.0" text="8.00-10.00" />
+                              <Label layoutX="13.0" layoutY="168.0" text="10.00-12.00" />
+                              <Label layoutX="13.0" layoutY="251.0" text="12.00-14.00" />
+                              <Label layoutX="13.0" layoutY="340.0" text="14.00-16.00" />
+                              <Label fx:id="date1Label" alignment="CENTER" layoutX="96.0" layoutY="24.0" text="date 1" />
+                              <Label fx:id="date2Label" layoutX="196.0" layoutY="24.0" text="date 2" />
+                              <Label fx:id="date3Label" layoutX="296.0" layoutY="24.0" text="date 3" />
+                              <Label fx:id="date4Label" layoutX="396.0" layoutY="24.0" text="date 4" />
+                              <Label fx:id="date5Label" layoutX="496.0" layoutY="24.0" text="date 5" />
+                              <Label fx:id="date6Label" layoutX="596.0" layoutY="24.0" text="date 6" />
+                              <Label fx:id="date7Label" layoutX="696.0" layoutY="24.0" text="date 7" />
+                              <FlowPane fx:id="timeTableFlowPane" layoutX="88.0" layoutY="52.0" prefHeight="335.0" prefWidth="676.0" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <Button fx:id="nextWeekButton" layoutX="902.0" layoutY="261.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="52.0" text="Nästa vecka" wrapText="true" />
+            <Button fx:id="previousWeekButton" layoutX="14.0" layoutY="271.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="52.0" text="Förra vecka" wrapText="true" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
