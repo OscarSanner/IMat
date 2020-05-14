@@ -18,3 +18,16 @@
     -fx-border-width: 2px;
     -fx-border-color: black;
 }
+
+.tabButtons{
+    -fx-background-color: #00FFFF;
+    -fx-border-width: 1px;
+    -fx-border-color: #037C99;
+}
+
+.categoryButtons{
+    -fx-border-color: white;
+    -fx-border-width: 1px;
+    -fx-background-color: #B1D5F6;
+    -fx-font-size: 15;
+}
