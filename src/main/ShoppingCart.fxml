@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="960.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="26.0" layoutY="14.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="97.0" text="Button" />
+                  <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="123.0" text="Button" />
+                  <ImageView fitHeight="81.0" fitWidth="423.0" layoutX="247.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <Pane prefHeight="573.0" prefWidth="960.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="72.0" layoutY="23.0" prefHeight="590.0" prefWidth="826.0" style="-fx-background-color: #B1D5F6;">
+                     <children>
+                        <Pane layoutX="23.0" layoutY="101.0" prefHeight="416.0" prefWidth="781.0">
+                           <children>
+                              <StackPane layoutY="1.0" prefHeight="416.0" prefWidth="781.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="416.0" prefWidth="781.0">
+                                             <children>
+                                                <Label layoutX="113.0" layoutY="14.0" text="Label" />
+                                                <Label layoutX="253.0" layoutY="14.0" text="Label" />
+                                                <Label layoutX="409.0" layoutY="14.0" text="Label" />
+                                                <Label layoutX="560.0" layoutY="14.0" text="Label" />
+                                                <FlowPane layoutX="-1.0" layoutY="31.0" prefHeight="328.0" prefWidth="769.0" styleClass="border" stylesheets="@styles.css" />
+                                                <Label layoutX="51.0" layoutY="372.0" text="Label" />
+                                                <Button fx:id="saveButton" layoutX="453.0" layoutY="361.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="Button" />
+                                                <Label fx:id="sumPriceLabel" layoutX="682.0" layoutY="369.0" text="Label" />
+                                                <ImageView fx:id="saveTooltip" fitHeight="31.0" fitWidth="37.0" layoutX="552.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="31.0" layoutY="529.0" prefHeight="52.0" prefWidth="763.0" style="-fx-background-color: white;">
+                           <children>
+                              <ImageView fx:id="previousImage" fitHeight="32.0" fitWidth="88.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="nextImage" fitHeight="32.0" fitWidth="88.0" layoutX="661.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="23.0" layoutY="24.0" prefHeight="43.0" prefWidth="778.0" style="-fx-background-color: white;">
+                           <children>
+                              <Label fx:id="pageNameLabel" layoutX="370.0" layoutY="13.0" text="Delsida" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

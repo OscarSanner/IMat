@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="960.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane layoutX="27.0" layoutY="46.0" prefHeight="628.0" prefWidth="909.0" style="-fx-background-color: #B1D5F6;">
+               <children>
+                  <Label layoutX="325.0" layoutY="53.0" prefHeight="50.0" prefWidth="272.0" style="-fx-background-color: white;" text="    Köp genomfört!">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="283.0" layoutY="233.0" prefHeight="112.0" prefWidth="344.0" text="    Du kommer få ett bekräftelse mejl til galan474@yahoo.es inom kort. " textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="369.0" layoutY="382.0" text="Ditt köp finns i &quot;Ordrar&quot;">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="337.0" layoutY="465.0" text="Tack för att du handlar hos oss!">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="87.0" fitWidth="150.0" layoutX="397.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button layoutX="285.0" layoutY="517.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="80.0" text="Button" />
+                  <Button layoutX="378.0" layoutY="517.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="80.0" text="Button" />
+                  <Button layoutX="472.0" layoutY="517.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="140.0" />
+                  <ImageView fitHeight="69.0" fitWidth="80.0" layoutX="286.0" layoutY="515.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="69.0" fitWidth="80.0" layoutX="378.0" layoutY="520.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="69.0" fitWidth="80.0" layoutX="469.0" layoutY="518.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="541.0" layoutY="519.0" prefHeight="69.0" prefWidth="72.0" text="Kundservice &amp; Hjälp" wrapText="true" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

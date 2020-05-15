@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="960.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="26.0" layoutY="14.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="97.0" text="Button" />
+                  <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="123.0" text="Button" />
+                  <ImageView fitHeight="81.0" fitWidth="423.0" layoutX="247.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <Pane prefHeight="573.0" prefWidth="960.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="72.0" layoutY="23.0" prefHeight="590.0" prefWidth="826.0" style="-fx-background-color: #B1D5F6;">
+                     <children>
+                        <StackPane prefHeight="592.0" prefWidth="827.0">
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <Pane layoutX="86.0" layoutY="21.0" prefHeight="61.0" prefWidth="642.0" style="-fx-background-color: #B1D5F6;">
+                                       <children>
+                                          <Label layoutX="39.0" layoutY="12.0" prefHeight="38.0" prefWidth="215.0" text="Kundservice &amp; Hjälp">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                    <Pane layoutX="86.0" layoutY="123.0" prefHeight="443.0" prefWidth="642.0" style="-fx-background-color: #B1D5F6;">
+                                       <children>
+                                          <Label layoutX="27.0" layoutY="-22.0" prefHeight="139.0" prefWidth="565.0" text="Här hittar du svar på vanliga frågor, om du har synpunkter eller behöver hjälp så kan du alltid kontakta vår kundservice.Kontakt uppgifterna hittar du nedan." wrapText="true">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fitHeight="41.0" fitWidth="42.0" layoutX="40.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Downloads/icon-2.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="40.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Downloads/interfaz.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label layoutX="134.0" layoutY="129.0" text="0765633221" />
+                                          <Label layoutX="122.0" layoutY="202.0" text="galan474@yahoo.es">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="273.0" layoutY="129.0" text="Vardagar 8:00 - 16:00" />
+                                          <Label layoutX="230.0" layoutY="272.0" prefHeight="31.0" prefWidth="159.0" text="Vanliga Frågor">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="51.0" layoutY="331.0" prefHeight="94.0" prefWidth="532.0" text="Label" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
