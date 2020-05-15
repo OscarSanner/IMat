@@ -10,15 +10,14 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="960.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
             <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
                <children>
                   <Button layoutX="26.0" layoutY="14.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="97.0" text="Button" />
-                  <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="123.0" text="Button" />
+                  <Button fx:id="closeWindowButton" layoutX="801.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#onCloseWindowsButtonPressed" prefHeight="64.0" prefWidth="123.0" text="Button" />
                   <ImageView fitHeight="81.0" fitWidth="423.0" layoutX="247.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </Pane>
@@ -84,4 +83,4 @@
          </center>
       </BorderPane>
    </children>
-</AnchorPane>
+</fx:root>

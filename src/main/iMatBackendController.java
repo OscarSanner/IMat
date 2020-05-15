@@ -2,7 +2,9 @@ package main;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import main.CustomerSupport.CustomerSupport;
 
 public class iMatBackendController {
 
@@ -22,6 +24,10 @@ public class iMatBackendController {
     public Button myPageTabButton;
     @FXML
     public Button shoppingTabButton;
+    @FXML
+    public AnchorPane mainAnchorPane;
+
+    public CustomerSupport customerSupportpage = new CustomerSupport(this);
 
 
 
@@ -44,5 +50,14 @@ public class iMatBackendController {
     @FXML
     public void onListtabSelect(){
         listTabPane.toFront();
+    }
+
+    @FXML
+    public void onCustomerSupportPressed(){
+            mainAnchorPane.getChildren().add(customerSupportpage);
+    }
+
+    public void closeCustomerSupport() {
+        mainAnchorPane.getChildren().remove(customerSupportpage);
     }
 }

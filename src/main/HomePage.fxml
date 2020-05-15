@@ -15,14 +15,14 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.iMatBackendController">
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.iMatBackendController">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" stylesheets="@Res/styles.css">
          <top>
             <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
                <children>
                   <Button layoutX="26.0" layoutY="14.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="97.0" text="Button" />
-                  <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="123.0" text="Button" />
+                  <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#onCustomerSupportPressed" prefHeight="64.0" prefWidth="123.0" text="Button" />
                   <TextField fx:id="searchBarTextField" layoutX="164.0" layoutY="32.0" prefHeight="25.0" prefWidth="562.0" />
                </children>
             </Pane>
