@@ -17,7 +17,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" stylesheets="@styles.css">
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" stylesheets="@Res/styles.css">
          <top>
             <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
                <children>
@@ -32,16 +32,16 @@
                <children>
                   <Pane layoutX="5.0" layoutY="30.0" prefHeight="578.0" prefWidth="155.0" styleClass="border">
                      <children>
-                        <Button layoutX="22.0" layoutY="82.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
-                        <Button layoutX="22.0" layoutY="126.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
-                        <Button layoutX="22.0" layoutY="219.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
-                        <Button layoutX="22.0" layoutY="263.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
-                        <Button layoutX="22.0" layoutY="307.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
-                        <Button layoutX="22.0" layoutY="351.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
-                        <Button layoutX="22.0" layoutY="395.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
-                        <Button layoutX="22.0" layoutY="439.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
-                        <Button layoutX="22.0" layoutY="483.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
+                        <Button layoutX="22.0" layoutY="82.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mina Favoriter" />
+                        <Button layoutX="22.0" layoutY="126.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Erbjudanden" />
+                        <Button layoutX="22.0" layoutY="199.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kött &amp; Fisk" />
+                        <Button layoutX="22.0" layoutY="243.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Frukt &amp; Grönt" />
+                        <Button layoutX="22.0" layoutY="287.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Dryck" />
+                        <Button layoutX="22.0" layoutY="331.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mejeri" />
+                        <Button layoutX="22.0" layoutY="375.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Skafferi" />
+                        <Button layoutX="22.0" layoutY="464.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kryddor" />
                         <Label layoutX="50.0" layoutY="20.0" text="Kategorier" />
+                        <Button layoutX="22.0" layoutY="419.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Snacks" />
                      </children>
                   </Pane>
                </children>
@@ -71,19 +71,19 @@
                      <children>
                         <Pane prefHeight="58.0" prefWidth="569.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Button alignment="CENTER" contentDisplay="CENTER" layoutX="9.0" layoutY="12.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Handla">
+                              <Button alignment="CENTER" contentDisplay="CENTER" layoutX="9.0" layoutY="12.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" styleClass="tabButtons" text="Handla">
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
                                  </graphic></Button>
-                              <Button contentDisplay="CENTER" layoutX="153.0" layoutY="12.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Ordrar">
+                              <Button contentDisplay="CENTER" layoutX="153.0" layoutY="12.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" styleClass="tabButtons" text="Ordrar">
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
                                  </graphic></Button>
-                              <Button contentDisplay="CENTER" layoutX="297.0" layoutY="12.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Inköpslistor">
+                              <Button contentDisplay="CENTER" layoutX="297.0" layoutY="12.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" styleClass="tabButtons" text="Inköpslistor">
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
                                  </graphic></Button>
-                              <Button contentDisplay="CENTER" layoutX="441.0" layoutY="12.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Min Sida">
+                              <Button contentDisplay="CENTER" layoutX="441.0" layoutY="12.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" styleClass="tabButtons" text="Min Sida">
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
                                  </graphic></Button>
@@ -228,7 +228,7 @@
                               </StackPane>
                               <StackPane prefHeight="541.0" prefWidth="569.0">
                                  <children>
-                                    <Pane prefHeight="200.0" prefWidth="200.0">
+                                    <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
                                        <children>
                                           <Pane layoutX="14.0" layoutY="19.0" prefHeight="302.0" prefWidth="538.0" style="-fx-background-color: lightgrey;">
                                              <children>
