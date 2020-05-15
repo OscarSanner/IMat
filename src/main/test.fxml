@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="720.0" prefWidth="960.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="26.0" layoutY="14.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="97.0" text="Button" />
+                  <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="123.0" text="Button" />
+                  <ImageView fitHeight="81.0" fitWidth="423.0" layoutX="247.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <Pane prefHeight="573.0" prefWidth="960.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="72.0" layoutY="23.0" prefHeight="590.0" prefWidth="826.0" style="-fx-background-color: #B1D5F6;">
+                     <children>
+                        <Pane layoutX="23.0" layoutY="24.0" prefHeight="43.0" prefWidth="778.0" style="-fx-background-color: white;">
+                           <children>
+                              <Label fx:id="pageNameLabel" layoutX="370.0" layoutY="13.0" text="Delsida" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="23.0" layoutY="101.0" prefHeight="416.0" prefWidth="781.0">
+                           <children>
+                              <StackPane layoutY="1.0" prefHeight="416.0" prefWidth="781.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="416.0" prefWidth="781.0">
+                                             <children>
+                                                <Label layoutX="113.0" layoutY="14.0" text="Label" />
+                                                <Label layoutX="253.0" layoutY="14.0" text="Label" />
+                                                <Label layoutX="409.0" layoutY="14.0" text="Label" />
+                                                <Label layoutX="560.0" layoutY="14.0" text="Label" />
+                                                <FlowPane layoutX="-1.0" layoutY="31.0" prefHeight="328.0" prefWidth="769.0" styleClass="border" stylesheets="@styles.css" />
+                                                <Label layoutX="51.0" layoutY="372.0" text="Label" />
+                                                <Button fx:id="saveButton" layoutX="453.0" layoutY="361.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="Button" />
+                                                <Label fx:id="sumPriceLabel" layoutX="682.0" layoutY="369.0" text="Label" />
+                                                <ImageView fx:id="saveTooltip" fitHeight="31.0" fitWidth="37.0" layoutX="552.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true" />
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </ScrollPane>
+                                 </children>
+                              </StackPane>
+                              <StackPane layoutY="1.0" prefHeight="416.0" prefWidth="781.0" style="-fx-background-color: yellow;" />
+                              <StackPane layoutY="1.0" prefHeight="416.0" prefWidth="781.0" style="-fx-background-color: blue;" />
+                              <StackPane layoutY="1.0" prefHeight="416.0" prefWidth="781.0" style="-fx-background-color: red;">
+                                 <children>
+                                    <Pane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutX="38.0" layoutY="32.0" prefHeight="17.0" prefWidth="200.0" text="Förnamn:">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font></Label>
+                                          <Label layoutX="38.0" layoutY="110.0" prefHeight="17.0" prefWidth="200.0" text="Efternamn:">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font></Label>
+                                          <Label layoutX="38.0" layoutY="182.0" prefHeight="17.0" prefWidth="200.0" text="Gatuadrress:">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font></Label>
+                                          <Label layoutX="38.0" layoutY="254.0" prefHeight="17.0" prefWidth="200.0" text="Postnummer:">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font></Label>
+                                          <Label layoutX="38.0" layoutY="326.0" prefHeight="17.0" prefWidth="200.0" text="Postort:">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font></Label>
+                                          <Label layoutX="412.0" layoutY="32.0" prefHeight="22.0" prefWidth="245.0" text="Mobilnummer:">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font></Label>
+                                          <Label layoutX="412.0" layoutY="110.0" prefHeight="22.0" prefWidth="245.0" text="E-mail adress: (Valbart)">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font></Label>
+                                          <Label layoutX="412.0" layoutY="182.0" prefHeight="22.0" prefWidth="245.0" text="Övrig adressinformation: (Valbart)">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font></Label>
+                                          <TextField fx:id="nameLbl" layoutX="38.0" layoutY="62.0" prefHeight="35.0" prefWidth="245.0" promptText="Nicklas" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="surnameLbl" layoutX="38.0" layoutY="140.0" prefHeight="35.0" prefWidth="245.0" promptText="Börjesson" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="adressLbl" layoutX="38.0" layoutY="214.0" prefHeight="35.0" prefWidth="245.0" promptText="Kantarellslingan 24" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="postcodeLbl" layoutX="38.0" layoutY="284.0" prefHeight="35.0" prefWidth="245.0" promptText="42011" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="areaLbl" layoutX="38.0" layoutY="356.0" prefHeight="35.0" prefWidth="245.0" promptText="Göteborg" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="mobilLbl" layoutX="412.0" layoutY="62.0" prefHeight="35.0" prefWidth="245.0" promptText="+46 ..." style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="emailLbl" layoutX="412.0" layoutY="140.0" prefHeight="35.0" prefWidth="245.0" promptText="börjesson@exempel.nu" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="extrainfLabl" layoutX="412.0" layoutY="214.0" prefHeight="35.0" prefWidth="245.0" promptText="Exempelvis våning, vägbeskrivning..." style="-fx-background-radius: 20;" />
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="640.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="640.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Button layoutX="400.0" layoutY="357.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="14.0" text="Button" />
+                                          <Label layoutX="438.0" layoutY="359.0" prefHeight="22.0" prefWidth="298.0" text="Spara mina personuppgifter till nästa köp">
+                                             <font>
+                                                <Font size="17.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                 </children></StackPane>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="31.0" layoutY="529.0" prefHeight="52.0" prefWidth="763.0" style="-fx-background-color: white;">
+                           <children>
+                              <ImageView fx:id="previousImage" fitHeight="32.0" fitWidth="88.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="nextImage" fitHeight="32.0" fitWidth="88.0" layoutX="661.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" stylesheets="@styles.css">
+         <top>
+            <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="26.0" layoutY="14.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="97.0" text="Button" />
+                  <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="123.0" text="Button" />
+                  <TextField fx:id="searchBarTextField" layoutX="164.0" layoutY="32.0" prefHeight="25.0" prefWidth="562.0" />
+               </children>
+            </Pane>
+         </top>
+         <left>
+            <Pane prefHeight="618.0" prefWidth="164.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="5.0" layoutY="30.0" prefHeight="578.0" prefWidth="155.0" styleClass="border">
+                     <children>
+                        <Button layoutX="22.0" layoutY="82.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
+                        <Button layoutX="22.0" layoutY="126.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
+                        <Button layoutX="22.0" layoutY="219.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
+                        <Button layoutX="22.0" layoutY="263.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
+                        <Button layoutX="22.0" layoutY="307.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
+                        <Button layoutX="22.0" layoutY="351.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
+                        <Button layoutX="22.0" layoutY="395.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
+                        <Button layoutX="22.0" layoutY="439.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
+                        <Button layoutX="22.0" layoutY="483.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" text="Button" />
+                        <Label layoutX="50.0" layoutY="20.0" text="Kategorier" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </left>
+         <bottom>
+            <Pane prefHeight="12.0" prefWidth="960.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
+         </bottom>
+         <right>
+            <Pane prefHeight="607.0" prefWidth="224.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="4.0" layoutY="30.0" prefHeight="577.0" prefWidth="218.0" styleClass="border">
+                     <children>
+                        <Button fx:id="tillKassanButton" layoutX="32.0" layoutY="486.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="159.0" text="Button" />
+                        <Label layoutX="73.0" layoutY="26.0" text="Kundvagn" />
+                        <Label fx:id="summaLbl" layoutX="181.0" layoutY="459.0" text="0 kr" />
+                        <FlowPane fx:id="shoppingCartFlowPane" layoutX="15.0" layoutY="56.0" prefHeight="402.0" prefWidth="204.0" AnchorPane.bottomAnchor="121.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="54.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+         </right>
+         <center>
+            <SplitPane dividerPositions="0.10082644628099173" orientation="VERTICAL" prefHeight="607.0" prefWidth="553.0" BorderPane.alignment="CENTER">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Pane prefHeight="58.0" prefWidth="569.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Button layoutX="14.0" layoutY="7.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="84.0" text="Button" />
+                              <Button layoutX="104.0" layoutY="7.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="84.0" text="Button" />
+                              <Button layoutX="201.0" layoutY="7.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="84.0" text="Button" />
+                              <Button layoutX="299.0" layoutY="7.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="84.0" text="Button" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Pane prefHeight="541.0" prefWidth="569.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <StackPane prefHeight="541.0" prefWidth="569.0">
+                                 <children>
+                                    <SplitPane dividerPositions="0.10204081632653061" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                             <children>
+                                                <FlowPane layoutX="-24.0" layoutY="-64.0" prefHeight="72.0" prefWidth="567.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                             <children>
+                                                <FlowPane layoutX="53.0" layoutY="60.0" prefHeight="461.0" prefWidth="567.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                      </items>
+                                    </SplitPane>
+                                    <StackPane prefHeight="541.0" prefWidth="569.0">
+                                       <children>
+                                          <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gray;">
+                                             <children>
+                                                <ImageView fx:id="offersImage" fitHeight="216.0" fitWidth="248.0" layoutX="60.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="videoImage" fitHeight="112.0" fitWidth="157.0" layoutX="359.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="newsImage" fitHeight="112.0" fitWidth="157.0" layoutX="359.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label layoutX="262.0" layoutY="314.0" text="Carousel" />
+                                                <Pane layoutX="52.0" layoutY="364.0" prefHeight="162.0" prefWidth="467.0" style="-fx-background-color: purple;">
+                                                   <children>
+                                                      <FlowPane fx:id="carouselFlowPane" prefHeight="162.0" prefWidth="467.0" />
+                                                   </children>
+                                                </Pane>
+                                                <ImageView fx:id="rightArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="522.0" layoutY="421.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="leftArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="3.0" layoutY="421.0" pickOnBounds="true" preserveRatio="true" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </StackPane>
+                                    <StackPane prefHeight="541.0" prefWidth="569.0" />
+                                 </children>
+                              </StackPane>
+                              <StackPane prefHeight="541.0" prefWidth="569.0" style="-fx-background-color: RED;">
+                                 <children>
+                                    <Accordion>
+                                      <panes>
+                                        <TitledPane animated="false" text=" ">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <FlowPane layoutX="16.0" prefHeight="451.0" prefWidth="536.0" style="-fx-background-color: gray;" />
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                             <graphic>
+                                                <Pane prefHeight="58.0" prefWidth="536.0">
+                                                   <children>
+                                                      <Label layoutX="14.0" layoutY="21.0" prefHeight="17.0" prefWidth="64.0" text="25e Maj 2020" />
+                                                      <Button layoutX="200.0" layoutY="17.0" mnemonicParsing="false" text="Lägg till som iköpslista" />
+                                                   </children>
+                                                </Pane>
+                                             </graphic>
+                                        </TitledPane>
+                                          <TitledPane animated="false" text=" ">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <FlowPane layoutX="16.0" prefHeight="450.0" prefWidth="536.0" style="-fx-background-color: gray;" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                             <graphic>
+                                                <Pane prefHeight="58.0" prefWidth="536.0">
+                                                   <children>
+                                                      <Label layoutX="14.0" layoutY="21.0" prefHeight="17.0" prefWidth="64.0" text="25e Maj 2020" />
+                                                      <Button layoutX="200.0" layoutY="17.0" mnemonicParsing="false" text="Lägg till som iköpslista" />
+                                                   </children>
+                                                </Pane>
+                                             </graphic>
+                                          </TitledPane>
+                                      </panes>
+                                    </Accordion>
+                                 </children></StackPane>
+                              <StackPane prefHeight="541.0" prefWidth="569.0" style="-fx-background-color: red;">
+                                 <children>
+                                    <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="539.0" prefWidth="554.0">
+                                             <children>
+                                                <Accordion layoutX="64.0" layoutY="43.0" prefHeight="539.2" prefWidth="554.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                  <panes>
+                                                    <TitledPane animated="false" text="untitled 1">
+                                                      <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                      </content>
+                                                    </TitledPane>
+                                                    <TitledPane animated="false" text="untitled 2">
+                                                      <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                      </content>
+                                                    </TitledPane>
+                                                    <TitledPane animated="false" prefHeight="426.0" prefWidth="554.0" text="untitled 3">
+                                                      <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                      </content>
+                                                    </TitledPane>
+                                                  </panes>
+                                                </Accordion>
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </ScrollPane>
+                                 </children></StackPane>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

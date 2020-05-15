@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import main.CustomerSupport.CustomerSupport;
+import main.ShoppingCart.ShoppingCart;
 
 public class iMatBackendController {
 
@@ -27,7 +28,8 @@ public class iMatBackendController {
     @FXML
     public AnchorPane mainAnchorPane;
 
-    public CustomerSupport customerSupportpage = new CustomerSupport(this);
+    public CustomerSupport customerSupportPage = new CustomerSupport(this);
+    public ShoppingCart shoppingCartPage = new ShoppingCart();
 
 
 
@@ -54,10 +56,10 @@ public class iMatBackendController {
 
     @FXML
     public void onCustomerSupportPressed(){
-            mainAnchorPane.getChildren().add(customerSupportpage);
+            mainAnchorPane.getChildren().add(customerSupportPage);
     }
 
     public void closeCustomerSupport() {
-        mainAnchorPane.getChildren().remove(customerSupportpage);
+        mainAnchorPane.getChildren().remove(customerSupportPage);
     }
 }
