@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="paymentMainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="960.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -61,7 +60,7 @@
                                                       <Label layoutX="140.0" layoutY="15.0" text="kr" />
                                                    </children>
                                                 </Pane>
-                                                <Button layoutX="220.0" layoutY="297.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="226.0" style="-fx-background-color: #FF5E5E;" text="Slutför köpet">
+                                                <Button fx:id="payButton" layoutX="220.0" layoutY="297.0" mnemonicParsing="false" onMouseClicked="#onPayButtonPressed" prefHeight="27.0" prefWidth="226.0" style="-fx-background-color: #FF5E5E;" text="Slutför köpet">
                                                    <opaqueInsets>
                                                       <Insets />
                                                    </opaqueInsets>
@@ -92,4 +91,4 @@
          </center>
       </BorderPane>
    </children>
-</AnchorPane>
+</fx:root>

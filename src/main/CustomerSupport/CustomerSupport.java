@@ -27,10 +27,10 @@ public class CustomerSupport extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-
     }
 
     public void onCloseWindowsButtonPressed(){
         parentBackendController.closeCustomerSupport();
     }
+
 }

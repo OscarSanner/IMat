@@ -27,9 +27,12 @@ public class iMatBackendController {
     public Button shoppingTabButton;
     @FXML
     public AnchorPane mainAnchorPane;
+    @FXML
+    public Button checkoutButton;
 
     public CustomerSupport customerSupportPage = new CustomerSupport(this);
-    public ShoppingCart shoppingCartPage = new ShoppingCart();
+    public ShoppingCart shoppingCartPage = new ShoppingCart(this);
+
 
 
 
@@ -59,7 +62,15 @@ public class iMatBackendController {
             mainAnchorPane.getChildren().add(customerSupportPage);
     }
 
+
     public void closeCustomerSupport() {
         mainAnchorPane.getChildren().remove(customerSupportPage);
     }
+
+    @FXML
+    public void onCheckoutButtonPressed(){
+        mainAnchorPane.getChildren().add(shoppingCartPage);
+    }
+
+
 }

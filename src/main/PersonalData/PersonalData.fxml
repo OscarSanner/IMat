@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="personalDataMainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="960.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -100,8 +99,8 @@
                         </Pane>
                         <Pane layoutX="31.0" layoutY="529.0" prefHeight="52.0" prefWidth="763.0" style="-fx-background-color: white;">
                            <children>
-                              <ImageView fx:id="previousImage" fitHeight="32.0" fitWidth="88.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
-                              <ImageView fx:id="nextImage" fitHeight="32.0" fitWidth="88.0" layoutX="661.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                              <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Button" />
+                              <Button fx:id="personalDataNextButton" layoutX="697.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#onNextButtonPressed" text="Button" />
                            </children>
                         </Pane>
                         <Pane layoutX="23.0" layoutY="24.0" prefHeight="43.0" prefWidth="778.0" style="-fx-background-color: white;">
@@ -116,4 +115,4 @@
          </center>
       </BorderPane>
    </children>
-</AnchorPane>
+</fx:root>

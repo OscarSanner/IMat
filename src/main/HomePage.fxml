@@ -55,7 +55,7 @@
                <children>
                   <AnchorPane layoutX="4.0" layoutY="30.0" prefHeight="577.0" prefWidth="218.0" styleClass="border">
                      <children>
-                        <Button fx:id="tillKassanButton" layoutX="32.0" layoutY="486.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="159.0" text="Button" />
+                        <Button fx:id="checkoutButton" layoutX="32.0" layoutY="486.0" mnemonicParsing="false" onMouseClicked="#onCheckoutButtonPressed" prefHeight="62.0" prefWidth="159.0" text="Button" />
                         <Label layoutX="73.0" layoutY="26.0" text="Kundvagn" />
                         <Label fx:id="summaLbl" layoutX="181.0" layoutY="459.0" text="0 kr" />
                         <FlowPane fx:id="shoppingCartFlowPane" layoutX="15.0" layoutY="56.0" prefHeight="402.0" prefWidth="204.0" AnchorPane.bottomAnchor="121.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="54.0" />
