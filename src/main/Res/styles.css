@@ -1,18 +1,3 @@
-.tabhandle{
-    -fx-tab-min-height: 20px; /* 24 */
-    -fx-tab-max-height: 20px; /* 24 */
-    -fx-font-weight: bold;
-    -fx-background-color: #E1E1E1, white;
-    -fx-background-insets: 0, 0 0 1px 0
-}
-
-.tab-pane .tab-header-area .tab-header-background {
-    -fx-opacity: 0;
-}
-.tab-pane
-{
-    -fx-tab-min-width:124px;
-}
 
 .border{
     -fx-border-width: 2px;
@@ -32,6 +17,3 @@
     -fx-font-size: 15;
 }
 
-.test{
-    -fx-background-color: black;
-}
