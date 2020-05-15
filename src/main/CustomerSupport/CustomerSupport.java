@@ -10,6 +10,8 @@ import java.io.IOException;
 
 public class CustomerSupport extends AnchorPane {
 
+    //----------------NAVIGATION OCH INIT------------------
+
     @FXML
     public Button closeWindowButton;
 
@@ -32,5 +34,7 @@ public class CustomerSupport extends AnchorPane {
     public void onCloseWindowsButtonPressed(){
         parentBackendController.closeCustomerSupport();
     }
+
+    //----------------FAKTISK KOD-----------------
 
 }

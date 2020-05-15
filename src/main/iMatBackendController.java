@@ -9,6 +9,8 @@ import main.ShoppingCart.ShoppingCart;
 
 public class iMatBackendController {
 
+    //----------------NAVIGATION OCH INIT------------------
+
     @FXML
     public StackPane orderTabPane;
     @FXML
@@ -72,5 +74,6 @@ public class iMatBackendController {
         mainAnchorPane.getChildren().add(shoppingCartPage);
     }
 
+    //----------------FAKTISK KOD-----------------
 
 }

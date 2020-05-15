@@ -4,12 +4,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import main.IWizardPage;
 import main.PersonalData.PersonalData;
 import main.iMatBackendController;
 
 import java.io.IOException;
 
-public class ShoppingCart extends AnchorPane {
+public class ShoppingCart extends AnchorPane implements IWizardPage {
+
+    //----------------NAVIGATION OCH INIT------------------
+
+    //TODO Alla wizardklasser behöver ha en fungerande "Customer Support" knapp
 
     @FXML
     public Button shoppingCartNextButton;
@@ -17,14 +22,14 @@ public class ShoppingCart extends AnchorPane {
     @FXML
     public AnchorPane shoppingCartMainAnchorPane;
 
-    public PersonalData personalDataPage = new PersonalData();
-    public iMatBackendController backendController;
+    public PersonalData personalDataPage = new PersonalData(this);
+    public iMatBackendController parentBackendController;
 
     public ShoppingCart(iMatBackendController backendController){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ShoppingCart.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
-        this.backendController = backendController;
+        this.parentBackendController = backendController;
 
         try {
             fxmlLoader.load();
@@ -34,7 +39,19 @@ public class ShoppingCart extends AnchorPane {
 
     }
 
-    public void onNextButtonClickEvent(){
+    public void onNextButtonPressed(){
         shoppingCartMainAnchorPane.getChildren().add(personalDataPage);
     }
+
+    @Override
+    public void closeWizard() {
+        parentBackendController.mainAnchorPane.getChildren().remove(this);
+    }
+
+    @Override
+    public void previousStep() {
+        closeWizard();
+    }
+
+    //----------------FAKTISK KOD-----------------
 }

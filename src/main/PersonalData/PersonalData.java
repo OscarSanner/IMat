@@ -2,25 +2,31 @@ package main.PersonalData;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import main.IWizardPage;
+import main.ShoppingCart.ShoppingCart;
 import main.Timetable.Timetable;
 
 import java.io.IOException;
 
-public class PersonalData extends AnchorPane {
+public class PersonalData extends AnchorPane implements IWizardPage {
 
-    @FXML
-    public Button personalDataNextButton;
+    //----------------NAVIGATION OCH INIT------------------
+
+    //TODO Alla wizardklasser behöver ha en fungerande "Customer Support" knapp
+
     @FXML
     public AnchorPane personalDataMainAnchorPane;
 
-    public Timetable timetablePage = new Timetable();
+    public Timetable timetablePage = new Timetable(this);
+    public ShoppingCart parentBackendController;
 
-    public PersonalData(){
+
+    public PersonalData(ShoppingCart parentBackendController){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("PersonalData.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
+        this.parentBackendController = parentBackendController;
 
         try {
             fxmlLoader.load();
@@ -32,4 +38,17 @@ public class PersonalData extends AnchorPane {
     public void onNextButtonPressed(){
         personalDataMainAnchorPane.getChildren().add(timetablePage);
     }
+
+    @Override
+    public void closeWizard() {
+        parentBackendController.getChildren().remove(this);
+        parentBackendController.closeWizard();
+    }
+
+    @Override
+    public void previousStep() {
+        parentBackendController.getChildren().remove(this);
+    }
+
+    //----------------FAKTISK KOD-----------------
 }

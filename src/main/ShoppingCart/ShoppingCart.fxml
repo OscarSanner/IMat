@@ -16,7 +16,6 @@
          <top>
             <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="26.0" layoutY="14.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="97.0" text="Button" />
                   <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="123.0" text="Button" />
                   <ImageView fitHeight="81.0" fitWidth="423.0" layoutX="247.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
                </children>
@@ -54,8 +53,8 @@
                         </Pane>
                         <Pane layoutX="31.0" layoutY="529.0" prefHeight="52.0" prefWidth="763.0" style="-fx-background-color: white;">
                            <children>
-                              <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Button" />
-                              <Button fx:id="shoppingCartNextButton" layoutX="697.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#onNextButtonClickEvent" text="Button" />
+                              <Button fx:id="shoppingCartNextButton" layoutX="697.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#onNextButtonPressed" text="Button" />
+                              <Button fx:id="previousButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#previousStep" text="Button" />
                            </children>
                         </Pane>
                         <Pane layoutX="23.0" layoutY="24.0" prefHeight="43.0" prefWidth="778.0" style="-fx-background-color: white;">
@@ -69,5 +68,6 @@
             </Pane>
          </center>
       </BorderPane>
+      <Button fx:id="homeButton" layoutX="26.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#closeWizard" prefHeight="64.0" prefWidth="97.0" text="Button" />
    </children>
 </fx:root>
