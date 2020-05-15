@@ -5,8 +5,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane fx:id="shuoppingCardItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" prefWidth="225.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="shuoppingCardItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" prefWidth="225.0" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="itemLabel" layoutX="76.0" layoutY="12.0" prefHeight="30.0" prefWidth="52.0" text="Paprika" />
       <ImageView fx:id="itemImage" fitHeight="70.0" fitWidth="71.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
@@ -16,4 +15,4 @@
       <Label fx:id="priceLabel" layoutX="176.0" layoutY="55.0" prefHeight="30.0" prefWidth="45.0" text="kr" textAlignment="RIGHT" />
       <Label fx:id="amountLabel" layoutX="112.0" layoutY="55.0" prefHeight="25.0" prefWidth="25.0" text="0" />
    </children>
-</AnchorPane>
+</fx:root>
