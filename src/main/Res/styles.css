@@ -31,3 +31,7 @@
     -fx-background-color: #B1D5F6;
     -fx-font-size: 15;
 }
+
+.test{
+    -fx-background-color: black;
+}
