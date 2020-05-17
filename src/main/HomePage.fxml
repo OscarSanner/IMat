@@ -143,97 +143,6 @@
                                     </ScrollPane>
                                  </children>
                               </StackPane>
-                              <StackPane fx:id="myPageTabPane" prefHeight="541.0" prefWidth="569.0">
-                                 <children>
-                                    <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
-                                       <children>
-                                          <Pane layoutX="14.0" layoutY="19.0" prefHeight="302.0" prefWidth="538.0" style="-fx-background-color: lightgrey;">
-                                             <children>
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true" />
-                                                <Label layoutX="46.0" layoutY="22.0" text="Förnamn:">
-                                                   <font>
-                                                      <Font size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label layoutX="46.0" layoutY="83.0" text="Efternamn:">
-                                                   <font>
-                                                      <Font size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label layoutX="46.0" layoutY="144.0" text="Gatuadress:">
-                                                   <font>
-                                                      <Font size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label layoutX="46.0" layoutY="205.0" text="Postnummer:">
-                                                   <font>
-                                                      <Font size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label layoutX="274.0" layoutY="22.0" text="Postort:">
-                                                   <font>
-                                                      <Font size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label layoutX="274.0" layoutY="144.0" text="Mobilnummer:">
-                                                   <font>
-                                                      <Font size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label layoutX="274.0" layoutY="83.0" text="E-mail adress:">
-                                                   <font>
-                                                      <Font size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label layoutX="274.0" layoutY="205.0" text="Övrig adressinformation:">
-                                                   <font>
-                                                      <Font size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <TextField layoutX="46.0" layoutY="46.0" prefHeight="33.0" prefWidth="180.0" promptText="Nicklas" style="-fx-background-radius: 20;" />
-                                                <TextField layoutX="46.0" layoutY="107.0" prefHeight="33.0" prefWidth="180.0" promptText="Börjesson" style="-fx-background-radius: 20;" />
-                                                <TextField layoutX="46.0" layoutY="168.0" prefHeight="33.0" prefWidth="180.0" promptText="Kantarellslingan 24 " style="-fx-background-radius: 20;" />
-                                                <TextField layoutX="274.0" layoutY="46.0" prefHeight="33.0" prefWidth="180.0" promptText="Göteborg" style="-fx-background-radius: 20;" />
-                                                <TextField layoutX="274.0" layoutY="107.0" prefHeight="33.0" prefWidth="180.0" promptText="+46XXXXXXXXX" style="-fx-background-radius: 20;" />
-                                                <TextField layoutX="274.0" layoutY="229.0" prefHeight="33.0" prefWidth="180.0" promptText="Ex. våning, etc." style="-fx-background-radius: 20;" />
-                                                <TextField layoutX="274.0" layoutY="168.0" prefHeight="33.0" prefWidth="180.0" promptText="börjesson@exempel.nu" style="-fx-background-radius: 20;" />
-                                                <TextField layoutX="46.0" layoutY="229.0" prefHeight="33.0" prefWidth="180.0" promptText="42011" style="-fx-background-radius: 20;" />
-                                                <Label layoutX="364.0" layoutY="146.0" text="(Valbart)">
-                                                   <font>
-                                                      <Font size="11.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label layoutX="423.0" layoutY="207.0" text="(Valbart)">
-                                                   <font>
-                                                      <Font size="11.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </Pane>
-                                          <Pane layoutX="16.0" layoutY="340.0" prefHeight="180.0" prefWidth="538.0" style="-fx-background-color: lightgrey;">
-                                             <children>
-                                                <Label layoutX="113.0" layoutY="20.0" text="Kredit- eller debitkort">
-                                                   <font>
-                                                      <Font size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <TextField layoutX="113.0" layoutY="54.0" prefHeight="35.0" prefWidth="312.0" promptText="           Kortnummer" style="-fx-border-color: black;" />
-                                                <TextField layoutX="113.0" layoutY="89.0" prefHeight="35.0" prefWidth="156.0" promptText="           MM/ÅR" style="-fx-border-color: black;" />
-                                                <TextField layoutX="269.0" layoutY="89.0" prefHeight="35.0" prefWidth="156.0" promptText="           CVC/CVV" style="-fx-border-color: black;" />
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="121.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="121.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="278.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fitHeight="30.0" fitWidth="50.0" layoutX="113.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fitHeight="30.0" fitWidth="50.0" layoutX="177.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fitHeight="30.0" fitWidth="50.0" layoutX="244.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" />
-                                             </children>
-                                          </Pane>
-                                       </children>
-                                    </Pane>
-                                 </children>
-                              </StackPane>
                               <StackPane fx:id="shoppingTabPane" prefHeight="541.0" prefWidth="569.0">
                                  <children>
                                     <SplitPane dividerPositions="0.10204081632653061" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
@@ -317,6 +226,97 @@
                                        </content>
                                     </ScrollPane>
                                  </children></StackPane>
+                              <StackPane fx:id="myPageTabPane" prefHeight="541.0" prefWidth="569.0">
+                                 <children>
+                                    <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+                                       <children>
+                                          <Pane layoutX="14.0" layoutY="19.0" prefHeight="302.0" prefWidth="538.0" style="-fx-background-color: lightgrey;">
+                                             <children>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label layoutX="46.0" layoutY="22.0" text="Förnamn:">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="46.0" layoutY="83.0" text="Efternamn:">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="46.0" layoutY="144.0" text="Gatuadress:">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="46.0" layoutY="205.0" text="Postnummer:">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="274.0" layoutY="22.0" text="Postort:">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="274.0" layoutY="144.0" text="Mobilnummer:">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="274.0" layoutY="83.0" text="E-mail adress:">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="274.0" layoutY="205.0" text="Övrig adressinformation:">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="firstName" layoutX="46.0" layoutY="46.0" onAction="#loadUserInfo" prefHeight="33.0" prefWidth="180.0" promptText="Nicklas" style="-fx-background-radius: 20;" />
+                                                <TextField fx:id="lastName" layoutX="46.0" layoutY="107.0" prefHeight="33.0" prefWidth="180.0" promptText="Börjesson" style="-fx-background-radius: 20;" />
+                                                <TextField fx:id="address" layoutX="46.0" layoutY="168.0" prefHeight="33.0" prefWidth="180.0" promptText="Kantarellslingan 24 " style="-fx-background-radius: 20;" />
+                                                <TextField fx:id="area" layoutX="274.0" layoutY="46.0" prefHeight="33.0" prefWidth="180.0" promptText="Göteborg" style="-fx-background-radius: 20;" />
+                                                <TextField fx:id="email" layoutX="274.0" layoutY="107.0" prefHeight="33.0" prefWidth="180.0" promptText="+46XXXXXXXXX" style="-fx-background-radius: 20;" />
+                                                <TextField layoutX="274.0" layoutY="229.0" prefHeight="33.0" prefWidth="180.0" promptText="Ex. våning, etc." style="-fx-background-radius: 20;" />
+                                                <TextField fx:id="mobileNumber" layoutX="274.0" layoutY="168.0" prefHeight="33.0" prefWidth="180.0" promptText="börjesson@exempel.nu" style="-fx-background-radius: 20;" />
+                                                <TextField fx:id="postcode" layoutX="46.0" layoutY="229.0" prefHeight="33.0" prefWidth="180.0" promptText="42011" style="-fx-background-radius: 20;" />
+                                                <Label layoutX="364.0" layoutY="146.0" text="(Valbart)">
+                                                   <font>
+                                                      <Font size="11.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="423.0" layoutY="207.0" text="(Valbart)">
+                                                   <font>
+                                                      <Font size="11.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
+                                          <Pane layoutX="16.0" layoutY="340.0" prefHeight="180.0" prefWidth="538.0" style="-fx-background-color: lightgrey;">
+                                             <children>
+                                                <Label layoutX="113.0" layoutY="20.0" text="Kredit- eller debitkort">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField layoutX="113.0" layoutY="54.0" prefHeight="35.0" prefWidth="312.0" promptText="           Kortnummer" style="-fx-border-color: black;" />
+                                                <TextField layoutX="113.0" layoutY="89.0" prefHeight="35.0" prefWidth="156.0" promptText="           MM/ÅR" style="-fx-border-color: black;" />
+                                                <TextField layoutX="269.0" layoutY="89.0" prefHeight="35.0" prefWidth="156.0" promptText="           CVC/CVV" style="-fx-border-color: black;" />
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="121.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="121.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="278.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fitHeight="30.0" fitWidth="50.0" layoutX="113.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fitHeight="30.0" fitWidth="50.0" layoutX="177.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fitHeight="30.0" fitWidth="50.0" layoutX="244.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </StackPane>
                            </children>
                         </Pane>
                      </children>

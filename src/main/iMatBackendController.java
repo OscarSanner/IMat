@@ -5,7 +5,10 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import main.CustomerSupport.CustomerSupport;
+import main.PersonalData.PersonalData;
 import main.ShoppingCart.ShoppingCart;
+import se.chalmers.cse.dat216.project.Customer;
+import se.chalmers.cse.dat216.project.IMatDataHandler;
 
 public class iMatBackendController {
 
@@ -35,8 +38,22 @@ public class iMatBackendController {
     public CustomerSupport customerSupportPage = new CustomerSupport(this);
     public ShoppingCart shoppingCartPage = new ShoppingCart(this);
 
+    //public Customer customer = IMatDataHandler.getInstance().getCustomer();
 
-
+    @FXML
+    private javafx.scene.control.TextField firstName;
+    @FXML
+    private javafx.scene.control.TextField lastName;
+    @FXML
+    private javafx.scene.control.TextField mobileNumber;
+    @FXML
+    private javafx.scene.control.TextField email;
+    @FXML
+    private javafx.scene.control.TextField address;
+    @FXML
+    private javafx.scene.control.TextField postcode;
+    @FXML
+    private javafx.scene.control.TextField area;
 
 
     @FXML
@@ -52,6 +69,7 @@ public class iMatBackendController {
     @FXML
     public void onMyPageTabSelect(){
         myPageTabPane.toFront();
+        loadUserInfo();
     }
 
     @FXML
@@ -76,4 +94,23 @@ public class iMatBackendController {
 
     //----------------FAKTISK KOD-----------------
 
-}
+    @FXML
+    private void loadUserInfo(){
+        Customer customer = IMatDataHandler.getInstance().getCustomer();
+        firstName.setText("hello"); //customer.getFirstName()
+        //resetBorder(forNameChange);
+        lastName.setText(customer.getLastName());
+        //resetBorder(lastNameChange);
+        email.setText(customer.getEmail());
+        //resetBorder(emailChange);
+        address.setText(customer.getAddress());
+        //resetBorder(adrChange);
+        postcode.setText(customer.getPostCode());
+        //resetBorder(postNrChange);
+        mobileNumber.setText(customer.getMobilePhoneNumber());
+    }
+
+
+
+    }
+

@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import se.chalmers.cse.dat216.project.Customer;
+import se.chalmers.cse.dat216.project.IMatDataHandler;
 
 import java.util.ResourceBundle;
 
@@ -22,5 +24,12 @@ public class iMat extends Application {
         stage.setTitle(bundle.getString("application.name"));
         stage.setScene(scene);
         stage.show();
+
+    }
+
+    // Ser till att allt sparas inför nästa gång programmet öppnas
+    public static void main(String[] args) {
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> IMatDataHandler.getInstance().shutDown(), "Shutdown-thread"));
+        launch(args);
     }
 }
