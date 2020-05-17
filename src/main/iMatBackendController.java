@@ -2,14 +2,18 @@ package main;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.WritableImage;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import main.CustomerSupport.CustomerSupport;
+import main.DetailedView.DetailedView;
 import main.PersonalData.PersonalData;
 import main.ShoppingCart.ShoppingCart;
 import se.chalmers.cse.dat216.project.CreditCard;
 import se.chalmers.cse.dat216.project.Customer;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
+import se.chalmers.cse.dat216.project.Product;
 
 public class iMatBackendController {
 
@@ -38,6 +42,7 @@ public class iMatBackendController {
 
     public CustomerSupport customerSupportPage = new CustomerSupport(this);
     public ShoppingCart shoppingCartPage = new ShoppingCart(this);
+    public DetailedView detailedViewPage = new DetailedView(this);
 
     //public Customer customer = IMatDataHandler.getInstance().getCustomer();
 
@@ -98,6 +103,34 @@ public class iMatBackendController {
         mainAnchorPane.getChildren().add(shoppingCartPage);
     }
 
+    public Image getSquareImage(Image image){
+
+        int x = 0;
+        int y = 0;
+        int width = 0;
+        int height = 0;
+
+        if(image.getWidth() > image.getHeight()){
+            width = (int) image.getHeight();
+            height = (int) image.getHeight();
+            x = (int)(image.getWidth() - width)/2;
+            y = 0;
+        }
+
+        else if(image.getHeight() > image.getWidth()){
+            width = (int) image.getWidth();
+            height = (int) image.getWidth();
+            x = 0;
+            y = (int) (image.getHeight() - height)/2;
+        }
+
+        else{
+            //Width equals Height, return original image
+            return image;
+        }
+        return new WritableImage(image.getPixelReader(), x, y, width, height);
+    }
+
     //----------------FAKTISK KOD-----------------
 
     @FXML
@@ -123,7 +156,12 @@ public class iMatBackendController {
 
     }
 
-
-
+    public void openProductView(Product product){
+        detailedViewPage.populateProductDetailedView(product);
+        mainAnchorPane.getChildren().add(detailedViewPage);
     }
+
+
+
+}
 

@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="productImage" fitHeight="200.0" fitWidth="220.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="35.0" />
@@ -26,13 +25,13 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <Label fx:id="quantityLabel" layoutX="367.0" layoutY="164.0" text="X st">
+      <Label fx:id="quantityLabel" layoutX="367.0" layoutY="164.0" text="X">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="increaseButton" layoutX="413.0" layoutY="155.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" text="+" />
-      <Button fx:id="decreaseButton" layoutX="303.0" layoutY="155.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" text="-" />
+      <Button fx:id="increaseButton" layoutX="413.0" layoutY="155.0" mnemonicParsing="false" onMouseClicked="#increaseQuantity" prefHeight="45.0" prefWidth="45.0" text="+" />
+      <Button fx:id="decreaseButton" layoutX="303.0" layoutY="155.0" mnemonicParsing="false" onMouseClicked="#decreaseQuantity" prefHeight="45.0" prefWidth="45.0" text="-" />
       <Label layoutX="67.0" layoutY="270.0" text="Produktinformation:">
          <font>
             <Font name="System Italic" size="36.0" />
@@ -45,5 +44,10 @@
          </font>
       </TextArea>
       <Button fx:id="exitButton" layoutX="761.0" layoutY="13.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" text="Exit" />
+      <Label fx:id="quantityLabel1" layoutX="389.0" layoutY="164.0" text="st">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
