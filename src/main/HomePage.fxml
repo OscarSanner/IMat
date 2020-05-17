@@ -302,9 +302,9 @@
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <TextField layoutX="113.0" layoutY="54.0" prefHeight="35.0" prefWidth="312.0" promptText="           Kortnummer" style="-fx-border-color: black;" />
-                                                <TextField layoutX="113.0" layoutY="89.0" prefHeight="35.0" prefWidth="156.0" promptText="           MM/ÅR" style="-fx-border-color: black;" />
-                                                <TextField layoutX="269.0" layoutY="89.0" prefHeight="35.0" prefWidth="156.0" promptText="           CVC/CVV" style="-fx-border-color: black;" />
+                                                <TextField fx:id="cardNumber" layoutX="113.0" layoutY="54.0" prefHeight="35.0" prefWidth="312.0" promptText="           Kortnummer" style="-fx-border-color: black;" />
+                                                <TextField fx:id="year" layoutX="113.0" layoutY="89.0" prefHeight="35.0" prefWidth="156.0" promptText="           MM/ÅR" style="-fx-border-color: black;" />
+                                                <TextField fx:id="cvc" layoutX="269.0" layoutY="89.0" prefHeight="35.0" prefWidth="156.0" promptText="           CVC/CVV" style="-fx-border-color: black;" />
                                                 <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="121.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" />
                                                 <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="121.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true" />
                                                 <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="278.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true" />

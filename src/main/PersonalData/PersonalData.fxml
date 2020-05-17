@@ -30,67 +30,66 @@
                      <children>
                         <Pane layoutX="23.0" layoutY="101.0" prefHeight="416.0" prefWidth="781.0">
                            <children>
-                              <StackPane layoutY="1.0" prefHeight="416.0" prefWidth="781.0" style="-fx-background-color: lightblue;">
+                              <StackPane layoutY="1.0" prefHeight="416.0" prefWidth="781.0" style="-fx-background-color: white;">
                                  <children>
                                     <Pane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <Label layoutX="38.0" layoutY="32.0" prefHeight="17.0" prefWidth="200.0" text="Förnamn:">
+                                          <Label layoutX="38.0" layoutY="14.0" prefHeight="17.0" prefWidth="200.0" text="Förnamn:">
                                              <font>
                                                 <Font size="17.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="38.0" layoutY="110.0" prefHeight="17.0" prefWidth="200.0" text="Efternamn:">
+                                          <Label layoutX="38.0" layoutY="102.0" prefHeight="17.0" prefWidth="200.0" text="Efternamn:">
                                              <font>
                                                 <Font size="17.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="38.0" layoutY="182.0" prefHeight="17.0" prefWidth="200.0" text="Gatuadrress:">
+                                          <Label layoutX="38.0" layoutY="190.0" prefHeight="17.0" prefWidth="200.0" text="Gatuadrress:">
                                              <font>
                                                 <Font size="17.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="38.0" layoutY="254.0" prefHeight="17.0" prefWidth="200.0" text="Postnummer:">
+                                          <Label layoutX="38.0" layoutY="278.0" prefHeight="17.0" prefWidth="200.0" text="Postnummer:">
                                              <font>
                                                 <Font size="17.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="38.0" layoutY="326.0" prefHeight="17.0" prefWidth="200.0" text="Postort:">
+                                          <Label layoutX="412.0" layoutY="14.0" prefHeight="17.0" prefWidth="200.0" text="Postort:">
                                              <font>
                                                 <Font size="17.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="412.0" layoutY="32.0" prefHeight="22.0" prefWidth="245.0" text="Mobilnummer:">
+                                          <Label layoutX="412.0" layoutY="102.0" prefHeight="22.0" prefWidth="245.0" text="Mobilnummer:">
                                              <font>
                                                 <Font size="17.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="412.0" layoutY="110.0" prefHeight="22.0" prefWidth="107.0" text="E-mail adress:">
+                                          <Label layoutX="412.0" layoutY="190.0" prefHeight="22.0" prefWidth="107.0" text="E-mail adress:">
                                              <font>
                                                 <Font size="17.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="412.0" layoutY="182.0" prefHeight="22.0" prefWidth="183.0" text="Övrig adressinformation:">
-                                             <font>
-                                                <Font size="17.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="firstNameTextField" layoutX="38.0" layoutY="62.0" prefHeight="35.0" prefWidth="245.0" promptText="Nicklas" style="-fx-background-radius: 20;" />
-                                          <TextField fx:id="lastNameTextField" layoutX="38.0" layoutY="140.0" prefHeight="35.0" prefWidth="245.0" promptText="Börjesson" style="-fx-background-radius: 20;" />
-                                          <TextField fx:id="addressTextField" layoutX="38.0" layoutY="214.0" prefHeight="35.0" prefWidth="245.0" promptText="Kantarellslingan 24" style="-fx-background-radius: 20;" />
-                                          <TextField fx:id="postcodeTextField" layoutX="38.0" layoutY="284.0" prefHeight="35.0" prefWidth="245.0" promptText="42011" style="-fx-background-radius: 20;" />
-                                          <TextField fx:id="areaTextField" layoutX="38.0" layoutY="356.0" prefHeight="35.0" prefWidth="245.0" promptText="Göteborg" style="-fx-background-radius: 20;" />
-                                          <TextField fx:id="mobileNumberTextField" layoutX="412.0" layoutY="62.0" prefHeight="35.0" prefWidth="245.0" promptText="+46 ..." style="-fx-background-radius: 20;" />
-                                          <TextField fx:id="emailTextField" layoutX="412.0" layoutY="140.0" prefHeight="35.0" prefWidth="245.0" promptText="börjesson@exempel.nu" style="-fx-background-radius: 20;" />
-                                          <TextField fx:id="extraInfTextField" layoutX="412.0" layoutY="214.0" prefHeight="35.0" prefWidth="245.0" promptText="Ex. våning, etc." style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="firstNameTextField" layoutX="38.0" layoutY="44.0" prefHeight="35.0" prefWidth="245.0" promptText="Nicklas" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="lastNameTextField" layoutX="38.0" layoutY="132.0" prefHeight="35.0" prefWidth="245.0" promptText="Börjesson" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="addressTextField" layoutX="38.0" layoutY="220.0" prefHeight="35.0" prefWidth="245.0" promptText="Kantarellslingan 24" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="postcodeTextField" layoutX="38.0" layoutY="308.0" onMouseClicked="#checkIfCorrect" prefHeight="35.0" prefWidth="245.0" promptText="42011" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="areaTextField" layoutX="412.0" layoutY="44.0" prefHeight="35.0" prefWidth="245.0" promptText="Göteborg" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="mobileNumberTextField" layoutX="412.0" layoutY="132.0" prefHeight="35.0" prefWidth="245.0" promptText="+46 ..." style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="emailTextField" layoutX="412.0" layoutY="220.0" prefHeight="35.0" prefWidth="245.0" promptText="börjesson@exempel.nu" style="-fx-background-radius: 20;" />
                                           <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="640.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true" />
                                           <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="640.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
-                                          <CheckBox fx:id="personalCheckBox" layoutX="412.0" layoutY="362.0" mnemonicParsing="false" text="Spara mina personuppgifter till nästa köp">
+                                          <CheckBox fx:id="personalCheckBox" layoutX="412.0" layoutY="308.0" mnemonicParsing="false" text="Spara mina personuppgifter till nästa köp">
                                              <font>
                                                 <Font size="17.0" />
                                              </font>
                                           </CheckBox>
-                                          <Label layoutX="516.0" layoutY="113.0" prefHeight="17.0" prefWidth="89.0" text="(Valbart)" />
-                                          <Label layoutX="590.0" layoutY="185.0" prefHeight="17.0" prefWidth="89.0" text="(Valbart)" />
+                                          <Label fx:id="firstNameErrorLbl" layoutX="38.0" layoutY="81.0" prefHeight="17.0" prefWidth="178.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b" />
+                                          <Label fx:id="lastNameErrorLbl" layoutX="38.0" layoutY="169.0" prefHeight="17.0" prefWidth="176.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b" />
+                                          <Label fx:id="adressErrorLbl" layoutX="38.0" layoutY="257.0" prefHeight="17.0" prefWidth="176.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b" />
+                                          <Label fx:id="postCodeErrorLbl" layoutX="38.0" layoutY="345.0" prefHeight="17.0" prefWidth="179.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b" />
+                                          <Label fx:id="areaErrorLbl" layoutX="412.0" layoutY="81.0" prefHeight="17.0" prefWidth="181.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b" />
+                                          <Label fx:id="mobileErrorLbl" layoutX="412.0" layoutY="169.0" prefHeight="17.0" prefWidth="175.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b" />
+                                          <Label fx:id="emailErrorLbl" layoutX="412.0" layoutY="257.0" prefHeight="17.0" prefWidth="183.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b" />
                                        </children>
                                     </Pane>
                                  </children>
@@ -105,7 +104,10 @@
                         </Pane>
                         <Pane layoutX="23.0" layoutY="24.0" prefHeight="43.0" prefWidth="778.0" style="-fx-background-color: white;">
                            <children>
-                              <Label fx:id="pageNameLabel" layoutX="370.0" layoutY="13.0" text="Delsida" />
+                              <Label fx:id="pageNameLabel" layoutX="333.0" layoutY="5.0" text="Personuppgifter">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font></Label>
                            </children>
                         </Pane>
                      </children>
