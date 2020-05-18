@@ -97,7 +97,7 @@ public class DetailedView extends AnchorPane {
 
         //Product information is missing
         this.productTextArea.setText("PRODUCT INFORMATION IS MISSING.--> Product.java");
-        
+
 
     }
 
