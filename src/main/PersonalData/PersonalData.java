@@ -13,10 +13,12 @@ import main.ShoppingCart.ShoppingCart;
 import main.Timetable.Timetable;
 import se.chalmers.cse.dat216.project.Customer;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
+import se.chalmers.cse.dat216.project.Order;
 
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
+import java.util.Date;
 
 public class PersonalData extends AnchorPane implements IWizardPage {
 
@@ -55,6 +57,7 @@ public class PersonalData extends AnchorPane implements IWizardPage {
 
         if(allFilledInCorrectly()) {
             personalDataMainAnchorPane.getChildren().add(timetablePage);
+
         }
     }
 
@@ -156,6 +159,7 @@ public class PersonalData extends AnchorPane implements IWizardPage {
                 && isComplete(mobileNumberTextField,getMinAllowedLength(mobileNumberTextField))
                 && containsDigitsOnly(mobileNumberTextField) && containsDigitsOnly(postcodeTextField)
                 && isComplete(postcodeTextField,getMinAllowedLength(postcodeTextField));
+
     }
 
     private boolean isInEmailForm(TextField textField){

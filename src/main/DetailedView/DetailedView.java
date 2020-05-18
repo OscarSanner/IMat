@@ -44,11 +44,11 @@ public class DetailedView extends AnchorPane {
         this.parentController = backendController;
         //Fix load error with Detailed View
 
-        /*try {
+        try {
             fxmlLoader.load();
         } catch (IOException exception) {
             throw new RuntimeException(exception);
-        }*/
+        }
     }
 
     //TODO: Add buyButton interaction
@@ -97,6 +97,7 @@ public class DetailedView extends AnchorPane {
 
         //Product information is missing
         this.productTextArea.setText("PRODUCT INFORMATION IS MISSING.--> Product.java");
+        
 
     }
 
