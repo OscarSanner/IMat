@@ -24,6 +24,7 @@
                   <Button layoutX="26.0" layoutY="14.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="97.0" text="Button" />
                   <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#onCustomerSupportPressed" prefHeight="64.0" prefWidth="123.0" text="Button" />
                   <TextField fx:id="searchBarTextField" layoutX="164.0" layoutY="32.0" prefHeight="25.0" prefWidth="562.0" />
+                  <Button fx:id="testButton" layoutX="372.0" layoutY="65.0" mnemonicParsing="false" text="TESTKNAPP" />
                </children>
             </Pane>
          </top>
@@ -95,54 +96,6 @@
                      <children>
                         <Pane prefHeight="541.0" prefWidth="569.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <StackPane fx:id="orderTabPane" prefHeight="541.0" prefWidth="569.0" style="-fx-background-color: red;">
-                                 <children>
-                                    <ScrollPane prefHeight="200.0" prefWidth="200.0">
-                                       <content>
-                                          <Accordion>
-                                             <panes>
-                                                <TitledPane animated="false" text=" ">
-                                                   <content>
-                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="382.0" prefWidth="575.0">
-                                                         <children>
-                                                            <FlowPane layoutX="16.0" prefHeight="451.0" prefWidth="536.0" style="-fx-background-color: gray;" />
-                                                         </children>
-                                                      </AnchorPane>
-                                                   </content>
-                                                   <graphic>
-                                                      <Pane prefHeight="58.0" prefWidth="536.0">
-                                                         <children>
-                                                            <Label layoutX="14.0" layoutY="11.0" prefHeight="17.0" prefWidth="92.0" text="Inköpslista 1" />
-                                                            <Button layoutX="208.0" layoutY="2.0" mnemonicParsing="false" text="Lägg till i kundvagn" />
-                                                            <Button layoutX="198.0" layoutY="30.0" mnemonicParsing="false" text="Ta bort som inköpslista" />
-                                                         </children>
-                                                      </Pane>
-                                                   </graphic>
-                                                </TitledPane>
-                                                <TitledPane animated="false" text=" ">
-                                                   <content>
-                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                         <children>
-                                                            <FlowPane layoutX="16.0" prefHeight="451.0" prefWidth="536.0" style="-fx-background-color: gray;" />
-                                                         </children>
-                                                      </AnchorPane>
-                                                   </content>
-                                                   <graphic>
-                                                      <Pane prefHeight="58.0" prefWidth="536.0">
-                                                         <children>
-                                                            <Label layoutX="14.0" layoutY="11.0" prefHeight="17.0" prefWidth="92.0" text="Inköpslista 1" />
-                                                            <Button layoutX="208.0" layoutY="2.0" mnemonicParsing="false" text="Lägg till i kundvagn" />
-                                                            <Button layoutX="199.0" layoutY="30.0" mnemonicParsing="false" text="Ta bort som inköpslista" />
-                                                         </children>
-                                                      </Pane>
-                                                   </graphic>
-                                                </TitledPane>
-                                             </panes>
-                                          </Accordion>
-                                       </content>
-                                    </ScrollPane>
-                                 </children>
-                              </StackPane>
                               <StackPane fx:id="shoppingTabPane" prefHeight="541.0" prefWidth="569.0">
                                  <children>
                                     <SplitPane dividerPositions="0.10204081632653061" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
@@ -181,51 +134,6 @@
                                     <StackPane prefHeight="541.0" prefWidth="569.0" />
                                  </children>
                               </StackPane>
-                              <StackPane fx:id="listTabPane" prefHeight="541.0" prefWidth="570.0" style="-fx-background-color: RED;">
-                                 <children>
-                                    <ScrollPane prefHeight="541.0" prefWidth="445.0">
-                                       <content>
-                                          <Accordion prefHeight="234.0" prefWidth="508.0">
-                                             <panes>
-                                                <TitledPane animated="false" text=" ">
-                                                   <content>
-                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                         <children>
-                                                            <FlowPane layoutX="16.0" prefHeight="451.0" prefWidth="536.0" style="-fx-background-color: gray;" />
-                                                         </children>
-                                                      </AnchorPane>
-                                                   </content>
-                                                   <graphic>
-                                                      <Pane prefHeight="58.0" prefWidth="536.0">
-                                                         <children>
-                                                            <Label layoutX="14.0" layoutY="21.0" prefHeight="17.0" prefWidth="64.0" text="25e Maj 2020" />
-                                                            <Button layoutX="200.0" layoutY="17.0" mnemonicParsing="false" text="Lägg till som iköpslista" />
-                                                         </children>
-                                                      </Pane>
-                                                   </graphic>
-                                                </TitledPane>
-                                                <TitledPane animated="false" text=" ">
-                                                   <content>
-                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                         <children>
-                                                            <FlowPane layoutX="16.0" prefHeight="450.0" prefWidth="536.0" style="-fx-background-color: gray;" />
-                                                         </children>
-                                                      </AnchorPane>
-                                                   </content>
-                                                   <graphic>
-                                                      <Pane prefHeight="58.0" prefWidth="536.0">
-                                                         <children>
-                                                            <Label layoutX="14.0" layoutY="21.0" prefHeight="17.0" prefWidth="64.0" text="25e Maj 2020" />
-                                                            <Button layoutX="200.0" layoutY="17.0" mnemonicParsing="false" text="Lägg till som iköpslista" />
-                                                         </children>
-                                                      </Pane>
-                                                   </graphic>
-                                                </TitledPane>
-                                             </panes>
-                                          </Accordion>
-                                       </content>
-                                    </ScrollPane>
-                                 </children></StackPane>
                               <StackPane fx:id="myPageTabPane" prefHeight="541.0" prefWidth="569.0">
                                  <children>
                                     <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
@@ -317,6 +225,62 @@
                                     </Pane>
                                  </children>
                               </StackPane>
+                              <StackPane fx:id="listTabPane" prefHeight="541.0" prefWidth="569.0" style="-fx-background-color: red;">
+                                 <children>
+                                    <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                       <content>
+                                          <Accordion fx:id="listAccordion">
+                                             <panes>
+                                                <TitledPane animated="false" text=" ">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="382.0" prefWidth="575.0">
+                                                         <children>
+                                                            <FlowPane layoutX="16.0" prefHeight="451.0" prefWidth="536.0" style="-fx-background-color: gray;" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                   <graphic>
+                                                      <Pane prefHeight="58.0" prefWidth="536.0">
+                                                         <children>
+                                                            <Label layoutX="14.0" layoutY="11.0" prefHeight="17.0" prefWidth="92.0" text="Inköpslista 1" />
+                                                            <Button layoutX="208.0" layoutY="2.0" mnemonicParsing="false" text="Lägg till i kundvagn" />
+                                                            <Button layoutX="198.0" layoutY="30.0" mnemonicParsing="false" text="Ta bort som inköpslista" />
+                                                         </children>
+                                                      </Pane>
+                                                   </graphic>
+                                                </TitledPane>
+                                                <TitledPane animated="false" text=" ">
+                                                   <content>
+                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                         <children>
+                                                            <FlowPane layoutX="16.0" prefHeight="451.0" prefWidth="536.0" style="-fx-background-color: gray;" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                   <graphic>
+                                                      <Pane prefHeight="58.0" prefWidth="536.0">
+                                                         <children>
+                                                            <Label layoutX="14.0" layoutY="11.0" prefHeight="17.0" prefWidth="92.0" text="Inköpslista 1" />
+                                                            <Button layoutX="208.0" layoutY="2.0" mnemonicParsing="false" text="Lägg till i kundvagn" />
+                                                            <Button layoutX="199.0" layoutY="30.0" mnemonicParsing="false" text="Ta bort som inköpslista" />
+                                                         </children>
+                                                      </Pane>
+                                                   </graphic>
+                                                </TitledPane>
+                                             </panes>
+                                          </Accordion>
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="orderTabPane" prefHeight="541.0" prefWidth="570.0" style="-fx-background-color: RED;">
+                                 <children>
+                                    <ScrollPane prefHeight="541.0" prefWidth="445.0">
+                                       <content>
+                                          <Accordion fx:id="orderAccordion" prefHeight="102.0" prefWidth="577.0" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children></StackPane>
                            </children>
                         </Pane>
                      </children>

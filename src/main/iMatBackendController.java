@@ -1,19 +1,19 @@
 package main;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
+import javafx.scene.control.TitledPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import main.CustomerSupport.CustomerSupport;
 import main.DetailedView.DetailedView;
+import main.OrderTabTitlePane.OrderTabTitlePane;
 import main.PersonalData.PersonalData;
 import main.ShoppingCart.ShoppingCart;
-import se.chalmers.cse.dat216.project.CreditCard;
-import se.chalmers.cse.dat216.project.Customer;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.*;
 
 public class iMatBackendController {
 
@@ -36,9 +36,15 @@ public class iMatBackendController {
     @FXML
     public Button shoppingTabButton;
     @FXML
+    public Button testButton;
+    @FXML
     public AnchorPane mainAnchorPane;
     @FXML
     public Button checkoutButton;
+    @FXML
+    public Accordion orderAccordion;
+    @FXML
+    public Accordion listAccordion;
 
     public CustomerSupport customerSupportPage = new CustomerSupport(this);
     public ShoppingCart shoppingCartPage = new ShoppingCart(this);
@@ -70,6 +76,20 @@ public class iMatBackendController {
     @FXML
     public void onOrderTabSelect(){
         orderTabPane.toFront();
+        populateOrderPane();
+    }
+
+    private void populateOrderPane() {
+        int calcExpansion = 0;
+        orderAccordion.getPanes().add(new OrderTabTitlePane());
+        for(Order o : IMatDataHandler.getInstance().getOrders()){
+            orderAccordion.getPanes().add(new OrderTabTitlePane());
+        }
+        if (orderAccordion.getExpandedPane() != null){
+            OrderTabTitlePane tp = (OrderTabTitlePane)orderAccordion.getExpandedPane();
+            calcExpansion = tp.calculateExpansion();
+        }
+        orderAccordion.prefHeightProperty().set(orderAccordion.getPrefHeight() + 67 + calcExpansion);
     }
 
     @FXML
@@ -86,6 +106,10 @@ public class iMatBackendController {
     @FXML
     public void onListtabSelect(){
         listTabPane.toFront();
+        populateListPane();
+    }
+
+    private void populateListPane() {
     }
 
     @FXML
@@ -162,13 +186,7 @@ public class iMatBackendController {
         cardNumber.setText(creditCard.getCardNumber());
         //year.setText(creditCard.getValidYear() && creditCard.getValidMonth());
         //cvc.setText(creditCard.getVerificationCode());
-
-
     }
-
-
-
-
 
 }
 
