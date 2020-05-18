@@ -1,19 +1,20 @@
 package main;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import main.CustomerSupport.CustomerSupport;
 import main.DetailedView.DetailedView;
+import main.OrderTabTitlePane.OrderTabTitlePane;
 import main.PersonalData.PersonalData;
 import main.ShoppingCart.ShoppingCart;
-import se.chalmers.cse.dat216.project.CreditCard;
-import se.chalmers.cse.dat216.project.Customer;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.*;
 
 public class iMatBackendController {
 
@@ -36,9 +37,15 @@ public class iMatBackendController {
     @FXML
     public Button shoppingTabButton;
     @FXML
+    public Button testButton;
+    @FXML
     public AnchorPane mainAnchorPane;
     @FXML
     public Button checkoutButton;
+    @FXML
+    public Accordion orderAccordion;
+    @FXML
+    public Accordion listAccordion;
 
     public CustomerSupport customerSupportPage = new CustomerSupport(this);
     public ShoppingCart shoppingCartPage = new ShoppingCart(this);
@@ -63,13 +70,39 @@ public class iMatBackendController {
     @FXML
     private javafx.scene.control.TextField cardNumber;
     @FXML
+    private Label postCodeAmountErrorLabel;
+    @FXML
+    private Label mobileAmountErrorLabel;
+    @FXML
+    private Label emailStyleErrorLabel;
+    @FXML
+    private Label postCodeStyleErrorLabel;
+    @FXML
+    private Label mobileStyleErrorLabel;
+    @FXML
     private javafx.scene.control.TextField year;
     @FXML
     private javafx.scene.control.TextField cvc;
+    @FXML
+    private Button saveButton;
 
     @FXML
     public void onOrderTabSelect(){
         orderTabPane.toFront();
+        populateOrderPane();
+    }
+
+    private void populateOrderPane() {
+        int calcExpansion = 0;
+        orderAccordion.getPanes().add(new OrderTabTitlePane());
+        for(Order o : IMatDataHandler.getInstance().getOrders()){
+            orderAccordion.getPanes().add(new OrderTabTitlePane());
+        }
+        if (orderAccordion.getExpandedPane() != null){
+            OrderTabTitlePane tp = (OrderTabTitlePane)orderAccordion.getExpandedPane();
+            calcExpansion = tp.calculateExpansion();
+        }
+        orderAccordion.prefHeightProperty().set(orderAccordion.getPrefHeight() + 67 + calcExpansion);
     }
 
     @FXML
@@ -81,11 +114,16 @@ public class iMatBackendController {
     public void onMyPageTabSelect(){
         myPageTabPane.toFront();
         loadUserInfo();
+        makeLblsInvisible();
     }
 
     @FXML
     public void onListtabSelect(){
         listTabPane.toFront();
+        populateListPane();
+    }
+
+    private void populateListPane() {
     }
 
     @FXML
@@ -101,6 +139,21 @@ public class iMatBackendController {
     @FXML
     public void onCheckoutButtonPressed(){
         mainAnchorPane.getChildren().add(shoppingCartPage);
+        saveCustomerInfo();
+
+
+
+    }
+
+    @FXML
+    public void onSaveButtonPressed(){
+
+
+        if(allFilledInCorrectly()) {
+            saveCustomerInfo();
+
+        }
+
     }
 
     @FXML
@@ -108,10 +161,10 @@ public class iMatBackendController {
         mainAnchorPane.getChildren().remove(detailedViewPage);
     }
 
-    public void openProductView(Product product){
+    /*public void openProductView(Product product){
         detailedViewPage.populateProductDetailedView(product);
         mainAnchorPane.getChildren().add(detailedViewPage);
-    }
+    }*/
 
     public Image getSquareImage(Image image){
 
@@ -140,34 +193,142 @@ public class iMatBackendController {
         }
         return new WritableImage(image.getPixelReader(), x, y, width, height);
     }
+    @FXML
+    public void mySiteErrorLabelDisapear() {
+        postCodeAmountErrorLabel.setVisible(false);
+        postCodeStyleErrorLabel.setVisible(false);
+    }
+    @FXML
+    public void mySiteErrorLabelDisapear2() {
+        mobileAmountErrorLabel.setVisible(false);
+        mobileStyleErrorLabel.setVisible(false);
+    }
+    @FXML
+    public void mySiteErrorLabelDisapear3() {
+        emailStyleErrorLabel.setVisible(false);
+    }
 
     //----------------FAKTISK KOD-----------------
+
+
+
+//------------------------------------------------------------MinSida-----------------------------------------------------------------------//
+
+    //Customer customer = IMatDataHandler.getInstance().getCustomer();
 
     @FXML
     private void loadUserInfo(){
         Customer customer = IMatDataHandler.getInstance().getCustomer();
-        CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
-        firstName.setText(customer.getFirstName()); //customer.getFirstName()
-        //resetBorder(forNameChange);
+      // CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
+        firstName.setText(customer.getFirstName());
         lastName.setText(customer.getLastName());
-        //resetBorder(lastNameChange);
         email.setText(customer.getEmail());
-        //resetBorder(emailChange);
         address.setText(customer.getAddress());
-        //resetBorder(adrChange);
         postcode.setText(customer.getPostCode());
-        //resetBorder(postNrChange);
         mobileNumber.setText(customer.getMobilePhoneNumber());
         area.setText(customer.getPostAddress());
-        cardNumber.setText(creditCard.getCardNumber());
+       // cardNumber.setText(creditCard.getCardNumber());
         //year.setText(creditCard.getValidYear() && creditCard.getValidMonth());
         //cvc.setText(creditCard.getVerificationCode());
+
+    }
+    private void saveCustomerInfo() {
+        Customer customer = IMatDataHandler.getInstance().getCustomer();
+        customer.setFirstName(firstName.getText());
+        customer.setLastName(lastName.getText());
+        customer.setMobilePhoneNumber(mobileNumber.getText());
+        customer.setEmail(email.getText());
+        customer.setAddress(address.getText());
+        customer.setPostAddress(area.getText());
+        customer.setPostCode(postcode.getText());
 
 
     }
 
+    private boolean isCustomerInfoComplete(){
+        return isInEmailForm(email) && isComplete(mobileNumber,getMinAllowedLength(mobileNumber))
+                && containsDigitsOnly(mobileNumber) && containsDigitsOnly(postcode)
+                && isComplete(postcode,getMinAllowedLength(postcode));
+    }
+
+    private boolean isInEmailForm(TextField textField){
+        return (textField.getText().contains("@") && textField.getText().contains(".") || textField.getText().isEmpty());
+    }
+
+    private boolean containsDigitsOnly(TextField textField){
+        char[] chars = textField.getText().toCharArray();
+        for(int i = 0; i < chars.length; i++){
+            if(!Character.isDigit(chars[i]) && !String.valueOf(chars[i]).equals(" ") && !String.valueOf(chars[i]).equals("-")){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean isComplete(TextField textfield, int completeLength){
+        return textfield.getText().length() == completeLength;
+    }
+    private int getMinAllowedLength(TextField textField){
+        if(textField.equals(mobileNumber)){
+            return 10;
+        } else if(textField.equals(postcode)){
+            return 5;
+        } else {
+            return 0;
+        }
+    }
+
+    private boolean allFilledInCorrectly() {
+
+        if (isCustomerInfoComplete()) {
+            emailStyleErrorLabel.setVisible(false);
+            mobileAmountErrorLabel.setVisible(false);
+            mobileStyleErrorLabel.setVisible(false);
+            postCodeAmountErrorLabel.setVisible(false);
+            postCodeStyleErrorLabel.setVisible(false);
+
+            return true;
+
+        } else{
+
+            if (!(email.getText().isEmpty()) && !(isInEmailForm(email))){//*|| !isInEmailForm(emailTextField)*//*) {
+                emailStyleErrorLabel.setVisible(true);
+            }
+            if (!containsDigitsOnly(mobileNumber) && !(mobileNumber.getText().isEmpty())) {
+                mobileAmountErrorLabel.setVisible(false);
+                mobileStyleErrorLabel.setVisible(true);
+            } else if (!isComplete(mobileNumber, getMinAllowedLength(mobileNumber)) && !(mobileNumber.getText().isEmpty())) {
+                mobileAmountErrorLabel.setVisible(true);
+                mobileStyleErrorLabel.setVisible(false);
+            }
+            if (!containsDigitsOnly(postcode) && !(postcode.getText().isEmpty())) {
+                postCodeStyleErrorLabel.setVisible(true);
+                postCodeAmountErrorLabel.setVisible(false);
+            } else if (!isComplete(postcode, getMinAllowedLength(postcode)) && !(postcode.getText().isEmpty())) {
+                postCodeStyleErrorLabel.setVisible(false);
+                postCodeAmountErrorLabel.setVisible(true);
+            }
+
+            return false;
+        }
+    }
+
+    private void makeLblsInvisible() {
+        mobileStyleErrorLabel.setVisible(false);
+        mobileAmountErrorLabel.setVisible(false);
+        emailStyleErrorLabel.setVisible(false);
+        postCodeAmountErrorLabel.setVisible(false);
+        postCodeStyleErrorLabel.setVisible(false);
+    }
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
 
+
+    public void openProductView(Product product){
+        detailedViewPage.populateProductDetailedView(product);
+        mainAnchorPane.getChildren().add(detailedViewPage);
+    }
 
 
 }

@@ -7,6 +7,8 @@ import javafx.scene.layout.AnchorPane;
 import main.IWizardPage;
 import main.PersonalData.PersonalData;
 import main.iMatBackendController;
+import se.chalmers.cse.dat216.project.Customer;
+import se.chalmers.cse.dat216.project.IMatDataHandler;
 
 import java.io.IOException;
 
@@ -25,6 +27,8 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
     public PersonalData personalDataPage = new PersonalData(this);
     public iMatBackendController parentBackendController;
 
+    Customer customer = IMatDataHandler.getInstance().getCustomer();
+
     public ShoppingCart(iMatBackendController backendController){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ShoppingCart.fxml"));
         fxmlLoader.setRoot(this);
@@ -37,11 +41,14 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
             throw new RuntimeException(exception);
         }
 
+
     }
 
     public void onNextButtonPressed(){
         shoppingCartMainAnchorPane.getChildren().add(personalDataPage);
         //PersonalData.inputCustomerInfo();
+
+
     }
 
     @Override
