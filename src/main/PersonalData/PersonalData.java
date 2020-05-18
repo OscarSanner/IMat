@@ -34,12 +34,13 @@ public class PersonalData extends AnchorPane implements IWizardPage {
 
     @FXML private CheckBox personalCheckBox;
 
+   // private Customer customer = IMatDataHandler.getInstance().getCustomer();
+
 
     public PersonalData(ShoppingCart parentBackendController){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("PersonalData.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
-        this.parentBackendController = parentBackendController;
 
         try {
             fxmlLoader.load();
@@ -47,13 +48,23 @@ public class PersonalData extends AnchorPane implements IWizardPage {
             throw new RuntimeException(exception);
         }
 
-        inputCustomerInfo();
-        makeLblsInvisible();
+        this.parentBackendController = parentBackendController;
 
+       // System.out.println(customer.getFirstName());
+        inputCustomerInfo();
+       // System.out.println(customer.getFirstName());
+        makeLblsInvisible();
     }
 
     @FXML
     public void onNextButtonPressed(){
+
+       // Customer customer = IMatDataHandler.getInstance().getCustomer();
+        //System.out.println(customer.getFirstName());
+
+        if (personalCheckBox.isSelected()) {
+            setCustomerInfo();
+        }
 
         if(allFilledInCorrectly()) {
             personalDataMainAnchorPane.getChildren().add(timetablePage);
@@ -66,9 +77,6 @@ public class PersonalData extends AnchorPane implements IWizardPage {
         parentBackendController.getChildren().remove(this);
         parentBackendController.closeWizard();
 
-        if (personalCheckBox.isSelected()) {
-            setCustomerInfo();
-        }
     }
 
     @Override
@@ -77,7 +85,7 @@ public class PersonalData extends AnchorPane implements IWizardPage {
     }
 
     @FXML
-    public void checkIfCorrect() {
+    public void errorlabeldisapear() {
 
         areaErrorLbl.setVisible(false);
 
@@ -89,10 +97,52 @@ public class PersonalData extends AnchorPane implements IWizardPage {
         }*/
     }
 
+    @FXML
+    public void errorlabeldisapear2() {
+
+        firstNameErrorLbl.setVisible(false);
+
+    }
+    @FXML
+    public void errorlabeldisapear3() {
+
+        lastNameErrorLbl.setVisible(false);
+
+    }
+    @FXML
+    public void errorlabeldisapear4() {
+
+        postCodeAmountErrorLbl.setVisible(false);
+        postCodeStyleErrorLbl.setVisible(false);
+        postCodeErrorLbl.setVisible(false);
+
+    }
+    @FXML
+    public void errorlabeldisapear5() {
+
+        adressErrorLbl.setVisible(false);
+
+    }
+    @FXML
+    public void errorlabeldisapear6() {
+
+        mobileAmountErrorLbl.setVisible(false);
+        mobileStyleErrorLbl.setVisible(false);
+        mobileErrorLbl.setVisible(false);
+
+    }
+    @FXML
+    public void errorlabeldisapear7() {
+
+        emailErrorLbl.setVisible(false);
+        emailStyleErrorLbl.setVisible(false);
+
+    }
+
     //----------------FAKTISK KOD-----------------
 
     // Personen som handlar
-    public Customer customer = IMatDataHandler.getInstance().getCustomer();
+   // private Customer customer = IMatDataHandler.getInstance().getCustomer();
 
 
     // alla textfält i betalningswizard
@@ -126,9 +176,20 @@ public class PersonalData extends AnchorPane implements IWizardPage {
     private Label mobileErrorLbl;
     @FXML
     private Label emailErrorLbl;
+    @FXML
+    private Label postCodeStyleErrorLbl;
+    @FXML
+    private Label mobileStyleErrorLbl;
+    @FXML
+    private Label emailStyleErrorLbl;
+    @FXML
+    private Label mobileAmountErrorLbl;
+    @FXML
+    private Label postCodeAmountErrorLbl;
 
    // sätter kundinfo som skrevs in av kunden
-    public void setCustomerInfo() {
+    private void setCustomerInfo() {
+       Customer customer = IMatDataHandler.getInstance().getCustomer();
             customer.setFirstName(firstNameTextField.getText());
             customer.setLastName(lastNameTextField.getText());
             customer.setMobilePhoneNumber(mobileNumberTextField.getText());
@@ -140,18 +201,31 @@ public class PersonalData extends AnchorPane implements IWizardPage {
 
 
     // fyller i sparade informationen i beatlningssteget
-    public void inputCustomerInfo(){
+    private void inputCustomerInfo(){
+       Customer customer = IMatDataHandler.getInstance().getCustomer();
+
+        emailTextField.setText(customer.getEmail());
+        mobileNumberTextField.setText(customer.getMobilePhoneNumber());
+        postcodeTextField.setText(customer.getPostCode());
+        lastNameTextField.setText(customer.getLastName());
+        firstNameTextField.setText(customer.getFirstName());
+        addressTextField.setText(customer.getAddress());
+        areaTextField.setText(customer.getPostAddress());
+
+
+    /*
         emailTextField.textProperty().setValue(customer.getEmail());
         mobileNumberTextField.textProperty().setValue(customer.getMobilePhoneNumber());
-        postcodeTextField.textProperty().setValue(customer.getPhoneNumber());
+        postcodeTextField.textProperty().setValue(customer.getPostCode());
         lastNameTextField.textProperty().setValue(customer.getLastName());
         firstNameTextField.textProperty().setValue(customer.getFirstName());
         addressTextField.textProperty().setValue(customer.getAddress());
-        areaTextField.textProperty().setValue(customer.getPostCode());
+        areaTextField.textProperty().setValue(customer.getPostAddress());
+                */
 
     }
 
-    public boolean isCustomerInfoComplete(){
+    private boolean isCustomerInfoComplete(){
         return !firstNameTextField.getText().isEmpty() && !lastNameTextField.getText().isEmpty()
                 && !emailTextField.getText().isEmpty() && isInEmailForm(emailTextField)
                 && !mobileNumberTextField.getText().isEmpty()
@@ -192,51 +266,82 @@ public class PersonalData extends AnchorPane implements IWizardPage {
         }
     }
 
+
     private boolean allFilledInCorrectly() {
 
-       if(isCustomerInfoComplete()) {
-           firstNameErrorLbl.setVisible(false);
-           lastNameErrorLbl.setVisible(false);
-           emailErrorLbl.setVisible(false);
-           adressErrorLbl.setVisible(false);
-           postCodeErrorLbl.setVisible(false);
-           areaErrorLbl.setVisible(false);
-           mobileErrorLbl.setVisible(false);
+        if (isCustomerInfoComplete()) {
+            firstNameErrorLbl.setVisible(false);
+            lastNameErrorLbl.setVisible(false);
+            emailErrorLbl.setVisible(false);
+            adressErrorLbl.setVisible(false);
+            postCodeErrorLbl.setVisible(false);
+            areaErrorLbl.setVisible(false);
+            mobileErrorLbl.setVisible(false);
+            mobileStyleErrorLbl.setVisible(false);
+            mobileAmountErrorLbl.setVisible(false);
+            emailStyleErrorLbl.setVisible(false);
+            postCodeStyleErrorLbl.setVisible(false);
+            postCodeAmountErrorLbl.setVisible(false);
 
-           return true;
-       } else {
-            if(firstNameTextField.getText().isEmpty()) {
+            return true;
+
+        } else{
+            if (firstNameTextField.getText().isEmpty()) {
                 firstNameErrorLbl.setVisible(true);
             }
 
-            if(lastNameTextField.getText().isEmpty()) {
+            if (lastNameTextField.getText().isEmpty()) {
                 lastNameErrorLbl.setVisible(true);
             }
 
-            if(emailTextField.getText().isEmpty() || !isInEmailForm(emailTextField)){
+            if (emailTextField.getText().isEmpty() /*|| !isInEmailForm(emailTextField)*/) {
                 emailErrorLbl.setVisible(true);
+                emailStyleErrorLbl.setVisible(false);
+            }
+            if (!isInEmailForm(emailTextField)) {
+                emailErrorLbl.setVisible(false);
+                emailStyleErrorLbl.setVisible(true);
             }
 
-            if(mobileNumberTextField.getText().isEmpty() || !isComplete(mobileNumberTextField,getMinAllowedLength(mobileNumberTextField)) || !containsDigitsOnly(mobileNumberTextField)) {
+            if (mobileNumberTextField.getText().isEmpty() ) {
                 mobileErrorLbl.setVisible(true);
-           }
-
-            if(!containsDigitsOnly(postcodeTextField) || !isComplete(postcodeTextField,getMinAllowedLength(postcodeTextField)) || postcodeTextField.getText().isEmpty()) {
+                mobileStyleErrorLbl.setVisible(false);
+                mobileAmountErrorLbl.setVisible(false);
+            } else if (!isComplete(mobileNumberTextField, getMinAllowedLength(mobileNumberTextField))) {
+                mobileErrorLbl.setVisible(false);
+                mobileAmountErrorLbl.setVisible(true);
+                mobileStyleErrorLbl.setVisible(false);
+            } else if (!containsDigitsOnly(mobileNumberTextField)) {
+                mobileErrorLbl.setVisible(false);
+                mobileAmountErrorLbl.setVisible(false);
+                mobileStyleErrorLbl.setVisible(true);
+            }
+            if (postcodeTextField.getText().isEmpty()) {
                 postCodeErrorLbl.setVisible(true);
+                postCodeAmountErrorLbl.setVisible(false);
+                postCodeStyleErrorLbl.setVisible(false);
+            } else if (!containsDigitsOnly(postcodeTextField)) {
+                postCodeErrorLbl.setVisible(false);
+                postCodeAmountErrorLbl.setVisible(false);
+                postCodeStyleErrorLbl.setVisible(true);
+            } else if (!isComplete(postcodeTextField, getMinAllowedLength(postcodeTextField))) {
+                postCodeErrorLbl.setVisible(false);
+                postCodeAmountErrorLbl.setVisible(true);
+                postCodeStyleErrorLbl.setVisible(false);
             }
 
-            if(addressTextField.getText().isEmpty()) {
+            if (addressTextField.getText().isEmpty()) {
                 adressErrorLbl.setVisible(true);
             }
 
-            if(areaTextField.getText().isEmpty()) {
+            if (areaTextField.getText().isEmpty()) {
                 areaErrorLbl.setVisible(true);
             }
 
-           return false;
-       }
-       //return false;
+            return false;
+        }
     }
+       //return false;
 
 
 
@@ -248,6 +353,11 @@ public class PersonalData extends AnchorPane implements IWizardPage {
         postCodeErrorLbl.setVisible(false);
         areaErrorLbl.setVisible(false);
         mobileErrorLbl.setVisible(false);
+        mobileStyleErrorLbl.setVisible(false);
+        mobileAmountErrorLbl.setVisible(false);
+        emailStyleErrorLbl.setVisible(false);
+        postCodeStyleErrorLbl.setVisible(false);
+        postCodeAmountErrorLbl.setVisible(false);
     }
 
     /* public void errorMeasureIfEmpty(TextField textField){

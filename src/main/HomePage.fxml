@@ -140,63 +140,77 @@
                                        <children>
                                           <Pane layoutX="14.0" layoutY="19.0" prefHeight="302.0" prefWidth="538.0" style="-fx-background-color: lightgrey;">
                                              <children>
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true" />
-                                                <Label layoutX="46.0" layoutY="22.0" text="Förnamn:">
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" />
+                                                <Label layoutX="46.0" layoutY="8.0" text="Förnamn:">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="46.0" layoutY="83.0" text="Efternamn:">
+                                                <Label layoutX="46.0" layoutY="82.0" text="Efternamn:">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="46.0" layoutY="144.0" text="Gatuadress:">
+                                                <Label layoutX="46.0" layoutY="156.0" text="Gatuadress:">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="46.0" layoutY="205.0" text="Postnummer:">
+                                                <Label layoutX="46.0" layoutY="230.0" text="Postnummer:">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="274.0" layoutY="22.0" text="Postort:">
+                                                <Label layoutX="274.0" layoutY="8.0" text="Postort:">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="274.0" layoutY="144.0" text="Mobilnummer:">
+                                                <Label layoutX="274.0" layoutY="156.0" text="Mobilnummer:">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="274.0" layoutY="83.0" text="E-mail adress:">
+                                                <Label layoutX="274.0" layoutY="82.0" text="E-mail adress:">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="274.0" layoutY="205.0" text="Övrig adressinformation:">
-                                                   <font>
-                                                      <Font size="14.0" />
-                                                   </font>
-                                                </Label>
-                                                <TextField fx:id="firstName" layoutX="46.0" layoutY="46.0" onAction="#loadUserInfo" prefHeight="33.0" prefWidth="180.0" promptText="Nicklas" style="-fx-background-radius: 20;" />
-                                                <TextField fx:id="lastName" layoutX="46.0" layoutY="107.0" prefHeight="33.0" prefWidth="180.0" promptText="Börjesson" style="-fx-background-radius: 20;" />
-                                                <TextField fx:id="address" layoutX="46.0" layoutY="168.0" prefHeight="33.0" prefWidth="180.0" promptText="Kantarellslingan 24 " style="-fx-background-radius: 20;" />
-                                                <TextField fx:id="area" layoutX="274.0" layoutY="46.0" prefHeight="33.0" prefWidth="180.0" promptText="Göteborg" style="-fx-background-radius: 20;" />
-                                                <TextField fx:id="email" layoutX="274.0" layoutY="107.0" prefHeight="33.0" prefWidth="180.0" promptText="+46XXXXXXXXX" style="-fx-background-radius: 20;" />
-                                                <TextField layoutX="274.0" layoutY="229.0" prefHeight="33.0" prefWidth="180.0" promptText="Ex. våning, etc." style="-fx-background-radius: 20;" />
-                                                <TextField fx:id="mobileNumber" layoutX="274.0" layoutY="168.0" prefHeight="33.0" prefWidth="180.0" promptText="börjesson@exempel.nu" style="-fx-background-radius: 20;" />
-                                                <TextField fx:id="postcode" layoutX="46.0" layoutY="229.0" prefHeight="33.0" prefWidth="180.0" promptText="42011" style="-fx-background-radius: 20;" />
-                                                <Label layoutX="364.0" layoutY="146.0" text="(Valbart)">
+                                                <TextField fx:id="firstName" layoutX="46.0" layoutY="28.0" onAction="#loadUserInfo" prefHeight="33.0" prefWidth="180.0" promptText="Nicklas" style="-fx-background-radius: 20;" />
+                                                <TextField fx:id="lastName" layoutX="46.0" layoutY="102.0" prefHeight="33.0" prefWidth="180.0" promptText="Börjesson" style="-fx-background-radius: 20;" />
+                                                <TextField fx:id="address" layoutX="46.0" layoutY="176.0" prefHeight="33.0" prefWidth="180.0" promptText="Kantarellslingan 24 " style="-fx-background-radius: 20;" />
+                                                <TextField fx:id="area" layoutX="274.0" layoutY="28.0" prefHeight="33.0" prefWidth="180.0" promptText="Göteborg" style="-fx-background-radius: 20;" />
+                                                <TextField fx:id="email" layoutX="274.0" layoutY="102.0" onMouseClicked="#mySiteErrorLabelDisapear3" prefHeight="33.0" prefWidth="180.0" promptText="+46XXXXXXXXX" style="-fx-background-radius: 20;" />
+                                                <TextField fx:id="mobileNumber" layoutX="274.0" layoutY="176.0" onMouseClicked="#mySiteErrorLabelDisapear2" prefHeight="33.0" prefWidth="180.0" promptText="börjesson@exempel.nu" style="-fx-background-radius: 20;" />
+                                                <TextField fx:id="postcode" layoutX="46.0" layoutY="250.0" onMouseClicked="#mySiteErrorLabelDisapear" prefHeight="33.0" prefWidth="180.0" promptText="42011" style="-fx-background-radius: 20;" />
+                                                <Label fx:id="firstNameErrorLbl" layoutX="46.0" layoutY="61.0" textFill="RED">
                                                    <font>
                                                       <Font size="11.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="423.0" layoutY="207.0" text="(Valbart)">
+                                                <Label fx:id="postCodeAmountErrorLabel" layoutX="46.0" layoutY="283.0" text="OBS! Postnummer få bara innehålla 5 siffror!" textFill="RED">
+                                                   <font>
+                                                      <Font size="11.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="emailStyleErrorLabel" layoutX="274.0" layoutY="135.0" text="OBS! Är inte i email form!" textFill="RED">
+                                                   <font>
+                                                      <Font size="11.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="mobileAmountErrorLabel" layoutX="274.0" layoutY="209.0" text="OBS! Mobilnummer få bara innehålla 5 siffror!" textFill="RED">
+                                                   <font>
+                                                      <Font size="11.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button fx:id="saveButton" layoutX="301.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#onSaveButtonPressed" prefHeight="33.0" prefWidth="115.0" text="Spara" />
+                                                <Label fx:id="postCodeStyleErrorLabel" layoutX="46.0" layoutY="283.0" text="OBS! Postnummer få bara innehålla syffror!" textFill="RED">
+                                                   <font>
+                                                      <Font size="11.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="mobileStyleErrorLabel" layoutX="274.0" layoutY="209.0" text="OBS! Mobilnummer få bara innehålla siffror!" textFill="RED">
                                                    <font>
                                                       <Font size="11.0" />
                                                    </font>

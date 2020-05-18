@@ -69,13 +69,13 @@
                                                 <Font size="17.0" />
                                              </font>
                                           </Label>
-                                          <TextField fx:id="firstNameTextField" layoutX="38.0" layoutY="44.0" prefHeight="35.0" prefWidth="245.0" promptText="Nicklas" style="-fx-background-radius: 20;" />
-                                          <TextField fx:id="lastNameTextField" layoutX="38.0" layoutY="132.0" prefHeight="35.0" prefWidth="245.0" promptText="Börjesson" style="-fx-background-radius: 20;" />
-                                          <TextField fx:id="addressTextField" layoutX="38.0" layoutY="220.0" prefHeight="35.0" prefWidth="245.0" promptText="Kantarellslingan 24" style="-fx-background-radius: 20;" />
-                                          <TextField fx:id="postcodeTextField" layoutX="38.0" layoutY="308.0" onMouseClicked="#checkIfCorrect" prefHeight="35.0" prefWidth="245.0" promptText="42011" style="-fx-background-radius: 20;" />
-                                          <TextField fx:id="areaTextField" layoutX="412.0" layoutY="44.0" prefHeight="35.0" prefWidth="245.0" promptText="Göteborg" style="-fx-background-radius: 20;" />
-                                          <TextField fx:id="mobileNumberTextField" layoutX="412.0" layoutY="132.0" prefHeight="35.0" prefWidth="245.0" promptText="+46 ..." style="-fx-background-radius: 20;" />
-                                          <TextField fx:id="emailTextField" layoutX="412.0" layoutY="220.0" prefHeight="35.0" prefWidth="245.0" promptText="börjesson@exempel.nu" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="firstNameTextField" layoutX="38.0" layoutY="44.0" onMouseClicked="#errorlabeldisapear2" prefHeight="35.0" prefWidth="245.0" promptText="Nicklas" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="lastNameTextField" layoutX="38.0" layoutY="132.0" onMouseClicked="#errorlabeldisapear3" prefHeight="35.0" prefWidth="245.0" promptText="Börjesson" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="addressTextField" layoutX="38.0" layoutY="220.0" onMouseClicked="#errorlabeldisapear5" prefHeight="35.0" prefWidth="245.0" promptText="Kantarellslingan 24" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="postcodeTextField" layoutX="38.0" layoutY="308.0" onMouseClicked="#errorlabeldisapear4" prefHeight="35.0" prefWidth="245.0" promptText="42011" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="areaTextField" layoutX="412.0" layoutY="44.0" onMouseClicked="#errorlabeldisapear" prefHeight="35.0" prefWidth="245.0" promptText="Göteborg" style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="mobileNumberTextField" layoutX="412.0" layoutY="132.0" onMouseClicked="#errorlabeldisapear6" prefHeight="35.0" prefWidth="245.0" promptText="+46 ..." style="-fx-background-radius: 20;" />
+                                          <TextField fx:id="emailTextField" layoutX="412.0" layoutY="220.0" onMouseClicked="#errorlabeldisapear7" prefHeight="35.0" prefWidth="245.0" promptText="börjesson@exempel.nu" style="-fx-background-radius: 20;" />
                                           <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="640.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true" />
                                           <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="640.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
                                           <CheckBox fx:id="personalCheckBox" layoutX="412.0" layoutY="308.0" mnemonicParsing="false" text="Spara mina personuppgifter till nästa köp">
@@ -90,6 +90,11 @@
                                           <Label fx:id="areaErrorLbl" layoutX="412.0" layoutY="81.0" prefHeight="17.0" prefWidth="181.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b" />
                                           <Label fx:id="mobileErrorLbl" layoutX="412.0" layoutY="169.0" prefHeight="17.0" prefWidth="175.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b" />
                                           <Label fx:id="emailErrorLbl" layoutX="412.0" layoutY="257.0" prefHeight="17.0" prefWidth="183.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b" />
+                                          <Label fx:id="postCodeAmountErrorLbl" layoutX="38.0" layoutY="345.0" prefHeight="17.0" prefWidth="193.0" text="OBS! Postnummer innehåller 5 tal!" textFill="#d30b0b" />
+                                          <Label fx:id="mobileAmountErrorLbl" layoutX="412.0" layoutY="169.0" prefHeight="17.0" prefWidth="210.0" text="OBS! Mobilnummer innehåller 10 tal!" textFill="#d30b0b" />
+                                          <Label fx:id="emailStyleErrorLbl" layoutX="412.0" layoutY="257.0" prefHeight="17.0" prefWidth="183.0" text="OBS! Fältet är inte i email Form" textFill="#d30b0b" />
+                                          <Label fx:id="postCodeStyleErrorLbl" layoutX="38.0" layoutY="345.0" prefHeight="17.0" prefWidth="220.0" text="OBS! Postnummer få bara innehålla tal!" textFill="#d30b0b" />
+                                          <Label fx:id="mobileStyleErrorLbl" layoutX="412.0" layoutY="169.0" prefHeight="17.0" prefWidth="227.0" text="OBS! Mobilnummer få bara innehåller tal!" textFill="#d30b0b" />
                                        </children>
                                     </Pane>
                                  </children>
