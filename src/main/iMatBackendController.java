@@ -1,19 +1,20 @@
 package main;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import main.CustomerSupport.CustomerSupport;
 import main.DetailedView.DetailedView;
+import main.OrderTabTitlePane.OrderTabTitlePane;
 import main.PersonalData.PersonalData;
 import main.ShoppingCart.ShoppingCart;
-import se.chalmers.cse.dat216.project.CreditCard;
-import se.chalmers.cse.dat216.project.Customer;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.*;
 
 public class iMatBackendController {
 
@@ -160,10 +161,10 @@ public class iMatBackendController {
         mainAnchorPane.getChildren().remove(detailedViewPage);
     }
 
-    public void openProductView(Product product){
+    /*public void openProductView(Product product){
         detailedViewPage.populateProductDetailedView(product);
         mainAnchorPane.getChildren().add(detailedViewPage);
-    }
+    }*/
 
     public Image getSquareImage(Image image){
 
@@ -217,7 +218,7 @@ public class iMatBackendController {
 
     @FXML
     private void loadUserInfo(){
-       // Customer customer = IMatDataHandler.getInstance().getCustomer();
+        Customer customer = IMatDataHandler.getInstance().getCustomer();
       // CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
         firstName.setText(customer.getFirstName());
         lastName.setText(customer.getLastName());
@@ -232,7 +233,7 @@ public class iMatBackendController {
 
     }
     private void saveCustomerInfo() {
-      //  Customer customer = IMatDataHandler.getInstance().getCustomer();
+        Customer customer = IMatDataHandler.getInstance().getCustomer();
         customer.setFirstName(firstName.getText());
         customer.setLastName(lastName.getText());
         customer.setMobilePhoneNumber(mobileNumber.getText());
