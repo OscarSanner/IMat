@@ -12,37 +12,39 @@ import javafx.scene.layout.AnchorPane;
 import main.iMatBackendController;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ShoppingCart;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
 
 public class DetailedView extends AnchorPane {
 
+
+    //Elements connected to backend.
     private se.chalmers.cse.dat216.project.Product product;
     private iMatBackendController parentController;
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
-
-
-    //Frontend elements
-    @FXML
-    private Label quantityLabel;
-    @FXML private Button increaseButton;
-    @FXML private Button decreaseButton;
-    @FXML private Button addButton;
-    @FXML private Button exitButton;
-
-    //Elements connected to backend.
+    private ShoppingCart shoppingCart = dataHandler.getShoppingCart();
     @FXML private ImageView productImage;
     @FXML private Label productNameLabel;
     @FXML private Label productCategoryLabel;
     @FXML private Label priceLabel;
     @FXML private TextArea productTextArea;
 
+    //Frontend elements
+    @FXML
+    private Label quantityLabel;
+    @FXML private Button increaseButton; //may be removed
+    @FXML private Button decreaseButton; //may be removed
+    @FXML private Button addButton;      //may be removed
+    @FXML private Button exitButton;     //may be removed
+
+
     public DetailedView(iMatBackendController backendController){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DetailedView.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
         this.parentController = backendController;
-        //Fix load error with Detailed View
 
         try {
             fxmlLoader.load();
@@ -51,8 +53,23 @@ public class DetailedView extends AnchorPane {
         }
     }
 
-    //TODO: Add buyButton interaction
 
+    @FXML
+    public void closeDetailedView(){ parentController.closeDetailedView();}
+    @FXML
+    public void addToShoppingCart(){
+        try
+        {
+            double temporaryNumber = Double.parseDouble(quantityLabel.toString());
+            ShoppingItem shoppingItem = new ShoppingItem(product, temporaryNumber);
+            shoppingCart.addItem(shoppingItem);
+        }
+        catch (NumberFormatException nfe)
+        {
+            System.out.println("Could not add item to shopping cart. String not convertable to Double.");
+        }
+
+    }
     @FXML
     public void increaseQuantity(Event event){
         try
@@ -97,7 +114,6 @@ public class DetailedView extends AnchorPane {
 
         //Product information is missing
         this.productTextArea.setText("PRODUCT INFORMATION IS MISSING.--> Product.java");
-
 
     }
 

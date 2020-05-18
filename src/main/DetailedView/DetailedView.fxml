@@ -37,13 +37,13 @@
             <Font name="System Italic" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="addButton" layoutX="302.0" layoutY="209.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="157.0" text="Lägg till" />
+      <Button fx:id="addButton" layoutX="302.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#addToShoppingCart" prefHeight="53.0" prefWidth="157.0" text="Lägg till" />
       <TextArea fx:id="productTextArea" layoutX="67.0" layoutY="323.0" prefHeight="152.0" prefWidth="613.0" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. " wrapText="true">
          <font>
             <Font size="18.0" />
          </font>
       </TextArea>
-      <Button fx:id="exitButton" layoutX="761.0" layoutY="13.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" text="Exit" />
+      <Button fx:id="exitButton" layoutX="761.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#closeDetailedView" prefHeight="45.0" prefWidth="45.0" text="Exit" />
       <Label fx:id="quantityLabel1" layoutX="389.0" layoutY="164.0" text="st">
          <font>
             <Font size="18.0" />

@@ -11,6 +11,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.*;
 import main.iMatBackendController;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
+import se.chalmers.cse.dat216.project.ShoppingCart;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.awt.*;
 import java.io.IOException;
@@ -25,6 +27,9 @@ public class Product extends AnchorPane {
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     private iMatBackendController parentController;
     private se.chalmers.cse.dat216.project.Product product;
+    private ShoppingCart shoppingCart = dataHandler.getShoppingCart();
+    private ShoppingItem shoppingItem;
+    private int itemCounter = 0;
 
     public Product(iMatBackendController iMatBackendController, se.chalmers.cse.dat216.project.Product product){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Product.fxml"));
@@ -39,14 +44,33 @@ public class Product extends AnchorPane {
 
         this.parentController = iMatBackendController;
         this.product = product;
+        this.shoppingItem = new ShoppingItem(product, 1);
 
         this.itemImage.setImage(parentController.getSquareImage(dataHandler.getFXImage(product)));
         this.itemLabel.setText(product.getName());
         this.priceLabel.setText(String.valueOf(product.getPrice()) + " kr");
     }
 
-    //TODO: Add buyButton interaction
+    @FXML
+    protected void onBuyButtonPressed(){
+        shoppingCart.addItem(shoppingItem);
+        buyButton.setVisible(false);    //Hides the button temporarily to show the +/- buttons underneath.
+        itemCounter++;
+    }
 
+    @FXML
+    protected void onPlusButtonPressed(){
+        shoppingCart.addItem(shoppingItem);
+        itemCounter++;
+    }
+    @FXML
+    protected void onMinusButtonPressed(){
+        shoppingCart.removeItem(shoppingItem);
+        itemCounter--;
+        if(itemCounter==0){
+            buyButton.setVisible(true);
+        }
+    }
 
     @FXML
     protected void onClick(Event event){parentController.openProductView(product);}

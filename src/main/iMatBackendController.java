@@ -103,6 +103,16 @@ public class iMatBackendController {
         mainAnchorPane.getChildren().add(shoppingCartPage);
     }
 
+    @FXML
+    public void closeDetailedView(){
+        mainAnchorPane.getChildren().remove(detailedViewPage);
+    }
+
+    public void openProductView(Product product){
+        detailedViewPage.populateProductDetailedView(product);
+        mainAnchorPane.getChildren().add(detailedViewPage);
+    }
+
     public Image getSquareImage(Image image){
 
         int x = 0;
@@ -156,10 +166,7 @@ public class iMatBackendController {
 
     }
 
-    public void openProductView(Product product){
-        detailedViewPage.populateProductDetailedView(product);
-        mainAnchorPane.getChildren().add(detailedViewPage);
-    }
+
 
 
 
