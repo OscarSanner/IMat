@@ -8,6 +8,7 @@ import main.Payment.Payment;
 import main.PersonalData.PersonalData;
 
 import java.io.IOException;
+import java.util.Date;
 
 public class Timetable extends AnchorPane implements IWizardPage {
 
@@ -18,8 +19,9 @@ public class Timetable extends AnchorPane implements IWizardPage {
 
     @FXML
     public AnchorPane timetableMainAnchorPane;
-    public Payment paymentPage = new Payment(this);
+    public Payment paymentPage;
     public PersonalData parentBackendController;
+    private Date deliveryTime;
 
 
     public Timetable(PersonalData parentBackendController){
@@ -37,6 +39,7 @@ public class Timetable extends AnchorPane implements IWizardPage {
     }
 
     public void onNextButtonPressed(){
+        paymentPage = new Payment(this, deliveryTime);
         timetableMainAnchorPane.getChildren().add(paymentPage);
     }
 
