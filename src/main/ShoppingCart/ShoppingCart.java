@@ -46,7 +46,7 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
 
     public void onNextButtonPressed(){
         shoppingCartMainAnchorPane.getChildren().add(personalDataPage);
-        //PersonalData.inputCustomerInfo();
+        personalDataPage.inputCustomerInfo();
 
 
     }
