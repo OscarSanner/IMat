@@ -141,6 +141,13 @@ public class Timetable extends AnchorPane implements IWizardPage {
         return currentWeek;
     }
 
+    public void clear(){
+        for(TimetableItem t: timetableItemList){
+            t.deSelectDate();
+        }
+
+    }
+
     //================================================================================
     // Interaction
     //================================================================================
