@@ -16,6 +16,8 @@ import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
+import java.util.Random;
 
 public class OrderTabTitlePane extends TitledPane{
 
@@ -26,7 +28,7 @@ public class OrderTabTitlePane extends TitledPane{
     @FXML
     AnchorPane orderTitleAnchorPane;
 
-    public OrderTabTitlePane(){
+    public OrderTabTitlePane(List<ShoppingItem> items){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("OrderTabTitlePane.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -36,11 +38,13 @@ public class OrderTabTitlePane extends TitledPane{
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-        populatePane(new Order());
+        populatePane(items);
     }
 
-    public void populatePane(Order order){
-        orderTitlePaneFlowPane.getChildren().add(new OrderListTabItem());
+    public void populatePane(List<ShoppingItem> items){
+        for(ShoppingItem i : items){
+            orderTitlePaneFlowPane.getChildren().add(new OrderListTabItem(i.getAmount(), i.getProduct(), i.getTotal()));
+        }
     }
 
     public int calculateExpansion() {

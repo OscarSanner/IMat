@@ -93,16 +93,9 @@ public class iMatBackendController {
     }
 
     private void populateOrderPane() {
-        int calcExpansion = 0;
-        orderAccordion.getPanes().add(new OrderTabTitlePane());
         for(Order o : IMatDataHandler.getInstance().getOrders()){
-            orderAccordion.getPanes().add(new OrderTabTitlePane());
+            orderAccordion.getPanes().add(new OrderTabTitlePane(o.getItems()));
         }
-        if (orderAccordion.getExpandedPane() != null){
-            OrderTabTitlePane tp = (OrderTabTitlePane)orderAccordion.getExpandedPane();
-            calcExpansion = tp.calculateExpansion();
-        }
-        orderAccordion.prefHeightProperty().set(orderAccordion.getPrefHeight() + 67 + calcExpansion);
     }
 
     @FXML

@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <fx:root prefHeight="60.0" prefWidth="536.0" style="-fx-background-color: lightgray;" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="223.0" layoutY="22.0" text="TO BE DESIGNED" />
+      <Label fx:id="itemName" layoutX="88.0" layoutY="22.0" prefHeight="17.0" prefWidth="56.0" text="Paprika" />
+      <ImageView fx:id="itemImage" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="unitPriceLabel" layoutX="157.0" layoutY="15.0" prefHeight="30.0" prefWidth="56.0" text="styckpris" textAlignment="RIGHT" />
+      <Label fx:id="amountLabel" layoutX="268.0" layoutY="15.0" prefHeight="30.0" prefWidth="33.0" text="antal:" textAlignment="RIGHT" />
+      <Label fx:id="totalPriceLabel" layoutX="461.0" layoutY="23.0" text="Totalpris" />
    </children>
 </fx:root>
