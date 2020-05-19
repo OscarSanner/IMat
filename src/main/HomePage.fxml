@@ -20,7 +20,7 @@
          <top>
             <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="26.0" layoutY="14.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="97.0" text="Button" />
+                  <Button layoutX="26.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#onHomeButtonPressed" prefHeight="64.0" prefWidth="97.0" text="Button" />
                   <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#onCustomerSupportPressed" prefHeight="64.0" prefWidth="123.0" text="Button" />
                   <TextField fx:id="searchBarTextField" layoutX="164.0" layoutY="32.0" prefHeight="25.0" prefWidth="562.0" />
                   <Button fx:id="testButton" layoutX="372.0" layoutY="65.0" mnemonicParsing="false" text="TESTKNAPP" />
@@ -32,16 +32,16 @@
                <children>
                   <Pane layoutX="5.0" layoutY="30.0" prefHeight="578.0" prefWidth="155.0" styleClass="border">
                      <children>
-                        <Button layoutX="22.0" layoutY="82.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mina Favoriter" />
-                        <Button layoutX="22.0" layoutY="126.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Erbjudanden" />
-                        <Button layoutX="22.0" layoutY="199.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kött &amp; Fisk" />
-                        <Button layoutX="22.0" layoutY="243.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Frukt &amp; Grönt" />
-                        <Button layoutX="22.0" layoutY="287.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Dryck" />
-                        <Button layoutX="22.0" layoutY="331.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mejeri" />
-                        <Button layoutX="22.0" layoutY="375.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Skafferi" />
-                        <Button layoutX="22.0" layoutY="464.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kryddor" />
+                        <Button layoutX="22.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#onFavouritesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mina Favoriter" />
+                        <Button layoutX="22.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#onOffersButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Erbjudanden" />
+                        <Button layoutX="22.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#onMeatAndFishButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kött &amp; Fisk" />
+                        <Button layoutX="22.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#onVeggiesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Frukt &amp; Grönt" />
+                        <Button layoutX="22.0" layoutY="287.0" mnemonicParsing="false" onMouseClicked="#onDrinkButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Dryck" />
+                        <Button layoutX="22.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#onDairyButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mejeri" />
+                        <Button layoutX="22.0" layoutY="375.0" mnemonicParsing="false" onMouseClicked="#onPantryButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Skafferi" />
+                        <Button layoutX="22.0" layoutY="464.0" mnemonicParsing="false" onMouseClicked="#onSpicesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kryddor" />
                         <Label layoutX="50.0" layoutY="20.0" text="Kategorier" />
-                        <Button layoutX="22.0" layoutY="419.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Snacks" />
+                        <Button layoutX="22.0" layoutY="419.0" mnemonicParsing="false" onMouseClicked="#onSnacksButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Snacks" />
                      </children>
                   </Pane>
                </children>
@@ -95,44 +95,6 @@
                      <children>
                         <Pane prefHeight="541.0" prefWidth="569.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <StackPane fx:id="shoppingTabPane" prefHeight="541.0" prefWidth="569.0">
-                                 <children>
-                                    <SplitPane dividerPositions="0.10204081632653061" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
-                                      <items>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                             <children>
-                                                <FlowPane layoutX="-24.0" layoutY="-64.0" prefHeight="72.0" prefWidth="567.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                             </children>
-                                          </AnchorPane>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                             <children>
-                                                <FlowPane layoutX="53.0" layoutY="60.0" prefHeight="461.0" prefWidth="567.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                             </children>
-                                          </AnchorPane>
-                                      </items>
-                                    </SplitPane>
-                                    <StackPane prefHeight="541.0" prefWidth="569.0">
-                                       <children>
-                                          <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gray;">
-                                             <children>
-                                                <ImageView fx:id="offersImage" fitHeight="216.0" fitWidth="248.0" layoutX="60.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fx:id="videoImage" fitHeight="112.0" fitWidth="157.0" layoutX="359.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fx:id="newsImage" fitHeight="112.0" fitWidth="157.0" layoutX="359.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true" />
-                                                <Label layoutX="262.0" layoutY="314.0" text="Carousel" />
-                                                <Pane layoutX="52.0" layoutY="364.0" prefHeight="162.0" prefWidth="467.0" style="-fx-background-color: purple;">
-                                                   <children>
-                                                      <FlowPane fx:id="carouselFlowPane" prefHeight="162.0" prefWidth="467.0" />
-                                                   </children>
-                                                </Pane>
-                                                <ImageView fx:id="rightArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="522.0" layoutY="421.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fx:id="leftArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="3.0" layoutY="421.0" pickOnBounds="true" preserveRatio="true" />
-                                             </children>
-                                          </Pane>
-                                       </children>
-                                    </StackPane>
-                                    <StackPane prefHeight="541.0" prefWidth="569.0" />
-                                 </children>
-                              </StackPane>
                               <StackPane fx:id="myPageTabPane" prefHeight="541.0" prefWidth="569.0">
                                  <children>
                                     <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
@@ -253,6 +215,43 @@
                                           <Accordion fx:id="listAccordion" />
                                        </content>
                                     </ScrollPane>
+                                 </children>
+                              </StackPane>
+                              <StackPane fx:id="shoppingTabPane" prefHeight="541.0" prefWidth="569.0">
+                                 <children>
+                                    <SplitPane fx:id="categoryPane" dividerPositions="0.10204081632653061" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                             <children>
+                                                <FlowPane layoutX="-24.0" layoutY="-64.0" prefHeight="72.0" prefWidth="567.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                             <children>
+                                                <FlowPane layoutX="53.0" layoutY="60.0" prefHeight="461.0" prefWidth="567.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                      </items>
+                                    </SplitPane>
+                                    <StackPane fx:id="homePane" prefHeight="541.0" prefWidth="569.0">
+                                       <children>
+                                          <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gray;">
+                                             <children>
+                                                <ImageView fx:id="offersImage" fitHeight="216.0" fitWidth="248.0" layoutX="60.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="videoImage" fitHeight="112.0" fitWidth="157.0" layoutX="359.0" layoutY="55.0" onMouseClicked="#onVideoImagePressed" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="newsImage" fitHeight="112.0" fitWidth="157.0" layoutX="359.0" layoutY="163.0" onMouseClicked="#onNewsImagePressed" pickOnBounds="true" preserveRatio="true" />
+                                                <Label layoutX="262.0" layoutY="314.0" text="Carousel" />
+                                                <Pane layoutX="52.0" layoutY="364.0" prefHeight="162.0" prefWidth="467.0" style="-fx-background-color: purple;">
+                                                   <children>
+                                                      <FlowPane fx:id="carouselFlowPane" prefHeight="162.0" prefWidth="467.0" />
+                                                   </children>
+                                                </Pane>
+                                                <ImageView fx:id="rightArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="522.0" layoutY="421.0" onMouseClicked="#rotateCarouselRight" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="leftArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="3.0" layoutY="421.0" onMouseClicked="#rotateCarouselLeft" pickOnBounds="true" preserveRatio="true" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </StackPane>
                                  </children>
                               </StackPane>
                            </children>

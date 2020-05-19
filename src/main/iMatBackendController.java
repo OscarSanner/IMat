@@ -1,10 +1,7 @@
 package main;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Accordion;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.AnchorPane;
@@ -31,6 +28,8 @@ public class iMatBackendController {
     @FXML
     public StackPane shoppingTabPane;
     @FXML
+    public StackPane homePane;
+    @FXML
     public Button orderTabButton;
     @FXML
     public Button listTabButton;
@@ -48,6 +47,8 @@ public class iMatBackendController {
     public Accordion orderAccordion;
     @FXML
     public Accordion listAccordion;
+    @FXML
+    public SplitPane categoryPane;
 
     public CustomerSupport customerSupportPage = new CustomerSupport(this);
     public ShoppingCart shoppingCartPage = new ShoppingCart(this);
@@ -211,6 +212,10 @@ public class iMatBackendController {
         emailStyleErrorLabel.setVisible(false);
     }
 
+    public void onHomeButtonPressed(){
+        homePane.toFront();
+    }
+
     //----------------FAKTISK KOD-----------------
 
 
@@ -333,6 +338,73 @@ public class iMatBackendController {
         mainAnchorPane.getChildren().add(detailedViewPage);
     }
 
+
+//----------------------------------------------------------KOD FÖR KATEGORISIDAN----------------------------------------------------------------------------//
+//TODO: För att komma åt gridden, kalla på:
+
+    //kopplad till högerpilen vid carouselen.
+    @FXML
+    public void rotateCarouselRight(){
+
+    }
+
+    //kopplad till vänsterpilen vid carouselen.
+    @FXML
+    public void rotateCarouselLeft(){
+
+    }
+
+    //För att komma åt CarouselFlowPane, kalla på "carouselFlowPane".
+    @FXML
+    public void populateCarouselFlowPane(){
+
+    }
+
+    //kopplad till newsImage.
+    public void onNewsImagePressed(){
+        categoryPane.toFront();
+    }
+
+    //kopplad till videoImage.
+    public void onVideoImagePressed(){
+        categoryPane.toFront();
+    }
+
+    public void onFavouritesButtonPressed(){
+        categoryPane.toFront();
+    }
+
+    public void onOffersButtonPressed(){
+        categoryPane.toFront();
+    }
+
+    public void onMeatAndFishButtonPressed(){
+        categoryPane.toFront();
+    }
+
+    public void onVeggiesButtonPressed(){
+        categoryPane.toFront();
+    }
+
+    public void onDrinkButtonPressed(){
+        categoryPane.toFront();
+    }
+
+    public void onDairyButtonPressed(){
+        categoryPane.toFront();
+    }
+
+    public void onPantryButtonPressed(){
+        categoryPane.toFront();
+    }
+
+    public void onSnacksButtonPressed(){
+        categoryPane.toFront();
+    }
+
+    public void onSpicesButtonPressed(){
+        categoryPane.toFront();
+    }
 
 }
 
