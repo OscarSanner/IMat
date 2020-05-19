@@ -26,13 +26,13 @@ public class Payment extends AnchorPane implements IWizardPage {
     @FXML
     public AnchorPane paymentMainAnchorPane;
     @FXML
-    private javafx.scene.control.TextField cardNumberTextField;
+    private TextField cardNumberTextField;
     @FXML
-    private javafx.scene.control.TextField monthTextField;
+    private TextField monthTextField;
     @FXML
-    private javafx.scene.control.TextField yearTextField;
+    private TextField yearTextField;
     @FXML
-    private javafx.scene.control.TextField cvcTextField;
+    private TextField cvcTextField;
     @FXML
     public Label cardErrorLabel;
     @FXML
@@ -40,7 +40,7 @@ public class Payment extends AnchorPane implements IWizardPage {
     @FXML
     public Label cardAmountErrorLabel;
     @FXML
-    public CheckBox ceckButtonPayment;
+    public CheckBox checkButtonPayment;
 
 
     public IMatDataHandler dataHandler = IMatDataHandler.getInstance();
@@ -71,15 +71,12 @@ public class Payment extends AnchorPane implements IWizardPage {
         paymentMainAnchorPane.getChildren().add(confirmationPage);
         finalizePurchase();
 
-        if (ceckButtonPayment.isSelected()) {
+        if (checkButtonPayment.isSelected()) {
             setPaymentInfo();
         }
-
         if(allFilledInCorrectly()) {
             paymentMainAnchorPane.getChildren().add(parentBackendController);
-
         }
-
     }
 
     @Override
@@ -102,8 +99,6 @@ public class Payment extends AnchorPane implements IWizardPage {
 
     }
 
-
-    // sätter kundinfo som skrevs in av kunden
     private void setPaymentInfo() {
         CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
         creditCard.setCardNumber(cardNumberTextField.getText());
@@ -112,8 +107,6 @@ public class Payment extends AnchorPane implements IWizardPage {
         creditCard.setValidYear(Integer.parseInt(yearTextField.getText()));
     }
 
-
-    // fyller i sparade informationen i beatlningssteget
     private void inputPaymentInfo() {
         CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
         cardNumberTextField.setText(creditCard.getCardNumber());
