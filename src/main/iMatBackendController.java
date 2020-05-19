@@ -1,10 +1,12 @@
 package main;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.WritableImage;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
@@ -454,8 +456,8 @@ public class iMatBackendController {
                 break;
             }
             case "Dryck": {
-                Button warmDrinks = new Button("Varma Drycker");
-                Button coldDrinks = new Button("Kalla Drycker");
+                Button warmDrinks = new Button("Varma drycker");
+                Button coldDrinks = new Button("Kalla drycker");
                 buttons.add(warmDrinks);
                 buttons.add(coldDrinks);
                 break;
@@ -466,9 +468,9 @@ public class iMatBackendController {
                 break;
             }
             case "Skafferi":  {
-                Button flourSugarSalt = new Button("Mjöl, Socker, Salt");
+                Button flourSugarSalt = new Button("Mjöl, socker, salt");
                 Button pasta = new Button("Pasta");
-                Button potatoRice = new Button("Potatis och Ris");
+                Button potatoRice = new Button("Potatis, ris");
                 buttons.add(flourSugarSalt);
                 buttons.add(pasta);
                 buttons.add(potatoRice);
@@ -476,7 +478,7 @@ public class iMatBackendController {
             }
             case "Snacks" : {
                 Button sweets = new Button("Sötsaker");
-                Button seeds = new Button("Nötter och Frön");
+                Button seeds = new Button("Nötter och frön");
                 buttons.add(sweets);
                 buttons.add(seeds);
                 break;
@@ -491,8 +493,22 @@ public class iMatBackendController {
         subCategoryFlowPane.setPadding(new Insets(9,30,30,9));
         subCategoryFlowPane.setHgap(10);
         for(Button button : buttons){
+            button.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent mouseEvent) {
+                    populateProductFlowpane(button);
+                }
+            });
             button.setPrefSize(150,35);
             subCategoryFlowPane.getChildren().add(button);
+        }
+    }
+
+    private void populateProductFlowpane(Button button) {
+        String a = button.getText();
+        for(Product p : ProductHandler.getProductsFromCategory(button.getText())){
+            main.Product.Product productCard = new main.Product.Product(this, p);
+                productFlowPane.getChildren().add(productCard);
         }
     }
 }
