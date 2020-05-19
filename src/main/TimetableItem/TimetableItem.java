@@ -41,11 +41,14 @@ public class TimetableItem extends AnchorPane {
 
     @FXML
     private void selectDate(){
+        timeTableController.clear();
         timeTableController.onDatePress(selectedDate);
         selectedCircleImage.toFront();
+
+
     }
     @FXML
-    private void deSelectDate(){
+    public void deSelectDate(){
         timeTableController.onDatePress(null);
         unselectedCircleImage.toFront();
     }
