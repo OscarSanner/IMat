@@ -391,6 +391,7 @@ public class iMatBackendController {
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
         populateSubCategoryFlowPane("Kött & Fisk");
+        populateProductFlowpane("Kött & Fisk");
     }
 
     public void onVeggiesButtonPressed(){
@@ -398,6 +399,7 @@ public class iMatBackendController {
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
         populateSubCategoryFlowPane("Frukt & Grönt");
+        populateProductFlowpane("Frukt & Grönt");
     }
 
     public void onDrinkButtonPressed(){
@@ -405,6 +407,7 @@ public class iMatBackendController {
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
         populateSubCategoryFlowPane("Dryck");
+        populateProductFlowpane("Dryck");
     }
 
     public void onDairyButtonPressed(){
@@ -496,7 +499,7 @@ public class iMatBackendController {
             button.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent mouseEvent) {
-                    populateProductFlowpane(button);
+                    populateProductFlowpane(button.getText());
                 }
             });
             button.setPrefSize(150,35);
@@ -504,9 +507,9 @@ public class iMatBackendController {
         }
     }
 
-    private void populateProductFlowpane(Button button) {
+    private void populateProductFlowpane( String button) {
         productFlowPane.getChildren().clear();
-        for(Product p : ProductHandler.getProductsFromCategory(button.getText())){
+        for(Product p : ProductHandler.getProductsFromCategory(button)){
             main.Product.Product productCard = new main.Product.Product(this, p);
                 productFlowPane.getChildren().add(productCard);
         }
