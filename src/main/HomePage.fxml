@@ -219,20 +219,6 @@
                               </StackPane>
                               <StackPane fx:id="shoppingTabPane" prefHeight="541.0" prefWidth="569.0">
                                  <children>
-                                    <SplitPane fx:id="categoryPane" dividerPositions="0.10204081632653061" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
-                                      <items>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                             <children>
-                                                <FlowPane layoutX="-24.0" layoutY="-64.0" prefHeight="72.0" prefWidth="567.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                             </children>
-                                          </AnchorPane>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                             <children>
-                                                <FlowPane layoutX="53.0" layoutY="60.0" prefHeight="461.0" prefWidth="567.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                             </children>
-                                          </AnchorPane>
-                                      </items>
-                                    </SplitPane>
                                     <StackPane fx:id="homePane" prefHeight="541.0" prefWidth="569.0">
                                        <children>
                                           <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gray;">
@@ -252,6 +238,20 @@
                                           </Pane>
                                        </children>
                                     </StackPane>
+                                    <SplitPane fx:id="categoryPane" dividerPositions="0.10204081632653061" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                             <children>
+                                                <FlowPane fx:id="subCategoryFlowPane" layoutX="-24.0" layoutY="-64.0" prefHeight="72.0" prefWidth="567.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                             <children>
+                                                <FlowPane fx:id="productFlowPane" layoutX="53.0" layoutY="60.0" prefHeight="461.0" prefWidth="567.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                      </items>
+                                    </SplitPane>
                                  </children>
                               </StackPane>
                            </children>

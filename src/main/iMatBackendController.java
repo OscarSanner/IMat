@@ -5,6 +5,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
 import main.CustomerSupport.CustomerSupport;
 import main.DetailedView.DetailedView;
@@ -29,6 +30,10 @@ public class iMatBackendController {
     public StackPane shoppingTabPane;
     @FXML
     public StackPane homePane;
+    @FXML
+    public FlowPane subCategoryFlowPane;
+    @FXML
+    public FlowPane productFlowPane;
     @FXML
     public Button orderTabButton;
     @FXML
@@ -332,7 +337,8 @@ public class iMatBackendController {
 
 
 //----------------------------------------------------------KOD FÖR KATEGORISIDAN----------------------------------------------------------------------------//
-//TODO: För att komma åt gridden, kalla på:
+//TODO: För att komma åt den FlowPane där vi skall ha subkategorier: kalla på "subCategoryFlowPane"
+//TODO: För att komma åt den FLowPane där vi skall ha produkter: kalla på: ""
 
     //kopplad till högerpilen vid carouselen.
     @FXML
@@ -354,48 +360,67 @@ public class iMatBackendController {
 
     //kopplad till newsImage.
     public void onNewsImagePressed(){
-        categoryPane.toFront();
+
     }
 
     //kopplad till videoImage.
     public void onVideoImagePressed(){
-        categoryPane.toFront();
+
     }
 
     public void onFavouritesButtonPressed(){
         categoryPane.toFront();
+        subCategoryFlowPane.getChildren().removeAll();
+        productFlowPane.getChildren().removeAll();
     }
 
     public void onOffersButtonPressed(){
         categoryPane.toFront();
+        subCategoryFlowPane.getChildren().removeAll();
+        productFlowPane.getChildren().removeAll();
     }
 
     public void onMeatAndFishButtonPressed(){
         categoryPane.toFront();
+        subCategoryFlowPane.getChildren().removeAll();
+        productFlowPane.getChildren().removeAll();
+
     }
 
     public void onVeggiesButtonPressed(){
         categoryPane.toFront();
+        subCategoryFlowPane.getChildren().removeAll();
+        productFlowPane.getChildren().removeAll();
     }
 
     public void onDrinkButtonPressed(){
         categoryPane.toFront();
+        subCategoryFlowPane.getChildren().removeAll();
+        productFlowPane.getChildren().removeAll();
     }
 
     public void onDairyButtonPressed(){
         categoryPane.toFront();
+        subCategoryFlowPane.getChildren().removeAll();
+        productFlowPane.getChildren().removeAll();
     }
 
     public void onPantryButtonPressed(){
         categoryPane.toFront();
+        subCategoryFlowPane.getChildren().removeAll();
+        productFlowPane.getChildren().removeAll();
     }
 
     public void onSnacksButtonPressed(){
         categoryPane.toFront();
+        subCategoryFlowPane.getChildren().removeAll();
+        productFlowPane.getChildren().removeAll();
     }
 
     public void onSpicesButtonPressed(){
         categoryPane.toFront();
+        subCategoryFlowPane.getChildren().removeAll();
+        productFlowPane.getChildren().removeAll();
     }
 
 }
