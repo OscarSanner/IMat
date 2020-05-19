@@ -46,7 +46,8 @@ public class Product extends AnchorPane {
         this.product = product;
         this.shoppingItem = new ShoppingItem(product, 1);
 
-        this.itemImage.setImage(parentController.getSquareImage(dataHandler.getFXImage(product)));
+        //this.itemImage.setImage(parentController.getSquareImage(dataHandler.getFXImage(product)));
+        this.itemImage.setImage(dataHandler.getFXImage(product));
         this.itemLabel.setText(product.getName());
         this.priceLabel.setText(String.valueOf(product.getPrice()) + " kr");
     }

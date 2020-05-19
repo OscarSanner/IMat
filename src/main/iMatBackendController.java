@@ -25,40 +25,24 @@ public class iMatBackendController {
 
     //----------------NAVIGATION OCH INIT------------------
 
-    @FXML
-    public StackPane orderTabPane;
-    @FXML
-    public StackPane listTabPane;
-    @FXML
-    public StackPane myPageTabPane;
-    @FXML
-    public StackPane shoppingTabPane;
-    @FXML
-    public StackPane homePane;
-    @FXML
-    public FlowPane subCategoryFlowPane;
-    @FXML
-    public FlowPane productFlowPane;
-    @FXML
-    public Button orderTabButton;
-    @FXML
-    public Button listTabButton;
-    @FXML
-    public Button myPageTabButton;
-    @FXML
-    public Button shoppingTabButton;
-    @FXML
-    public Button testButton;
-    @FXML
-    public AnchorPane mainAnchorPane;
-    @FXML
-    public Button checkoutButton;
-    @FXML
-    public Accordion orderAccordion;
-    @FXML
-    public Accordion listAccordion;
-    @FXML
-    public SplitPane categoryPane;
+    @FXML public StackPane orderTabPane;
+    @FXML public StackPane listTabPane;
+    @FXML public StackPane myPageTabPane;
+    @FXML public StackPane shoppingTabPane;
+    @FXML public StackPane homePane;
+    @FXML public FlowPane subCategoryFlowPane;
+    @FXML public FlowPane productFlowPane;
+    @FXML public Button orderTabButton;
+    @FXML public Button listTabButton;
+    @FXML public Button myPageTabButton;
+    @FXML public Button shoppingTabButton;
+    @FXML public Button testButton;
+    @FXML public AnchorPane mainAnchorPane;
+    @FXML public Button checkoutButton;
+    @FXML public Accordion orderAccordion;
+    @FXML public Accordion listAccordion;
+    @FXML public SplitPane categoryPane;
+    @FXML public ScrollPane productsScrollPane;
 
     public CustomerSupport customerSupportPage = new CustomerSupport(this);
     public ShoppingCart shoppingCartPage = new ShoppingCart(this);
@@ -66,38 +50,22 @@ public class iMatBackendController {
 
     //public Customer customer = IMatDataHandler.getInstance().getCustomer();
 
-    @FXML
-    private javafx.scene.control.TextField firstName;
-    @FXML
-    private javafx.scene.control.TextField lastName;
-    @FXML
-    private javafx.scene.control.TextField mobileNumber;
-    @FXML
-    private javafx.scene.control.TextField email;
-    @FXML
-    private javafx.scene.control.TextField address;
-    @FXML
-    private javafx.scene.control.TextField postcode;
-    @FXML
-    private javafx.scene.control.TextField area;
-    @FXML
-    private javafx.scene.control.TextField cardNumber;
-    @FXML
-    private Label postCodeAmountErrorLabel;
-    @FXML
-    private Label mobileAmountErrorLabel;
-    @FXML
-    private Label emailStyleErrorLabel;
-    @FXML
-    private Label postCodeStyleErrorLabel;
-    @FXML
-    private Label mobileStyleErrorLabel;
-    @FXML
-    private javafx.scene.control.TextField year;
-    @FXML
-    private javafx.scene.control.TextField cvc;
-    @FXML
-    private Button saveButton;
+    @FXML private javafx.scene.control.TextField firstName;
+    @FXML private javafx.scene.control.TextField lastName;
+    @FXML private javafx.scene.control.TextField mobileNumber;
+    @FXML private javafx.scene.control.TextField email;
+    @FXML private javafx.scene.control.TextField address;
+    @FXML private javafx.scene.control.TextField postcode;
+    @FXML private javafx.scene.control.TextField area;
+    @FXML private javafx.scene.control.TextField cardNumber;
+    @FXML private Label postCodeAmountErrorLabel;
+    @FXML private Label mobileAmountErrorLabel;
+    @FXML private Label emailStyleErrorLabel;
+    @FXML private Label postCodeStyleErrorLabel;
+    @FXML private Label mobileStyleErrorLabel;
+    @FXML private javafx.scene.control.TextField year;
+    @FXML private javafx.scene.control.TextField cvc;
+    @FXML private Button saveButton;
 
     @FXML
     public void onOrderTabSelect(){
@@ -335,13 +303,10 @@ public class iMatBackendController {
 
 
 
-    public void openProductView(Product product){
-        detailedViewPage.populateProductDetailedView(product);
-        mainAnchorPane.getChildren().add(detailedViewPage);
-    }
 
 
-//----------------------------------------------------------KOD FÖR KATEGORISIDAN----------------------------------------------------------------------------//
+
+//----------------------------------------------------------KOD FÖR KATEGORISIDAN-------------------------------------------------------------------------------//
 //TODO: För att komma åt den FlowPane där vi skall ha subkategorier: kalla på "subCategoryFlowPane"
 //TODO: För att komma åt den FLowPane där vi skall ha produkter: kalla på: ""
 
@@ -392,6 +357,8 @@ public class iMatBackendController {
         productFlowPane.getChildren().removeAll();
         populateSubCategoryFlowPane("Kött & Fisk");
         populateProductFlowpane("Kött & Fisk");
+        productsScrollPane.setVvalue(0); //Resets the scrollpane to the top
+
     }
 
     public void onVeggiesButtonPressed(){
@@ -400,6 +367,7 @@ public class iMatBackendController {
         productFlowPane.getChildren().removeAll();
         populateSubCategoryFlowPane("Frukt & Grönt");
         populateProductFlowpane("Frukt & Grönt");
+        productsScrollPane.setVvalue(0);
     }
 
     public void onDrinkButtonPressed(){
@@ -408,6 +376,7 @@ public class iMatBackendController {
         productFlowPane.getChildren().removeAll();
         populateSubCategoryFlowPane("Dryck");
         populateProductFlowpane("Dryck");
+        productsScrollPane.setVvalue(0);
     }
 
     public void onDairyButtonPressed(){
@@ -415,6 +384,8 @@ public class iMatBackendController {
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
         populateSubCategoryFlowPane("Mejeri");
+        populateProductFlowpane("Mejeri");
+        productsScrollPane.setVvalue(0);
     }
 
     public void onPantryButtonPressed(){
@@ -422,6 +393,8 @@ public class iMatBackendController {
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
         populateSubCategoryFlowPane("Skafferi");
+        populateProductFlowpane("Skafferi");
+        productsScrollPane.setVvalue(0);
     }
 
     public void onSnacksButtonPressed(){
@@ -429,6 +402,8 @@ public class iMatBackendController {
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
         populateSubCategoryFlowPane("Snacks");
+        populateProductFlowpane("Snacks");
+        productsScrollPane.setVvalue(0);
     }
 
     public void onSpicesButtonPressed(){
@@ -436,6 +411,8 @@ public class iMatBackendController {
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
         populateSubCategoryFlowPane("Kryddor");
+        populateProductFlowpane("Kryddor");
+        productsScrollPane.setVvalue(0);
     }
 
     private void populateSubCategoryFlowPane(String category) {
@@ -495,11 +472,14 @@ public class iMatBackendController {
         subCategoryFlowPane.getChildren().clear();
         subCategoryFlowPane.setPadding(new Insets(9,30,30,9));
         subCategoryFlowPane.setHgap(10);
+
+        //Listener for Subcategory buttons
         for(Button button : buttons){
             button.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent mouseEvent) {
                     populateProductFlowpane(button.getText());
+                    productsScrollPane.setVvalue(0);
                 }
             });
             button.setPrefSize(150,35);
@@ -507,12 +487,27 @@ public class iMatBackendController {
         }
     }
 
-    private void populateProductFlowpane( String button) {
+    private void populateProductFlowpane( String category) {
         productFlowPane.getChildren().clear();
-        for(Product p : ProductHandler.getProductsFromCategory(button)){
-            main.Product.Product productCard = new main.Product.Product(this, p);
-                productFlowPane.getChildren().add(productCard);
+        setupProductFlowpane();
+
+        for(Product p : ProductHandler.getProductsFromCategory(category)){
+                productFlowPane.getChildren().add(new main.Product.Product(this, p));
         }
+    }
+
+    private void setupProductFlowpane(){
+        productsScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER); //Removes horizontal scrollPane
+        productFlowPane.setPadding(new Insets(9,0,9,6));
+        productFlowPane.setHgap(8);
+        productFlowPane.setVgap(15);
+    }
+
+    public void openProductView(Product product){
+        detailedViewPage.populateProductDetailedView(product);
+        mainAnchorPane.getChildren().add(detailedViewPage);
+        detailedViewPage.setLayoutX(85);
+        detailedViewPage.setLayoutY(110);
     }
 }
 

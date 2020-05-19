@@ -14,6 +14,8 @@ import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingCart;
 import se.chalmers.cse.dat216.project.ShoppingItem;
+import se.chalmers.cse.dat216.project.ProductCategory;
+
 
 import java.io.IOException;
 
@@ -30,6 +32,9 @@ public class DetailedView extends AnchorPane {
     @FXML private Label productCategoryLabel;
     @FXML private Label priceLabel;
     @FXML private TextArea productTextArea;
+    @FXML private ImageView organicImage;
+    @FXML private Label unitLabel;
+    @FXML private Label unitSuffixLabel;
 
     //Frontend elements
     @FXML
@@ -60,7 +65,7 @@ public class DetailedView extends AnchorPane {
     public void addToShoppingCart(){
         try
         {
-            double temporaryNumber = Double.parseDouble(quantityLabel.toString());
+            double temporaryNumber = Double.parseDouble(quantityLabel.getText());
             ShoppingItem shoppingItem = new ShoppingItem(product, temporaryNumber);
             shoppingCart.addItem(shoppingItem);
         }
@@ -71,12 +76,12 @@ public class DetailedView extends AnchorPane {
 
     }
     @FXML
-    public void increaseQuantity(Event event){
+    public void increaseQuantity(){
         try
         {
-            int temporaryNumber = Integer.parseInt(quantityLabel.toString());
+            int temporaryNumber = Integer.parseInt(quantityLabel.getText());
             temporaryNumber++;
-            quantityLabel.setText(String.valueOf(temporaryNumber) + " kr");
+            quantityLabel.setText(String.valueOf(temporaryNumber));
         }
         catch (NumberFormatException nfe)
         {
@@ -84,10 +89,10 @@ public class DetailedView extends AnchorPane {
         }
     }
     @FXML
-    public void decreaseQuantity(Event event){
+    public void decreaseQuantity(){
         try
         {
-            int temporaryNumber = Integer.parseInt(quantityLabel.toString());
+            int temporaryNumber = Integer.parseInt(quantityLabel.getText());
             temporaryNumber--;
             if(temporaryNumber > 0){
                 quantityLabel.setText(String.valueOf(temporaryNumber));
@@ -104,17 +109,50 @@ public class DetailedView extends AnchorPane {
     public void populateProductDetailedView(Product product){
 
         this.product = product;
-        this.productImage.setImage(parentController.getSquareImage(dataHandler.getFXImage(product)));
+        this.productImage.setImage(dataHandler.getFXImage(product));
         this.productNameLabel.setText(product.getName());
 
-        //Needs to be changed depending on our categories
-        this.productCategoryLabel.setText(product.getCategory().name());
+        if(product.isEcological()){
+            organicImage.setVisible(true);
+        }else{organicImage.setVisible(false);}
 
-        this.priceLabel.setText(String.valueOf(product.getPrice()) + " kr");
+        //Needs to be changed depending on our categories
+        this.productCategoryLabel.setText(getProductCategory(product));
+
+        this.priceLabel.setText(String.valueOf(product.getPrice()) + " " + product.getUnit());
+
+        this.unitSuffixLabel.setText(product.getUnitSuffix());
 
         //Product information is missing
         this.productTextArea.setText("PRODUCT INFORMATION IS MISSING.--> Product.java");
 
+    }
+
+    private String getProductCategory(Product product){
+        switch(product.getCategory()){
+            case POD:       return "Grönsaker";
+            case BREAD:     return "Bröd";
+            case BERRY:     return "Bär";
+            case CITRUS_FRUIT: return "Frukt";
+            case HOT_DRINKS: return "Varma drycker";
+            case COLD_DRINKS: return "Kalla drycker";
+            case EXOTIC_FRUIT: return "Frukt";
+            case FISH:      return "Fisk";
+            case VEGETABLE_FRUIT: return "Grönsaker";
+            case CABBAGE:   return "Grönsaker";
+            case MEAT:      return "Kött";
+            case DAIRIES:   return "Mejeri";
+            case MELONS:    return "Frukt";
+            case FLOUR_SUGAR_SALT: return "Mjöl, socker, salt";
+            case NUTS_AND_SEEDS: return "Nötter och frön";
+            case PASTA:     return "Pasta";
+            case POTATO_RICE: return "Potatis och ris";
+            case ROOT_VEGETABLE: return "Grönsaker";
+            case FRUIT:     return "Frukt";
+            case SWEET:     return "Sötsaker";
+            case HERB:      return "Kryddor";
+            default:    return null;
+        }
     }
 
 }
