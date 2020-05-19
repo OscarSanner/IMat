@@ -33,6 +33,7 @@ public class iMat extends Application {
 
         //To test if it is able to collect all products from the requested category umu
         for(Product p: ProductHandler.getProductsFromCategory("Kött")){
+        for(Product p: ProductHandler.getProductsFromCategory("Kött & Fisk")){
             System.out.println(p.getName());
         }
 
