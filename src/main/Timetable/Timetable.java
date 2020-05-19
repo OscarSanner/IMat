@@ -16,7 +16,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-import static java.lang.System.out;
 
 public class Timetable extends AnchorPane implements IWizardPage {
 

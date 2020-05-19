@@ -5,10 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import se.chalmers.cse.dat216.project.Customer;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.Order;
-import se.chalmers.cse.dat216.project.ShoppingItem;
+import se.chalmers.cse.dat216.project.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -33,6 +30,12 @@ public class iMat extends Application {
 //        Order order = new Order();
 //        order.setDate(new Date());
 //        IMatDataHandler.getInstance().getOrders().add(order);
+
+        //To test if it is able to collect all products from the requested category umu
+        for(Product p: ProductHandler.getProductsFromCategory("Kö")){
+            System.out.println(p.getName());
+        }
+
     }
 
     // Ser till att allt sparas inför nästa gång programmet öppnas
