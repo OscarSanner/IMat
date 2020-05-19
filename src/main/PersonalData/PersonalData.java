@@ -34,7 +34,7 @@ public class PersonalData extends AnchorPane implements IWizardPage {
 
     @FXML private CheckBox personalCheckBox;
 
-   // private Customer customer = IMatDataHandler.getInstance().getCustomer();
+   private Customer customer = IMatDataHandler.getInstance().getCustomer();
 
 
     public PersonalData(ShoppingCart parentBackendController){
@@ -50,9 +50,9 @@ public class PersonalData extends AnchorPane implements IWizardPage {
 
         this.parentBackendController = parentBackendController;
 
-       // System.out.println(customer.getFirstName());
+       //System.out.println(customer.getFirstName());
         inputCustomerInfo();
-       // System.out.println(customer.getFirstName());
+       //System.out.println(customer.getFirstName());
         makeLblsInvisible();
     }
 
@@ -64,6 +64,7 @@ public class PersonalData extends AnchorPane implements IWizardPage {
 
         if (personalCheckBox.isSelected()) {
             setCustomerInfo();
+            personalCheckBox.setSelected(true);
         }
 
         if(allFilledInCorrectly()) {
@@ -201,7 +202,7 @@ public class PersonalData extends AnchorPane implements IWizardPage {
 
 
     // fyller i sparade informationen i beatlningssteget
-    private void inputCustomerInfo(){
+    public void inputCustomerInfo(){
        Customer customer = IMatDataHandler.getInstance().getCustomer();
 
         emailTextField.setText(customer.getEmail());

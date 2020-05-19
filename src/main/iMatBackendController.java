@@ -140,22 +140,14 @@ public class iMatBackendController {
     public void onCheckoutButtonPressed(){
         mainAnchorPane.getChildren().add(shoppingCartPage);
         saveCustomerInfo();
-
-
-
     }
-
     @FXML
     public void onSaveButtonPressed(){
-
-
         if(allFilledInCorrectly()) {
             saveCustomerInfo();
-
+            System.out.println(customer.getFirstName());
         }
-
     }
-
     @FXML
     public void closeDetailedView(){
         mainAnchorPane.getChildren().remove(detailedViewPage);
@@ -214,7 +206,7 @@ public class iMatBackendController {
 
 //------------------------------------------------------------MinSida-----------------------------------------------------------------------//
 
-    //Customer customer = IMatDataHandler.getInstance().getCustomer();
+    Customer customer = IMatDataHandler.getInstance().getCustomer();
 
     @FXML
     private void loadUserInfo(){
