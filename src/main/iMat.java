@@ -7,7 +7,13 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import se.chalmers.cse.dat216.project.Customer;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
+import se.chalmers.cse.dat216.project.Order;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class iMat extends Application {
@@ -24,7 +30,9 @@ public class iMat extends Application {
         stage.setTitle(bundle.getString("application.name"));
         stage.setScene(scene);
         stage.show();
-
+//        Order order = new Order();
+//        order.setDate(new Date());
+//        IMatDataHandler.getInstance().getOrders().add(order);
     }
 
     // Ser till att allt sparas inför nästa gång programmet öppnas

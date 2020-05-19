@@ -11,10 +11,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import main.CustomerSupport.CustomerSupport;
 import main.DetailedView.DetailedView;
+import main.ListTitlePane.ListTitlePane;
 import main.OrderTabTitlePane.OrderTabTitlePane;
-import main.PersonalData.PersonalData;
 import main.ShoppingCart.ShoppingCart;
 import se.chalmers.cse.dat216.project.*;
+
+import java.util.Map;
 
 public class iMatBackendController {
 
@@ -93,16 +95,9 @@ public class iMatBackendController {
     }
 
     private void populateOrderPane() {
-        int calcExpansion = 0;
-        orderAccordion.getPanes().add(new OrderTabTitlePane());
         for(Order o : IMatDataHandler.getInstance().getOrders()){
-            orderAccordion.getPanes().add(new OrderTabTitlePane());
+            orderAccordion.getPanes().add(new OrderTabTitlePane(o));
         }
-        if (orderAccordion.getExpandedPane() != null){
-            OrderTabTitlePane tp = (OrderTabTitlePane)orderAccordion.getExpandedPane();
-            calcExpansion = tp.calculateExpansion();
-        }
-        orderAccordion.prefHeightProperty().set(orderAccordion.getPrefHeight() + 67 + calcExpansion);
     }
 
     @FXML
@@ -124,6 +119,14 @@ public class iMatBackendController {
     }
 
     private void populateListPane() {
+        for(Map.Entry<Order, String> entry : IMatBackendEngine.getInstance().savedOrders.entrySet()){
+            listAccordion.getPanes().add(new ListTitlePane(entry.getKey(), entry.getValue()));
+        }
+    }
+
+    @FXML
+    public void saveOrder(){
+
     }
 
     @FXML
