@@ -65,6 +65,7 @@ public class PersonalData extends AnchorPane implements IWizardPage {
         if (personalCheckBox.isSelected()) {
             setCustomerInfo();
             personalCheckBox.setSelected(true);
+             setCustomerInfo();
         }
 
         if(allFilledInCorrectly()) {
