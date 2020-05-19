@@ -150,11 +150,11 @@ public class Payment extends AnchorPane implements IWizardPage {
         if(textField.equals(cardNumberTextField)){
             return 16;
         } else if(textField.equals(cvcTextField)) {
-            return 3;
+            return 1;
         } else if(textField.equals(monthTextField)){
-            return 2;
+            return 1;
         } else if(textField.equals(yearTextField)){
-            return 2;
+            return 4;
         } else {
             return 0;
         }
