@@ -30,7 +30,9 @@ public class iMat extends Application {
         stage.setTitle(bundle.getString("application.name"));
         stage.setScene(scene);
         stage.show();
-
+//        Order order = new Order();
+//        order.setDate(new Date());
+//        IMatDataHandler.getInstance().getOrders().add(order);
     }
 
     // Ser till att allt sparas inför nästa gång programmet öppnas

@@ -1,14 +1,13 @@
-package main.OrderTabTitlePane;
+package main.ListTitlePane;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
-import main.IMatBackendEngine;
 import main.OrderListTabItem.OrderListTabItem;
+import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
@@ -16,7 +15,7 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
-public class OrderTabTitlePane extends TitledPane{
+public class ListTitlePane extends TitledPane{
 
     //----------------NAVIGATION OCH INIT------------------
 
@@ -25,14 +24,10 @@ public class OrderTabTitlePane extends TitledPane{
     @FXML
     AnchorPane orderTitleAnchorPane;
     @FXML
-    Label dateLabel;
-    @FXML
-    Button saveButton;
+    Label nameLabel;
 
-    Order order;
-
-    public OrderTabTitlePane(Order order){
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("OrderTabTitlePane.fxml"));
+    public ListTitlePane(Order o, String s){
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ListTitlePane.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -41,9 +36,9 @@ public class OrderTabTitlePane extends TitledPane{
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-        this.order = order;
-        populatePane(order.getItems());
-        dateLabel.setText(order.getDate().toString());
+        populatePane(o.getItems());
+        nameLabel.setText(s);
+
     }
 
     public void populatePane(List<ShoppingItem> items){
@@ -53,12 +48,7 @@ public class OrderTabTitlePane extends TitledPane{
             }
         }
     }
-
     public int calculateExpansion() {
         return 60 * orderTitlePaneFlowPane.getChildren().size();
-    }
-
-    public void onSaveButtonPressed(){
-        IMatBackendEngine.getInstance().addSavedOrder(order);
     }
 }

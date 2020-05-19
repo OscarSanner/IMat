@@ -6,7 +6,6 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -239,54 +238,6 @@
                                     </Pane>
                                  </children>
                               </StackPane>
-                              <StackPane fx:id="listTabPane" prefHeight="541.0" prefWidth="569.0" style="-fx-background-color: red;">
-                                 <children>
-                                    <ScrollPane prefHeight="200.0" prefWidth="200.0">
-                                       <content>
-                                          <Accordion fx:id="listAccordion">
-                                             <panes>
-                                                <TitledPane animated="false" text=" ">
-                                                   <content>
-                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="382.0" prefWidth="575.0">
-                                                         <children>
-                                                            <FlowPane layoutX="16.0" prefHeight="451.0" prefWidth="536.0" style="-fx-background-color: gray;" />
-                                                         </children>
-                                                      </AnchorPane>
-                                                   </content>
-                                                   <graphic>
-                                                      <Pane prefHeight="58.0" prefWidth="536.0">
-                                                         <children>
-                                                            <Label layoutX="14.0" layoutY="11.0" prefHeight="17.0" prefWidth="92.0" text="Inköpslista 1" />
-                                                            <Button layoutX="208.0" layoutY="2.0" mnemonicParsing="false" text="Lägg till i kundvagn" />
-                                                            <Button layoutX="198.0" layoutY="30.0" mnemonicParsing="false" text="Ta bort som inköpslista" />
-                                                         </children>
-                                                      </Pane>
-                                                   </graphic>
-                                                </TitledPane>
-                                                <TitledPane animated="false" text=" ">
-                                                   <content>
-                                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                         <children>
-                                                            <FlowPane layoutX="16.0" prefHeight="451.0" prefWidth="536.0" style="-fx-background-color: gray;" />
-                                                         </children>
-                                                      </AnchorPane>
-                                                   </content>
-                                                   <graphic>
-                                                      <Pane prefHeight="58.0" prefWidth="536.0">
-                                                         <children>
-                                                            <Label layoutX="14.0" layoutY="11.0" prefHeight="17.0" prefWidth="92.0" text="Inköpslista 1" />
-                                                            <Button layoutX="208.0" layoutY="2.0" mnemonicParsing="false" text="Lägg till i kundvagn" />
-                                                            <Button layoutX="199.0" layoutY="30.0" mnemonicParsing="false" text="Ta bort som inköpslista" />
-                                                         </children>
-                                                      </Pane>
-                                                   </graphic>
-                                                </TitledPane>
-                                             </panes>
-                                          </Accordion>
-                                       </content>
-                                    </ScrollPane>
-                                 </children>
-                              </StackPane>
                               <StackPane fx:id="orderTabPane" prefHeight="541.0" prefWidth="570.0" style="-fx-background-color: RED;">
                                  <children>
                                     <ScrollPane prefHeight="541.0" prefWidth="445.0">
@@ -295,6 +246,15 @@
                                        </content>
                                     </ScrollPane>
                                  </children></StackPane>
+                              <StackPane fx:id="listTabPane" prefHeight="541.0" prefWidth="569.0" style="-fx-background-color: red;">
+                                 <children>
+                                    <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                       <content>
+                                          <Accordion fx:id="listAccordion" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </StackPane>
                            </children>
                         </Pane>
                      </children>
