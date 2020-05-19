@@ -51,12 +51,12 @@ public class Payment extends AnchorPane implements IWizardPage {
     public Order order;
 
 
-    public Payment(Timetable parentBackendController, Date deliveryTime){
+    public Payment(Timetable parentBackendController){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Payment.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
         this.parentBackendController = parentBackendController;
-        this.deliveryTime = deliveryTime;
+        //this.deliveryTime = deliveryTime; My heart is broken
 
         try {
             fxmlLoader.load();

@@ -2,22 +2,30 @@ package main.TimetableItem;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import main.Timetable.Timetable;
 
 import java.io.IOException;
 import java.util.Date;
 
 public class TimetableItem extends AnchorPane {
 
+    private Timetable timeTableController;
 
-    @FXML private Date date;
+    @FXML private Date selectedDate;
 
-    public TimetableItem(Date date){
+    //Scenebuilder Elements
+    @FXML private ImageView unselectedCircleImage;
+    @FXML private ImageView selectedCircleImage;
+
+
+    public TimetableItem(Date date, Timetable timeTableController){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TimetableItem.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
-        this.date = date;
+        this.selectedDate = date;
+        this.timeTableController = timeTableController;
 
         try {
             fxmlLoader.load();
@@ -25,5 +33,24 @@ public class TimetableItem extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
+        this.timeTableController = timeTableController;
     }
+
+    //----------------FAKTISK KOD-----------------
+
+
+    @FXML
+    private void selectDate(){
+        timeTableController.clear();
+        timeTableController.onDatePress(selectedDate);
+        selectedCircleImage.toFront();
+
+
+    }
+    @FXML
+    public void deSelectDate(){
+        timeTableController.onDatePress(null);
+        unselectedCircleImage.toFront();
+    }
+
 }
