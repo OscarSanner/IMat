@@ -68,7 +68,6 @@ public class ProductHandler {
             }
         }catch (NullPointerException e){System.out.println("Not valid input for category");}
         return selectedProducts;
-
     }
 
     /**

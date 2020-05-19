@@ -484,7 +484,7 @@ public class iMatBackendController {
                 break;
             }
             case "Kryddor": {
-                Button spices = new Button("Örtkryddor");
+                Button spices = new Button("Kryddor");
                 buttons.add(spices);
                 break;
             }
@@ -505,7 +505,7 @@ public class iMatBackendController {
     }
 
     private void populateProductFlowpane(Button button) {
-        String a = button.getText();
+        productFlowPane.getChildren().clear();
         for(Product p : ProductHandler.getProductsFromCategory(button.getText())){
             main.Product.Product productCard = new main.Product.Product(this, p);
                 productFlowPane.getChildren().add(productCard);

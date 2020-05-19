@@ -73,6 +73,8 @@ public class Product extends AnchorPane {
     }
 
     @FXML
-    protected void onClick(Event event){parentController.openProductView(product);}
+    protected void onClick(){
+        parentController.openProductView(product);
+    }
 
 }
