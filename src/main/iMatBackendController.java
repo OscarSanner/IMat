@@ -1,6 +1,7 @@
 package main;
 
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.WritableImage;
@@ -14,6 +15,8 @@ import main.OrderTabTitlePane.OrderTabTitlePane;
 import main.ShoppingCart.ShoppingCart;
 import se.chalmers.cse.dat216.project.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class iMatBackendController {
@@ -372,6 +375,7 @@ public class iMatBackendController {
         categoryPane.toFront();
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
+
     }
 
     public void onOffersButtonPressed(){
@@ -384,44 +388,112 @@ public class iMatBackendController {
         categoryPane.toFront();
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
-
+        populateSubCategoryFlowPane("Kött & Fisk");
     }
 
     public void onVeggiesButtonPressed(){
         categoryPane.toFront();
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
+        populateSubCategoryFlowPane("Frukt & Grönt");
     }
 
     public void onDrinkButtonPressed(){
         categoryPane.toFront();
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
+        populateSubCategoryFlowPane("Dryck");
     }
 
     public void onDairyButtonPressed(){
         categoryPane.toFront();
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
+        populateSubCategoryFlowPane("Mejeri");
     }
 
     public void onPantryButtonPressed(){
         categoryPane.toFront();
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
+        populateSubCategoryFlowPane("Skafferi");
     }
 
     public void onSnacksButtonPressed(){
         categoryPane.toFront();
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
+        populateSubCategoryFlowPane("Snacks");
     }
 
     public void onSpicesButtonPressed(){
         categoryPane.toFront();
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
+        populateSubCategoryFlowPane("Kryddor");
     }
 
+    private void populateSubCategoryFlowPane(String category) {
+        List<Button> buttons = new ArrayList<Button>();
+
+        switch (category){
+            case "Kött & Fisk":{
+                Button meat = new Button("Kött");
+                Button fish = new Button("Fisk");
+                buttons.add(meat);
+                buttons.add(fish);
+                break;
+            }
+            case "Frukt & Grönt": {
+                Button berries = new Button("Bär");
+                Button fruit = new Button("Frukt");
+                Button veggies = new Button("Grönsaker");
+                buttons.add(berries);
+                buttons.add(veggies);
+                buttons.add(fruit);
+                break;
+            }
+            case "Dryck": {
+                Button warmDrinks = new Button("Varma Drycker");
+                Button coldDrinks = new Button("Kalla Drycker");
+                buttons.add(warmDrinks);
+                buttons.add(coldDrinks);
+                break;
+        }
+            case "Mejeri": {
+                Button dairy = new Button("Mejeri");
+                buttons.add(dairy);
+                break;
+            }
+            case "Skafferi":  {
+                Button flourSugarSalt = new Button("Mjöl, Socker, Salt");
+                Button pasta = new Button("Pasta");
+                Button potatoRice = new Button("Potatis och Ris");
+                buttons.add(flourSugarSalt);
+                buttons.add(pasta);
+                buttons.add(potatoRice);
+                break;
+            }
+            case "Snacks" : {
+                Button sweets = new Button("Sötsaker");
+                Button seeds = new Button("Nötter och Frön");
+                buttons.add(sweets);
+                buttons.add(seeds);
+                break;
+            }
+            case "Kryddor": {
+                Button spices = new Button("Örtkryddor");
+                buttons.add(spices);
+                break;
+            }
+        }
+        subCategoryFlowPane.getChildren().clear();
+        subCategoryFlowPane.setPadding(new Insets(9,30,30,9));
+        subCategoryFlowPane.setHgap(10);
+        for(Button button : buttons){
+            button.setPrefSize(150,35);
+            subCategoryFlowPane.getChildren().add(button);
+        }
+    }
 }
 
