@@ -55,6 +55,7 @@ public class Product extends AnchorPane {
     @FXML
     protected void onBuyButtonPressed(){
         shoppingCart.addItem(shoppingItem);
+
         buyButton.setVisible(false);    //Hides the button temporarily to show the +/- buttons underneath.
         itemCounter++;
 
@@ -64,16 +65,19 @@ public class Product extends AnchorPane {
 
     @FXML
     protected void onPlusButtonPressed(){
-        shoppingCart.addItem(shoppingItem);
+        shoppingItem.setAmount(shoppingItem.getAmount()+1);
         itemCounter++;
+        parentController.updateShoppingCart();
     }
     @FXML
     protected void onMinusButtonPressed(){
-        shoppingCart.removeItem(shoppingItem);
+        shoppingItem.setAmount(shoppingItem.getAmount()-1);
         itemCounter--;
         if(itemCounter==0){
             buyButton.setVisible(true);
         }
+        parentController.updateShoppingCart();
+
     }
 
     @FXML
