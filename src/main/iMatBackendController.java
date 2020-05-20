@@ -3,12 +3,15 @@ package main;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import main.CustomerSupport.CustomerSupport;
 import main.DetailedView.DetailedView;
@@ -47,6 +50,7 @@ public class iMatBackendController {
     public CustomerSupport customerSupportPage = new CustomerSupport(this);
     public ShoppingCart shoppingCartPage = new ShoppingCart(this);
     public DetailedView detailedViewPage = new DetailedView(this);
+    public StackPane blurPane = new StackPane();
 
     //public Customer customer = IMatDataHandler.getInstance().getCustomer();
 
@@ -133,6 +137,8 @@ public class iMatBackendController {
     @FXML
     public void closeDetailedView(){
         mainAnchorPane.getChildren().remove(detailedViewPage);
+        mainAnchorPane.getChildren().remove(blurPane);
+        undoBlurBackground();
     }
 
     /*public void openProductView(Product product){
@@ -504,10 +510,34 @@ public class iMatBackendController {
     }
 
     public void openProductView(Product product){
+        mainAnchorPane.getChildren().add(blurPane);
+        blurPane.setPrefHeight(mainAnchorPane.getPrefHeight());
+        blurPane.setPrefWidth(mainAnchorPane.getPrefWidth());
+        blurPane.setStyle("-fx-background-color: rgba(0, 0, 0, 0.65)");
         detailedViewPage.populateProductDetailedView(product);
+        blurBackground();
         mainAnchorPane.getChildren().add(detailedViewPage);
         detailedViewPage.setLayoutX(85);
         detailedViewPage.setLayoutY(110);
+        blurPane.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                closeDetailedView();
+            }
+        });
     }
+
+    private void blurBackground() {
+        for(Node n : mainAnchorPane.getChildren()){
+            n.setEffect(new GaussianBlur());
+        }
+    }
+
+    private void undoBlurBackground() {
+        for(Node n : mainAnchorPane.getChildren()){
+            n.setEffect(null);
+        }
+    }
+
 }
 
