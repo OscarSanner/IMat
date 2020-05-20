@@ -2,8 +2,16 @@ package main;
 
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
+
+import javafx.scene.control.Button;
+
+import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.scene.control.*;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
@@ -12,6 +20,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
 import main.CustomerSupport.CustomerSupport;
 import main.DetailedView.DetailedView;
+
 import main.ListTitlePane.ListTitlePane;
 import main.OrderTabTitlePane.OrderTabTitlePane;
 import main.ShoppingCart.ShoppingCart;
@@ -21,7 +30,27 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class iMatBackendController {
+import main.PersonalData.PersonalData;
+import main.ShoppingCart.ShoppingCart;
+import se.chalmers.cse.dat216.project.CreditCard;
+import se.chalmers.cse.dat216.project.Customer;
+import se.chalmers.cse.dat216.project.IMatDataHandler;
+import se.chalmers.cse.dat216.project.Product;
+
+import main.ListTitlePane.ListTitlePane;
+import main.OrderTabTitlePane.OrderTabTitlePane;
+import main.PurchaseFeedback.PurchaseFeedback;
+import main.ShoppingCart.ShoppingCart;
+import se.chalmers.cse.dat216.project.*;
+
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.ResourceBundle;
+
+
+public class iMatBackendController implements Initializable {
 
     //----------------NAVIGATION OCH INIT------------------
 
@@ -47,6 +76,7 @@ public class iMatBackendController {
     public CustomerSupport customerSupportPage = new CustomerSupport(this);
     public ShoppingCart shoppingCartPage = new ShoppingCart(this);
     public DetailedView detailedViewPage = new DetailedView(this);
+    public PurchaseFeedback purchaseFeedback = new PurchaseFeedback(this);
 
     //public Customer customer = IMatDataHandler.getInstance().getCustomer();
 
@@ -358,6 +388,7 @@ public class iMatBackendController {
         populateProductFlowpane("Bröd");
         productsScrollPane.setVvalue(0);
 
+
     }
 
     public void onMeatAndFishButtonPressed(){
@@ -503,19 +534,15 @@ public class iMatBackendController {
 
     private void populateProductFlowpane( String category) {
         productFlowPane.getChildren().clear();
+
         setupProductFlowpane();
+
 
         for(Product p : ProductHandler.getProductsFromCategory(category)){
                 productFlowPane.getChildren().add(new main.Product.Product(this, p));
         }
     }
-
-    private void setupProductFlowpane(){
-        productsScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER); //Removes horizontal scrollPane
-        productFlowPane.setPadding(new Insets(9,0,9,6));
-        productFlowPane.setHgap(8);
-        productFlowPane.setVgap(15);
-    }
+    
 
     public void openProductView(Product product){
         detailedViewPage.populateProductDetailedView(product);
@@ -523,5 +550,40 @@ public class iMatBackendController {
         detailedViewPage.setLayoutX(85);
         detailedViewPage.setLayoutY(110);
     }
+
+
+    public void showPurchaseFeedback(Product product, String quantity, String unitSuffix){
+        purchaseFeedback.setFeedbackLabel(quantity + " " + unitSuffix + " " + product.getName() + " har lagts till i varukorgen");
+        purchaseFeedback.setVisible(true);
+
+        System.out.println(purchaseFeedback.isVisible()
+        );
+    }
+    public void closePurchaseFeedback(){
+        purchaseFeedback.setVisible(false);
+    }
+
+
+    //================================================================================
+    // Init
+    //================================================================================
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        setupPurchaseFeedback();
+        setupProductFlowpane();
+
+    }
+    private void setupPurchaseFeedback(){
+        mainAnchorPane.getChildren().add(purchaseFeedback);
+        purchaseFeedback.setLayoutX(145);
+        purchaseFeedback.setLayoutY(36);
+    }
+    private void setupProductFlowpane(){
+        productsScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER); //Removes horizontal scrollPane
+        productFlowPane.setPadding(new Insets(9,0,9,6));
+        productFlowPane.setHgap(8);
+        productFlowPane.setVgap(15);
+    }
+
 }
 
