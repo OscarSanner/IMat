@@ -63,6 +63,7 @@ public class DetailedView extends AnchorPane {
             double temporaryNumber = Double.parseDouble(quantityLabel.toString());
             ShoppingItem shoppingItem = new ShoppingItem(product, temporaryNumber);
             shoppingCart.addItem(shoppingItem);
+            parentController.purchaseFeedback.startAnimation(product, quantityLabel.getText(), product.getUnitSuffix());
         }
         catch (NumberFormatException nfe)
         {

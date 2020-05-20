@@ -56,6 +56,9 @@ public class Product extends AnchorPane {
         shoppingCart.addItem(shoppingItem);
         buyButton.setVisible(false);    //Hides the button temporarily to show the +/- buttons underneath.
         itemCounter++;
+
+        parentController.purchaseFeedback.startAnimation(product, "1", product.getUnitSuffix());
+
     }
 
     @FXML
