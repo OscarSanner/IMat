@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import main.ICustomTitledPane;
 import main.IMatBackendEngine;
 import main.OrderListTabItem.OrderListTabItem;
 import se.chalmers.cse.dat216.project.Order;
@@ -16,7 +17,7 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
-public class OrderTabTitlePane extends TitledPane{
+public class OrderTabTitlePane extends TitledPane implements ICustomTitledPane {
 
     //----------------NAVIGATION OCH INIT------------------
 
@@ -43,7 +44,7 @@ public class OrderTabTitlePane extends TitledPane{
         }
         this.order = order;
         populatePane(order.getItems());
-        dateLabel.setText(order.getDate().toString());
+        dateLabel.setText("25e maj");
     }
 
     public void populatePane(List<ShoppingItem> items){
@@ -60,5 +61,9 @@ public class OrderTabTitlePane extends TitledPane{
 
     public void onSaveButtonPressed(){
         IMatBackendEngine.getInstance().addSavedOrder(order);
+    }
+
+    public Order getOrder(){
+        return this.order;
     }
 }

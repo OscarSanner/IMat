@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
 
 
@@ -41,7 +42,7 @@ public class OrderListTabItem extends AnchorPane {
     }
 
     private void initCard(double amount, Product product, double total) {
-        Image productImage = new Image(getClass().getResourceAsStream("/Res/img/" + product.getImageName()));
+        Image productImage = IMatDataHandler.getInstance().getFXImage(product);
         itemImage.setImage(productImage);
         itemName.setText(product.getName());
         unitPriceLabel.setText("Styckpris: " + total/amount);

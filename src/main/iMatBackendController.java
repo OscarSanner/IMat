@@ -34,9 +34,7 @@ import main.ShoppingCart.ShoppingCart;
 import main.ShoppingCartItem.ShoppingCartItem;
 import se.chalmers.cse.dat216.project.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import main.PersonalData.PersonalData;
 import main.ShoppingCart.ShoppingCart;
@@ -55,7 +53,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.stream.Collectors;
+
+import static java.util.Comparator.comparingInt;
+import static java.util.stream.Collectors.collectingAndThen;
+import static java.util.stream.Collectors.toCollection;
 
 
 public class iMatBackendController implements Initializable {
@@ -113,11 +115,30 @@ public class iMatBackendController implements Initializable {
     public void onOrderTabSelect(){
         orderTabPane.toFront();
         populateOrderPane();
+        calculateAccordionSize(orderAccordion);
+    }
+
+    private void calculateAccordionSize(Accordion accordion) {
+        if(accordion.getExpandedPane() == null){
+            accordion.setPrefHeight(67 * accordion.getChildrenUnmodifiable().size());
+        }else{
+            System.out.println(accordion.getChildrenUnmodifiable().size());
+            ICustomTitledPane activePane = (ICustomTitledPane) accordion.getExpandedPane();
+            System.out.println(activePane.getOrder().getItems().size());
+            accordion.setPrefHeight((67 * accordion.getChildrenUnmodifiable().size()) + (60 * activePane.getOrder().getItems().size()));
+        }
     }
 
     private void populateOrderPane() {
         for(Order o : IMatDataHandler.getInstance().getOrders()){
-            orderAccordion.getPanes().add(new OrderTabTitlePane(o));
+            OrderTabTitlePane ot = new OrderTabTitlePane(o);
+            orderAccordion.getPanes().add(ot);
+            ot.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent mouseEvent) {
+                    calculateAccordionSize(orderAccordion);
+                }
+            });
         }
     }
 
@@ -137,11 +158,19 @@ public class iMatBackendController implements Initializable {
     public void onListtabSelect(){
         listTabPane.toFront();
         populateListPane();
+        calculateAccordionSize(listAccordion);
     }
 
     private void populateListPane() {
         for(Map.Entry<Order, String> entry : IMatBackendEngine.getInstance().savedOrders.entrySet()){
-            listAccordion.getPanes().add(new ListTitlePane(entry.getKey(), entry.getValue()));
+            ListTitlePane ltp = new ListTitlePane(entry.getKey(), entry.getValue());
+            listAccordion.getPanes().add(ltp);
+            ltp.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent mouseEvent) {
+                    calculateAccordionSize(listAccordion);
+                }
+            });
         }
     }
 

@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import main.ICustomTitledPane;
 import main.OrderListTabItem.OrderListTabItem;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
@@ -15,7 +16,7 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
-public class ListTitlePane extends TitledPane{
+public class ListTitlePane extends TitledPane implements ICustomTitledPane {
 
     //----------------NAVIGATION OCH INIT------------------
 
@@ -25,6 +26,7 @@ public class ListTitlePane extends TitledPane{
     AnchorPane orderTitleAnchorPane;
     @FXML
     Label nameLabel;
+    Order order;
 
     public ListTitlePane(Order o, String s){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ListTitlePane.fxml"));
@@ -38,6 +40,7 @@ public class ListTitlePane extends TitledPane{
         }
         populatePane(o.getItems());
         nameLabel.setText(s);
+        this.order = o;
 
     }
 
@@ -50,5 +53,10 @@ public class ListTitlePane extends TitledPane{
     }
     public int calculateExpansion() {
         return 60 * orderTitlePaneFlowPane.getChildren().size();
+    }
+
+    @Override
+    public Order getOrder() {
+        return this.order;
     }
 }
