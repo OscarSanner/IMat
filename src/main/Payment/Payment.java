@@ -55,7 +55,7 @@ public class Payment extends AnchorPane implements IWizardPage {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Payment.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
-        this.parentBackendController = parentBackendController;
+
         //this.deliveryTime = deliveryTime; My heart is broken
 
         try {
@@ -63,6 +63,8 @@ public class Payment extends AnchorPane implements IWizardPage {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+
+        this.parentBackendController = parentBackendController;
         inputPaymentInfo();
         makePaymentLblsInvisible();
     }
@@ -143,11 +145,11 @@ public class Payment extends AnchorPane implements IWizardPage {
         if(textField.equals(cardNumberTextField)){
             return 16;
         } else if(textField.equals(cvcTextField)) {
-            return 1;
+            return 3;
         } else if(textField.equals(monthTextField)){
-            return 1;
+            return 2;
         } else if(textField.equals(yearTextField)){
-            return 4;
+            return 2;
         } else {
             return 0;
         }
