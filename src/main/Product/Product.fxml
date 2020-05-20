@@ -8,17 +8,17 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="175.0" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane prefHeight="210.0" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane prefHeight="210.0" prefWidth="175.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fx:id="itemImage" fitHeight="134.0" fitWidth="175.0" onMouseClicked="#onClick" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="itemLabel" layoutX="60.0" layoutY="134.0" text="Varunamn" />
+            <Label fx:id="itemLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="134.0" prefHeight="17.0" prefWidth="175.0" text="Varunamn" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" />
             <Label fx:id="priceLabel" layoutX="71.0" layoutY="151.0" text="pris kr" />
             <ImageView fx:id="minusImage" fitHeight="30.0" fitWidth="30.0" layoutX="45.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="plusImage" fitHeight="30.0" fitWidth="30.0" layoutX="100.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="amountLabel" layoutX="84.0" layoutY="175.0" text="x" />
-            <Button fx:id="addButton" layoutX="104.0" layoutY="166.0" mnemonicParsing="false" onMouseClicked="#onPlusButtonPressed" prefHeight="36.0" prefWidth="36.0" text="+" />
-            <Button fx:id="removeButton" layoutX="38.0" layoutY="165.0" mnemonicParsing="false" onMouseClicked="#onMinusButtonPressed" prefHeight="36.0" prefWidth="36.0" text="-" />
-            <Button fx:id="buyButton" layoutX="38.0" layoutY="166.0" mnemonicParsing="false" onMouseClicked="#onBuyButtonPressed" prefHeight="36.0" prefWidth="104.0" text="Köp" />
+            <Label fx:id="amountLabel" layoutX="84.0" layoutY="175.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="x" />
+            <Button fx:id="addButton" layoutX="104.0" layoutY="170.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onPlusButtonPressed" prefHeight="36.0" prefWidth="36.0" text="+" />
+            <Button fx:id="removeButton" layoutX="38.0" layoutY="170.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onMinusButtonPressed" prefHeight="36.0" prefWidth="36.0" text="-" />
+            <Button fx:id="buyButton" layoutX="38.0" layoutY="170.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onBuyButtonPressed" prefHeight="36.0" prefWidth="104.0" text="Köp" />
          </children>
       </Pane>
    </children>
