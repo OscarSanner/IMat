@@ -30,6 +30,7 @@ public class DetailedView extends AnchorPane {
     private iMatBackendController parentController;
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     private ShoppingCart shoppingCart = dataHandler.getShoppingCart();
+    private main.Product.Product detailedViewProduct;
     @FXML private ImageView productImage;
     @FXML private Label productNameLabel;
     @FXML private Label productCategoryLabel;
@@ -71,8 +72,6 @@ public class DetailedView extends AnchorPane {
     public void closeDetailedView(){ parentController.closeDetailedView();}
     @FXML
     public void addToShoppingCart(){
-
-
         try
         {
             List<ShoppingItem> currentCart = new ArrayList<>();
@@ -85,20 +84,36 @@ public class DetailedView extends AnchorPane {
                     System.out.println("There is an idential shopping item in shoppingcart. Increase amount on the existing shoppingitem");
                 }
             }
-            if(currentCart.isEmpty()){
+
+            if(Integer.parseInt(quantityLabel.getText()) == 0){
+                // Do nothing
+                System.out.println("zerooo");
+            }
+            else if(currentCart.isEmpty()){
                 shoppingItem.setAmount(Double.parseDouble(quantityLabel.getText()));
                 parentController.createItemtoShoppingCart(shoppingItem);
                 System.out.println("Cart empty. Creating new shoppingitem.");
 
+                parentController.purchaseFeedback.startAnimation(product, quantityLabel.getText(), product.getUnitSuffix());
+                parentController.updateShoppingCart();
+
             }else if (exists){
                 parentController.increaseItem(shoppingItem, Double.parseDouble(quantityLabel.getText()));
+
+
+                parentController.purchaseFeedback.startAnimation(product, quantityLabel.getText(), product.getUnitSuffix());
+                parentController.updateShoppingCart();
             } else{
                 shoppingItem.setAmount(Double.parseDouble(quantityLabel.getText()));
                 parentController.createItemtoShoppingCart(shoppingItem);
+
+                parentController.purchaseFeedback.startAnimation(product, quantityLabel.getText(), product.getUnitSuffix());
+                parentController.updateShoppingCart();
             }
-            
-            parentController.purchaseFeedback.startAnimation(product, quantityLabel.getText(), product.getUnitSuffix());
-            parentController.updateShoppingCart();
+
+            detailedViewProduct.setQuantityLabel(shoppingItem.getAmount());
+
+
         }
         catch (NumberFormatException nfe)
         {
@@ -190,4 +205,7 @@ public class DetailedView extends AnchorPane {
         this.shoppingItem = shoppingItem;
     }
 
+    public void setProduct(main.Product.Product productClass) {
+        detailedViewProduct = productClass;
+    }
 }

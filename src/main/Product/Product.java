@@ -25,6 +25,7 @@ public class Product extends AnchorPane {
      @FXML Label itemLabel;
      @FXML Label priceLabel;
      @FXML Button buyButton;
+     @FXML Label amountLabel;
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     private iMatBackendController parentController;
@@ -75,7 +76,8 @@ public class Product extends AnchorPane {
             parentController.createItemtoShoppingCart(shoppingItem);
         }parentController.updateShoppingCart();
 
-        //parentController.createItemtoShoppingCart(shoppingItem);
+
+        amountLabel.setText(Double.toString(shoppingItem.getAmount()));
 
         buyButton.setVisible(false);    //Hides the button temporarily to show the +/- buttons underneath.
         itemCounter++;
@@ -86,29 +88,40 @@ public class Product extends AnchorPane {
 
     @FXML
     protected void onPlusButtonPressed(){
-        //shoppingItem.setAmount(shoppingItem.getAmount()+1);
 
         parentController.increaseItem(shoppingItem, 1);
         itemCounter++;
         parentController.updateShoppingCart();
+
+        amountLabel.setText(Double.toString(shoppingItem.getAmount()));
+
     }
     @FXML
     protected void onMinusButtonPressed(){
-        //shoppingItem.setAmount(shoppingItem.getAmount()-1);
 
-        parentController.decreaseItem(shoppingItem, -1);
+        parentController.decreaseItem(shoppingItem, 1);
         itemCounter--;
         if(itemCounter==0){
             buyButton.setVisible(true);
         }
+
+        if(shoppingItem.getAmount()<= 0){
+            shoppingCart.removeItem(shoppingItem);
+        }
         parentController.updateShoppingCart();
+
+        amountLabel.setText(Double.toString(shoppingItem.getAmount()));
 
     }
 
     @FXML
     protected void onClick(){
-        parentController.openProductView(product);
+        parentController.openProductView(product, this);
         parentController.detailedViewPage.setShoppingItem(shoppingItem);
     }
 
+    public void setQuantityLabel(double amount){
+        amountLabel.setText(Double.toString(amount));
+
+    }
 }

@@ -179,10 +179,6 @@ public class iMatBackendController implements Initializable {
         undoBlurBackground();
     }
 
-    /*public void openProductView(Product product){
-        detailedViewPage.populateProductDetailedView(product);
-        mainAnchorPane.getChildren().add(detailedViewPage);
-    }*/
 
     public Image getSquareImage(Image image){
 
@@ -679,7 +675,10 @@ public class iMatBackendController implements Initializable {
     }
 
 
-    public void openProductView(Product product){
+    public void openProductView(Product product, main.Product.Product productClass){
+
+        detailedViewPage.setProduct(productClass);
+
         mainAnchorPane.getChildren().add(blurPane);
         purchaseFeedback.toFront();
         blurPane.setPrefHeight(mainAnchorPane.getPrefHeight());
