@@ -356,6 +356,15 @@ public class iMatBackendController {
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
     }
+    public void onBreadButtonPressed(){
+        categoryPane.toFront();
+        subCategoryFlowPane.getChildren().removeAll();
+        productFlowPane.getChildren().removeAll();
+        populateSubCategoryFlowPane("Bröd");
+        populateProductFlowpane("Bröd");
+        productsScrollPane.setVvalue(0);
+
+    }
 
     public void onMeatAndFishButtonPressed(){
         categoryPane.toFront();
@@ -472,6 +481,11 @@ public class iMatBackendController {
             case "Kryddor": {
                 Button spices = new Button("Kryddor");
                 buttons.add(spices);
+                break;
+            }
+            case "Bröd": {
+                Button bread = new Button("Bröd");
+                buttons.add(bread);
                 break;
             }
         }
