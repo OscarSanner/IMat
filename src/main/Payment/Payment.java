@@ -42,6 +42,8 @@ public class Payment extends AnchorPane implements IWizardPage {
     @FXML
     public CheckBox checkButtonPayment;
 
+    private CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
+
 
     public IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     public ConfirmationPage confirmationPage = new ConfirmationPage(this);
@@ -55,7 +57,7 @@ public class Payment extends AnchorPane implements IWizardPage {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Payment.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
-        this.parentBackendController = parentBackendController;
+
         //this.deliveryTime = deliveryTime; My heart is broken
 
         try {
@@ -63,10 +65,13 @@ public class Payment extends AnchorPane implements IWizardPage {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+
+        this.parentBackendController = parentBackendController;
         inputPaymentInfo();
         makePaymentLblsInvisible();
     }
 
+    @FXML
     public void onPayButtonPressed(){
         paymentMainAnchorPane.getChildren().add(confirmationPage);
         finalizePurchase();
@@ -100,7 +105,7 @@ public class Payment extends AnchorPane implements IWizardPage {
     }
 
     private void setPaymentInfo() {
-        CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
+        //CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
         creditCard.setCardNumber(cardNumberTextField.getText());
         creditCard.setVerificationCode(Integer.parseInt(cvcTextField.getText()));
         creditCard.setValidMonth(Integer.parseInt(monthTextField.getText()));
@@ -108,7 +113,7 @@ public class Payment extends AnchorPane implements IWizardPage {
     }
 
     private void inputPaymentInfo() {
-        CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
+        //CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
         cardNumberTextField.setText(creditCard.getCardNumber());
         cvcTextField.setText(String.valueOf(creditCard.getVerificationCode()));
         monthTextField.setText(String.valueOf(creditCard.getValidMonth()));
@@ -117,10 +122,8 @@ public class Payment extends AnchorPane implements IWizardPage {
 
     private boolean isPaymentInfoComplete(){
         return isComplete(cardNumberTextField,getMinAllowedLength(cardNumberTextField))
-                && containsDigitsOnly(cardNumberTextField) && containsDigitsOnly(cardNumberTextField)
-                && containsDigitsOnly(cvcTextField) && containsDigitsOnly(cvcTextField)
-                && containsDigitsOnly(monthTextField) && containsDigitsOnly(monthTextField)
-                && containsDigitsOnly(yearTextField) && containsDigitsOnly(yearTextField)
+                && containsDigitsOnly(cardNumberTextField) && containsDigitsOnly(cvcTextField)
+                && containsDigitsOnly(monthTextField) && containsDigitsOnly(yearTextField)
                 && isComplete(cvcTextField,getMinAllowedLength(cvcTextField))
                 && isComplete(monthTextField,getMinAllowedLength(monthTextField))
                 && isComplete(yearTextField,getMinAllowedLength(yearTextField));
@@ -143,11 +146,11 @@ public class Payment extends AnchorPane implements IWizardPage {
         if(textField.equals(cardNumberTextField)){
             return 16;
         } else if(textField.equals(cvcTextField)) {
-            return 1;
+            return 3;
         } else if(textField.equals(monthTextField)){
-            return 1;
+            return 2;
         } else if(textField.equals(yearTextField)){
-            return 4;
+            return 2;
         } else {
             return 0;
         }

@@ -32,6 +32,8 @@ public class iMat extends Application {
 //        IMatDataHandler.getInstance().getOrders().add(order);
 
         //To test if it is able to collect all products from the requested category umu
+        for(Product p: ProductHandler.getProductsFromCategory("Kö")){
+        /*for(Product p: ProductHandler.getProductsFromCategory("Kött")){
         for(Product p: ProductHandler.getProductsFromCategory("Kött")){
             System.out.println(p.getName());
         }
@@ -39,8 +41,10 @@ public class iMat extends Application {
     }
 
     // Ser till att allt sparas inför nästa gång programmet öppnas
-    public static void main(String[] args) {
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> IMatDataHandler.getInstance().shutDown(), "Shutdown-thread"));
-        launch(args);
-    }
-}
+//    public static void main(String[] args) {
+//        Runtime.getRuntime().addShutdownHook(new Thread(() -> IMatDataHandler.getInstance().shutDown(), "Shutdown-thread"));
+//        launch(args);
+//    }
+}}
+
+         */}}}
