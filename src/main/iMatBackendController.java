@@ -592,6 +592,7 @@ public class iMatBackendController implements Initializable {
 
     public void openProductView(Product product){
         mainAnchorPane.getChildren().add(blurPane);
+        purchaseFeedback.toFront();
         blurPane.setPrefHeight(mainAnchorPane.getPrefHeight());
         blurPane.setPrefWidth(mainAnchorPane.getPrefWidth());
         blurPane.setStyle("-fx-background-color: rgba(0, 0, 0, 0.65)");
@@ -610,7 +611,9 @@ public class iMatBackendController implements Initializable {
 
     private void blurBackground() {
         for(Node n : mainAnchorPane.getChildren()){
-            n.setEffect(new GaussianBlur());
+            if(!(n.equals(purchaseFeedback))) {
+                n.setEffect(new GaussianBlur());
+            }
         }
     }
 
