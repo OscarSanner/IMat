@@ -16,6 +16,8 @@ import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.awt.*;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Product extends AnchorPane {
 
@@ -54,7 +56,26 @@ public class Product extends AnchorPane {
 
     @FXML
     protected void onBuyButtonPressed(){
-        shoppingCart.addItem(shoppingItem);
+        //shoppingCart.addItem(shoppingItem);
+        boolean exists = false;
+        List<ShoppingItem> currentCart = new ArrayList<>();
+        currentCart = dataHandler.getShoppingCart().getItems();
+        for(ShoppingItem s: currentCart){
+            if(s.getProduct().equals(shoppingItem.getProduct())){
+                    exists = true;
+            }
+        }
+        if(currentCart.isEmpty()){
+            parentController.createItemtoShoppingCart(shoppingItem);
+            System.out.println("Cart empty. Creating new shoppingitem.");
+        }else if(exists) {
+            parentController.increaseItem(shoppingItem, 1);
+        }
+        else{
+            parentController.createItemtoShoppingCart(shoppingItem);
+        }parentController.updateShoppingCart();
+
+        //parentController.createItemtoShoppingCart(shoppingItem);
 
         buyButton.setVisible(false);    //Hides the button temporarily to show the +/- buttons underneath.
         itemCounter++;
@@ -65,13 +86,17 @@ public class Product extends AnchorPane {
 
     @FXML
     protected void onPlusButtonPressed(){
-        shoppingItem.setAmount(shoppingItem.getAmount()+1);
+        //shoppingItem.setAmount(shoppingItem.getAmount()+1);
+
+        parentController.increaseItem(shoppingItem, 1);
         itemCounter++;
         parentController.updateShoppingCart();
     }
     @FXML
     protected void onMinusButtonPressed(){
-        shoppingItem.setAmount(shoppingItem.getAmount()-1);
+        //shoppingItem.setAmount(shoppingItem.getAmount()-1);
+
+        parentController.decreaseItem(shoppingItem, -1);
         itemCounter--;
         if(itemCounter==0){
             buyButton.setVisible(true);
@@ -83,6 +108,7 @@ public class Product extends AnchorPane {
     @FXML
     protected void onClick(){
         parentController.openProductView(product);
+        parentController.detailedViewPage.setShoppingItem(shoppingItem);
     }
 
 }

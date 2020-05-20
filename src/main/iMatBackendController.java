@@ -614,8 +614,15 @@ public class iMatBackendController implements Initializable {
 
     }
 
-    public void controlShoppingCart(){
+    public void createItemtoShoppingCart(ShoppingItem shoppingItem){
+        shoppingCart.addItem(shoppingItem);
+    }
 
+    public void increaseItem(ShoppingItem shoppingItem, double amount){
+        shoppingItem.setAmount(shoppingItem.getAmount() + amount);
+    }
+    public void decreaseItem(ShoppingItem shoppingItem, double amount){
+        shoppingItem.setAmount(shoppingItem.getAmount() - amount);
     }
 
 

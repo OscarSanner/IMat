@@ -18,6 +18,9 @@ import se.chalmers.cse.dat216.project.ProductCategory;
 
 
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DetailedView extends AnchorPane {
 
@@ -44,6 +47,9 @@ public class DetailedView extends AnchorPane {
     @FXML private Button addButton;      //may be removed
     @FXML private Button exitButton;     //may be removed
 
+    ShoppingItem shoppingItem;
+
+
 
     public DetailedView(iMatBackendController backendController){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DetailedView.fxml"));
@@ -57,6 +63,7 @@ public class DetailedView extends AnchorPane {
             throw new RuntimeException(exception);
         }
         this.setEffect(null);
+
     }
 
 
@@ -64,12 +71,34 @@ public class DetailedView extends AnchorPane {
     public void closeDetailedView(){ parentController.closeDetailedView();}
     @FXML
     public void addToShoppingCart(){
+
+
         try
         {
-            double temporaryNumber = Double.parseDouble(quantityLabel.getText());
-            ShoppingItem shoppingItem = new ShoppingItem(product, temporaryNumber);
-            shoppingCart.addItem(shoppingItem);
+            List<ShoppingItem> currentCart = new ArrayList<>();
+            currentCart = dataHandler.getShoppingCart().getItems();
+            boolean exists = false;
+
+            for(ShoppingItem s: currentCart){
+                if(s.getProduct().equals(shoppingItem.getProduct())){
+                    exists = true;
+                    System.out.println("There is an idential shopping item in shoppingcart. Increase amount on the existing shoppingitem");
+                }
+            }
+            if(currentCart.isEmpty()){
+                shoppingItem.setAmount(Double.parseDouble(quantityLabel.getText()));
+                parentController.createItemtoShoppingCart(shoppingItem);
+                System.out.println("Cart empty. Creating new shoppingitem.");
+
+            }else if (exists){
+                parentController.increaseItem(shoppingItem, Double.parseDouble(quantityLabel.getText()));
+            } else{
+                shoppingItem.setAmount(Double.parseDouble(quantityLabel.getText()));
+                parentController.createItemtoShoppingCart(shoppingItem);
+            }
+            
             parentController.purchaseFeedback.startAnimation(product, quantityLabel.getText(), product.getUnitSuffix());
+            parentController.updateShoppingCart();
         }
         catch (NumberFormatException nfe)
         {
@@ -155,6 +184,10 @@ public class DetailedView extends AnchorPane {
             case HERB:      return "Kryddor";
             default:    return null;
         }
+    }
+
+    public void setShoppingItem(ShoppingItem shoppingItem){
+        this.shoppingItem = shoppingItem;
     }
 
 }
