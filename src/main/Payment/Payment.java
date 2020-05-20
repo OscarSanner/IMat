@@ -42,6 +42,8 @@ public class Payment extends AnchorPane implements IWizardPage {
     @FXML
     public CheckBox checkButtonPayment;
 
+    private CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
+
 
     public IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     public ConfirmationPage confirmationPage = new ConfirmationPage(this);
@@ -69,6 +71,7 @@ public class Payment extends AnchorPane implements IWizardPage {
         makePaymentLblsInvisible();
     }
 
+    @FXML
     public void onPayButtonPressed(){
         paymentMainAnchorPane.getChildren().add(confirmationPage);
         finalizePurchase();
@@ -102,7 +105,7 @@ public class Payment extends AnchorPane implements IWizardPage {
     }
 
     private void setPaymentInfo() {
-        CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
+        //CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
         creditCard.setCardNumber(cardNumberTextField.getText());
         creditCard.setVerificationCode(Integer.parseInt(cvcTextField.getText()));
         creditCard.setValidMonth(Integer.parseInt(monthTextField.getText()));
@@ -110,7 +113,7 @@ public class Payment extends AnchorPane implements IWizardPage {
     }
 
     private void inputPaymentInfo() {
-        CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
+        //CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
         cardNumberTextField.setText(creditCard.getCardNumber());
         cvcTextField.setText(String.valueOf(creditCard.getVerificationCode()));
         monthTextField.setText(String.valueOf(creditCard.getValidMonth()));
@@ -119,10 +122,8 @@ public class Payment extends AnchorPane implements IWizardPage {
 
     private boolean isPaymentInfoComplete(){
         return isComplete(cardNumberTextField,getMinAllowedLength(cardNumberTextField))
-                && containsDigitsOnly(cardNumberTextField) && containsDigitsOnly(cardNumberTextField)
-                && containsDigitsOnly(cvcTextField) && containsDigitsOnly(cvcTextField)
-                && containsDigitsOnly(monthTextField) && containsDigitsOnly(monthTextField)
-                && containsDigitsOnly(yearTextField) && containsDigitsOnly(yearTextField)
+                && containsDigitsOnly(cardNumberTextField) && containsDigitsOnly(cvcTextField)
+                && containsDigitsOnly(monthTextField) && containsDigitsOnly(yearTextField)
                 && isComplete(cvcTextField,getMinAllowedLength(cvcTextField))
                 && isComplete(monthTextField,getMinAllowedLength(monthTextField))
                 && isComplete(yearTextField,getMinAllowedLength(yearTextField));

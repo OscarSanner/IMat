@@ -41,8 +41,10 @@ public class iMat extends Application {
     }
 
     // Ser till att allt sparas inför nästa gång programmet öppnas
-    public static void main(String[] args) {
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> IMatDataHandler.getInstance().shutDown(), "Shutdown-thread"));
-        launch(args);
-    }
-}
+//    public static void main(String[] args) {
+//        Runtime.getRuntime().addShutdownHook(new Thread(() -> IMatDataHandler.getInstance().shutDown(), "Shutdown-thread"));
+//        launch(args);
+//    }
+}}
+
+         */}}}
