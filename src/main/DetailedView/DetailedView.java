@@ -67,7 +67,6 @@ public class DetailedView extends AnchorPane {
 
     }
 
-
     @FXML
     public void closeDetailedView(){ parentController.closeDetailedView();}
     @FXML

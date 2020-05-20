@@ -32,7 +32,6 @@ public class Product extends AnchorPane {
     private se.chalmers.cse.dat216.project.Product product;
     private ShoppingCart shoppingCart = dataHandler.getShoppingCart();
     private ShoppingItem shoppingItem;
-    private int itemCounter = 0;
 
     public Product(iMatBackendController iMatBackendController, se.chalmers.cse.dat216.project.Product product){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Product.fxml"));
@@ -57,9 +56,8 @@ public class Product extends AnchorPane {
 
     @FXML
     protected void onBuyButtonPressed(){
-        //shoppingCart.addItem(shoppingItem);
         boolean exists = false;
-        List<ShoppingItem> currentCart = new ArrayList<>();
+        List<ShoppingItem> currentCart;
         currentCart = dataHandler.getShoppingCart().getItems();
         for(ShoppingItem s: currentCart){
             if(s.getProduct().equals(shoppingItem.getProduct())){
@@ -80,7 +78,6 @@ public class Product extends AnchorPane {
         amountLabel.setText(Double.toString(shoppingItem.getAmount()));
 
         buyButton.setVisible(false);    //Hides the button temporarily to show the +/- buttons underneath.
-        itemCounter++;
 
         parentController.purchaseFeedback.startAnimation(product, "1", product.getUnitSuffix());
 
@@ -88,9 +85,7 @@ public class Product extends AnchorPane {
 
     @FXML
     protected void onPlusButtonPressed(){
-
         parentController.increaseItem(shoppingItem, 1);
-        itemCounter++;
         parentController.updateShoppingCart();
 
         amountLabel.setText(Double.toString(shoppingItem.getAmount()));
@@ -98,20 +93,16 @@ public class Product extends AnchorPane {
     }
     @FXML
     protected void onMinusButtonPressed(){
+            parentController.decreaseItem(shoppingItem, 1);
+            if (shoppingItem.getAmount() <= 0) {
+                buyButton.setVisible(true);
+                shoppingItem.setAmount(1);
+                shoppingCart.removeItem(shoppingItem);
 
-        parentController.decreaseItem(shoppingItem, 1);
-        itemCounter--;
-        if(itemCounter==0){
-            buyButton.setVisible(true);
-        }
+            }
+            parentController.updateShoppingCart();
 
-        if(shoppingItem.getAmount()<= 0){
-            shoppingCart.removeItem(shoppingItem);
-        }
-        parentController.updateShoppingCart();
-
-        amountLabel.setText(Double.toString(shoppingItem.getAmount()));
-
+            amountLabel.setText(Double.toString(shoppingItem.getAmount()));
     }
 
     @FXML
@@ -123,5 +114,11 @@ public class Product extends AnchorPane {
     public void setQuantityLabel(double amount){
         amountLabel.setText(Double.toString(amount));
 
+    }
+    public void buyButtonVisible(boolean state){
+        buyButton.setVisible(state);
+
+        if(!state){
+        shoppingItem.setAmount(1);}
     }
 }

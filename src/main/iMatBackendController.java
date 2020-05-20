@@ -350,6 +350,7 @@ public class iMatBackendController implements Initializable {
 //TODO: För att komma åt den FlowPane där vi skall ha subkategorier: kalla på "subCategoryFlowPane"
 //TODO: För att komma åt den FLowPane där vi skall ha produkter: kalla på: ""
 
+    public String currentCategory;
     //kopplad till högerpilen vid carouselen.
     @FXML
     public void rotateCarouselRight(){
@@ -547,12 +548,29 @@ public class iMatBackendController implements Initializable {
 
         setupProductFlowpane();
 
+        currentCategory = category;
 
         for(Product p : ProductHandler.getProductsFromCategory(category)){
                 productFlowPane.getChildren().add(new main.Product.Product(this, p));
         }
     }
 
+    public void updateProductFlowpane(String category, ShoppingCartItem shoppingCartItem){
+        productFlowPane.getChildren().clear();
+
+        for(Product p : ProductHandler.getProductsFromCategory(category)){
+            if(shoppingCartItem.getShoppingItem().equals(p))
+            {
+                main.Product.Product tempProd = new main.Product.Product(this, p);
+                tempProd.buyButtonVisible(false);
+                tempProd.setQuantityLabel(shoppingCartItem.getShoppingItem().getAmount());
+                productFlowPane.getChildren().add(new main.Product.Product(this, p));
+
+            }else{
+                productFlowPane.getChildren().add(new main.Product.Product(this, p));
+            }
+        }
+    }
 
     public void showPurchaseFeedback(Product product, String quantity, String unitSuffix){
         purchaseFeedback.setFeedbackLabel(quantity + " " + unitSuffix + " " + product.getName() + " har lagts till i varukorgen");
@@ -609,9 +627,13 @@ public class iMatBackendController implements Initializable {
         }
 
     }
+    //================================================================================
+    // Functions connected to backend
+    //================================================================================
 
     public void createItemtoShoppingCart(ShoppingItem shoppingItem){
         shoppingCart.addItem(shoppingItem);
+
     }
 
     public void increaseItem(ShoppingItem shoppingItem, double amount){
@@ -620,6 +642,12 @@ public class iMatBackendController implements Initializable {
     public void decreaseItem(ShoppingItem shoppingItem, double amount){
         shoppingItem.setAmount(shoppingItem.getAmount() - amount);
     }
+
+    public void removeShoppingItem(ShoppingItem shoppingItem, ShoppingCartItem shoppingCartItem){
+        shoppingCart.removeItem(shoppingItem);
+        updateShoppingCart();
+    }
+
 
 
 

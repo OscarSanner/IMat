@@ -2,14 +2,12 @@ package main.ShoppingCartItem;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import main.PersonalData.PersonalData;
+import main.Product.Product;
 import main.iMatBackendController;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
@@ -17,8 +15,12 @@ import java.io.IOException;
 public class ShoppingCartItem extends AnchorPane {
 
     private iMatBackendController parentController;
+
+
+
     private ShoppingItem shoppingItem;
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+    private Product shoppingItemsProduct;
 
     //Scenebuilder elements
     @FXML private ImageView itemImage;
@@ -45,5 +47,37 @@ public class ShoppingCartItem extends AnchorPane {
         this.amountLabel.setText(Double.toString(shoppingItem.getAmount()));
     }
 
+    @FXML
+    protected void onPlusButtonPressed(){
+        parentController.increaseItem(shoppingItem, 1);
+        parentController.updateShoppingCart();
 
+        amountLabel.setText(Double.toString(shoppingItem.getAmount()));
+
+    }
+    @FXML
+    protected void onMinusButtonPressed(){
+        parentController.decreaseItem(shoppingItem, 1);
+        if (shoppingItem.getAmount() <= 0) {
+            shoppingItem.setAmount(1);
+            dataHandler.getShoppingCart().removeItem(shoppingItem);
+            parentController.updateProductFlowpane(parentController.currentCategory, this);
+
+        }
+        parentController.updateShoppingCart();
+
+        amountLabel.setText(Double.toString(shoppingItem.getAmount()));
+    }
+
+    public ShoppingItem getShoppingItem() {
+        return shoppingItem;
+    }
+
+    @FXML
+    public void onPaperbinPressed(){
+        dataHandler.getShoppingCart().removeItem(shoppingItem);
+        parentController.updateProductFlowpane(parentController.currentCategory, this);
+        parentController.updateShoppingCart();
+
+    }
 }

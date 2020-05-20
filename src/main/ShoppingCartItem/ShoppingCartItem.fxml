@@ -14,21 +14,21 @@
          </image></ImageView>
       <Label fx:id="priceLabel" alignment="CENTER" layoutX="77.0" layoutY="53.0" prefHeight="25.0" prefWidth="45.0" text="kr" textAlignment="RIGHT" />
       <Label fx:id="amountLabel" alignment="CENTER" layoutX="88.0" layoutY="29.0" prefHeight="25.0" prefWidth="25.0" text="0" />
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="65.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="65.0" layoutY="29.0" onMouseClicked="#onMinusButtonPressed" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Res/Images/minus.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="109.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="109.0" layoutY="29.0" onMouseClicked="#onPlusButtonPressed" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Res/Images/plus.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="144.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="144.0" layoutY="29.0" onMouseClicked="#onPaperbinPressed" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Res/Images/paperbin.png" />
          </image>
       </ImageView>
-      <Label layoutX="137.0" layoutY="10.0" text="Ta bort" />
+      <Label layoutX="137.0" layoutY="14.0" text="Ta bort" />
    </children>
 </fx:root>
