@@ -12,6 +12,9 @@ public class ProductHandler {
     private static IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     //_________________________Subcategories
+    //Bread
+    private static ProductCategory bread [] = {ProductCategory.BREAD};
+
     //Meat and Fish
     private static ProductCategory meat[] = {ProductCategory.MEAT};
     private static ProductCategory fish [] = {ProductCategory.FISH};
@@ -48,6 +51,7 @@ public class ProductHandler {
     private static ProductCategory pantry [][] = {flour_sugar_salt, pasta, potato_rice};
     private static ProductCategory spices [][] = {herbs};
     private static ProductCategory snacks [][] = {sweets, nuts_seeds};
+    private static ProductCategory breadstuff [][] ={bread};
 
     //================================================================================
     // "Collect Products" logic
@@ -82,6 +86,7 @@ public class ProductHandler {
             case "Skafferi": return pantry;
             case "Snacks": return snacks;
             case "Kryddor": return spices;
+            case "Bröd": return breadstuff;
 
             case "Kött": return new ProductCategory[][]{meat};
             case "Fisk": return new ProductCategory[][]{fish};

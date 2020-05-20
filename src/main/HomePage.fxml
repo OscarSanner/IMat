@@ -43,6 +43,7 @@
                         <Button layoutX="22.0" layoutY="464.0" mnemonicParsing="false" onMouseClicked="#onSpicesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kryddor" />
                         <Label layoutX="50.0" layoutY="20.0" text="Kategorier" />
                         <Button layoutX="22.0" layoutY="419.0" mnemonicParsing="false" onMouseClicked="#onSnacksButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Snacks" />
+                        <Button layoutX="22.0" layoutY="508.0" mnemonicParsing="false" onMouseClicked="#onBreadButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Bröd" />
                      </children>
                   </Pane>
                </children>
