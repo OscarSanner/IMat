@@ -56,6 +56,7 @@ public class DetailedView extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+        this.setEffect(null);
     }
 
 

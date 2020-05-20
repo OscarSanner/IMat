@@ -17,3 +17,6 @@
     -fx-font-size: 15;
 }
 
+.gaussianBlurAndOpaque{
+    -fx-background-color: pink;
+}
