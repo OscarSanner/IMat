@@ -4,6 +4,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 
 import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.scene.control.*;
 
 import javafx.scene.control.Button;
@@ -30,6 +31,7 @@ import main.DetailedView.DetailedView;
 import main.ListTitlePane.ListTitlePane;
 import main.OrderTabTitlePane.OrderTabTitlePane;
 import main.ShoppingCart.ShoppingCart;
+import main.ShoppingCartItem.ShoppingCartItem;
 import se.chalmers.cse.dat216.project.*;
 
 import java.util.ArrayList;
@@ -566,6 +568,86 @@ public class iMatBackendController implements Initializable {
     public void closePurchaseFeedback(){
         purchaseFeedback.setVisible(false);
     }
+    //------------------------------------------------------------Kundvagn-----------------------------------------------------------------------//
+
+    @FXML public FlowPane shoppingCartFlowPane;
+    public List<ShoppingItem> shoppingCartItems; //Items in the cart
+    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+    private se.chalmers.cse.dat216.project.ShoppingCart shoppingCart = dataHandler.getShoppingCart();
+    @FXML public ScrollPane shoppingCartScrollPane;
+
+
+    private ShoppingCartListener scl = new ShoppingCartListener() {
+        @Override
+        public void shoppingCartChanged(CartEvent cartEvent) {
+            updateShoppingCart();
+
+        }
+    };
+
+    private List<ShoppingCartItem> visualShoppingItems = new ArrayList<>();
+
+    //================================================================================
+    // FlowPane
+    //================================================================================
+
+    public void initShoppingCartFlowPane(){
+        shoppingCartFlowPane.setOrientation(Orientation.HORIZONTAL); //NOT VERTICAL
+        shoppingCartFlowPane.getChildren().clear();
+        shoppingCartFlowPane.setVgap(7);
+        shoppingCartFlowPane.setPadding(new Insets(9,6,9,6));
+        shoppingCart.addShoppingCartListener(scl);
+        shoppingCart.clear();
+    }
+
+    public void updateShoppingCart(){
+
+        shoppingCartFlowPane.getChildren().clear();
+        visualShoppingItems.clear();
+
+        for(ShoppingItem s: shoppingCart.getItems()){
+            visualShoppingItems.add(new ShoppingCartItem(this, s));
+        }
+        for(ShoppingCartItem sI: visualShoppingItems){
+            shoppingCartFlowPane.getChildren().add(sI);
+        }
+
+    }
+
+    public void controlShoppingCart(){
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
 
     //================================================================================
@@ -575,7 +657,7 @@ public class iMatBackendController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setupPurchaseFeedback();
         setupProductFlowpane();
-
+        initShoppingCartFlowPane();
     }
     private void setupPurchaseFeedback(){
         mainAnchorPane.getChildren().add(purchaseFeedback);
