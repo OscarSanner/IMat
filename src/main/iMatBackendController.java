@@ -434,6 +434,7 @@ public class iMatBackendController implements Initializable {
         populateSubCategoryFlowPane("Bröd");
         populateProductFlowpane("Bröd");
         productsScrollPane.setVvalue(0);
+        categoryPane.toFront();
     }
 
     public void onMeatAndFishButtonPressed(){
@@ -443,7 +444,7 @@ public class iMatBackendController implements Initializable {
         populateSubCategoryFlowPane("Kött & Fisk");
         populateProductFlowpane("Kött & Fisk");
         productsScrollPane.setVvalue(0); //Resets the scrollpane to the top
-
+        shoppingTabPane.toFront();
     }
 
     public void onVeggiesButtonPressed(){
@@ -453,6 +454,7 @@ public class iMatBackendController implements Initializable {
         populateSubCategoryFlowPane("Frukt & Grönt");
         populateProductFlowpane("Frukt & Grönt");
         productsScrollPane.setVvalue(0);
+        shoppingTabPane.toFront();
     }
 
     public void onDrinkButtonPressed(){
@@ -462,6 +464,7 @@ public class iMatBackendController implements Initializable {
         populateSubCategoryFlowPane("Dryck");
         populateProductFlowpane("Dryck");
         productsScrollPane.setVvalue(0);
+        shoppingTabPane.toFront();
     }
 
     public void onDairyButtonPressed(){
@@ -471,6 +474,7 @@ public class iMatBackendController implements Initializable {
         populateSubCategoryFlowPane("Mejeri");
         populateProductFlowpane("Mejeri");
         productsScrollPane.setVvalue(0);
+        shoppingTabPane.toFront();
     }
 
     public void onPantryButtonPressed(){
@@ -480,6 +484,7 @@ public class iMatBackendController implements Initializable {
         populateSubCategoryFlowPane("Skafferi");
         populateProductFlowpane("Skafferi");
         productsScrollPane.setVvalue(0);
+        shoppingTabPane.toFront();
     }
 
     public void onSnacksButtonPressed(){
@@ -489,6 +494,7 @@ public class iMatBackendController implements Initializable {
         populateSubCategoryFlowPane("Snacks");
         populateProductFlowpane("Snacks");
         productsScrollPane.setVvalue(0);
+        shoppingTabPane.toFront();
     }
 
     public void onSpicesButtonPressed(){
@@ -498,6 +504,7 @@ public class iMatBackendController implements Initializable {
         populateSubCategoryFlowPane("Kryddor");
         populateProductFlowpane("Kryddor");
         productsScrollPane.setVvalue(0);
+        shoppingTabPane.toFront();
     }
 
     private void populateSubCategoryFlowPane(String category) {
@@ -746,8 +753,6 @@ public class iMatBackendController implements Initializable {
         for(main.Product.Product pepe: listofProducts){
             productFlowPane.getChildren().add(pepe);
         }
-
-
     }
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -758,9 +763,20 @@ public class iMatBackendController implements Initializable {
     @FXML TextField searchBarTextField;
     List<Product> searchedItems;
 
+
+
+    public void resetSearchBarText(){ //Nollställer searchbar
+        searchBarTextField.setText("");
+    }
     @FXML
     public void searchBarKeyPressed(javafx.scene.input.KeyEvent evt) {
-        if(evt.getCode() == KeyCode.ENTER) {
+        //if(evt.getCode() == KeyCode.ENTER) {  //__________________________Keep if you want to search after "ENTER" keypress.
+
+            if(searchBarTextField.getText().equals("Sök miljontals varor...")){
+                resetSearchBarText();
+            }
+
+
             String userInput = searchBarTextField.getText();
             searchedItems = dataHandler.findProducts(userInput);
             if(searchedItems.isEmpty()){
@@ -769,8 +785,7 @@ public class iMatBackendController implements Initializable {
                 updateProductsWithSearch(userInput);
 
             }
-
-        }
+      //  }
     }
 
     public void updateProductsWithSearch(String userInput){
@@ -817,9 +832,8 @@ public class iMatBackendController implements Initializable {
         for(main.Product.Product pepe: listOfProducts){
             productFlowPane.getChildren().add(pepe);
         }
+        categoryPane.toFront();
     }
-
-
 
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------//
