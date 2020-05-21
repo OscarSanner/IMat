@@ -14,6 +14,7 @@ import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
 
+
 public class WideShoppingCartItem extends AnchorPane {
 
     private ShoppingItem shoppingItem;

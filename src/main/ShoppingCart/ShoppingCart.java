@@ -22,9 +22,6 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
     //----------------NAVIGATION OCH INIT------------------
 
     //TODO Alla wizardklasser behöver ha en fungerande "Customer Support" knapp
-    //Navigation
-    @FXML
-    public Button shoppingCartNextButton;
 
     //SceneBuiler
     @FXML public AnchorPane shoppingCartMainAnchorPane;

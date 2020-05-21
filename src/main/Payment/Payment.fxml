@@ -5,6 +5,7 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -90,7 +91,11 @@
                            <children>
                               <ImageView fx:id="previousImage" fitHeight="32.0" fitWidth="88.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
                               <ImageView fx:id="nextImage" fitHeight="32.0" fitWidth="88.0" layoutX="661.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
-                              <Button fx:id="previousButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#previousStep" text="Button" />
+                              <ImageView fitHeight="30.0" fitWidth="170.0" layoutX="14.0" layoutY="11.0" onMouseClicked="#previousStep" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../Res/Images/previous.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                         <Pane layoutX="23.0" layoutY="24.0" prefHeight="43.0" prefWidth="778.0" style="-fx-background-color: white;">
