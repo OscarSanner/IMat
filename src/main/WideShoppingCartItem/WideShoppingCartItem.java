@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import main.ShoppingCart.ShoppingCart;
@@ -23,9 +24,8 @@ public class WideShoppingCartItem extends AnchorPane {
     @FXML ImageView itemImage;
     @FXML Label itemLabel;
     @FXML Label unitPriceLabel;
-    @FXML Label amountLabel;
     @FXML Label totalPriceLabel;
-    @FXML Label unitSuffixLabel;
+    @FXML TextField amountTextField;
 
 
 
@@ -46,10 +46,11 @@ public class WideShoppingCartItem extends AnchorPane {
 
         this.itemImage.setImage(dataHandler.getFXImage(shoppingItem.getProduct(), 90, 90)); //Fix size of image
         this.itemLabel.setText(shoppingItem.getProduct().getName());
-        this.unitPriceLabel.setText(String.valueOf(shoppingItem.getProduct().getPrice()));
-        this.unitSuffixLabel.setText(shoppingItem.getProduct().getUnitSuffix());
-        this.totalPriceLabel.setText(String.valueOf(shoppingItem.getAmount() * shoppingItem.getProduct().getPrice()));
-        this.amountLabel.setText(String.valueOf(shoppingItem.getAmount()));
+        this.unitPriceLabel.setText(String.valueOf((int)shoppingItem.getProduct().getPrice()) + "kr/" + shoppingItem.getProduct().getUnitSuffix());
+
+        this.totalPriceLabel.setText(String.valueOf((int)shoppingItem.getAmount() * (int)shoppingItem.getProduct().getPrice()) + " kr");
+
+        this.amountTextField.setText(String.valueOf((int)shoppingItem.getAmount()));
     }
 
     @FXML

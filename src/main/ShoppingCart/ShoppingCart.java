@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import main.IWizardPage;
@@ -28,6 +29,7 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
     //SceneBuiler
     @FXML public AnchorPane shoppingCartMainAnchorPane;
     @FXML public FlowPane shoppingCartFlowPane;
+    @FXML public Label totalSumLabel;
 
     //Other
     public PersonalData personalDataPage = new PersonalData(this);
@@ -89,9 +91,14 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
     public void populateShoppingCartPage(){
         shoppingCartFlowPane.getChildren().clear();
 
+        int sum = 0;
         for(ShoppingItem s: shoppingCart.getItems()){
             shoppingCartFlowPane.getChildren().add(new WideShoppingCartItem(this, s));
+            sum += (int)(s.getAmount() * s.getProduct().getPrice());
         }
+
+        totalSumLabel.setText(String.valueOf(sum) + " kr");
+
     }
 
 }
