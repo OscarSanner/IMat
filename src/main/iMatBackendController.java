@@ -910,7 +910,7 @@ public class iMatBackendController implements Initializable {
         initShoppingCartFlowPane();
 
         // To test favourite section.
-       /* dataHandler.addFavorite(70);
+        /*dataHandler.addFavorite(70);
         dataHandler.addFavorite(32);*/
     }
     private void setupPurchaseFeedback(){

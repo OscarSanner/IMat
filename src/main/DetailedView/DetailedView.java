@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import main.iMatBackendController;
@@ -21,6 +22,7 @@ import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class DetailedView extends AnchorPane {
 
@@ -41,12 +43,8 @@ public class DetailedView extends AnchorPane {
     @FXML private Label unitSuffixLabel;
 
     //Frontend elements
-    @FXML
-    private Label quantityLabel;
-    @FXML private Button increaseButton; //may be removed
-    @FXML private Button decreaseButton; //may be removed
-    @FXML private Button addButton;      //may be removed
-    @FXML private Button exitButton;     //may be removed
+    @FXML private Label quantityLabel;
+   @FXML private ImageView favouriteImage;
 
     public ShoppingItem shoppingItem;
 
@@ -67,8 +65,58 @@ public class DetailedView extends AnchorPane {
 
     }
 
+    //================================================================================
+    // Escapehatch Hover
+    //================================================================================
     @FXML
-    public void closeDetailedView(){ parentController.closeDetailedView();}
+    public void onFavouriteEnter(){
+        if(!dataHandler.isFavorite(product)){
+            favouriteImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                    "main/Res/Images/favourite_hover.png"
+            ))));
+        }else{
+            favouriteImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                    "main/Res/Images/favourite_clicked_hover.png"
+            ))));
+        }
+
+    }
+    @FXML
+    public void onFavouriteExit(){
+        if(!dataHandler.isFavorite(product)){
+            favouriteImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                    "main/Res/Images/favourite.png"
+            ))));
+        }else{
+            favouriteImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                    "main/Res/Images/favourite_clicked.png"
+            ))));
+        }
+
+    }
+
+    @FXML
+    public void onFavouriteClicked(){
+        if(dataHandler.isFavorite(product)){
+            dataHandler.removeFavorite(product);
+            favouriteImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                    "main/Res/Images/favourite.png"
+            ))));
+        }else{
+            dataHandler.addFavorite(product);
+            favouriteImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                    "main/Res/Images/favourite_clicked.png"
+            ))));
+        }
+
+
+    }
+
+    @FXML
+    public void closeDetailedView(){
+        parentController.closeDetailedView();
+        parentController.updateProductFlowpane(parentController.currentCategory);
+    }
     @FXML
     public void addToShoppingCart(){
         try
@@ -162,6 +210,8 @@ public class DetailedView extends AnchorPane {
 
         //Product information is missing
         this.productTextArea.setText("PRODUCT INFORMATION IS MISSING.--> Product.java");
+
+        onFavouriteExit();
 
     }
 

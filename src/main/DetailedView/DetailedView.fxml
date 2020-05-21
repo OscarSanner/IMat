@@ -6,6 +6,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="820.0" style="-fx-background-color: #F5FFFF;" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
@@ -38,7 +39,7 @@
             <Font name="System Italic" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="addButton" layoutX="302.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#addToShoppingCart" prefHeight="53.0" prefWidth="157.0" text="Lägg till" />
+      <Button fx:id="addButton" layoutX="302.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#addToShoppingCart" prefHeight="53.0" prefWidth="157.0" text="Köp" />
       <TextArea fx:id="productTextArea" layoutX="67.0" layoutY="323.0" prefHeight="152.0" prefWidth="613.0" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. " wrapText="true">
          <font>
             <Font size="18.0" />
@@ -53,6 +54,17 @@
       <ImageView fx:id="organicImage" fitHeight="50.0" fitWidth="50.0" layoutX="202.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Res/Images/eko.jpg" />
+         </image>
+      </ImageView>
+      <Line endX="180.0" layoutX="400.0" layoutY="148.0" startX="-100.0" />
+      <ImageView fx:id="favouriteImage" fitHeight="65.0" fitWidth="65.0" layoutX="615.0" layoutY="20.0" onMouseClicked="#onFavouriteClicked" onMouseEntered="#onFavouriteEnter" onMouseExited="#onFavouriteExit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Res/Images/favourite.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="125.0" layoutX="648.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Res/Images/favourite_input_hint.png" />
          </image>
       </ImageView>
    </children>
