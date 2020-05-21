@@ -10,6 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import main.IMatBackendEngine;
 import main.IWizardPage;
 import main.PersonalData.PersonalData;
 import main.ShoppingCartItem.ShoppingCartItem;
@@ -18,6 +19,9 @@ import main.iMatBackendController;
 import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class ShoppingCart extends AnchorPane implements IWizardPage {
@@ -117,4 +121,17 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
 
     }
 
+    public void saveAsList(){
+        Order order = new Order();
+        List<ShoppingItem> items = new ArrayList<>();
+        for(ShoppingItem item : IMatDataHandler.getInstance().getShoppingCart().getItems()){
+            items.add(item);
+        }
+        order.setItems(items);
+        order.setDate(new Date());
+        IMatBackendEngine.getInstance().addSavedOrder(order);
+        parentBackendController.onListtabSelect();
+    }
 }
+
+

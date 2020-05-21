@@ -64,7 +64,7 @@
                                              <font>
                                                 <Font name="System Bold" size="30.0" />
                                              </font></Label>
-                                          <Button fx:id="saveButton" layoutX="391.0" layoutY="365.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="187.0" text="Spara som inköpslista">
+                                          <Button fx:id="saveButton" layoutX="391.0" layoutY="365.0" mnemonicParsing="false" onMouseClicked="#saveAsList" prefHeight="43.0" prefWidth="187.0" text="Spara som inköpslista">
                                              <font>
                                                 <Font size="16.0" />
                                              </font></Button>
