@@ -14,17 +14,7 @@
          <children>
             <Pane layoutX="27.0" layoutY="46.0" prefHeight="628.0" prefWidth="909.0" style="-fx-background-color: #B1D5F6;">
                <children>
-                  <Label layoutX="325.0" layoutY="53.0" prefHeight="50.0" prefWidth="272.0" style="-fx-background-color: white;" text="    Köp genomfört!">
-                     <font>
-                        <Font size="34.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="283.0" layoutY="233.0" prefHeight="112.0" prefWidth="344.0" text="    Du kommer få ett bekräftelse mejl til galan474@yahoo.es inom kort. " textAlignment="CENTER" wrapText="true">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="369.0" layoutY="382.0" text="Ditt köp finns i &quot;Ordrar&quot;">
+                  <Label layoutX="370.0" layoutY="342.0" text="Ditt köp finns i &quot;Ordrar&quot;">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -42,6 +32,32 @@
                         <Image url="@../Res/Images/escape_hatch.png" />
                      </image>
                   </ImageView>
+                  <Label alignment="CENTER" layoutX="328.0" layoutY="63.0" prefHeight="50.0" prefWidth="288.0" style="-fx-background-color: white;" text="Köp genomfört!" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="34.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="87.0" fitWidth="150.0" layoutX="407.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="orderNumberLabel" alignment="CENTER" layoutX="393.0" layoutY="186.0" prefHeight="28.0" prefWidth="159.0" text="Order No.: XXXXX   " textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="orderDateLabel" alignment="CENTER" layoutX="353.0" layoutY="230.0" prefHeight="27.0" prefWidth="239.0" text="Order datum: XX maj 2020">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="deliveryDateLabel" alignment="CENTER" layoutX="302.0" layoutY="267.0" prefHeight="27.0" prefWidth="333.0" text="Förväntat leveransdatum: XX maj 2020">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="thankYouLabel" alignment="CENTER" layoutX="298.0" layoutY="142.0" prefHeight="28.0" prefWidth="349.0" text="Hej NAMN, din order har mottagits!" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
          </children>

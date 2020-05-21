@@ -39,21 +39,21 @@ public class Payment extends AnchorPane implements IWizardPage {
 
     private CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
 
-
+    public Date deliveryTime;
     public IMatDataHandler dataHandler = IMatDataHandler.getInstance();
-    public ConfirmationPage confirmationPage = new ConfirmationPage(this);
+    public ConfirmationPage confirmationPage;
     public ShoppingCart shoppingCart = dataHandler.getShoppingCart();
     public Timetable parentBackendController;
-    public Date deliveryTime;
+
     public Order order;
 
 
-    public Payment(Timetable parentBackendController){
+    public Payment(Timetable parentBackendController, Date deliveryTime){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Payment.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
-        //this.deliveryTime = deliveryTime; My heart is broken
+        this.deliveryTime = deliveryTime;
 
         try {
             fxmlLoader.load();
@@ -68,8 +68,11 @@ public class Payment extends AnchorPane implements IWizardPage {
 
     @FXML
     public void onPayButtonPressed(){
-        paymentMainAnchorPane.getChildren().add(confirmationPage);
         finalizePurchase();
+        confirmationPage = new ConfirmationPage(this, deliveryTime, order);
+
+        paymentMainAnchorPane.getChildren().add(confirmationPage);
+
 
         if (checkButtonPayment.isSelected()) {
             setPaymentInfo();
