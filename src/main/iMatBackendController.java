@@ -171,7 +171,7 @@ public class iMatBackendController implements Initializable {
     private void populateListPane() {
         listAccordion.getPanes().clear();
         for(Map.Entry<Order, String> entry : IMatBackendEngine.getInstance().savedOrders.entrySet()){
-            ListTitlePane ltp = new ListTitlePane(entry.getKey(), entry.getValue());
+            ListTitlePane ltp = new ListTitlePane(entry.getKey(), entry.getValue(), this);
             listAccordion.getPanes().add(ltp);
             ltp.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override

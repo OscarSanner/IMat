@@ -7,7 +7,9 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import main.ICustomTitledPane;
+import main.IMatBackendEngine;
 import main.OrderListTabItem.OrderListTabItem;
+import main.iMatBackendController;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.ShoppingItem;
@@ -27,8 +29,10 @@ public class ListTitlePane extends TitledPane implements ICustomTitledPane {
     @FXML
     Label nameLabel;
     Order order;
+    iMatBackendController parent;
+    private boolean added = false;
 
-    public ListTitlePane(Order o, String s){
+    public ListTitlePane(Order o, String s, iMatBackendController parent){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ListTitlePane.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -41,6 +45,7 @@ public class ListTitlePane extends TitledPane implements ICustomTitledPane {
         populatePane(o.getItems());
         nameLabel.setText(s);
         this.order = o;
+        this.parent = parent;
 
     }
 
@@ -58,5 +63,20 @@ public class ListTitlePane extends TitledPane implements ICustomTitledPane {
     @Override
     public Order getOrder() {
         return this.order;
+    }
+
+    public void removeAsSaved(){
+        IMatBackendEngine.getInstance().removeSavedOrder(this.getOrder());
+        parent.onListtabSelect();
+    }
+
+    public void addOrderToCart(){
+        if(!added){
+            for(ShoppingItem item : order.getItems()) {
+                IMatDataHandler.getInstance().getShoppingCart().addItem(item);
+                parent.updateShoppingCart();
+            }
+            added = true;
+        }
     }
 }

@@ -27,4 +27,8 @@ public class IMatBackendEngine {
     public void addSavedOrder(Order order){
         savedOrders.put(order, ("Inköpslista " + savedOrders.size()));
     }
+
+    public void removeSavedOrder(Order order) {
+        savedOrders.remove(order);
+    }
 }
