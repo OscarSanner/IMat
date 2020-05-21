@@ -10,50 +10,50 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="960.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane layoutX="9.0" layoutY="15.0" prefHeight="705.0" prefWidth="951.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Pane layoutX="27.0" layoutY="46.0" prefHeight="628.0" prefWidth="909.0" style="-fx-background-color: #B1D5F6;">
+            <Pane layoutX="27.0" layoutY="19.0" prefHeight="680.0" prefWidth="909.0" style="-fx-background-color: #B1D5F6;">
                <children>
-                  <Label layoutX="347.0" layoutY="349.0" text="Ditt köp finns i &quot;Ordrar&quot;">
+                  <Label layoutX="336.0" layoutY="354.0" text="Ditt köp finns i &quot;Ordrar&quot;">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="337.0" layoutY="465.0" text="Tack för att du handlar hos oss!">
+                  <Label layoutX="326.0" layoutY="470.0" text="Tack för att du handlar hos oss!">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="87.0" fitWidth="150.0" layoutX="397.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button layoutX="285.0" layoutY="517.0" mnemonicParsing="false" onMouseClicked="#shutDownApplication" prefHeight="69.0" prefWidth="80.0" text="Stäng iMat" />
-                  <Button layoutX="592.0" layoutY="517.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="140.0" />
-                  <ImageView fx:id="escapeHatchImage" fitHeight="98.0" fitWidth="105.0" layoutX="394.0" layoutY="509.0" onMouseClicked="#onGoBackToFrontButtonPressed" onMouseEntered="#onEscapeHatchEnter" onMouseExited="#onEscapeHatchExit" pickOnBounds="true" preserveRatio="true" x="26.0">
+                  <ImageView fitHeight="87.0" fitWidth="150.0" layoutX="386.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button layoutX="274.0" layoutY="522.0" mnemonicParsing="false" onMouseClicked="#shutDownApplication" prefHeight="69.0" prefWidth="80.0" text="Stäng iMat" />
+                  <Button layoutX="581.0" layoutY="522.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="140.0" />
+                  <ImageView fx:id="escapeHatchImage" fitHeight="98.0" fitWidth="105.0" layoutX="383.0" layoutY="514.0" onMouseClicked="#onGoBackToFrontButtonPressed" onMouseEntered="#onEscapeHatchEnter" onMouseExited="#onEscapeHatchExit" pickOnBounds="true" preserveRatio="true" x="26.0">
                      <image>
                         <Image url="@../Res/Images/escape_hatch.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" layoutX="328.0" layoutY="63.0" prefHeight="50.0" prefWidth="288.0" style="-fx-background-color: white;" text="Köp genomfört!" textAlignment="CENTER">
+                  <Label alignment="CENTER" layoutX="317.0" layoutY="68.0" prefHeight="50.0" prefWidth="288.0" style="-fx-background-color: white;" text="Köp genomfört!" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="34.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="87.0" fitWidth="150.0" layoutX="407.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label fx:id="orderNumberLabel" alignment="CENTER" layoutX="351.0" layoutY="190.0" prefHeight="35.0" prefWidth="263.0" text="Order No.: XXXXX   " textAlignment="CENTER">
+                  <ImageView fitHeight="87.0" fitWidth="150.0" layoutX="396.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="orderNumberLabel" alignment="CENTER" layoutX="340.0" layoutY="195.0" prefHeight="35.0" prefWidth="263.0" text="Order No.: XXXXX   " textAlignment="CENTER">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="orderDateLabel" alignment="CENTER" layoutX="315.0" layoutY="233.0" prefHeight="35.0" prefWidth="335.0" text="Order datum: XX maj 2020">
+                  <Label fx:id="orderDateLabel" alignment="CENTER" layoutX="304.0" layoutY="238.0" prefHeight="35.0" prefWidth="335.0" text="Order datum: XX maj 2020">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="deliveryDateLabel" alignment="CENTER" layoutX="286.0" layoutY="279.0" prefHeight="35.0" prefWidth="393.0" text="Förväntat leveransdatum: XX maj 2020">
+                  <Label fx:id="deliveryDateLabel" alignment="CENTER" layoutX="224.0" layoutY="284.0" prefHeight="35.0" prefWidth="495.0" text="Förväntat leveransdatum: XX maj 2020">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="thankYouLabel" alignment="CENTER" layoutX="252.0" layoutY="139.0" prefHeight="35.0" prefWidth="440.0" text="Hej NAMN, din order har mottagits!" textAlignment="CENTER">
+                  <Label fx:id="thankYouLabel" alignment="CENTER" layoutX="241.0" layoutY="144.0" prefHeight="35.0" prefWidth="440.0" text="Hej NAMN, din order har mottagits!" textAlignment="CENTER">
                      <font>
                         <Font size="24.0" />
                      </font>

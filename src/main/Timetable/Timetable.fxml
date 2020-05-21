@@ -18,10 +18,14 @@
             <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
                <children>
                   <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="123.0" text="Button" />
-                  <ImageView fitHeight="81.0" fitWidth="423.0" layoutX="247.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="escapeHatchImage" fitHeight="98.0" fitWidth="105.0" onMouseClicked="#closeWizard" onMouseEntered="#onEscapeHatchEnter" onMouseExited="#onEscapeHatchExit" pickOnBounds="true" preserveRatio="true" x="26.0">
                      <image>
                         <Image url="@../Res/Images/escape_hatch.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="182.0" fitWidth="548.0" layoutX="199.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Res/Images/progress_indicator_three.png" />
                      </image>
                   </ImageView>
                </children>

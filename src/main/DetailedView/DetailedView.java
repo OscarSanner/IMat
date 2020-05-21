@@ -211,7 +211,7 @@ public class DetailedView extends AnchorPane {
         //Product information is missing
         this.productTextArea.setText("PRODUCT INFORMATION IS MISSING.--> Product.java");
 
-        onFavouriteExit();
+        onFavouriteExit(); //Resets favourite icon
 
     }
 
