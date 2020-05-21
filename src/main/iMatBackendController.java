@@ -130,6 +130,7 @@ public class iMatBackendController implements Initializable {
     }
 
     private void populateOrderPane() {
+        orderAccordion.getPanes().clear();
         for(Order o : IMatDataHandler.getInstance().getOrders()){
             OrderTabTitlePane ot = new OrderTabTitlePane(o);
             orderAccordion.getPanes().add(ot);
@@ -162,6 +163,7 @@ public class iMatBackendController implements Initializable {
     }
 
     private void populateListPane() {
+        listAccordion.getPanes().clear();
         for(Map.Entry<Order, String> entry : IMatBackendEngine.getInstance().savedOrders.entrySet()){
             ListTitlePane ltp = new ListTitlePane(entry.getKey(), entry.getValue());
             listAccordion.getPanes().add(ltp);
