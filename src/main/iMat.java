@@ -27,13 +27,15 @@ public class iMat extends Application {
         stage.setTitle(bundle.getString("application.name"));
         stage.setScene(scene);
         stage.show();
+
+
 //        Order order = new Order();
 //        order.setDate(new Date());
 //        IMatDataHandler.getInstance().getOrders().add(order);
 
         //To test if it is able to collect all products from the requested category umu
-        for(Product p: ProductHandler.getProductsFromCategory("Kö")){
-        /*for(Product p: ProductHandler.getProductsFromCategory("Kött")){
+        /*for(Product p: ProductHandler.getProductsFromCategory("Kö")){
+        for(Product p: ProductHandler.getProductsFromCategory("Kött")){
         for(Product p: ProductHandler.getProductsFromCategory("Kött")){
             System.out.println(p.getName());
         }
@@ -47,4 +49,5 @@ public class iMat extends Application {
 //    }
 }}
 
-         */}}}
+         }*/
+    }}
