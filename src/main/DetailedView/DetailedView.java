@@ -75,12 +75,15 @@ public class DetailedView extends AnchorPane {
         {
             List<ShoppingItem> currentCart = new ArrayList<>();
             currentCart = dataHandler.getShoppingCart().getItems();
-            boolean exists = false;
+            boolean alreadyAdded = false;
 
             for(ShoppingItem s: currentCart){
                 if(s.getProduct().equals(shoppingItem.getProduct())){
-                    exists = true;
+                    alreadyAdded = true;
+                    s.setAmount(s.getAmount() + Double.parseDouble(quantityLabel.getText()));
                     System.out.println("There is an idential shopping item in shoppingcart. Increase amount on the existing shoppingitem");
+                    detailedViewProduct.setQuantityLabel(String.valueOf(s.getAmount()));
+
                 }
             }
 
@@ -88,34 +91,19 @@ public class DetailedView extends AnchorPane {
                 // Do nothing
                 System.out.println("zerooo");
             }
-            /*else if(currentCart.isEmpty()){
-                shoppingItem.setAmount(Double.parseDouble(quantityLabel.getText()));
-                parentController.createItemtoShoppingCart(shoppingItem);
-                System.out.println("Cart empty. Creating new shoppingitem.");
-
-                parentController.updateProductFlowpane(parentController.currentCategory);
-
-                parentController.purchaseFeedback.startAnimation(product, quantityLabel.getText(), product.getUnitSuffix());
-                parentController.updateShoppingCart();
-
-            }*/else if (exists){
-                //parentController.increaseItem(shoppingItem, Double.parseDouble(quantityLabel.getText()));
-                shoppingItem.setAmount(shoppingItem.getAmount() + Double.parseDouble(quantityLabel.getText()));
-
-                parentController.updateProductFlowpane(parentController.currentCategory);
-
-                parentController.purchaseFeedback.startAnimation(product, quantityLabel.getText(), product.getUnitSuffix());
-                parentController.updateShoppingCart();
-            } else{
+           else if(!alreadyAdded){
                 shoppingItem.setAmount(Double.parseDouble(quantityLabel.getText()));
                 parentController.createItemtoShoppingCart(shoppingItem);
 
                 parentController.updateProductFlowpane(parentController.currentCategory);
 
                 parentController.purchaseFeedback.startAnimation(product, quantityLabel.getText(), product.getUnitSuffix());
-                parentController.updateShoppingCart();
+                detailedViewProduct.setQuantityLabel(String.valueOf(shoppingItem.getAmount()));
+
             }
-            detailedViewProduct.setQuantityLabel(String.valueOf(shoppingItem.getAmount()));
+            alreadyAdded = false;
+            parentController.updateShoppingCart();
+
 
         }
         catch (NumberFormatException nfe)

@@ -61,12 +61,13 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
     @Override
     public void closeWizard() {
         parentBackendController.mainAnchorPane.getChildren().remove(this);
+        parentBackendController.updateProductFlowpane(parentBackendController.currentCategory);
+        parentBackendController.updateShoppingCart();
+
     }
 
     @Override
-    public void previousStep() {
-        closeWizard();
-    }
+    public void previousStep() {closeWizard(); }
 
     //----------------FAKTISK KOD-----------------
 
@@ -88,12 +89,9 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
     public void populateShoppingCartPage(){
         shoppingCartFlowPane.getChildren().clear();
 
-        ShoppingCartItem item;
         for(ShoppingItem s: shoppingCart.getItems()){
             shoppingCartFlowPane.getChildren().add(new WideShoppingCartItem(this, s));
         }
     }
-
-
 
 }

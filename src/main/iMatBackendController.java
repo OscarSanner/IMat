@@ -195,6 +195,7 @@ public class iMatBackendController implements Initializable {
     public void onCheckoutButtonPressed(){
         mainAnchorPane.getChildren().add(shoppingCartPage);
         saveCustomerInfo();
+        shoppingCartPage.populateShoppingCartPage();
     }
     @FXML
     public void onSaveButtonPressed(){

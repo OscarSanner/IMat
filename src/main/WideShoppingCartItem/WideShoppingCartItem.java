@@ -44,11 +44,35 @@ public class WideShoppingCartItem extends AnchorPane {
 
         this.shoppingItem = shoppingItem;
 
-        this.itemImage.setImage(dataHandler.getFXImage(shoppingItem.getProduct())); //Fix size of image
+        this.itemImage.setImage(dataHandler.getFXImage(shoppingItem.getProduct(), 90, 90)); //Fix size of image
         this.itemLabel.setText(shoppingItem.getProduct().getName());
         this.unitPriceLabel.setText(String.valueOf(shoppingItem.getProduct().getPrice()));
         this.unitSuffixLabel.setText(shoppingItem.getProduct().getUnitSuffix());
-        this.totalPriceLabel.setText(String.valueOf(shoppingItem.getAmount() * shoppingItem.getProduct().getProductId()));
+        this.totalPriceLabel.setText(String.valueOf(shoppingItem.getAmount() * shoppingItem.getProduct().getPrice()));
         this.amountLabel.setText(String.valueOf(shoppingItem.getAmount()));
     }
+
+    @FXML
+    public void removeShoppingItem(){
+        dataHandler.getShoppingCart().removeItem(shoppingItem);
+        parentController.populateShoppingCartPage();
+        System.out.println("Removed " + shoppingItem.getProduct().getName() + " ShoppingItem from ShoppingCartPage");
+    }
+
+    @FXML
+    protected void onPlusButtonPressed(){
+        shoppingItem.setAmount(shoppingItem.getAmount() + 1);
+        parentController.populateShoppingCartPage();
+    }
+    @FXML
+    protected void onMinusButtonPressed(){
+        shoppingItem.setAmount(shoppingItem.getAmount() - 1);
+
+        if(shoppingItem.getAmount() <= 0){
+            shoppingItem.setAmount(1);
+            dataHandler.getShoppingCart().removeItem(shoppingItem);
+        }
+        parentController.populateShoppingCartPage();
+    }
+
 }

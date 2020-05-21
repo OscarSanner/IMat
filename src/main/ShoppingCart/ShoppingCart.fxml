@@ -37,10 +37,10 @@
                                                 <FlowPane fx:id="shoppingCartFlowPane" prefHeight="319.0" prefWidth="767.0" stylesheets="@../Res/styles.css" />
                                              </content>
                                           </ScrollPane>
-                                          <Label layoutX="113.0" layoutY="14.0" text="Label" />
-                                          <Label layoutX="253.0" layoutY="14.0" text="Label" />
-                                          <Label layoutX="409.0" layoutY="14.0" text="Label" />
-                                          <Label layoutX="560.0" layoutY="14.0" text="Label" />
+                                          <Label layoutX="113.0" layoutY="14.0" text="Namn" />
+                                          <Label layoutX="253.0" layoutY="14.0" text="Styckpris" />
+                                          <Label layoutX="409.0" layoutY="14.0" text="Antal" />
+                                          <Label layoutX="560.0" layoutY="14.0" text="Totalpris" />
                                           <Label layoutX="51.0" layoutY="372.0" text="Label" />
                                           <Button fx:id="saveButton" layoutX="453.0" layoutY="361.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="Button" />
                                           <Label fx:id="sumPriceLabel" layoutX="682.0" layoutY="369.0" text="Label" />

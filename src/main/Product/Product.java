@@ -64,10 +64,7 @@ public class Product extends AnchorPane {
                     exists = true;
             }
         }
-       /* if(currentCart.isEmpty()){
-            parentController.createItemtoShoppingCart(shoppingItem);
-            System.out.println("Cart empty. Creating new shoppingitem.");
-        }else */if(exists) {
+   if(exists) {
             parentController.increaseItem(shoppingItem, 1);
         }
         else{
@@ -85,10 +82,18 @@ public class Product extends AnchorPane {
 
     @FXML
     protected void onPlusButtonPressed(){
-        parentController.increaseItem(shoppingItem, 1);
-        parentController.updateShoppingCart();
 
-        amountLabel.setText(String.valueOf(shoppingItem.getAmount()));
+        boolean alreadyAdded = false;
+        for(ShoppingItem s: dataHandler.getShoppingCart().getItems()){
+            if(s.getProduct().equals(shoppingItem.getProduct())){
+                alreadyAdded = true;
+                s.setAmount(s.getAmount() + 1);
+                System.out.println("There is an idential shopping item in shoppingcart. Increase amount on the existing shoppingitem");
+                amountLabel.setText(String.valueOf(s.getAmount()));
+
+            }
+        }        parentController.updateShoppingCart();
+
 
     }
     @FXML
