@@ -64,10 +64,10 @@ public class Product extends AnchorPane {
                     exists = true;
             }
         }
-        if(currentCart.isEmpty()){
+       /* if(currentCart.isEmpty()){
             parentController.createItemtoShoppingCart(shoppingItem);
             System.out.println("Cart empty. Creating new shoppingitem.");
-        }else if(exists) {
+        }else */if(exists) {
             parentController.increaseItem(shoppingItem, 1);
         }
         else{
@@ -75,7 +75,7 @@ public class Product extends AnchorPane {
         }parentController.updateShoppingCart();
 
 
-        amountLabel.setText(Double.toString(shoppingItem.getAmount()));
+        amountLabel.setText(String.valueOf(shoppingItem.getAmount()));
 
         buyButton.setVisible(false);    //Hides the button temporarily to show the +/- buttons underneath.
 
@@ -88,7 +88,7 @@ public class Product extends AnchorPane {
         parentController.increaseItem(shoppingItem, 1);
         parentController.updateShoppingCart();
 
-        amountLabel.setText(Double.toString(shoppingItem.getAmount()));
+        amountLabel.setText(String.valueOf(shoppingItem.getAmount()));
 
     }
     @FXML
@@ -111,14 +111,18 @@ public class Product extends AnchorPane {
         parentController.detailedViewPage.setShoppingItem(shoppingItem);
     }
 
-    public void setQuantityLabel(double amount){
-        amountLabel.setText(Double.toString(amount));
+    public void setQuantityLabel(String amount){
+        amountLabel.setText(amount);
 
     }
-    public void buyButtonVisible(boolean state){
+    public Product buyButtonVisible(boolean state){
         buyButton.setVisible(state);
 
         if(!state){
         shoppingItem.setAmount(1);}
+        return this;
+    }
+    public int getProductIDDD(){
+        return product.getProductId();
     }
 }
