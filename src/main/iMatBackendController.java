@@ -20,6 +20,8 @@ import javafx.scene.effect.GaussianBlur;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.WritableImage;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -747,6 +749,78 @@ public class iMatBackendController implements Initializable {
 
 
     }
+
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+    //------------------------------------------------------------Searchbar-----------------------------------------------------------------------//
+
+
+    @FXML TextField searchBarTextField;
+    List<Product> searchedItems;
+
+    @FXML
+    public void searchBarKeyPressed(javafx.scene.input.KeyEvent evt) {
+        if(evt.getCode() == KeyCode.ENTER) {
+            String userInput = searchBarTextField.getText();
+            searchedItems = dataHandler.findProducts(userInput);
+            if(searchedItems.isEmpty()){
+                
+            }else{
+                updateProductsWithSearch(userInput);
+
+            }
+
+        }
+    }
+
+    public void updateProductsWithSearch(String userInput){
+
+        productFlowPane.getChildren().clear();
+
+        List<Integer> currentGOE = new ArrayList<>();
+        List<main.Product.Product> listOfProducts = new ArrayList<>();
+
+        for(Product p: searchedItems){
+            for(ShoppingItem st: shoppingCart.getItems()){
+                if(st.getProduct().equals(p) && st.getAmount() > 0){
+                    if(!currentGOE.contains(p.getProductId())){
+                        main.Product.Product tempProd = new main.Product.Product(this, p);
+                        tempProd.buyButtonVisible(false);
+                        tempProd.setQuantityLabel(String.valueOf(st.getAmount()));
+
+                        currentGOE.add(p.getProductId());
+                        listOfProducts.add(tempProd);
+                    }
+                }
+            }
+        }
+
+        for(Product pp: searchedItems){
+            if(!currentGOE.contains(pp.getProductId())){
+                listOfProducts.add(new main.Product.Product(this, pp));
+            }
+        }
+
+        //BubbleSort
+        int n = listOfProducts.size();
+        for (int i = 0; i < n-1; i++){
+            for (int j = 0; j < n-i-1; j++){
+                if (listOfProducts.get(j).getProductIDDD() > listOfProducts.get(j+1).getProductIDDD())
+                {
+                    // swap arr[j+1] and arr[i]
+                    main.Product.Product temp = listOfProducts.get(j);
+                    listOfProducts.set(j, listOfProducts.get(j+1));
+                    listOfProducts.set(j+1, temp);
+                }
+            }
+        }
+        for(main.Product.Product pepe: listOfProducts){
+            productFlowPane.getChildren().add(pepe);
+        }
+    }
+
+
+
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
