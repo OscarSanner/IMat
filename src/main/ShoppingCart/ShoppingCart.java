@@ -2,13 +2,17 @@ package main.ShoppingCart;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import main.IWizardPage;
 import main.PersonalData.PersonalData;
+import main.ShoppingCartItem.ShoppingCartItem;
+import main.WideShoppingCartItem.WideShoppingCartItem;
 import main.iMatBackendController;
-import se.chalmers.cse.dat216.project.Customer;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
+import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
 
@@ -17,15 +21,18 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
     //----------------NAVIGATION OCH INIT------------------
 
     //TODO Alla wizardklasser behöver ha en fungerande "Customer Support" knapp
-
+    //Navigation
     @FXML
     public Button shoppingCartNextButton;
 
-    @FXML
-    public AnchorPane shoppingCartMainAnchorPane;
+    //SceneBuiler
+    @FXML public AnchorPane shoppingCartMainAnchorPane;
+    @FXML public FlowPane shoppingCartFlowPane;
 
+    //Other
     public PersonalData personalDataPage = new PersonalData(this);
     public iMatBackendController parentBackendController;
+    public se.chalmers.cse.dat216.project.ShoppingCart shoppingCart = IMatDataHandler.getInstance().getShoppingCart();
 
     Customer customer = IMatDataHandler.getInstance().getCustomer();
 
@@ -40,7 +47,7 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-
+        initShoppingCartFlowPane();
 
     }
 
@@ -63,6 +70,29 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
 
     //----------------FAKTISK KOD-----------------
 
+    public void initShoppingCartFlowPane(){
+        shoppingCartFlowPane.setOrientation(Orientation.HORIZONTAL); //NOT VERTICAL
+        shoppingCartFlowPane.getChildren().clear();
+        shoppingCartFlowPane.setVgap(7);
+        shoppingCartFlowPane.setPadding(new Insets(9,6,9,6));
+        shoppingCart.addShoppingCartListener(scl2);
+        shoppingCart.clear();
+    }
+
+    private ShoppingCartListener scl2 = new ShoppingCartListener() {
+        @Override
+        public void shoppingCartChanged(CartEvent cartEvent) {
+            populateShoppingCartPage();
+        }
+    };
+    public void populateShoppingCartPage(){
+        shoppingCartFlowPane.getChildren().clear();
+
+        ShoppingCartItem item;
+        for(ShoppingItem s: shoppingCart.getItems()){
+            shoppingCartFlowPane.getChildren().add(new WideShoppingCartItem(this, s));
+        }
+    }
 
 
 
