@@ -573,6 +573,8 @@ public class iMatBackendController implements Initializable {
     }
 
     private void populateProductFlowpane( String category) {
+        List<main.Product.Product> listofProducts = new ArrayList<>();
+
         productFlowPane.getChildren().clear();
 
         setupProductFlowpane();
@@ -580,26 +582,28 @@ public class iMatBackendController implements Initializable {
         currentCategory = category;
 
         for(Product p : ProductHandler.getProductsFromCategory(category)){
-                productFlowPane.getChildren().add(new main.Product.Product(this, p));
+            listofProducts.add(new main.Product.Product(this, p));
+
         }
-    }
-
-    public void updateProductFlowpane(String category, ShoppingCartItem shoppingCartItem){
-        productFlowPane.getChildren().clear();
-
-        for(Product p : ProductHandler.getProductsFromCategory(category)){
-            if(shoppingCartItem.getShoppingItem().equals(p))
-            {
-                main.Product.Product tempProd = new main.Product.Product(this, p);
-                tempProd.buyButtonVisible(false);
-                tempProd.setQuantityLabel(shoppingCartItem.getShoppingItem().getAmount());
-                productFlowPane.getChildren().add(new main.Product.Product(this, p));
-
-            }else{
-                productFlowPane.getChildren().add(new main.Product.Product(this, p));
+        //BubbleSort
+        int n = listofProducts.size();
+        for (int i = 0; i < n-1; i++){
+            for (int j = 0; j < n-i-1; j++){
+                if (listofProducts.get(j).getProductIDDD() > listofProducts.get(j+1).getProductIDDD())
+                {
+                    // swap arr[j+1] and arr[i]
+                    main.Product.Product temp = listofProducts.get(j);
+                    listofProducts.set(j, listofProducts.get(j+1));
+                    listofProducts.set(j+1, temp);
+                }
             }
         }
+
+        for(main.Product.Product pepe: listofProducts){
+            productFlowPane.getChildren().add(pepe);
+        }
     }
+
 
     public void showPurchaseFeedback(Product product, String quantity, String unitSuffix){
         purchaseFeedback.setFeedbackLabel(quantity + " " + unitSuffix + " " + product.getName() + " har lagts till i varukorgen");
@@ -614,7 +618,6 @@ public class iMatBackendController implements Initializable {
     //------------------------------------------------------------Kundvagn-----------------------------------------------------------------------//
 
     @FXML public FlowPane shoppingCartFlowPane;
-    public List<ShoppingItem> shoppingCartItems; //Items in the cart
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     private se.chalmers.cse.dat216.project.ShoppingCart shoppingCart = dataHandler.getShoppingCart();
     @FXML public ScrollPane shoppingCartScrollPane;
@@ -677,6 +680,59 @@ public class iMatBackendController implements Initializable {
         updateShoppingCart();
     }
 
+
+
+    public void updateProductFlowpane(String category){
+        productFlowPane.getChildren().clear();
+        String pmet;
+
+        List<Integer> currentGOE = new ArrayList<>();
+        List<main.Product.Product> listofProducts = new ArrayList<>();
+
+        for(Product pd: ProductHandler.getProductsFromCategory(category)){
+            for(ShoppingItem st: shoppingCart.getItems()){
+                if(st.getProduct().getProductId() == pd.getProductId() && st.getAmount() > 0)
+                {
+                    if(!currentGOE.contains(pd.getProductId())){
+                        main.Product.Product tempProd = new main.Product.Product(this, pd);
+                        tempProd.buyButtonVisible(false);
+                        pmet = String.valueOf(st.getAmount());
+                        tempProd.setQuantityLabel(pmet);
+
+                        currentGOE.add(pd.getProductId());
+                        listofProducts.add(tempProd);
+                    }
+
+                }
+            }
+        }
+        for(Product PT : ProductHandler.getProductsFromCategory(category)){
+            if(!currentGOE.contains(PT.getProductId())){
+                //productFlowPane.getChildren().add(new main.Product.Product(this, PT));
+                listofProducts.add(new main.Product.Product(this, PT));
+            }
+        }
+
+        //BubbleSort
+        int n = listofProducts.size();
+        for (int i = 0; i < n-1; i++){
+            for (int j = 0; j < n-i-1; j++){
+                if (listofProducts.get(j).getProductIDDD() > listofProducts.get(j+1).getProductIDDD())
+                {
+                    // swap arr[j+1] and arr[i]
+                    main.Product.Product temp = listofProducts.get(j);
+                    listofProducts.set(j, listofProducts.get(j+1));
+                    listofProducts.set(j+1, temp);
+                }
+            }
+        }
+
+        for(main.Product.Product pepe: listofProducts){
+            productFlowPane.getChildren().add(pepe);
+        }
+
+
+    }
 
 
 

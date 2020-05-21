@@ -26,7 +26,7 @@ public class DetailedView extends AnchorPane {
 
 
     //Elements connected to backend.
-    private se.chalmers.cse.dat216.project.Product product;
+    public se.chalmers.cse.dat216.project.Product product;
     private iMatBackendController parentController;
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     private ShoppingCart shoppingCart = dataHandler.getShoppingCart();
@@ -48,7 +48,7 @@ public class DetailedView extends AnchorPane {
     @FXML private Button addButton;      //may be removed
     @FXML private Button exitButton;     //may be removed
 
-    ShoppingItem shoppingItem;
+    public ShoppingItem shoppingItem;
 
 
 
@@ -88,17 +88,21 @@ public class DetailedView extends AnchorPane {
                 // Do nothing
                 System.out.println("zerooo");
             }
-            else if(currentCart.isEmpty()){
+            /*else if(currentCart.isEmpty()){
                 shoppingItem.setAmount(Double.parseDouble(quantityLabel.getText()));
                 parentController.createItemtoShoppingCart(shoppingItem);
                 System.out.println("Cart empty. Creating new shoppingitem.");
 
+                parentController.updateProductFlowpane(parentController.currentCategory);
+
                 parentController.purchaseFeedback.startAnimation(product, quantityLabel.getText(), product.getUnitSuffix());
                 parentController.updateShoppingCart();
 
-            }else if (exists){
-                parentController.increaseItem(shoppingItem, Double.parseDouble(quantityLabel.getText()));
+            }*/else if (exists){
+                //parentController.increaseItem(shoppingItem, Double.parseDouble(quantityLabel.getText()));
+                shoppingItem.setAmount(shoppingItem.getAmount() + Double.parseDouble(quantityLabel.getText()));
 
+                parentController.updateProductFlowpane(parentController.currentCategory);
 
                 parentController.purchaseFeedback.startAnimation(product, quantityLabel.getText(), product.getUnitSuffix());
                 parentController.updateShoppingCart();
@@ -106,12 +110,12 @@ public class DetailedView extends AnchorPane {
                 shoppingItem.setAmount(Double.parseDouble(quantityLabel.getText()));
                 parentController.createItemtoShoppingCart(shoppingItem);
 
+                parentController.updateProductFlowpane(parentController.currentCategory);
+
                 parentController.purchaseFeedback.startAnimation(product, quantityLabel.getText(), product.getUnitSuffix());
                 parentController.updateShoppingCart();
             }
-
-            detailedViewProduct.setQuantityLabel(shoppingItem.getAmount());
-
+            detailedViewProduct.setQuantityLabel(String.valueOf(shoppingItem.getAmount()));
 
         }
         catch (NumberFormatException nfe)

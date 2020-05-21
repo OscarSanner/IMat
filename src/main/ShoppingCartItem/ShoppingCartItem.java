@@ -51,8 +51,9 @@ public class ShoppingCartItem extends AnchorPane {
     protected void onPlusButtonPressed(){
         parentController.increaseItem(shoppingItem, 1);
         parentController.updateShoppingCart();
+        parentController.updateProductFlowpane(parentController.currentCategory);
 
-        amountLabel.setText(Double.toString(shoppingItem.getAmount()));
+        //amountLabel.setText(Double.toString(shoppingItem.getAmount()));
 
     }
     @FXML
@@ -61,12 +62,13 @@ public class ShoppingCartItem extends AnchorPane {
         if (shoppingItem.getAmount() <= 0) {
             shoppingItem.setAmount(1);
             dataHandler.getShoppingCart().removeItem(shoppingItem);
-            parentController.updateProductFlowpane(parentController.currentCategory, this);
 
         }
         parentController.updateShoppingCart();
+        parentController.updateProductFlowpane(parentController.currentCategory);
 
-        amountLabel.setText(Double.toString(shoppingItem.getAmount()));
+
+       // amountLabel.setText(Double.toString(shoppingItem.getAmount()));
     }
 
     public ShoppingItem getShoppingItem() {
@@ -76,7 +78,7 @@ public class ShoppingCartItem extends AnchorPane {
     @FXML
     public void onPaperbinPressed(){
         dataHandler.getShoppingCart().removeItem(shoppingItem);
-        parentController.updateProductFlowpane(parentController.currentCategory, this);
+        parentController.updateProductFlowpane(parentController.currentCategory);
         parentController.updateShoppingCart();
 
     }
