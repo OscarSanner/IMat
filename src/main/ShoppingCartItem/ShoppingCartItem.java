@@ -49,26 +49,40 @@ public class ShoppingCartItem extends AnchorPane {
 
     @FXML
     protected void onPlusButtonPressed(){
-        parentController.increaseItem(shoppingItem, 1);
+        /*parentController.increaseItem(shoppingItem, 1);
         parentController.updateShoppingCart();
-        parentController.updateProductFlowpane(parentController.currentCategory);
+        parentController.updateProductFlowpane(parentController.currentCategory);*/
 
-        //amountLabel.setText(Double.toString(shoppingItem.getAmount()));
+        for(ShoppingItem s: dataHandler.getShoppingCart().getItems()){
+            if(s.getProduct().equals(shoppingItem.getProduct())){
+                s.setAmount(s.getAmount() + 1);
+                System.out.println("There is an idential shopping item in shoppingcart. Increase amount on the existing shoppingitem");
+                amountLabel.setText(String.valueOf(s.getAmount()));
 
-    }
-    @FXML
-    protected void onMinusButtonPressed(){
-        parentController.decreaseItem(shoppingItem, 1);
-        if (shoppingItem.getAmount() <= 0) {
-            shoppingItem.setAmount(1);
-            dataHandler.getShoppingCart().removeItem(shoppingItem);
-
+            }
         }
         parentController.updateShoppingCart();
         parentController.updateProductFlowpane(parentController.currentCategory);
 
+    }
+    @FXML
+    protected void onMinusButtonPressed(){
+        if(shoppingItem.getAmount()-1 <= 0){
+            dataHandler.getShoppingCart().removeItem(shoppingItem);
+            shoppingItem.setAmount(1);
+        } else{
+            for(ShoppingItem s: dataHandler.getShoppingCart().getItems()){
+                if(s.getProduct().equals(shoppingItem.getProduct())){
+                    s.setAmount(s.getAmount() - 1);
+                    System.out.println("There is an idential shopping item in shoppingcart. Decrease amount on the existing shoppingitem");
+                    amountLabel.setText(String.valueOf(s.getAmount()));
 
-       // amountLabel.setText(Double.toString(shoppingItem.getAmount()));
+                }
+            }
+        }
+        parentController.updateShoppingCart();
+        parentController.updateProductFlowpane(parentController.currentCategory);
+
     }
 
     public ShoppingItem getShoppingItem() {

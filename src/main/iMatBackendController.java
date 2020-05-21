@@ -83,6 +83,8 @@ public class iMatBackendController implements Initializable {
     @FXML public SplitPane categoryPane;
     @FXML public ScrollPane productsScrollPane;
 
+    @FXML public Label sumLabel;
+
     public CustomerSupport customerSupportPage = new CustomerSupport(this);
     public ShoppingCart shoppingCartPage = new ShoppingCart(this);
     public DetailedView detailedViewPage = new DetailedView(this);
@@ -430,8 +432,6 @@ public class iMatBackendController implements Initializable {
         populateSubCategoryFlowPane("Bröd");
         populateProductFlowpane("Bröd");
         productsScrollPane.setVvalue(0);
-
-
     }
 
     public void onMeatAndFishButtonPressed(){
@@ -583,9 +583,19 @@ public class iMatBackendController implements Initializable {
         setupProductFlowpane();
 
         currentCategory = category;
-
+        main.Product.Product temporaryProduct;
         for(Product p : ProductHandler.getProductsFromCategory(category)){
-            listofProducts.add(new main.Product.Product(this, p));
+            temporaryProduct = new main.Product.Product(this, p);
+
+            for(ShoppingItem s: dataHandler.getShoppingCart().getItems()){
+                if(s.getProduct().equals(p)){
+                    temporaryProduct.setQuantityLabel(String.valueOf(s.getAmount()));
+                    temporaryProduct.buyButtonVisible(false);
+                }
+            }
+
+            listofProducts.add(temporaryProduct);
+            //listofProducts.add(new main.Product.Product(this, p));
 
         }
         //BubbleSort
@@ -654,12 +664,16 @@ public class iMatBackendController implements Initializable {
         shoppingCartFlowPane.getChildren().clear();
         visualShoppingItems.clear();
 
+        int sum = 0;
         for(ShoppingItem s: shoppingCart.getItems()){
             visualShoppingItems.add(new ShoppingCartItem(this, s));
+            sum += (int)(s.getAmount() * s.getProduct().getPrice());
         }
         for(ShoppingCartItem sI: visualShoppingItems){
             shoppingCartFlowPane.getChildren().add(sI);
         }
+
+        sumLabel.setText(String.valueOf(sum) + " kr");
 
     }
     //================================================================================
@@ -682,8 +696,6 @@ public class iMatBackendController implements Initializable {
         shoppingCart.removeItem(shoppingItem);
         updateShoppingCart();
     }
-
-
 
     public void updateProductFlowpane(String category){
         productFlowPane.getChildren().clear();
@@ -711,7 +723,6 @@ public class iMatBackendController implements Initializable {
         }
         for(Product PT : ProductHandler.getProductsFromCategory(category)){
             if(!currentGOE.contains(PT.getProductId())){
-                //productFlowPane.getChildren().add(new main.Product.Product(this, PT));
                 listofProducts.add(new main.Product.Product(this, PT));
             }
         }
@@ -738,31 +749,6 @@ public class iMatBackendController implements Initializable {
     }
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------//
-
-    //------------------------------------------------------------ShoppingCartPage-----------------------------------------------------------------------//
-
-    //================================================================================
-    // FlowPane
-    //================================================================================
-
-    public void initShoppingCartPageFlowPane(){
-
-    }
-
-    public void populateShoppingCartPage(){
-
-    }
-
-
-
-
-
-
-
-
-    //-------------------------------------------------------------------------------------------------------------------------------------------------------------//
-
-
 
 
     //================================================================================

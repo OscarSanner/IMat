@@ -17,6 +17,8 @@ import se.chalmers.cse.dat216.project.ShoppingItem;
 import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
 import java.util.List;
 
 public class Product extends AnchorPane {
@@ -98,16 +100,37 @@ public class Product extends AnchorPane {
     }
     @FXML
     protected void onMinusButtonPressed(){
-            parentController.decreaseItem(shoppingItem, 1);
-            if (shoppingItem.getAmount() <= 0) {
-                buyButton.setVisible(true);
-                shoppingItem.setAmount(1);
-                shoppingCart.removeItem(shoppingItem);
+       /* if(shoppingItem.getAmount()-1 <= 0){
+            dataHandler.getShoppingCart().removeItem(shoppingItem);
+            shoppingItem.setAmount(1);
+            buyButton.setVisible(true);
+        } else{*/
 
-            }
-            parentController.updateShoppingCart();
+       try{
+           boolean removed = false;
+           for(ShoppingItem s: dataHandler.getShoppingCart().getItems()){
+               if(s.getProduct().equals(shoppingItem.getProduct()) && s.getAmount()-1 <= 0 && !removed){
+                   dataHandler.getShoppingCart().removeItem(s);
 
-            amountLabel.setText(Double.toString(shoppingItem.getAmount()));
+                   buyButton.setVisible(true);
+                   removed = true;
+               }
+               else if(s.getProduct().equals(shoppingItem.getProduct())){
+                   s.setAmount(s.getAmount() - 1);
+                   System.out.println("There is an idential shopping item in shoppingcart. Decrease amount on the existing shoppingitem");
+                   amountLabel.setText(String.valueOf(s.getAmount()));
+               }
+           }
+           // }
+           parentController.updateShoppingCart();
+           parentController.updateProductFlowpane(parentController.currentCategory);
+
+       }catch (ConcurrentModificationException ignore){
+           System.out.println("ConcurrentModificaitonException"); //Don't look at this...
+       }
+
+
+        //amountLabel.setText(Double.toString(shoppingItem.getAmount()));
     }
 
     @FXML

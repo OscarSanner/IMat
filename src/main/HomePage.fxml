@@ -13,6 +13,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.iMatBackendController">
@@ -57,14 +58,21 @@
                <children>
                   <AnchorPane layoutX="4.0" layoutY="30.0" prefHeight="577.0" prefWidth="218.0" styleClass="border">
                      <children>
-                        <Button fx:id="checkoutButton" layoutX="32.0" layoutY="486.0" mnemonicParsing="false" onMouseClicked="#onCheckoutButtonPressed" prefHeight="62.0" prefWidth="159.0" text="Button" />
+                        <Button fx:id="checkoutButton" layoutX="6.0" layoutY="494.0" mnemonicParsing="false" onMouseClicked="#onCheckoutButtonPressed" prefHeight="77.0" prefWidth="206.0" style="-fx-background-color: #32FF46;" text="Till kassan" textAlignment="CENTER">
+                           <font>
+                              <Font size="30.0" />
+                           </font></Button>
                         <Label layoutX="73.0" layoutY="26.0" text="Kundvagn" />
-                        <Label fx:id="summaLbl" layoutX="181.0" layoutY="459.0" text="0 kr" />
+                        <Label fx:id="sumLabel" alignment="CENTER_RIGHT" layoutX="125.0" layoutY="459.0" prefHeight="35.0" prefWidth="83.0" text="0 kr" textAlignment="RIGHT">
+                           <font>
+                              <Font size="24.0" />
+                           </font></Label>
                         <ScrollPane fx:id="shoppingCartScrollPane" hbarPolicy="NEVER" layoutX="3.0" layoutY="72.0" prefHeight="387.0" prefWidth="210.0" style="-fx-background-color: white;" vbarPolicy="ALWAYS">
                            <content>
                               <FlowPane fx:id="shoppingCartFlowPane" prefHeight="385.0" prefWidth="212.0" style="-fx-background-color: white;" />
                            </content>
                         </ScrollPane>
+                        <Line endX="100.0" layoutX="108.0" layoutY="463.0" startX="-100.0" />
                      </children>
                   </AnchorPane>
                </children>
