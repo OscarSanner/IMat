@@ -7,6 +7,8 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import main.IWizardPage;
 import main.ShoppingCart.ShoppingCart;
@@ -19,6 +21,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.util.Date;
+import java.util.Objects;
 
 public class PersonalData extends AnchorPane implements IWizardPage {
 
@@ -33,6 +36,7 @@ public class PersonalData extends AnchorPane implements IWizardPage {
     public ShoppingCart parentBackendController;
 
     @FXML private CheckBox personalCheckBox;
+    @FXML public ImageView escapeHatchImage;
 
    private Customer customer = IMatDataHandler.getInstance().getCustomer();
 
@@ -139,6 +143,22 @@ public class PersonalData extends AnchorPane implements IWizardPage {
         emailErrorLbl.setVisible(false);
         emailStyleErrorLbl.setVisible(false);
 
+    }
+
+    //================================================================================
+    // Escapehatch Hover
+    //================================================================================
+    @FXML
+    public void onEscapeHatchEnter(){
+        escapeHatchImage.setImage(new javafx.scene.image.Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/escape_hatch_hover.png"
+        ))));
+    }
+    @FXML
+    public void onEscapeHatchExit(){
+        escapeHatchImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/escape_hatch.png"
+        ))));
     }
 
     //----------------FAKTISK KOD-----------------

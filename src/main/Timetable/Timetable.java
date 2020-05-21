@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Orientation;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import main.IWizardPage;
@@ -28,6 +30,7 @@ public class Timetable extends AnchorPane implements IWizardPage {
      */
     @FXML
     public AnchorPane timetableMainAnchorPane;
+    @FXML public ImageView escapeHatchImage;
     public Payment paymentPage;
     public PersonalData parentBackendController;
     private Date deliveryTime;
@@ -75,6 +78,22 @@ public class Timetable extends AnchorPane implements IWizardPage {
     @Override
     public void previousStep() {
         parentBackendController.getChildren().remove(this);
+    }
+
+    //================================================================================
+    // Escapehatch Hover
+    //================================================================================
+    @FXML
+    public void onEscapeHatchEnter(){
+        escapeHatchImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/escape_hatch_hover.png"
+        ))));
+    }
+    @FXML
+    public void onEscapeHatchExit(){
+        escapeHatchImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/escape_hatch.png"
+        ))));
     }
 
     //----------------FAKTISK KOD-----------------

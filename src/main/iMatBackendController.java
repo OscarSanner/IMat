@@ -19,6 +19,7 @@ import javafx.scene.control.*;
 import javafx.scene.effect.GaussianBlur;
 
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -86,6 +87,7 @@ public class iMatBackendController implements Initializable {
     @FXML public ScrollPane productsScrollPane;
 
     @FXML public Label sumLabel;
+    @FXML public ImageView escapeHatchImage;
 
     public CustomerSupport customerSupportPage = new CustomerSupport(this);
     public ShoppingCart shoppingCartPage = new ShoppingCart(this);
@@ -263,6 +265,21 @@ public class iMatBackendController implements Initializable {
     }
 
     //----------------FAKTISK KOD-----------------
+// ------------------------------------------------------------Navigation-----------------------------------------------------------------------//
+
+
+    @FXML
+    public void onEscapeHatchEnter(){
+        escapeHatchImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/escape_hatch_hover.png"
+        ))));
+    }
+    @FXML
+    public void onEscapeHatchExit(){
+        escapeHatchImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                    "main/Res/Images/escape_hatch.png"
+        ))));
+    }
 
 
 

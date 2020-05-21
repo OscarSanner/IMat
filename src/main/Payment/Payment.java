@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import main.ConfirmationPage.ConfirmationPage;
 import main.IWizardPage;
@@ -14,6 +16,7 @@ import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.Objects;
 
 public class Payment extends AnchorPane implements IWizardPage {
 
@@ -21,26 +24,18 @@ public class Payment extends AnchorPane implements IWizardPage {
 
     //TODO Alla wizardklasser behöver ha en fungerande "Customer Support" knapp
 
-    @FXML
-    public Button payButton;
-    @FXML
-    public AnchorPane paymentMainAnchorPane;
-    @FXML
-    private TextField cardNumberTextField;
-    @FXML
-    private TextField monthTextField;
-    @FXML
-    private TextField yearTextField;
-    @FXML
-    private TextField cvcTextField;
-    @FXML
-    public Label cardErrorLabel;
-    @FXML
-    public Label cardStyleErrorLabel;
-    @FXML
-    public Label cardAmountErrorLabel;
-    @FXML
-    public CheckBox checkButtonPayment;
+    @FXML public Button payButton;
+    @FXML public AnchorPane paymentMainAnchorPane;
+    @FXML private TextField cardNumberTextField;
+    @FXML private TextField monthTextField;
+    @FXML private TextField yearTextField;
+    @FXML private TextField cvcTextField;
+    @FXML public Label cardErrorLabel;
+    @FXML public Label cardStyleErrorLabel;
+    @FXML public Label cardAmountErrorLabel;
+    @FXML public CheckBox checkButtonPayment;
+    @FXML public ImageView escapeHatchImage;
+
 
     private CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
 
@@ -93,6 +88,22 @@ public class Payment extends AnchorPane implements IWizardPage {
     @Override
     public void previousStep() {
         parentBackendController.getChildren().remove(this);
+    }
+
+    //================================================================================
+    // Escapehatch Hover
+    //================================================================================
+    @FXML
+    public void onEscapeHatchEnter(){
+        escapeHatchImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/escape_hatch_hover.png"
+        ))));
+    }
+    @FXML
+    public void onEscapeHatchExit(){
+        escapeHatchImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/escape_hatch.png"
+        ))));
     }
 
     //----------------FAKTISK KOD-----------------

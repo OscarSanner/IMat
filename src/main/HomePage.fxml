@@ -7,6 +7,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -22,10 +23,14 @@
          <top>
             <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="26.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#onHomeButtonPressed" prefHeight="64.0" prefWidth="97.0" text="Button" />
                   <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#onCustomerSupportPressed" prefHeight="64.0" prefWidth="123.0" text="Button" />
                   <TextField fx:id="searchBarTextField" layoutX="164.0" layoutY="32.0" onKeyPressed="#searchBarKeyPressed" prefHeight="25.0" prefWidth="562.0" text="Sök miljontals varor..." />
                   <Button fx:id="testButton" layoutX="372.0" layoutY="65.0" mnemonicParsing="false" text="TESTKNAPP" />
+                  <ImageView fx:id="escapeHatchImage" fitHeight="98.0" fitWidth="105.0" layoutX="3.0" layoutY="1.0" onMouseClicked="#onHomeButtonPressed" onMouseEntered="#onEscapeHatchEnter" onMouseExited="#onEscapeHatchExit" pickOnBounds="true" preserveRatio="true" x="26.0">
+                     <image>
+                        <Image url="@Res/Images/escape_hatch.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
          </top>

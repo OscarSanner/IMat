@@ -6,6 +6,8 @@ import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import main.IWizardPage;
@@ -16,6 +18,7 @@ import main.iMatBackendController;
 import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class ShoppingCart extends AnchorPane implements IWizardPage {
 
@@ -27,6 +30,7 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
     @FXML public AnchorPane shoppingCartMainAnchorPane;
     @FXML public FlowPane shoppingCartFlowPane;
     @FXML public Label totalSumLabel;
+    @FXML public ImageView escapeHatchImage;
 
     //Other
     public PersonalData personalDataPage = new PersonalData(this);
@@ -63,6 +67,21 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
         parentBackendController.updateProductFlowpane(parentBackendController.currentCategory);
         parentBackendController.updateShoppingCart();
 
+    }
+    //================================================================================
+    // Escapehatch Hover
+    //================================================================================
+    @FXML
+    public void onEscapeHatchEnter(){
+        escapeHatchImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/escape_hatch_hover.png"
+        ))));
+    }
+    @FXML
+    public void onEscapeHatchExit(){
+        escapeHatchImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/escape_hatch.png"
+        ))));
     }
 
     @Override
