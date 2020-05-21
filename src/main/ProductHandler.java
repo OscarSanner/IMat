@@ -62,16 +62,21 @@ public class ProductHandler {
     public static List<Product> getProductsFromCategory(String chosenCategory){
         List<Product> selectedProducts = new ArrayList<>();
 
-        try{
-            ProductCategory[][] selectedCategory = getProductCategory(chosenCategory);
+        if(chosenCategory == "Mina Favoriter"){
+            return dataHandler.favorites();
+        }else{
+            try{
+                ProductCategory[][] selectedCategory = getProductCategory(chosenCategory);
 
-            for(ProductCategory[] pcArr: selectedCategory){
-                for(ProductCategory pc: pcArr){
-                    selectedProducts.addAll(dataHandler.getProducts(pc));
+                for(ProductCategory[] pcArr: selectedCategory){
+                    for(ProductCategory pc: pcArr){
+                        selectedProducts.addAll(dataHandler.getProducts(pc));
+                    }
                 }
-            }
-        }catch (NullPointerException e){System.out.println("Not valid input for category");}
-        return selectedProducts;
+            }catch (NullPointerException e){System.out.println("Not valid input for category");}
+            return selectedProducts;
+        }
+
     }
 
     /**
@@ -100,6 +105,7 @@ public class ProductHandler {
             case "Potatis, ris": return new ProductCategory[][]{potato_rice};
             case "Sötsaker": return new ProductCategory[][]{sweets};
             case "Nötter och frön": return new ProductCategory[][]{nuts_seeds};
+
             default: return new ProductCategory[][]{null};
         }
     }

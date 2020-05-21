@@ -436,7 +436,51 @@ public class iMatBackendController implements Initializable {
         categoryPane.toFront();
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
+        populateProductFlowpane("Mina Favoriter");
 
+
+        /*
+        List<Integer> currentGOE = new ArrayList<>();
+        List<main.Product.Product> listOfProducts = new ArrayList<>();
+
+        for(Product p: dataHandler.favorites()){
+            for(ShoppingItem st: shoppingCart.getItems()){
+                if(st.getProduct().equals(p) && st.getAmount() > 0){
+                    if(!currentGOE.contains(p.getProductId())){
+                        main.Product.Product tempProd = new main.Product.Product(this, p);
+                        tempProd.buyButtonVisible(false);
+                        tempProd.setQuantityLabel(String.valueOf(st.getAmount()));
+
+                        currentGOE.add(p.getProductId());
+                        listOfProducts.add(tempProd);
+                    }
+                }
+            }
+        }
+
+        for(Product pp: dataHandler.favorites()){
+            if(!currentGOE.contains(pp.getProductId())){
+                listOfProducts.add(new main.Product.Product(this, pp));
+            }
+        }
+
+        //BubbleSort
+        int n = listOfProducts.size();
+        for (int i = 0; i < n-1; i++){
+            for (int j = 0; j < n-i-1; j++){
+                if (listOfProducts.get(j).getProductIDDD() > listOfProducts.get(j+1).getProductIDDD())
+                {
+                    // swap arr[j+1] and arr[i]
+                    main.Product.Product temp = listOfProducts.get(j);
+                    listOfProducts.set(j, listOfProducts.get(j+1));
+                    listOfProducts.set(j+1, temp);
+                }
+            }
+        }
+        for(main.Product.Product pepe: listOfProducts){
+            productFlowPane.getChildren().add(pepe);
+        }
+        categoryPane.toFront();*/
     }
 
     public void onOffersButtonPressed(){
@@ -601,7 +645,7 @@ public class iMatBackendController implements Initializable {
         }
     }
 
-    private void populateProductFlowpane( String category) {
+    private void populateProductFlowpane(String category) {
         List<main.Product.Product> listofProducts = new ArrayList<>();
 
         productFlowPane.getChildren().clear();
@@ -774,13 +818,13 @@ public class iMatBackendController implements Initializable {
 
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
+
+
     //------------------------------------------------------------Searchbar-----------------------------------------------------------------------//
 
 
     @FXML TextField searchBarTextField;
     List<Product> searchedItems;
-
-
 
     public void resetSearchBarText(){ //Nollställer searchbar
         searchBarTextField.setText("");
@@ -864,6 +908,10 @@ public class iMatBackendController implements Initializable {
         setupPurchaseFeedback();
         setupProductFlowpane();
         initShoppingCartFlowPane();
+
+        // To test favourite section.
+       /* dataHandler.addFavorite(70);
+        dataHandler.addFavorite(32);*/
     }
     private void setupPurchaseFeedback(){
         mainAnchorPane.getChildren().add(purchaseFeedback);
