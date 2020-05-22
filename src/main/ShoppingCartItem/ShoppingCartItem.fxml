@@ -21,12 +21,12 @@
          <font>
             <Font size="14.0" />
          </font></Label>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="62.0" layoutY="37.0" onMouseClicked="#onMinusButtonPressed" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="minusImage" fitHeight="25.0" fitWidth="25.0" layoutX="62.0" layoutY="37.0" onMouseClicked="#onMinusButtonPressed" onMouseEntered="#onMinusEnter" onMouseExited="#onMinusExit" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Res/Images/minus.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="148.0" layoutY="37.0" onMouseClicked="#onPlusButtonPressed" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="plusImage" fitHeight="25.0" fitWidth="25.0" layoutX="148.0" layoutY="37.0" onMouseClicked="#onPlusButtonPressed" onMouseEntered="#onPlusEnter" onMouseExited="#onPlusExit" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Res/Images/plus.png" />
          </image>
@@ -37,7 +37,7 @@
          </image>
       </ImageView>
       <Label layoutX="190.0" layoutY="-2.0" text="Ta bort" />
-      <TextField fx:id="amountTextField" layoutX="88.0" layoutY="37.0" prefHeight="30.0" prefWidth="59.0">
+      <TextField fx:id="amountTextField" editable="false" layoutX="88.0" layoutY="37.0" prefHeight="30.0" prefWidth="59.0">
          <font>
             <Font size="13.0" />
          </font>
