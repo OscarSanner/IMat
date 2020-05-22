@@ -11,9 +11,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="timetableMainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="960.0" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="timetableMainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1000.0" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <BorderPane prefHeight="720.0" prefWidth="960.0">
+      <BorderPane prefHeight="720.0" prefWidth="1000.0">
          <top>
             <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
                <children>
@@ -34,7 +34,7 @@
          <center>
             <Pane prefHeight="573.0" prefWidth="960.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                <children>
-                  <Pane layoutX="72.0" layoutY="23.0" prefHeight="590.0" prefWidth="826.0" style="-fx-background-color: #B1D5F6;">
+                  <Pane layoutX="87.0" layoutY="23.0" prefHeight="590.0" prefWidth="826.0" style="-fx-background-color: #B1D5F6;">
                      <children>
                         <Pane layoutX="23.0" layoutY="24.0" prefHeight="43.0" prefWidth="778.0" style="-fx-background-color: white;">
                            <children>
@@ -92,7 +92,7 @@
                         </AnchorPane>
                      </children>
                   </Pane>
-                  <Button fx:id="nextWeekButton" layoutX="902.0" layoutY="261.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="52.0" text="Nästa vecka" wrapText="true" />
+                  <Button fx:id="nextWeekButton" layoutX="925.0" layoutY="260.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="52.0" text="Nästa vecka" wrapText="true" />
                   <Button fx:id="previousWeekButton" layoutX="14.0" layoutY="271.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="52.0" text="Förra vecka" wrapText="true" />
                </children>
             </Pane>

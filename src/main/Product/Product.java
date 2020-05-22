@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.*;
@@ -27,7 +28,7 @@ public class Product extends AnchorPane {
      @FXML Label itemLabel;
      @FXML Label priceLabel;
      @FXML Button buyButton;
-     @FXML Label amountLabel;
+     @FXML TextField amountTextField;
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     private iMatBackendController parentController;
@@ -53,7 +54,7 @@ public class Product extends AnchorPane {
         //this.itemImage.setImage(parentController.getSquareImage(dataHandler.getFXImage(product)));
         this.itemImage.setImage(dataHandler.getFXImage(product));
         this.itemLabel.setText(product.getName());
-        this.priceLabel.setText(String.valueOf(product.getPrice()) + " kr");
+        this.priceLabel.setText(product.getPrice() + " kr/" + product.getUnitSuffix());
     }
 
     @FXML
@@ -74,7 +75,7 @@ public class Product extends AnchorPane {
         }parentController.updateShoppingCart();
 
 
-        amountLabel.setText(String.valueOf(shoppingItem.getAmount()));
+        amountTextField.setText(String.valueOf((int)shoppingItem.getAmount()) + " " + product.getUnitSuffix());
 
         buyButton.setVisible(false);    //Hides the button temporarily to show the +/- buttons underneath.
 
@@ -91,7 +92,7 @@ public class Product extends AnchorPane {
                 alreadyAdded = true;
                 s.setAmount(s.getAmount() + 1);
                 System.out.println("There is an idential shopping item in shoppingcart. Increase amount on the existing shoppingitem");
-                amountLabel.setText(String.valueOf(s.getAmount()));
+                amountTextField.setText(String.valueOf((int)s.getAmount()) + " " + product.getUnitSuffix());
 
             }
         }        parentController.updateShoppingCart();
@@ -100,12 +101,6 @@ public class Product extends AnchorPane {
     }
     @FXML
     protected void onMinusButtonPressed(){
-       /* if(shoppingItem.getAmount()-1 <= 0){
-            dataHandler.getShoppingCart().removeItem(shoppingItem);
-            shoppingItem.setAmount(1);
-            buyButton.setVisible(true);
-        } else{*/
-
        try{
            boolean removed = false;
            for(ShoppingItem s: dataHandler.getShoppingCart().getItems()){
@@ -118,7 +113,7 @@ public class Product extends AnchorPane {
                else if(s.getProduct().equals(shoppingItem.getProduct())){
                    s.setAmount(s.getAmount() - 1);
                    System.out.println("There is an idential shopping item in shoppingcart. Decrease amount on the existing shoppingitem");
-                   amountLabel.setText(String.valueOf(s.getAmount()));
+                   amountTextField.setText(String.valueOf((int)s.getAmount()) + " " + product.getUnitSuffix());
                }
            }
            // }
@@ -128,9 +123,6 @@ public class Product extends AnchorPane {
        }catch (ConcurrentModificationException ignore){
            System.out.println("ConcurrentModificaitonException"); //Don't look at this...
        }
-
-
-        //amountLabel.setText(Double.toString(shoppingItem.getAmount()));
     }
 
     @FXML
@@ -140,7 +132,8 @@ public class Product extends AnchorPane {
     }
 
     public void setQuantityLabel(String amount){
-        amountLabel.setText(amount);
+
+        amountTextField.setText(amount + " " + product.getUnitSuffix());
 
     }
     public Product buyButtonVisible(boolean state){

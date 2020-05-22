@@ -48,8 +48,8 @@ public class ShoppingCartItem extends AnchorPane {
 
         this.itemImage.setImage(dataHandler.getFXImage(shoppingItem.getProduct(), 70, 70));
         this.productNameLabel.setText(shoppingItem.getProduct().getName());
-        this.amountTextField.setText(Double.toString(shoppingItem.getAmount()));
-        this.priceLabel.setText(Double.toString(shoppingItem.getAmount() * shoppingItem.getProduct().getPrice()));
+        this.amountTextField.setText((int)shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
+        this.priceLabel.setText((int)shoppingItem.getAmount() * shoppingItem.getProduct().getPrice() + " kr");
     }
 
     @FXML
@@ -58,8 +58,8 @@ public class ShoppingCartItem extends AnchorPane {
             if(s.getProduct().equals(shoppingItem.getProduct())){
                 s.setAmount(s.getAmount() + 1);
                 System.out.println("There is an idential shopping item in shoppingcart. Increase amount on the existing shoppingitem");
-                amountTextField.setText(String.valueOf(s.getAmount()));
-                priceLabel.setText(Double.toString(shoppingItem.getAmount() * shoppingItem.getProduct().getPrice()));
+                amountTextField.setText(String.valueOf((int)s.getAmount()));
+                priceLabel.setText((int)shoppingItem.getAmount() * (int)shoppingItem.getProduct().getPrice() + " kr");
             }
         }
         parentController.updateShoppingCart();
@@ -75,8 +75,8 @@ public class ShoppingCartItem extends AnchorPane {
                 if(s.getProduct().equals(shoppingItem.getProduct())){
                     s.setAmount(s.getAmount() - 1);
                     System.out.println("There is an idential shopping item in shoppingcart. Decrease amount on the existing shoppingitem");
-                    amountTextField.setText(String.valueOf(s.getAmount()));
-                    priceLabel.setText(String.valueOf(shoppingItem.getAmount() * shoppingItem.getProduct().getPrice()));
+                    amountTextField.setText(String.valueOf((int)s.getAmount()));
+                    priceLabel.setText((int)shoppingItem.getAmount() * (int)shoppingItem.getProduct().getPrice() + " kr");
                 }
             }
         }

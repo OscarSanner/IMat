@@ -734,7 +734,7 @@ public class iMatBackendController implements Initializable {
         shoppingCartFlowPane.getChildren().clear();
         visualShoppingItems.clear();
 
-        int sum = 0;
+        double sum = 0;
         for(ShoppingItem s: shoppingCart.getItems()){
             visualShoppingItems.add(new ShoppingCartItem(this, s));
             sum += (int)(s.getAmount() * s.getProduct().getPrice());
@@ -743,7 +743,7 @@ public class iMatBackendController implements Initializable {
             shoppingCartFlowPane.getChildren().add(sI);
         }
 
-        sumLabel.setText(String.valueOf(sum) + " kr");
+        sumLabel.setText(sum + " kr");
 
     }
     //================================================================================
