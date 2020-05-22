@@ -3,6 +3,8 @@ package main.ShoppingCartItem;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import main.Product.Product;
@@ -11,6 +13,7 @@ import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class ShoppingCartItem extends AnchorPane {
 
@@ -25,8 +28,9 @@ public class ShoppingCartItem extends AnchorPane {
     //Scenebuilder elements
     @FXML private ImageView itemImage;
     @FXML private Label productNameLabel;
-    @FXML private Label amountLabel;
     @FXML private Label priceLabel;
+    @FXML private ImageView paperBinImage;
+    @FXML public TextField amountTextField;
 
     public ShoppingCartItem(iMatBackendController parentController, ShoppingItem shoppingItem){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ShoppingCartItem.fxml"));
@@ -44,26 +48,22 @@ public class ShoppingCartItem extends AnchorPane {
 
         this.itemImage.setImage(dataHandler.getFXImage(shoppingItem.getProduct(), 70, 70));
         this.productNameLabel.setText(shoppingItem.getProduct().getName());
-        this.amountLabel.setText(Double.toString(shoppingItem.getAmount()));
+        this.amountTextField.setText(Double.toString(shoppingItem.getAmount()));
+        this.priceLabel.setText(Double.toString(shoppingItem.getAmount() * shoppingItem.getProduct().getPrice()));
     }
 
     @FXML
     protected void onPlusButtonPressed(){
-        /*parentController.increaseItem(shoppingItem, 1);
-        parentController.updateShoppingCart();
-        parentController.updateProductFlowpane(parentController.currentCategory);*/
-
         for(ShoppingItem s: dataHandler.getShoppingCart().getItems()){
             if(s.getProduct().equals(shoppingItem.getProduct())){
                 s.setAmount(s.getAmount() + 1);
                 System.out.println("There is an idential shopping item in shoppingcart. Increase amount on the existing shoppingitem");
-                amountLabel.setText(String.valueOf(s.getAmount()));
-
+                amountTextField.setText(String.valueOf(s.getAmount()));
+                priceLabel.setText(Double.toString(shoppingItem.getAmount() * shoppingItem.getProduct().getPrice()));
             }
         }
         parentController.updateShoppingCart();
         parentController.updateProductFlowpane(parentController.currentCategory);
-
     }
     @FXML
     protected void onMinusButtonPressed(){
@@ -75,8 +75,8 @@ public class ShoppingCartItem extends AnchorPane {
                 if(s.getProduct().equals(shoppingItem.getProduct())){
                     s.setAmount(s.getAmount() - 1);
                     System.out.println("There is an idential shopping item in shoppingcart. Decrease amount on the existing shoppingitem");
-                    amountLabel.setText(String.valueOf(s.getAmount()));
-
+                    amountTextField.setText(String.valueOf(s.getAmount()));
+                    priceLabel.setText(String.valueOf(shoppingItem.getAmount() * shoppingItem.getProduct().getPrice()));
                 }
             }
         }
@@ -89,11 +89,27 @@ public class ShoppingCartItem extends AnchorPane {
         return shoppingItem;
     }
 
+    //================================================================================
+    // Paperbin Hover
+    //================================================================================
+    @FXML
+    public void onPaperBinEnter(){
+        paperBinImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/paperbin_hover.png"
+        ))));
+    }
+    @FXML
+    public void onPaperBinExit(){
+        paperBinImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/paperbin.png"
+        ))));
+    }
     @FXML
     public void onPaperbinPressed(){
         dataHandler.getShoppingCart().removeItem(shoppingItem);
-        parentController.updateProductFlowpane(parentController.currentCategory);
         parentController.updateShoppingCart();
+        parentController.updateProductFlowpane(parentController.currentCategory);
+
 
     }
 }

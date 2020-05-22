@@ -35,21 +35,21 @@
             </Pane>
          </top>
          <left>
-            <Pane prefHeight="618.0" prefWidth="164.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="607.0" prefWidth="148.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                <children>
-                  <Pane layoutX="5.0" layoutY="30.0" prefHeight="578.0" prefWidth="155.0" styleClass="border">
+                  <Pane layoutX="5.0" layoutY="30.0" prefHeight="578.0" prefWidth="139.0" styleClass="border">
                      <children>
-                        <Button layoutX="22.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#onFavouritesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mina Favoriter" />
-                        <Button layoutX="22.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#onOffersButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Erbjudanden" />
-                        <Button layoutX="22.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#onMeatAndFishButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kött &amp; Fisk" />
-                        <Button layoutX="22.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#onVeggiesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Frukt &amp; Grönt" />
-                        <Button layoutX="22.0" layoutY="287.0" mnemonicParsing="false" onMouseClicked="#onDrinkButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Dryck" />
-                        <Button layoutX="22.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#onDairyButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mejeri" />
-                        <Button layoutX="22.0" layoutY="375.0" mnemonicParsing="false" onMouseClicked="#onPantryButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Skafferi" />
-                        <Button layoutX="22.0" layoutY="464.0" mnemonicParsing="false" onMouseClicked="#onSpicesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kryddor" />
-                        <Label layoutX="50.0" layoutY="20.0" text="Kategorier" />
-                        <Button layoutX="22.0" layoutY="419.0" mnemonicParsing="false" onMouseClicked="#onSnacksButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Snacks" />
-                        <Button layoutX="22.0" layoutY="508.0" mnemonicParsing="false" onMouseClicked="#onBreadButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Bröd" />
+                        <Button layoutX="11.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#onFavouritesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mina Favoriter" />
+                        <Button layoutX="11.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#onOffersButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Erbjudanden" />
+                        <Button layoutX="11.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#onMeatAndFishButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kött &amp; Fisk" />
+                        <Button layoutX="11.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#onVeggiesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Frukt &amp; Grönt" />
+                        <Button layoutX="11.0" layoutY="287.0" mnemonicParsing="false" onMouseClicked="#onDrinkButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Dryck" />
+                        <Button layoutX="11.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#onDairyButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mejeri" />
+                        <Button layoutX="11.0" layoutY="375.0" mnemonicParsing="false" onMouseClicked="#onPantryButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Skafferi" />
+                        <Button layoutX="11.0" layoutY="464.0" mnemonicParsing="false" onMouseClicked="#onSpicesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kryddor" />
+                        <Label layoutX="39.0" layoutY="20.0" text="Kategorier" />
+                        <Button layoutX="11.0" layoutY="419.0" mnemonicParsing="false" onMouseClicked="#onSnacksButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Snacks" />
+                        <Button layoutX="11.0" layoutY="508.0" mnemonicParsing="false" onMouseClicked="#onBreadButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Bröd" />
                      </children>
                   </Pane>
                </children>
@@ -59,9 +59,9 @@
             <Pane prefHeight="12.0" prefWidth="960.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
          </bottom>
          <right>
-            <Pane prefHeight="607.0" prefWidth="224.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="607.0" prefWidth="241.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane layoutX="4.0" layoutY="30.0" prefHeight="577.0" prefWidth="218.0" styleClass="border">
+                  <AnchorPane layoutX="4.0" layoutY="30.0" prefHeight="577.0" prefWidth="234.0" styleClass="border">
                      <children>
                         <Button fx:id="checkoutButton" layoutX="6.0" layoutY="494.0" mnemonicParsing="false" onMouseClicked="#onCheckoutButtonPressed" prefHeight="77.0" prefWidth="206.0" style="-fx-background-color: #32FF46;" text="Till kassan" textAlignment="CENTER">
                            <font>
@@ -72,19 +72,19 @@
                            <font>
                               <Font size="24.0" />
                            </font></Label>
-                        <ScrollPane fx:id="shoppingCartScrollPane" hbarPolicy="NEVER" layoutX="3.0" layoutY="72.0" prefHeight="387.0" prefWidth="210.0" style="-fx-background-color: white;" vbarPolicy="ALWAYS">
+                        <ScrollPane fx:id="shoppingCartScrollPane" hbarPolicy="NEVER" layoutX="3.0" layoutY="72.0" prefHeight="387.0" prefWidth="227.0" style="-fx-background-color: white;" vbarPolicy="ALWAYS">
                            <content>
                               <FlowPane fx:id="shoppingCartFlowPane" prefHeight="385.0" prefWidth="212.0" style="-fx-background-color: white;" />
                            </content>
                         </ScrollPane>
-                        <Line endX="100.0" layoutX="108.0" layoutY="463.0" startX="-100.0" />
+                        <Line endX="110.0" layoutX="108.0" layoutY="463.0" startX="-100.0" />
                      </children>
                   </AnchorPane>
                </children>
             </Pane>
          </right>
          <center>
-            <SplitPane dividerPositions="0.10082644628099173" orientation="VERTICAL" prefHeight="607.0" prefWidth="553.0" BorderPane.alignment="CENTER">
+            <SplitPane dividerPositions="0.10082644628099173" orientation="VERTICAL" prefHeight="607.0" prefWidth="570.0" BorderPane.alignment="CENTER">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                      <children>

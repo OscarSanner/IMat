@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import main.ShoppingCart.ShoppingCart;
@@ -13,6 +14,7 @@ import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
+import java.util.Objects;
 
 
 public class WideShoppingCartItem extends AnchorPane {
@@ -27,9 +29,7 @@ public class WideShoppingCartItem extends AnchorPane {
     @FXML Label unitPriceLabel;
     @FXML Label totalPriceLabel;
     @FXML TextField amountTextField;
-
-
-
+    @FXML ImageView paperBinImage;
 
     public WideShoppingCartItem(ShoppingCart parentController, ShoppingItem shoppingItem ){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("WideShoppingCartItem.fxml"));
@@ -54,6 +54,21 @@ public class WideShoppingCartItem extends AnchorPane {
         this.amountTextField.setText(String.valueOf((int)shoppingItem.getAmount()));
     }
 
+    //================================================================================
+    // Paperbin Hover
+    //================================================================================
+    @FXML
+    public void onPaperBinEnter(){
+        paperBinImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/paperbin_hover.png"
+        ))));
+    }
+    @FXML
+    public void onPaperBinExit(){
+        paperBinImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/paperbin.png"
+        ))));
+    }
     @FXML
     public void removeShoppingItem(){
         dataHandler.getShoppingCart().removeItem(shoppingItem);

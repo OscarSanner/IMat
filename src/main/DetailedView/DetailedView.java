@@ -66,7 +66,7 @@ public class DetailedView extends AnchorPane {
     }
 
     //================================================================================
-    // Escapehatch Hover
+    // Favourite Hover
     //================================================================================
     @FXML
     public void onFavouriteEnter(){
