@@ -117,8 +117,9 @@ public class Product extends AnchorPane {
                }
            }
            // }
-           parentController.updateShoppingCart();
            parentController.updateProductFlowpane(parentController.currentCategory);
+           parentController.updateShoppingCart();
+
 
        }catch (ConcurrentModificationException ignore){
            System.out.println("ConcurrentModificaitonException"); //Don't look at this...

@@ -57,7 +57,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
 import static java.util.Comparator.comparingInt;
 import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.toCollection;
@@ -74,10 +73,10 @@ public class iMatBackendController implements Initializable {
     @FXML public StackPane homePane;
     @FXML public FlowPane subCategoryFlowPane;
     @FXML public FlowPane productFlowPane;
-    @FXML public Button orderTabButton;
-    @FXML public Button listTabButton;
-    @FXML public Button myPageTabButton;
-    @FXML public Button shoppingTabButton;
+    @FXML public ImageView orderTabImage;
+    @FXML public ImageView listTabImage;
+    @FXML public ImageView myPageTabImage;
+    @FXML public ImageView shoppingTabImage;
     @FXML public Button testButton;
     @FXML public AnchorPane mainAnchorPane;
     @FXML public Button checkoutButton;
@@ -117,11 +116,56 @@ public class iMatBackendController implements Initializable {
     @FXML private javafx.scene.control.TextField cvc;
     @FXML private Button saveButton;
 
+    public void resetSelectedTab(String currentTab){
+        shoppingTabImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/handla_tab.png"
+        ))));
+        orderTabImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/order_tab.png"
+        ))));
+        listTabImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/inkopslistor_tab.png"
+        ))));
+        myPageTabImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/min_sida_tab.png"
+        ))));
+
+        switch (currentTab){
+            case "order":
+                orderTabImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                        "main/Res/Images/order_tab_clicked.png"
+                ))));
+                break;
+            case "shopping":
+                shoppingTabImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                        "main/Res/Images/handla_tab_clicked.png"
+                ))));
+                break;
+            case "myPage":
+                myPageTabImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                        "main/Res/Images/min_sida_tab_clicked.png"
+                ))));
+                break;
+            case "inkop":
+                listTabImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                        "main/Res/Images/inkopslistor_tab_clicked.png"
+                ))));
+                break;
+            default:
+                orderTabImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                        "main/Res/Images/next.png"
+                ))));
+                System.out.println("Error currentTab");
+                break;
+        }
+    }
+
     @FXML
     public void onOrderTabSelect(){
         orderTabPane.toFront();
         populateOrderPane();
         calculateAccordionSize(orderAccordion);
+        resetSelectedTab("order");
     }
 
     private void calculateAccordionSize(Accordion accordion) {
@@ -152,6 +196,7 @@ public class iMatBackendController implements Initializable {
     @FXML
     public void onShoppingTabSelect(){
         shoppingTabPane.toFront();
+        resetSelectedTab("shopping");
     }
 
     @FXML
@@ -159,6 +204,8 @@ public class iMatBackendController implements Initializable {
         myPageTabPane.toFront();
         loadUserInfo();
         makeLblsInvisible();
+        resetSelectedTab("myPage");
+
     }
 
     @FXML
@@ -166,6 +213,8 @@ public class iMatBackendController implements Initializable {
         listTabPane.toFront();
         populateListPane();
         calculateAccordionSize(listAccordion);
+        resetSelectedTab("inkop");
+
     }
 
     private void populateListPane() {

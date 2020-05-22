@@ -98,22 +98,26 @@
                      <children>
                         <Pane prefHeight="58.0" prefWidth="569.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Button fx:id="shoppingTabButton" alignment="CENTER" contentDisplay="CENTER" layoutX="9.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#onShoppingTabSelect" prefHeight="40.0" prefWidth="120.0" styleClass="tabButtons" text="Handla">
-                                 <graphic>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
-                                 </graphic></Button>
-                              <Button fx:id="orderTabButton" contentDisplay="CENTER" layoutX="153.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#onOrderTabSelect" prefHeight="40.0" prefWidth="120.0" styleClass="tabButtons" text="Ordrar">
-                                 <graphic>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
-                                 </graphic></Button>
-                              <Button fx:id="listTabButton" contentDisplay="CENTER" layoutX="297.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#onListtabSelect" prefHeight="40.0" prefWidth="120.0" styleClass="tabButtons" text="Inköpslistor">
-                                 <graphic>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
-                                 </graphic></Button>
-                              <Button fx:id="myPageTabButton" contentDisplay="CENTER" layoutX="441.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#onMyPageTabSelect" prefHeight="40.0" prefWidth="120.0" styleClass="tabButtons" text="Min Sida">
-                                 <graphic>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
-                                 </graphic></Button>
+                              <ImageView fx:id="shoppingTabImage" fitHeight="50.0" fitWidth="132.0" layoutX="7.0" layoutY="4.0" onMouseClicked="#onShoppingTabSelect" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Res/Images/handla_tab_clicked.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="orderTabImage" fitHeight="50.0" fitWidth="115.0" layoutX="144.0" layoutY="4.0" onMouseClicked="#onOrderTabSelect" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Res/Images/order_tab.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="listTabImage" fitHeight="58.0" fitWidth="156.0" layoutX="267.0" layoutY="4.0" onMouseClicked="#onListtabSelect" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Res/Images/inkopslistor_tab.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="myPageTabImage" fitHeight="56.0" fitWidth="130.0" layoutX="433.0" layoutY="4.0" onMouseClicked="#onMyPageTabSelect" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Res/Images/min_sida_tab.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </Pane>
                      </children>
@@ -276,7 +280,7 @@
                                              <children>
                                                 <ScrollPane fx:id="productsScrollPane" prefHeight="481.0" prefWidth="551.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <content>
-                                                      <FlowPane fx:id="productFlowPane" alignment="CENTER_LEFT" prefHeight="479.0" prefWidth="563.0" prefWrapLength="1000.0" rowValignment="TOP" style="-fx-background-color: white;">
+                                                      <FlowPane fx:id="productFlowPane" prefHeight="479.0" prefWidth="563.0" prefWrapLength="1000.0" rowValignment="TOP" style="-fx-background-color: #EFEFEF;">
                                                          <rotationAxis>
                                                             <Point3D />
                                                          </rotationAxis></FlowPane>
