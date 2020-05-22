@@ -4,14 +4,12 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import se.chalmers.cse.dat216.project.*;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class iMat extends Application {
 
@@ -27,6 +25,9 @@ public class iMat extends Application {
         stage.setTitle(bundle.getString("application.name"));
         stage.setScene(scene);
         stage.show();
+        stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/398569911007576065.png"
+        ))));
 
 
 //        Order order = new Order();

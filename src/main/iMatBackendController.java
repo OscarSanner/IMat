@@ -116,6 +116,7 @@ public class iMatBackendController implements Initializable {
     @FXML private javafx.scene.control.TextField cvc;
     @FXML private Button saveButton;
 
+    //Resets the other unselected tabs
     public void resetSelectedTab(String currentTab){
         shoppingTabImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
                 "main/Res/Images/handla_tab.png"
