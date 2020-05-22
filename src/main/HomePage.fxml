@@ -35,11 +35,11 @@
             </Pane>
          </top>
          <left>
-            <Pane prefHeight="607.0" prefWidth="159.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="607.0" prefWidth="156.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                <children>
-                  <Pane layoutX="5.0" layoutY="30.0" prefHeight="578.0" prefWidth="149.0" styleClass="border">
+                  <Pane layoutX="4.0" layoutY="30.0" prefHeight="578.0" prefWidth="149.0" styleClass="border">
                      <children>
-                        <Button layoutX="17.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#onFavouritesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mina Favoriter" />
+                        <Button layoutX="17.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#onFavouritesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mina favoriter" />
                         <Button layoutX="17.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#onOffersButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Erbjudanden" />
                         <Button layoutX="17.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#onMeatAndFishButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kött &amp; Fisk" />
                         <Button layoutX="17.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#onVeggiesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Frukt &amp; Grönt" />
@@ -47,9 +47,13 @@
                         <Button layoutX="17.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#onDairyButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mejeri" />
                         <Button layoutX="17.0" layoutY="375.0" mnemonicParsing="false" onMouseClicked="#onPantryButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Skafferi" />
                         <Button layoutX="17.0" layoutY="464.0" mnemonicParsing="false" onMouseClicked="#onSpicesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kryddor" />
-                        <Label layoutX="45.0" layoutY="20.0" text="Kategorier" />
                         <Button layoutX="17.0" layoutY="419.0" mnemonicParsing="false" onMouseClicked="#onSnacksButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Snacks" />
                         <Button layoutX="17.0" layoutY="508.0" mnemonicParsing="false" onMouseClicked="#onBreadButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Bröd" />
+                        <ImageView fitHeight="58.0" fitWidth="135.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Res/Images/KATEGORIER_header.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                </children>
@@ -67,7 +71,6 @@
                            <font>
                               <Font size="30.0" />
                            </font></Button>
-                        <Label layoutX="109.0" layoutY="26.0" text="Kundvagn" />
                         <Label fx:id="sumLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="97.0" layoutY="459.0" prefHeight="35.0" prefWidth="147.0" text="0 kr" textAlignment="RIGHT">
                            <font>
                               <Font size="24.0" />
@@ -78,6 +81,11 @@
                            </content>
                         </ScrollPane>
                         <Line endX="140.0" layoutX="108.0" layoutY="463.0" startX="-100.0" />
+                        <ImageView fitHeight="58.0" fitWidth="244.0" layoutX="13.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Res/Images/KUNDVAGN_header.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </children>
@@ -268,7 +276,7 @@
                                              <children>
                                                 <ScrollPane fx:id="productsScrollPane" prefHeight="481.0" prefWidth="551.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                    <content>
-                                                      <FlowPane fx:id="productFlowPane" alignment="CENTER_LEFT" prefHeight="145.0" prefWidth="599.0" prefWrapLength="1000.0" rowValignment="TOP">
+                                                      <FlowPane fx:id="productFlowPane" alignment="CENTER_LEFT" prefHeight="479.0" prefWidth="563.0" prefWrapLength="1000.0" rowValignment="TOP" style="-fx-background-color: white;">
                                                          <rotationAxis>
                                                             <Point3D />
                                                          </rotationAxis></FlowPane>

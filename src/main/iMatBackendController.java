@@ -659,7 +659,7 @@ public class iMatBackendController implements Initializable {
 
             for(ShoppingItem s: dataHandler.getShoppingCart().getItems()){
                 if(s.getProduct().equals(p)){
-                    temporaryProduct.setQuantityLabel(String.valueOf(s.getAmount()));
+                    temporaryProduct.setQuantityLabel(String.valueOf((int)s.getAmount()));
                     temporaryProduct.buyButtonVisible(false);
                 }
             }
@@ -689,7 +689,8 @@ public class iMatBackendController implements Initializable {
 
 
     public void showPurchaseFeedback(Product product, String quantity, String unitSuffix){
-        purchaseFeedback.setFeedbackLabel(quantity + " " + unitSuffix + " " + product.getName() + " har lagts till i varukorgen");
+        //purchaseFeedback.setFeedbackLabel(quantity + " " + unitSuffix + " " + product.getName() + " har lagts till i varukorgen");
+        purchaseFeedback.setFeedbackLabel(product.getName() + " har lagts till i varukorgen");
         purchaseFeedback.setVisible(true);
 
         System.out.println(purchaseFeedback.isVisible()
@@ -781,7 +782,7 @@ public class iMatBackendController implements Initializable {
                     if(!currentGOE.contains(pd.getProductId())){
                         main.Product.Product tempProd = new main.Product.Product(this, pd);
                         tempProd.buyButtonVisible(false);
-                        pmet = String.valueOf(st.getAmount());
+                        pmet = String.valueOf((int)st.getAmount());
                         tempProd.setQuantityLabel(pmet);
 
                         currentGOE.add(pd.getProductId());
@@ -833,6 +834,7 @@ public class iMatBackendController implements Initializable {
     public void searchBarKeyPressed(javafx.scene.input.KeyEvent evt) {
         //if(evt.getCode() == KeyCode.ENTER) {  //__________________________Keep if you want to search after "ENTER" keypress.
 
+            shoppingTabPane.toFront();
             if(searchBarTextField.getText().equals("Sök miljontals varor...")){
                 resetSearchBarText();
             }
@@ -862,7 +864,7 @@ public class iMatBackendController implements Initializable {
                     if(!currentGOE.contains(p.getProductId())){
                         main.Product.Product tempProd = new main.Product.Product(this, p);
                         tempProd.buyButtonVisible(false);
-                        tempProd.setQuantityLabel(String.valueOf(st.getAmount()));
+                        tempProd.setQuantityLabel(String.valueOf((int)st.getAmount()));
 
                         currentGOE.add(p.getProductId());
                         listOfProducts.add(tempProd);
