@@ -39,16 +39,16 @@
                <children>
                   <Pane layoutX="4.0" layoutY="30.0" prefHeight="578.0" prefWidth="149.0" styleClass="border">
                      <children>
-                        <Button layoutX="17.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#onFavouritesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mina favoriter" />
-                        <Button layoutX="17.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#onOffersButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Erbjudanden" />
-                        <Button layoutX="17.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#onMeatAndFishButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kött &amp; Fisk" />
-                        <Button layoutX="17.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#onVeggiesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Frukt &amp; Grönt" />
-                        <Button layoutX="17.0" layoutY="287.0" mnemonicParsing="false" onMouseClicked="#onDrinkButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Dryck" />
-                        <Button layoutX="17.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#onDairyButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mejeri" />
-                        <Button layoutX="17.0" layoutY="375.0" mnemonicParsing="false" onMouseClicked="#onPantryButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Skafferi" />
-                        <Button layoutX="17.0" layoutY="464.0" mnemonicParsing="false" onMouseClicked="#onSpicesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kryddor" />
-                        <Button layoutX="17.0" layoutY="419.0" mnemonicParsing="false" onMouseClicked="#onSnacksButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Snacks" />
-                        <Button layoutX="17.0" layoutY="508.0" mnemonicParsing="false" onMouseClicked="#onBreadButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Bröd" />
+                        <Button fx:id="favouritesButton" layoutX="17.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#onFavouritesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mina favoriter" />
+                        <Button fx:id="offersButton" layoutX="17.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#onOffersButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Erbjudanden" />
+                        <Button fx:id="meatAndFishButton" layoutX="17.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#onMeatAndFishButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kött &amp; Fisk" />
+                        <Button fx:id="veggiesButton" layoutX="17.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#onVeggiesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Frukt &amp; Grönt" />
+                        <Button fx:id="drinkButton" layoutX="17.0" layoutY="287.0" mnemonicParsing="false" onMouseClicked="#onDrinkButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Dryck" />
+                        <Button fx:id="dairyButton" layoutX="17.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#onDairyButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mejeri" />
+                        <Button fx:id="pantryButton" layoutX="17.0" layoutY="375.0" mnemonicParsing="false" onMouseClicked="#onPantryButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Skafferi" />
+                        <Button fx:id="spicesButton" layoutX="17.0" layoutY="464.0" mnemonicParsing="false" onMouseClicked="#onSpicesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kryddor" />
+                        <Button fx:id="snacksButton" layoutX="17.0" layoutY="419.0" mnemonicParsing="false" onMouseClicked="#onSnacksButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Snacks" />
+                        <Button fx:id="breadButton" layoutX="17.0" layoutY="508.0" mnemonicParsing="false" onMouseClicked="#onBreadButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Bröd" />
                         <ImageView fitHeight="58.0" fitWidth="135.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Res/Images/KATEGORIER_header.png" />

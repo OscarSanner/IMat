@@ -10,10 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.Node;
-import javafx.scene.control.*;
-
 
 
 import javafx.scene.effect.GaussianBlur;
@@ -21,12 +18,9 @@ import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import main.CustomerSupport.CustomerSupport;
 import main.DetailedView.DetailedView;
@@ -39,27 +33,16 @@ import se.chalmers.cse.dat216.project.*;
 
 import java.util.*;
 
-import main.PersonalData.PersonalData;
-import main.ShoppingCart.ShoppingCart;
-import se.chalmers.cse.dat216.project.CreditCard;
 import se.chalmers.cse.dat216.project.Customer;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
 
-import main.ListTitlePane.ListTitlePane;
-import main.OrderTabTitlePane.OrderTabTitlePane;
 import main.PurchaseFeedback.PurchaseFeedback;
-import main.ShoppingCart.ShoppingCart;
-import se.chalmers.cse.dat216.project.*;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
-import static java.util.Comparator.comparingInt;
-import static java.util.stream.Collectors.collectingAndThen;
-import static java.util.stream.Collectors.toCollection;
 
 
 public class iMatBackendController implements Initializable {
@@ -85,8 +68,20 @@ public class iMatBackendController implements Initializable {
     @FXML public SplitPane categoryPane;
     @FXML public ScrollPane productsScrollPane;
 
+    @FXML public Button offersButton;
+    @FXML public Button favouritesButton;
+
     @FXML public Label sumLabel;
     @FXML public ImageView escapeHatchImage;
+    @FXML public Button meatAndFishButton;
+    @FXML public Button veggiesButton;
+    @FXML public Button drinkButton;
+    @FXML public Button dairyButton;
+    @FXML public Button pantryButton;
+    @FXML public Button snacksButton;
+    @FXML public Button spicesButton;
+    @FXML public Button breadButton;
+
 
     public CustomerSupport customerSupportPage = new CustomerSupport(this);
     public ShoppingCart shoppingCartPage = new ShoppingCart(this);
@@ -166,6 +161,7 @@ public class iMatBackendController implements Initializable {
         populateOrderPane();
         calculateAccordionSize(orderAccordion);
         resetSelectedTab("order");
+        IMatBackendEngine.getInstance().clearActiveCategory();
     }
 
     private void calculateAccordionSize(Accordion accordion) {
@@ -197,6 +193,7 @@ public class iMatBackendController implements Initializable {
     public void onShoppingTabSelect(){
         shoppingTabPane.toFront();
         resetSelectedTab("shopping");
+        IMatBackendEngine.getInstance().restoreActiveCategory();
     }
 
     @FXML
@@ -205,7 +202,7 @@ public class iMatBackendController implements Initializable {
         loadUserInfo();
         makeLblsInvisible();
         resetSelectedTab("myPage");
-
+        IMatBackendEngine.getInstance().clearActiveCategory();
     }
 
     @FXML
@@ -214,7 +211,7 @@ public class iMatBackendController implements Initializable {
         populateListPane();
         calculateAccordionSize(listAccordion);
         resetSelectedTab("inkop");
-
+        IMatBackendEngine.getInstance().clearActiveCategory();
     }
 
     private void populateListPane() {
@@ -482,10 +479,13 @@ public class iMatBackendController implements Initializable {
     }
 
     public void onFavouritesButtonPressed(){
+        IMatBackendEngine.getInstance().clearActiveCategory();
         categoryPane.toFront();
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
         populateProductFlowpane("Mina Favoriter");
+        IMatBackendEngine.getInstance().setActiveCategory(favouritesButton);
+        populateSubCategoryFlowPane("favourites");
 
 
         /*
@@ -533,11 +533,15 @@ public class iMatBackendController implements Initializable {
     }
 
     public void onOffersButtonPressed(){
+        IMatBackendEngine.getInstance().clearActiveCategory();
         categoryPane.toFront();
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
+        IMatBackendEngine.getInstance().setActiveCategory(offersButton);
+        populateSubCategoryFlowPane("Offers");
     }
     public void onBreadButtonPressed(){
+        IMatBackendEngine.getInstance().clearActiveCategory();
         categoryPane.toFront();
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
@@ -548,6 +552,7 @@ public class iMatBackendController implements Initializable {
     }
 
     public void onMeatAndFishButtonPressed(){
+        IMatBackendEngine.getInstance().clearActiveCategory();
         categoryPane.toFront();
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
@@ -558,6 +563,7 @@ public class iMatBackendController implements Initializable {
     }
 
     public void onVeggiesButtonPressed(){
+        IMatBackendEngine.getInstance().clearActiveCategory();
         categoryPane.toFront();
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
@@ -568,6 +574,7 @@ public class iMatBackendController implements Initializable {
     }
 
     public void onDrinkButtonPressed(){
+        IMatBackendEngine.getInstance().clearActiveCategory();
         categoryPane.toFront();
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
@@ -578,6 +585,7 @@ public class iMatBackendController implements Initializable {
     }
 
     public void onDairyButtonPressed(){
+        IMatBackendEngine.getInstance().clearActiveCategory();
         categoryPane.toFront();
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
@@ -588,6 +596,7 @@ public class iMatBackendController implements Initializable {
     }
 
     public void onPantryButtonPressed(){
+        IMatBackendEngine.getInstance().clearActiveCategory();
         categoryPane.toFront();
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
@@ -598,6 +607,7 @@ public class iMatBackendController implements Initializable {
     }
 
     public void onSnacksButtonPressed(){
+        IMatBackendEngine.getInstance().clearActiveCategory();
         categoryPane.toFront();
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
@@ -608,6 +618,7 @@ public class iMatBackendController implements Initializable {
     }
 
     public void onSpicesButtonPressed(){
+        IMatBackendEngine.getInstance().clearActiveCategory();
         categoryPane.toFront();
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
@@ -626,6 +637,7 @@ public class iMatBackendController implements Initializable {
                 Button fish = new Button("Fisk");
                 buttons.add(meat);
                 buttons.add(fish);
+                IMatBackendEngine.getInstance().setActiveCategory(meatAndFishButton);
                 break;
             }
             case "Frukt & Grönt": {
@@ -635,6 +647,7 @@ public class iMatBackendController implements Initializable {
                 buttons.add(berries);
                 buttons.add(veggies);
                 buttons.add(fruit);
+                IMatBackendEngine.getInstance().setActiveCategory(veggiesButton);
                 break;
             }
             case "Dryck": {
@@ -642,11 +655,13 @@ public class iMatBackendController implements Initializable {
                 Button coldDrinks = new Button("Kalla drycker");
                 buttons.add(warmDrinks);
                 buttons.add(coldDrinks);
+                IMatBackendEngine.getInstance().setActiveCategory(drinkButton);
                 break;
         }
             case "Mejeri": {
                 Button dairy = new Button("Mejeri");
                 buttons.add(dairy);
+                IMatBackendEngine.getInstance().setActiveCategory(dairyButton);
                 break;
             }
             case "Skafferi":  {
@@ -656,6 +671,7 @@ public class iMatBackendController implements Initializable {
                 buttons.add(flourSugarSalt);
                 buttons.add(pasta);
                 buttons.add(potatoRice);
+                IMatBackendEngine.getInstance().setActiveCategory(pantryButton);
                 break;
             }
             case "Snacks" : {
@@ -663,16 +679,19 @@ public class iMatBackendController implements Initializable {
                 Button seeds = new Button("Nötter och frön");
                 buttons.add(sweets);
                 buttons.add(seeds);
+                IMatBackendEngine.getInstance().setActiveCategory(snacksButton);
                 break;
             }
             case "Kryddor": {
                 Button spices = new Button("Kryddor");
                 buttons.add(spices);
+                IMatBackendEngine.getInstance().setActiveCategory(spicesButton);
                 break;
             }
             case "Bröd": {
                 Button bread = new Button("Bröd");
                 buttons.add(bread);
+                IMatBackendEngine.getInstance().setActiveCategory(breadButton);
                 break;
             }
         }
@@ -687,12 +706,12 @@ public class iMatBackendController implements Initializable {
                 public void handle(MouseEvent mouseEvent) {
                     populateProductFlowpane(button.getText());
                     productsScrollPane.setVvalue(0);
-                    IMatBackendEngine.getInstance().clarActiveButton(button);
-                    IMatBackendEngine.getInstance().setActiveButton(button);
+                    IMatBackendEngine.getInstance().clearActiveSubcategory();
+                    IMatBackendEngine.getInstance().setActiveSubcategory(button);
                 }
             });
             button.setPrefSize(150,35);
-            button.setStyle("-fx-background-color: #B1D5F6; -fx-text-fill: black");
+            button.getStyleClass().add("categoryButtons");
             subCategoryFlowPane.getChildren().add(button);
         }
     }
@@ -1016,6 +1035,11 @@ public class iMatBackendController implements Initializable {
         }
     }
 
+    public void setActiveCategory(){
+
+    }
+
 
 }
+
 

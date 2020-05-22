@@ -6,7 +6,6 @@ import se.chalmers.cse.dat216.project.Order;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class IMatBackendEngine {
 
@@ -17,8 +16,10 @@ public class IMatBackendEngine {
     private IMatBackendEngine(){}
     private List<Order> saved = new ArrayList<Order>();
     HashMap<Order, String> savedOrders = new HashMap<>();
-    Button activeButton;
-    String style;
+    Button activeSubcategory;
+    Button activeCategory;
+    Button lastActiveCategory;
+
 
     static public IMatBackendEngine getInstance(){
         if (instance == null){
@@ -36,16 +37,39 @@ public class IMatBackendEngine {
     }
 
 
-    public void clarActiveButton(Button button) {
-        if(activeButton != null){
-            activeButton.setStyle(style);
-            activeButton = null;
+    public void clearActiveSubcategory() {
+        if(activeSubcategory != null){
+            activeSubcategory.getStyleClass().clear();
+            activeSubcategory.getStyleClass().add("button");
+            activeSubcategory.getStyleClass().add("categoryButtons");
+            activeSubcategory = null;
         }
     }
 
-    public void setActiveButton(Button button) {
-        activeButton = button;
-        style = button.getStyle();
-        button.setStyle("-fx-background-color: #037C99; -fx-text-fill: white");
+    public void setActiveSubcategory(Button button) {
+        activeSubcategory = button;
+        button.getStyleClass().add("categoryButtonsSelected");
+    }
+
+    public void setActiveCategory(Button button){
+        activeCategory = button;
+        button.getStyleClass().add("categoryButtonsSelected");
+        lastActiveCategory = button;
+    }
+
+    public void clearActiveCategory() {
+        if (activeCategory != null){
+            activeCategory.getStyleClass().clear();
+            activeCategory.getStyleClass().add("button");
+            activeCategory.getStyleClass().add("categoryButtons");
+            activeCategory = null;
+        }
+    }
+
+
+    public void restoreActiveCategory() {
+        if(lastActiveCategory != null){
+            setActiveCategory(lastActiveCategory);
+        }
     }
 }
