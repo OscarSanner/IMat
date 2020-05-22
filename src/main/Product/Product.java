@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.*;
@@ -17,9 +18,7 @@ import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.awt.*;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.ConcurrentModificationException;
-import java.util.Iterator;
+import java.util.*;
 import java.util.List;
 
 public class Product extends AnchorPane {
@@ -29,6 +28,8 @@ public class Product extends AnchorPane {
      @FXML Label priceLabel;
      @FXML Button buyButton;
      @FXML TextField amountTextField;
+     @FXML ImageView plusImage;
+     @FXML ImageView minusImage;
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     private iMatBackendController parentController;
@@ -56,6 +57,35 @@ public class Product extends AnchorPane {
         this.itemLabel.setText(product.getName());
         this.priceLabel.setText(product.getPrice() + " kr/" + product.getUnitSuffix());
     }
+
+    //================================================================================
+    // +/- Hover
+    //================================================================================
+    @FXML
+    public void onPlusEnter(){
+        plusImage.setImage(new javafx.scene.image.Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/plus_hover.png"
+        ))));
+    }
+    @FXML
+    public void onPlusExit(){
+        plusImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/plus.png"
+        ))));
+    }
+    @FXML
+    public void onMinusEnter(){
+        minusImage.setImage(new javafx.scene.image.Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/minus_hover.png"
+        ))));
+    }
+    @FXML
+    public void onMinusExit(){
+        minusImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/minus.png"
+        ))));
+    }
+
 
     @FXML
     protected void onBuyButtonPressed(){
