@@ -40,7 +40,7 @@
                   <Pane layoutX="4.0" layoutY="30.0" prefHeight="578.0" prefWidth="149.0" styleClass="border">
                      <children>
                         <Button fx:id="favouritesButton" layoutX="17.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#onFavouritesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mina favoriter" />
-                        <Button fx:id="offersButton" layoutX="17.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#onOffersButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Erbjudanden" />
+                        <Button fx:id="offersButton" layoutX="17.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#onOffersButtonPressed" prefHeight="44.0" prefWidth="111.0" style="-fx-background-size: 100;" styleClass="categoryButtons" text="Erbjudanden" />
                         <Button fx:id="meatAndFishButton" layoutX="17.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#onMeatAndFishButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kött &amp; Fisk" />
                         <Button fx:id="veggiesButton" layoutX="17.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#onVeggiesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Frukt &amp; Grönt" />
                         <Button fx:id="drinkButton" layoutX="17.0" layoutY="287.0" mnemonicParsing="false" onMouseClicked="#onDrinkButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Dryck" />

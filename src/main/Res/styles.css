@@ -27,3 +27,13 @@
     -fx-background-color: #037C99;
     -fx-font-size: 15;
 }
+
+.categoryButtonsSelected:hover{
+    -fx-background-color: white;
+    -fx-font-size: 19;
+}
+
+.categoryButtons:hover{
+    -fx-background-color: #cee2f5;
+    -fx-font-size: 19;
+}
