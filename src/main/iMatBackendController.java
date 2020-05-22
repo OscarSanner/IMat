@@ -687,9 +687,12 @@ public class iMatBackendController implements Initializable {
                 public void handle(MouseEvent mouseEvent) {
                     populateProductFlowpane(button.getText());
                     productsScrollPane.setVvalue(0);
+                    IMatBackendEngine.getInstance().clarActiveButton(button);
+                    IMatBackendEngine.getInstance().setActiveButton(button);
                 }
             });
             button.setPrefSize(150,35);
+            button.setStyle("-fx-background-color: #B1D5F6; -fx-text-fill: black");
             subCategoryFlowPane.getChildren().add(button);
         }
     }

@@ -1,5 +1,6 @@
 package main;
 
+import javafx.scene.control.Button;
 import se.chalmers.cse.dat216.project.Order;
 
 import java.util.ArrayList;
@@ -16,6 +17,8 @@ public class IMatBackendEngine {
     private IMatBackendEngine(){}
     private List<Order> saved = new ArrayList<Order>();
     HashMap<Order, String> savedOrders = new HashMap<>();
+    Button activeButton;
+    String style;
 
     static public IMatBackendEngine getInstance(){
         if (instance == null){
@@ -30,5 +33,19 @@ public class IMatBackendEngine {
 
     public void removeSavedOrder(Order order) {
         savedOrders.remove(order);
+    }
+
+
+    public void clarActiveButton(Button button) {
+        if(activeButton != null){
+            activeButton.setStyle(style);
+            activeButton = null;
+        }
+    }
+
+    public void setActiveButton(Button button) {
+        activeButton = button;
+        style = button.getStyle();
+        button.setStyle("-fx-background-color: #037C99; -fx-text-fill: white");
     }
 }
