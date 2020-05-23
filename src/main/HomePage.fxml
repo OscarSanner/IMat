@@ -96,7 +96,7 @@
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                      <children>
-                        <Pane prefHeight="58.0" prefWidth="569.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Pane prefHeight="58.0" prefWidth="569.0" style="-fx-background-color: white;" styleClass="border" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <ImageView fx:id="shoppingTabImage" fitHeight="50.0" fitWidth="132.0" layoutX="7.0" layoutY="4.0" onMouseClicked="#onShoppingTabSelect" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -113,7 +113,7 @@
                                     <Image url="@Res/Images/inkopslistor_tab.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="myPageTabImage" fitHeight="56.0" fitWidth="130.0" layoutX="433.0" layoutY="4.0" onMouseClicked="#onMyPageTabSelect" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="myPageTabImage" fitHeight="49.0" fitWidth="143.0" layoutX="433.0" layoutY="4.0" onMouseClicked="#onMyPageTabSelect" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@Res/Images/min_sida_tab.png" />
                                  </image>
@@ -122,13 +122,13 @@
                         </Pane>
                      </children>
                   </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: white;">
                      <children>
-                        <Pane prefHeight="541.0" prefWidth="569.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Pane prefHeight="541.0" prefWidth="569.0" styleClass="border" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <StackPane fx:id="myPageTabPane" prefHeight="541.0" prefWidth="569.0">
+                              <StackPane fx:id="myPageTabPane" prefHeight="541.0" prefWidth="565.0" styleClass="border">
                                  <children>
-                                    <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+                                    <Pane prefHeight="537.0" prefWidth="576.0" style="-fx-background-color: white;">
                                        <children>
                                           <Pane layoutX="14.0" layoutY="19.0" prefHeight="302.0" prefWidth="538.0" style="-fx-background-color: lightgrey;">
                                              <children>
@@ -231,26 +231,26 @@
                                     </Pane>
                                  </children>
                               </StackPane>
-                              <StackPane fx:id="orderTabPane" prefHeight="541.0" prefWidth="570.0" style="-fx-background-color: RED;">
+                              <StackPane fx:id="orderTabPane" prefHeight="541.0" prefWidth="567.0" style="-fx-background-color: white;" styleClass="border">
                                  <children>
-                                    <ScrollPane prefHeight="541.0" prefWidth="445.0">
+                                    <ScrollPane prefHeight="541.0" prefWidth="549.0" style="-fx-background-color: white; -fx-background: white;">
                                        <content>
-                                          <Accordion fx:id="orderAccordion" prefHeight="102.0" prefWidth="577.0" />
+                                          <Accordion fx:id="orderAccordion" prefHeight="102.0" prefWidth="565.0" style="-fx-background-color: white;" />
                                        </content>
                                     </ScrollPane>
                                  </children></StackPane>
-                              <StackPane fx:id="listTabPane" prefHeight="541.0" prefWidth="569.0" style="-fx-background-color: red;">
+                              <StackPane fx:id="listTabPane" prefHeight="541.0" prefWidth="567.0" style="-fx-background-color: white;" styleClass="border">
                                  <children>
-                                    <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                    <ScrollPane prefHeight="541.0" prefWidth="549.0" style="-fx-background: white; -fx-background-color: white;">
                                        <content>
-                                          <Accordion fx:id="listAccordion" />
+                                          <Accordion fx:id="listAccordion" prefHeight="76.0" prefWidth="565.0" style="-fx-background-color: white;" />
                                        </content>
                                     </ScrollPane>
                                  </children>
                               </StackPane>
-                              <StackPane fx:id="shoppingTabPane" prefHeight="541.0" prefWidth="569.0">
+                              <StackPane fx:id="shoppingTabPane" prefHeight="541.0" prefWidth="570.0" style="-fx-background-color: white;">
                                  <children>
-                                    <StackPane fx:id="homePane" prefHeight="541.0" prefWidth="569.0">
+                                    <StackPane fx:id="homePane" prefHeight="537.0" prefWidth="573.0">
                                        <children>
                                           <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gray;">
                                              <children>
@@ -269,18 +269,18 @@
                                           </Pane>
                                        </children>
                                     </StackPane>
-                                    <SplitPane fx:id="categoryPane" dividerPositions="0.10204081632653061" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                    <SplitPane fx:id="categoryPane" dividerPositions="0.10204081632653061" orientation="VERTICAL" prefHeight="537.0" prefWidth="574.0">
                                       <items>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                        <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="52.0" prefWidth="563.0" styleClass="border">
                                              <children>
-                                                <FlowPane fx:id="subCategoryFlowPane" layoutX="-24.0" layoutY="-64.0" prefHeight="72.0" prefWidth="567.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                <FlowPane fx:id="subCategoryFlowPane" layoutX="4.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="563.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0" />
                                              </children>
                                           </AnchorPane>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                        <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="481.0" prefWidth="563.0" styleClass="border">
                                              <children>
-                                                <ScrollPane fx:id="productsScrollPane" prefHeight="481.0" prefWidth="551.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                <ScrollPane fx:id="productsScrollPane" layoutX="2.0" layoutY="3.0" prefHeight="476.0" prefWidth="557.0">
                                                    <content>
-                                                      <FlowPane fx:id="productFlowPane" prefHeight="479.0" prefWidth="563.0" prefWrapLength="1000.0" rowValignment="TOP" style="-fx-background-color: #EFEFEF;">
+                                                      <FlowPane fx:id="productFlowPane" prefHeight="479.0" prefWidth="560.0" prefWrapLength="1000.0" rowValignment="TOP" style="-fx-background-color: white;">
                                                          <rotationAxis>
                                                             <Point3D />
                                                          </rotationAxis></FlowPane>

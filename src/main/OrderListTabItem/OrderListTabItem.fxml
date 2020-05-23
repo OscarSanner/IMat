@@ -4,7 +4,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root prefHeight="60.0" prefWidth="536.0" style="-fx-background-color: lightgray;" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="60.0" prefWidth="536.0" style="-fx-background-color: white; -fx-border-width: 3px; -fx-border-color: #F0F0F0;" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="itemName" layoutX="88.0" layoutY="22.0" prefHeight="17.0" prefWidth="56.0" text="Paprika" />
       <ImageView fx:id="itemImage" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
