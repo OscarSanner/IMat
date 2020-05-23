@@ -56,10 +56,10 @@ public class iMatBackendController implements Initializable {
     @FXML public StackPane homePane;
     @FXML public FlowPane subCategoryFlowPane;
     @FXML public FlowPane productFlowPane;
-    @FXML public ImageView orderTabImage;
-    @FXML public ImageView listTabImage;
-    @FXML public ImageView myPageTabImage;
-    @FXML public ImageView shoppingTabImage;
+    //@FXML public ImageView orderTabImage;
+    //@FXML public ImageView listTabImage;
+    //@FXML public ImageView myPageTabImage;
+    //@FXML public ImageView shoppingTabImage;
     @FXML public Button testButton;
     @FXML public AnchorPane mainAnchorPane;
     @FXML public Button checkoutButton;
@@ -112,7 +112,7 @@ public class iMatBackendController implements Initializable {
     @FXML private Button saveButton;
 
     //Resets the other unselected tabs
-    public void resetSelectedTab(String currentTab){
+    /*public void resetSelectedTab(String currentTab){
         shoppingTabImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
                 "main/Res/Images/handla_tab.png"
         ))));
@@ -154,14 +154,14 @@ public class iMatBackendController implements Initializable {
                 System.out.println("Error currentTab");
                 break;
         }
-    }
+    }*/
 
     @FXML
     public void onOrderTabSelect(){
         orderTabPane.toFront();
         populateOrderPane();
         calculateAccordionSize(orderAccordion);
-        resetSelectedTab("order");
+        //resetSelectedTab("order");
         IMatBackendEngine.getInstance().clearActiveCategory();
     }
 
@@ -193,7 +193,7 @@ public class iMatBackendController implements Initializable {
     @FXML
     public void onShoppingTabSelect(){
         shoppingTabPane.toFront();
-        resetSelectedTab("shopping");
+        //resetSelectedTab("shopping");
         IMatBackendEngine.getInstance().restoreActiveCategory();
     }
 
@@ -202,7 +202,7 @@ public class iMatBackendController implements Initializable {
         myPageTabPane.toFront();
         loadUserInfo();
         makeLblsInvisible();
-        resetSelectedTab("myPage");
+        //resetSelectedTab("myPage");
         IMatBackendEngine.getInstance().clearActiveCategory();
     }
 
@@ -211,7 +211,7 @@ public class iMatBackendController implements Initializable {
         listTabPane.toFront();
         populateListPane();
         calculateAccordionSize(listAccordion);
-        resetSelectedTab("inkop");
+        //resetSelectedTab("inkop");
         IMatBackendEngine.getInstance().clearActiveCategory();
     }
 
