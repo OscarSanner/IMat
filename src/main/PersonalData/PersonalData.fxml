@@ -45,37 +45,37 @@
                                        <children>
                                           <Label layoutX="38.0" layoutY="14.0" prefHeight="17.0" prefWidth="200.0" text="Förnamn:">
                                              <font>
-                                                <Font size="17.0" />
+                                                <Font name="SansSerif Regular" size="17.0" />
                                              </font>
                                           </Label>
                                           <Label layoutX="38.0" layoutY="102.0" prefHeight="17.0" prefWidth="200.0" text="Efternamn:">
                                              <font>
-                                                <Font size="17.0" />
+                                                <Font name="SansSerif Regular" size="17.0" />
                                              </font>
                                           </Label>
                                           <Label layoutX="38.0" layoutY="190.0" prefHeight="17.0" prefWidth="200.0" text="Gatuadrress:">
                                              <font>
-                                                <Font size="17.0" />
+                                                <Font name="SansSerif Regular" size="17.0" />
                                              </font>
                                           </Label>
                                           <Label layoutX="38.0" layoutY="278.0" prefHeight="17.0" prefWidth="200.0" text="Postnummer:">
                                              <font>
-                                                <Font size="17.0" />
+                                                <Font name="SansSerif Regular" size="17.0" />
                                              </font>
                                           </Label>
                                           <Label layoutX="412.0" layoutY="14.0" prefHeight="17.0" prefWidth="200.0" text="Postort:">
                                              <font>
-                                                <Font size="17.0" />
+                                                <Font name="SansSerif Regular" size="17.0" />
                                              </font>
                                           </Label>
                                           <Label layoutX="412.0" layoutY="102.0" prefHeight="22.0" prefWidth="245.0" text="Mobilnummer:">
                                              <font>
-                                                <Font size="17.0" />
+                                                <Font name="SansSerif Regular" size="17.0" />
                                              </font>
                                           </Label>
                                           <Label layoutX="412.0" layoutY="190.0" prefHeight="22.0" prefWidth="147.0" text="E-mail adress:">
                                              <font>
-                                                <Font size="17.0" />
+                                                <Font name="SansSerif Regular" size="17.0" />
                                              </font>
                                           </Label>
                                           <TextField fx:id="firstNameTextField" layoutX="38.0" layoutY="44.0" onMouseClicked="#errorlabeldisapear2" prefHeight="35.0" prefWidth="245.0" promptText="Nicklas" style="-fx-background-radius: 20;">
@@ -110,21 +110,57 @@
                                           <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="640.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
                                           <CheckBox fx:id="personalCheckBox" layoutX="412.0" layoutY="308.0" mnemonicParsing="false" styleClass="cursor-hand" text="Spara mina personuppgifter till nästa köp">
                                              <font>
-                                                <Font size="17.0" />
+                                                <Font name="SansSerif Regular" size="17.0" />
                                              </font>
                                           </CheckBox>
-                                          <Label fx:id="firstNameErrorLbl" layoutX="38.0" layoutY="81.0" prefHeight="17.0" prefWidth="178.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b" />
-                                          <Label fx:id="lastNameErrorLbl" layoutX="38.0" layoutY="169.0" prefHeight="17.0" prefWidth="176.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b" />
-                                          <Label fx:id="adressErrorLbl" layoutX="38.0" layoutY="257.0" prefHeight="17.0" prefWidth="176.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b" />
-                                          <Label fx:id="postCodeErrorLbl" layoutX="38.0" layoutY="345.0" prefHeight="17.0" prefWidth="179.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b" />
-                                          <Label fx:id="areaErrorLbl" layoutX="412.0" layoutY="81.0" prefHeight="17.0" prefWidth="181.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b" />
-                                          <Label fx:id="mobileErrorLbl" layoutX="412.0" layoutY="169.0" prefHeight="17.0" prefWidth="175.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b" />
-                                          <Label fx:id="emailErrorLbl" layoutX="412.0" layoutY="257.0" prefHeight="17.0" prefWidth="183.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b" />
-                                          <Label fx:id="postCodeAmountErrorLbl" layoutX="38.0" layoutY="345.0" prefHeight="17.0" prefWidth="193.0" text="OBS! Postnummer innehåller 5 tal!" textFill="#d30b0b" />
-                                          <Label fx:id="mobileAmountErrorLbl" layoutX="412.0" layoutY="169.0" prefHeight="17.0" prefWidth="210.0" text="OBS! Mobilnummer innehåller 10 tal!" textFill="#d30b0b" />
-                                          <Label fx:id="emailStyleErrorLbl" layoutX="412.0" layoutY="257.0" prefHeight="17.0" prefWidth="183.0" text="OBS! Fältet är inte i email Form" textFill="#d30b0b" />
-                                          <Label fx:id="postCodeStyleErrorLbl" layoutX="38.0" layoutY="345.0" prefHeight="17.0" prefWidth="220.0" text="OBS! Postnummer få bara innehålla tal!" textFill="#d30b0b" />
-                                          <Label fx:id="mobileStyleErrorLbl" layoutX="412.0" layoutY="169.0" prefHeight="17.0" prefWidth="227.0" text="OBS! Mobilnummer få bara innehåller tal!" textFill="#d30b0b" />
+                                          <Label fx:id="firstNameErrorLbl" layoutX="38.0" layoutY="81.0" prefHeight="17.0" prefWidth="178.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="12.0" />
+                                             </font></Label>
+                                          <Label fx:id="lastNameErrorLbl" layoutX="38.0" layoutY="169.0" prefHeight="17.0" prefWidth="176.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="12.0" />
+                                             </font></Label>
+                                          <Label fx:id="adressErrorLbl" layoutX="38.0" layoutY="257.0" prefHeight="17.0" prefWidth="176.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="12.0" />
+                                             </font></Label>
+                                          <Label fx:id="postCodeErrorLbl" layoutX="38.0" layoutY="345.0" prefHeight="17.0" prefWidth="179.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="12.0" />
+                                             </font></Label>
+                                          <Label fx:id="areaErrorLbl" layoutX="412.0" layoutY="81.0" prefHeight="17.0" prefWidth="181.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="12.0" />
+                                             </font></Label>
+                                          <Label fx:id="mobileErrorLbl" layoutX="412.0" layoutY="169.0" prefHeight="17.0" prefWidth="175.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="12.0" />
+                                             </font></Label>
+                                          <Label fx:id="emailErrorLbl" layoutX="412.0" layoutY="257.0" prefHeight="17.0" prefWidth="183.0" text="OBS! Fältet kan inte vara tomt!" textFill="#d30b0b">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="12.0" />
+                                             </font></Label>
+                                          <Label fx:id="postCodeAmountErrorLbl" layoutX="38.0" layoutY="345.0" prefHeight="17.0" prefWidth="193.0" text="OBS! Postnummer innehåller 5 tal!" textFill="#d30b0b">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="12.0" />
+                                             </font></Label>
+                                          <Label fx:id="mobileAmountErrorLbl" layoutX="412.0" layoutY="169.0" prefHeight="17.0" prefWidth="210.0" text="OBS! Mobilnummer innehåller 10 tal!" textFill="#d30b0b">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="12.0" />
+                                             </font></Label>
+                                          <Label fx:id="emailStyleErrorLbl" layoutX="412.0" layoutY="257.0" prefHeight="17.0" prefWidth="183.0" text="OBS! Fältet är inte i email Form" textFill="#d30b0b">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="12.0" />
+                                             </font></Label>
+                                          <Label fx:id="postCodeStyleErrorLbl" layoutX="38.0" layoutY="345.0" prefHeight="17.0" prefWidth="220.0" text="OBS! Postnummer få bara innehålla tal!" textFill="#d30b0b">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="12.0" />
+                                             </font></Label>
+                                          <Label fx:id="mobileStyleErrorLbl" layoutX="412.0" layoutY="169.0" prefHeight="17.0" prefWidth="227.0" text="OBS! Mobilnummer få bara innehåller tal!" textFill="#d30b0b">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="12.0" />
+                                             </font></Label>
                                        </children>
                                     </Pane>
                                  </children>
@@ -149,7 +185,7 @@
                            <children>
                               <Label fx:id="pageNameLabel" layoutX="296.0" layoutY="5.0" text="Personuppgifter">
                                  <font>
-                                    <Font size="24.0" />
+                                    <Font name="SansSerif Regular" size="24.0" />
                                  </font></Label>
                            </children>
                         </Pane>

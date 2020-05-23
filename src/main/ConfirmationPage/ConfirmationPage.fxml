@@ -21,7 +21,7 @@
                   </Label>
                   <Label layoutX="326.0" layoutY="470.0" text="Tack för att du handlar hos oss!">
                      <font>
-                        <Font size="19.0" />
+                        <Font name="SansSerif Regular" size="19.0" />
                      </font>
                   </Label>
                   <ImageView fitHeight="87.0" fitWidth="150.0" layoutX="386.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" />
@@ -40,22 +40,22 @@
                   <ImageView fitHeight="87.0" fitWidth="150.0" layoutX="396.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true" />
                   <Label fx:id="orderNumberLabel" alignment="CENTER" layoutX="340.0" layoutY="195.0" prefHeight="35.0" prefWidth="263.0" text="Order No.: XXXXX   " textAlignment="CENTER">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="SansSerif Regular" size="24.0" />
                      </font>
                   </Label>
                   <Label fx:id="orderDateLabel" alignment="CENTER" layoutX="304.0" layoutY="238.0" prefHeight="35.0" prefWidth="335.0" text="Order datum: XX maj 2020">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="SansSerif Regular" size="24.0" />
                      </font>
                   </Label>
                   <Label fx:id="deliveryDateLabel" alignment="CENTER" layoutX="224.0" layoutY="284.0" prefHeight="35.0" prefWidth="495.0" text="Förväntat leveransdatum: XX maj 2020">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="SansSerif Regular" size="24.0" />
                      </font>
                   </Label>
                   <Label fx:id="thankYouLabel" alignment="CENTER" layoutX="241.0" layoutY="144.0" prefHeight="35.0" prefWidth="440.0" text="Hej NAMN, din order har mottagits!" textAlignment="CENTER">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="SansSerif Regular" size="24.0" />
                      </font>
                   </Label>
                </children>

@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -41,6 +42,7 @@ public class DetailedView extends AnchorPane {
     @FXML private ImageView organicImage;
     @FXML private Label unitLabel;
     @FXML private Label unitSuffixLabel;
+    @FXML private TextField quantityTextField;
 
     //Frontend elements
     @FXML private Label quantityLabel;
@@ -128,24 +130,24 @@ public class DetailedView extends AnchorPane {
             for(ShoppingItem s: currentCart){
                 if(s.getProduct().equals(shoppingItem.getProduct())){
                     alreadyAdded = true;
-                    s.setAmount(s.getAmount() + Double.parseDouble(quantityLabel.getText()));
+                    s.setAmount(s.getAmount() + Double.parseDouble(quantityTextField.getText()));
                     System.out.println("There is an idential shopping item in shoppingcart. Increase amount on the existing shoppingitem");
                     detailedViewProduct.setQuantityLabel(String.valueOf(s.getAmount()));
 
                 }
             }
 
-            if(Integer.parseInt(quantityLabel.getText()) == 0){
+            if(Integer.parseInt(quantityTextField.getText()) == 0){
                 // Do nothing
                 System.out.println("zerooo");
             }
            else if(!alreadyAdded){
-                shoppingItem.setAmount(Double.parseDouble(quantityLabel.getText()));
+                shoppingItem.setAmount(Double.parseDouble(quantityTextField.getText()));
                 parentController.createItemtoShoppingCart(shoppingItem);
 
                 parentController.updateProductFlowpane(parentController.currentCategory);
 
-                parentController.purchaseFeedback.startAnimation(product, quantityLabel.getText(), product.getUnitSuffix());
+                parentController.purchaseFeedback.startAnimation(product, quantityTextField.getText(), product.getUnitSuffix());
                 detailedViewProduct.setQuantityLabel(String.valueOf(shoppingItem.getAmount()));
 
             }
@@ -164,9 +166,9 @@ public class DetailedView extends AnchorPane {
     public void increaseQuantity(){
         try
         {
-            int temporaryNumber = Integer.parseInt(quantityLabel.getText());
+            int temporaryNumber = Integer.parseInt(quantityTextField.getText());
             temporaryNumber++;
-            quantityLabel.setText(String.valueOf(temporaryNumber));
+            quantityTextField.setText(String.valueOf(temporaryNumber));
         }
         catch (NumberFormatException nfe)
         {
@@ -177,12 +179,12 @@ public class DetailedView extends AnchorPane {
     public void decreaseQuantity(){
         try
         {
-            int temporaryNumber = Integer.parseInt(quantityLabel.getText());
+            int temporaryNumber = Integer.parseInt(quantityTextField.getText());
             temporaryNumber--;
             if(temporaryNumber > 0){
-                quantityLabel.setText(String.valueOf(temporaryNumber));
+                quantityTextField.setText(String.valueOf(temporaryNumber));
             } else{
-                quantityLabel.setText(String.valueOf(0));
+                quantityTextField.setText(String.valueOf(0));
             }
         }
         catch (NumberFormatException nfe)

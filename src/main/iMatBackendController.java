@@ -31,6 +31,7 @@ import main.ShoppingCart.ShoppingCart;
 import main.ShoppingCartItem.ShoppingCartItem;
 import se.chalmers.cse.dat216.project.*;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 import se.chalmers.cse.dat216.project.Customer;
@@ -796,7 +797,8 @@ public class iMatBackendController implements Initializable {
         double sum = 0;
         for(ShoppingItem s: shoppingCart.getItems()){
             visualShoppingItems.add(new ShoppingCartItem(this, s));
-            sum += (int)(s.getAmount() * s.getProduct().getPrice());
+            sum += (s.getAmount() * s.getProduct().getPrice());
+            sum = Math.round(sum * 100.0)/100.0;
         }
         for(ShoppingCartItem sI: visualShoppingItems){
             shoppingCartFlowPane.getChildren().add(sI);

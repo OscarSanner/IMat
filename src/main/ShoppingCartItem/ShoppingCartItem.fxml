@@ -19,7 +19,7 @@
          </image></ImageView>
       <Label fx:id="priceLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="171.0" layoutY="46.0" prefHeight="25.0" prefWidth="57.0" styleClass="san-serif" text="kr" textAlignment="CENTER" underline="true">
          <font>
-            <Font size="14.0" />
+            <Font name="SansSerif Regular" size="14.0" />
          </font></Label>
       <ImageView fx:id="minusImage" fitHeight="25.0" fitWidth="25.0" layoutX="62.0" layoutY="37.0" onMouseClicked="#onMinusButtonPressed" onMouseEntered="#onMinusEnter" onMouseExited="#onMinusExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
          <image>

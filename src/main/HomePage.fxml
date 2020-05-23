@@ -25,7 +25,10 @@
             <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
                <children>
                   <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#onCustomerSupportPressed" prefHeight="64.0" prefWidth="123.0" text="Button" />
-                  <TextField fx:id="searchBarTextField" layoutX="164.0" layoutY="32.0" onKeyPressed="#searchBarKeyPressed" prefHeight="25.0" prefWidth="562.0" styleClass="cursor-text" text="Sök miljontals varor..." />
+                  <TextField fx:id="searchBarTextField" layoutX="164.0" layoutY="32.0" onKeyPressed="#searchBarKeyPressed" prefHeight="25.0" prefWidth="562.0" styleClass="cursor-text" text="Sök miljontals varor...">
+                     <font>
+                        <Font name="SansSerif Regular" size="12.0" />
+                     </font></TextField>
                   <ImageView fx:id="escapeHatchImage" fitHeight="98.0" fitWidth="105.0" onMouseClicked="#onHomeButtonPressed" onMouseEntered="#onEscapeHatchEnter" onMouseExited="#onEscapeHatchExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand" x="26.0">
                      <image>
                         <Image url="@Res/Images/escape_hatch.png" />
@@ -139,7 +142,7 @@
                      <children>
                         <Button fx:id="checkoutButton" layoutX="6.0" layoutY="494.0" mnemonicParsing="false" onMouseClicked="#onCheckoutButtonPressed" prefHeight="77.0" prefWidth="251.0" style="-fx-background-color: #32FF46;" styleClass="cursor-hand" text="Till kassan" textAlignment="CENTER">
                            <font>
-                              <Font size="30.0" />
+                              <Font name="SansSerif Regular" size="30.0" />
                            </font></Button>
                         <Label fx:id="sumLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="97.0" layoutY="459.0" prefHeight="35.0" prefWidth="147.0" text="0 kr" textAlignment="RIGHT">
                            <font>
@@ -177,7 +180,7 @@
                                     </ImageView>
                                  </graphic>
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font name="SansSerif Regular" size="18.0" />
                                  </font>
                                  <styleClass>
                                     <String fx:value="tabButtons" />
@@ -193,7 +196,7 @@
                                     </ImageView>
                                  </graphic>
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font name="SansSerif Regular" size="18.0" />
                                  </font>
                                  <styleClass>
                                     <String fx:value="tabButtons" />
@@ -202,7 +205,7 @@
                               </Button>
                               <Button fx:id="listTab" alignment="CENTER" layoutX="260.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onListtabSelect" prefHeight="50.0" prefWidth="164.0" text="Inköpslistor">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font name="SansSerif Regular" size="18.0" />
                                  </font>
                                  <graphic>
                                     <ImageView fitHeight="37.0" fitWidth="32.0" onMouseClicked="#onOrderTabSelect" pickOnBounds="true" preserveRatio="true">
@@ -218,7 +221,7 @@
                               </Button>
                               <Button fx:id="myPageTab" alignment="CENTER" layoutX="427.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onMyPageTabSelect" prefHeight="50.0" prefWidth="136.0" text="Min sida">
                                  <font>
-                                    <Font size="18.0" />
+                                    <Font name="SansSerif Regular" size="18.0" />
                                  </font>
                                  <graphic>
                                     <ImageView fitHeight="37.0" fitWidth="32.0" onMouseClicked="#onOrderTabSelect" pickOnBounds="true" preserveRatio="true">

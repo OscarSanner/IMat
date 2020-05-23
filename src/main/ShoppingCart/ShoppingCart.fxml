@@ -66,11 +66,11 @@
                                              </font></Label>
                                           <Label layoutX="35.0" layoutY="364.0" text="Totalbelopp">
                                              <font>
-                                                <Font name="System Bold" size="30.0" />
+                                                <Font name="SansSerif Bold" size="30.0" />
                                              </font></Label>
                                           <Button fx:id="saveButton" layoutX="391.0" layoutY="365.0" mnemonicParsing="false" onMouseClicked="#saveAsList" prefHeight="44.0" prefWidth="226.0" styleClass="cursor-hand" text="Spara som inköpslista">
                                              <font>
-                                                <Font size="16.0" />
+                                                <Font name="SansSerif Regular" size="16.0" />
                                              </font>
                                              <graphic>
                                                 <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
@@ -81,7 +81,7 @@
                                              </graphic></Button>
                                           <Label fx:id="totalSumLabel" layoutX="671.0" layoutY="370.0" text="X kr">
                                              <font>
-                                                <Font name="System Bold" size="30.0" />
+                                                <Font name="SansSerif Bold" size="30.0" />
                                              </font></Label>
                                        </children>
                                     </AnchorPane>
@@ -107,7 +107,7 @@
                            <children>
                               <Label fx:id="pageNameLabel" layoutX="292.0" layoutY="-1.0" text="KUNDVAGN">
                                  <font>
-                                    <Font size="36.0" />
+                                    <Font name="SansSerif Regular" size="36.0" />
                                  </font></Label>
                            </children>
                         </Pane>
