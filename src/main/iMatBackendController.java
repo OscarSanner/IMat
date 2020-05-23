@@ -56,10 +56,6 @@ public class iMatBackendController implements Initializable {
     @FXML public StackPane homePane;
     @FXML public FlowPane subCategoryFlowPane;
     @FXML public FlowPane productFlowPane;
-    //@FXML public ImageView orderTabImage;
-    //@FXML public ImageView listTabImage;
-    //@FXML public ImageView myPageTabImage;
-    //@FXML public ImageView shoppingTabImage;
     @FXML public Button testButton;
     @FXML public AnchorPane mainAnchorPane;
     @FXML public Button checkoutButton;
@@ -156,14 +152,8 @@ public class iMatBackendController implements Initializable {
         }
     }*/
 
-    @FXML
-    public void onOrderTabSelect(){
-        orderTabPane.toFront();
-        populateOrderPane();
-        calculateAccordionSize(orderAccordion);
-        //resetSelectedTab("order");
-        IMatBackendEngine.getInstance().clearActiveCategory();
-    }
+
+
 
     private void calculateAccordionSize(Accordion accordion) {
         if(accordion.getExpandedPane() == null){
@@ -190,11 +180,28 @@ public class iMatBackendController implements Initializable {
         }
     }
 
+    @FXML Button shoppingTab;
+    @FXML Button orderTab;
+    @FXML Button listTab;
+    @FXML Button myPageTab;
+
+    @FXML
+    public void onOrderTabSelect(){
+        orderTabPane.toFront();
+        populateOrderPane();
+        calculateAccordionSize(orderAccordion);
+        //resetSelectedTab("order");
+        IMatBackendEngine.getInstance().clearActiveCategory();
+        IMatBackendEngine.getInstance().clearActiveTab();
+        IMatBackendEngine.getInstance().setActiveTab(orderTab);
+    }
     @FXML
     public void onShoppingTabSelect(){
         shoppingTabPane.toFront();
         //resetSelectedTab("shopping");
         IMatBackendEngine.getInstance().restoreActiveCategory();
+        IMatBackendEngine.getInstance().clearActiveTab();
+        IMatBackendEngine.getInstance().setActiveTab(shoppingTab);
     }
 
     @FXML
@@ -204,6 +211,8 @@ public class iMatBackendController implements Initializable {
         makeLblsInvisible();
         //resetSelectedTab("myPage");
         IMatBackendEngine.getInstance().clearActiveCategory();
+        IMatBackendEngine.getInstance().clearActiveTab();
+        IMatBackendEngine.getInstance().setActiveTab(myPageTab);
     }
 
     @FXML
@@ -213,6 +222,8 @@ public class iMatBackendController implements Initializable {
         calculateAccordionSize(listAccordion);
         //resetSelectedTab("inkop");
         IMatBackendEngine.getInstance().clearActiveCategory();
+        IMatBackendEngine.getInstance().clearActiveTab();
+        IMatBackendEngine.getInstance().setActiveTab(listTab);
     }
 
     private void populateListPane() {
@@ -265,33 +276,6 @@ public class iMatBackendController implements Initializable {
     }
 
 
-    public Image getSquareImage(Image image){
-
-        int x = 0;
-        int y = 0;
-        int width = 0;
-        int height = 0;
-
-        if(image.getWidth() > image.getHeight()){
-            width = (int) image.getHeight();
-            height = (int) image.getHeight();
-            x = (int)(image.getWidth() - width)/2;
-            y = 0;
-        }
-
-        else if(image.getHeight() > image.getWidth()){
-            width = (int) image.getWidth();
-            height = (int) image.getWidth();
-            x = 0;
-            y = (int) (image.getHeight() - height)/2;
-        }
-
-        else{
-            //Width equals Height, return original image
-            return image;
-        }
-        return new WritableImage(image.getPixelReader(), x, y, width, height);
-    }
     @FXML
     public void mySiteErrorLabelDisapear() {
         postCodeAmountErrorLabel.setVisible(false);
@@ -712,7 +696,7 @@ public class iMatBackendController implements Initializable {
                 }
             });
             button.setPrefSize(150,35);
-            button.getStyleClass().add("categoryButtons");
+            button.getStyleClass().add("subCategoryButton");
             subCategoryFlowPane.getChildren().add(button);
         }
     }
@@ -982,6 +966,9 @@ public class iMatBackendController implements Initializable {
         setupPurchaseFeedback();
         setupProductFlowpane();
         initShoppingCartFlowPane();
+
+        IMatBackendEngine.getInstance().clearActiveTab();
+        IMatBackendEngine.getInstance().setActiveTab(shoppingTab);
 
         // To test favourite section.
         /*dataHandler.addFavorite(70);

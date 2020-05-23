@@ -2,12 +2,50 @@
 .border{
     -fx-border-width: 2px;
     -fx-border-color: black;
+    -fx-background-color: white;
+}
+.border-extra{
+    -fx-border-width: 2px;
+    -fx-border-top-color: white;
 }
 
 .tabButtons{
+    -fx-border-color: white;
     -fx-background-color: #00FFFF;
     -fx-border-width: 1px;
     -fx-border-color: #037C99;
+    -fx-font-size: 18;
+
+    -fx-text-align: center;
+    -fx-align-content: center;
+
+}
+
+.tabButtons:hover{
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    -fx-background-color: #BFFDFD;
+    -fx-text-align: center;
+    -fx-align-content: center;
+}
+
+.tabButtonsSelected{
+    -fx-background-color: #1A61CC;
+    -fx-text-fill: white;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+    -fx-font-size: 18;
+    -fx-text-align: center;
+    -fx-border-color: black;
+    -fx-align-content: center;
+}
+.tabButtonsSelected:hover{
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    -fx-background-color: #7CA3DF;
+    -fx-text-align: center;
+    -fx-border-color: black;
+    -fx-align-content: center;
 }
 
 .categoryButtons{
@@ -16,9 +54,10 @@
     -fx-background-color: #B1D5F6;
     -fx-font-size: 15;
 }
-
-.gaussianBlurAndOpaque{
-    -fx-background-color: pink;
+.categoryButtons:hover{
+    -fx-background-color: #cee2f5;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
 }
 
 .categoryButtonsSelected{
@@ -30,11 +69,48 @@
 }
 
 .categoryButtonsSelected:hover{
-    -fx-background-color: white;
-    -fx-font-size: 19;
+    -fx-background-color: #2FAECD;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
 }
 
-.categoryButtons:hover{
+.subCategoryButton{
+    -fx-border-color: white;
+    -fx-border-width: 1px;
+    -fx-background-color: #B1D5F6;
+    -fx-font-size: 18;
+    -fx-text-align: center;
+    -fx-align-content: center;
+}
+.subCategoryButton:hover{
     -fx-background-color: #cee2f5;
-    -fx-font-size: 19;
+    -fx-font-weight: bold;
+    -fx-font-size: 18;
+    -fx-text-align: center;
+    -fx-align-content: center;
+}
+.subCategoryButtonSelected{
+    -fx-text-fill: white;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+    -fx-background-color: #037C99;
+    -fx-font-size: 18;
+    -fx-text-align: center;
+    -fx-align-content: center;
+}
+.subCategoryButtonSelected:hover{
+    -fx-background-color: #2FAECD;
+    -fx-font-weight: bold;
+    -fx-font-size: 18;
+    -fx-text-align: center;
+    -fx-align-content: center;
+}
+
+
+.gaussianBlurAndOpaque{
+    -fx-background-color: pink;
+}
+.split-pane-divider {
+   -fx-background-color: white;
+   -fx-padding: 0 0 0 0;
 }

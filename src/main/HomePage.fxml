@@ -25,7 +25,6 @@
                <children>
                   <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#onCustomerSupportPressed" prefHeight="64.0" prefWidth="123.0" text="Button" />
                   <TextField fx:id="searchBarTextField" layoutX="164.0" layoutY="32.0" onKeyPressed="#searchBarKeyPressed" prefHeight="25.0" prefWidth="562.0" text="Sök miljontals varor..." />
-                  <Button fx:id="testButton" layoutX="372.0" layoutY="65.0" mnemonicParsing="false" text="TESTKNAPP" />
                   <ImageView fx:id="escapeHatchImage" fitHeight="98.0" fitWidth="105.0" layoutX="3.0" layoutY="1.0" onMouseClicked="#onHomeButtonPressed" onMouseEntered="#onEscapeHatchEnter" onMouseExited="#onEscapeHatchExit" pickOnBounds="true" preserveRatio="true" x="26.0">
                      <image>
                         <Image url="@Res/Images/escape_hatch.png" />
@@ -39,16 +38,16 @@
                <children>
                   <Pane layoutX="4.0" layoutY="30.0" prefHeight="578.0" prefWidth="149.0" styleClass="border">
                      <children>
-                        <Button fx:id="favouritesButton" layoutX="17.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#onFavouritesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mina favoriter" />
-                        <Button fx:id="offersButton" layoutX="17.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#onOffersButtonPressed" prefHeight="44.0" prefWidth="111.0" style="-fx-background-size: 100;" styleClass="categoryButtons" text="Erbjudanden" />
-                        <Button fx:id="meatAndFishButton" layoutX="17.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#onMeatAndFishButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kött &amp; Fisk" />
-                        <Button fx:id="veggiesButton" layoutX="17.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#onVeggiesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Frukt &amp; Grönt" />
-                        <Button fx:id="drinkButton" layoutX="17.0" layoutY="287.0" mnemonicParsing="false" onMouseClicked="#onDrinkButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Dryck" />
-                        <Button fx:id="dairyButton" layoutX="17.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#onDairyButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Mejeri" />
-                        <Button fx:id="pantryButton" layoutX="17.0" layoutY="375.0" mnemonicParsing="false" onMouseClicked="#onPantryButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Skafferi" />
-                        <Button fx:id="spicesButton" layoutX="17.0" layoutY="464.0" mnemonicParsing="false" onMouseClicked="#onSpicesButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Kryddor" />
-                        <Button fx:id="snacksButton" layoutX="17.0" layoutY="419.0" mnemonicParsing="false" onMouseClicked="#onSnacksButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Snacks" />
-                        <Button fx:id="breadButton" layoutX="17.0" layoutY="508.0" mnemonicParsing="false" onMouseClicked="#onBreadButtonPressed" prefHeight="44.0" prefWidth="111.0" styleClass="categoryButtons" text="Bröd" />
+                        <Button fx:id="favouritesButton" layoutX="10.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#onFavouritesButtonPressed" prefHeight="44.0" prefWidth="125.0" styleClass="categoryButtons" text="Mina favoriter" />
+                        <Button fx:id="offersButton" layoutX="10.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#onOffersButtonPressed" prefHeight="44.0" prefWidth="125.0" style="-fx-background-size: 100;" styleClass="categoryButtons" text="Erbjudanden" />
+                        <Button fx:id="meatAndFishButton" layoutX="10.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#onMeatAndFishButtonPressed" prefHeight="44.0" prefWidth="125.0" styleClass="categoryButtons" text="Kött &amp; Fisk" />
+                        <Button fx:id="veggiesButton" layoutX="10.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#onVeggiesButtonPressed" prefHeight="44.0" prefWidth="125.0" styleClass="categoryButtons" text="Frukt &amp; Grönt" />
+                        <Button fx:id="drinkButton" layoutX="10.0" layoutY="287.0" mnemonicParsing="false" onMouseClicked="#onDrinkButtonPressed" prefHeight="44.0" prefWidth="125.0" styleClass="categoryButtons" text="Dryck" />
+                        <Button fx:id="dairyButton" layoutX="10.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#onDairyButtonPressed" prefHeight="44.0" prefWidth="125.0" styleClass="categoryButtons" text="Mejeri" />
+                        <Button fx:id="pantryButton" layoutX="10.0" layoutY="375.0" mnemonicParsing="false" onMouseClicked="#onPantryButtonPressed" prefHeight="44.0" prefWidth="125.0" styleClass="categoryButtons" text="Skafferi" />
+                        <Button fx:id="spicesButton" layoutX="10.0" layoutY="464.0" mnemonicParsing="false" onMouseClicked="#onSpicesButtonPressed" prefHeight="44.0" prefWidth="125.0" styleClass="categoryButtons" text="Kryddor" />
+                        <Button fx:id="snacksButton" layoutX="10.0" layoutY="419.0" mnemonicParsing="false" onMouseClicked="#onSnacksButtonPressed" prefHeight="44.0" prefWidth="125.0" styleClass="categoryButtons" text="Snacks" />
+                        <Button fx:id="breadButton" layoutX="10.0" layoutY="508.0" mnemonicParsing="false" onMouseClicked="#onBreadButtonPressed" prefHeight="44.0" prefWidth="125.0" styleClass="categoryButtons" text="Bröd" />
                         <ImageView fitHeight="58.0" fitWidth="135.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Res/Images/KATEGORIER_header.png" />
@@ -92,13 +91,13 @@
             </Pane>
          </right>
          <center>
-            <SplitPane dividerPositions="0.10082644628099173" orientation="VERTICAL" prefHeight="607.0" prefWidth="596.0" BorderPane.alignment="CENTER">
+            <SplitPane dividerPositions="0.10082644628099173" orientation="VERTICAL" prefHeight="607.0" prefWidth="596.0" styleClass="border" BorderPane.alignment="CENTER">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                      <children>
-                        <Pane prefHeight="58.0" prefWidth="569.0" style="-fx-background-color: white;" styleClass="border" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Pane prefHeight="58.0" prefWidth="569.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Button layoutX="5.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onShoppingTabSelect" prefHeight="50.0" prefWidth="132.0" styleClass="tabButtons" text="Handla">
+                              <Button fx:id="shoppingTab" alignment="CENTER" layoutX="5.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onShoppingTabSelect" prefHeight="50.0" prefWidth="132.0" styleClass="tabButtons" text="Handla">
                                  <graphic>
                                     <ImageView fitHeight="37.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -110,7 +109,7 @@
                                     <Font size="18.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="140.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onOrderTabSelect" prefHeight="50.0" prefWidth="115.0" styleClass="tabButtons" text="Ordar">
+                              <Button fx:id="orderTab" alignment="CENTER" layoutX="140.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onOrderTabSelect" prefHeight="50.0" prefWidth="117.0" styleClass="tabButtons" text="Ordar">
                                  <graphic>
                                     <ImageView fitHeight="37.0" fitWidth="32.0" onMouseClicked="#onOrderTabSelect" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -122,7 +121,7 @@
                                     <Font size="18.0" />
                                  </font>
                               </Button>
-                              <Button layoutX="258.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onListtabSelect" prefHeight="50.0" prefWidth="169.0" styleClass="tabButtons" text="Inköpslistor">
+                              <Button fx:id="listTab" alignment="CENTER" layoutX="260.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onListtabSelect" prefHeight="50.0" prefWidth="164.0" styleClass="tabButtons" text="Inköpslistor">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -134,7 +133,7 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button layoutX="431.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onMyPageTabSelect" prefHeight="50.0" prefWidth="132.0" styleClass="tabButtons" text="Min sida">
+                              <Button fx:id="myPageTab" alignment="CENTER" layoutX="427.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onMyPageTabSelect" prefHeight="50.0" prefWidth="136.0" styleClass="tabButtons" text="Min sida">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -146,15 +145,16 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
+                              <Line endX="507.0" layoutX="102.0" layoutY="61.0" startX="-108.0" strokeWidth="4.0" />
                            </children>
                         </Pane>
                      </children>
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: white;">
                      <children>
-                        <Pane prefHeight="541.0" prefWidth="569.0" styleClass="border" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Pane prefHeight="541.0" prefWidth="569.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <StackPane fx:id="myPageTabPane" prefHeight="541.0" prefWidth="565.0" styleClass="border">
+                              <StackPane fx:id="myPageTabPane" prefHeight="541.0" prefWidth="565.0">
                                  <children>
                                     <Pane prefHeight="537.0" prefWidth="576.0" style="-fx-background-color: white;">
                                        <children>
@@ -259,7 +259,7 @@
                                     </Pane>
                                  </children>
                               </StackPane>
-                              <StackPane fx:id="orderTabPane" prefHeight="541.0" prefWidth="567.0" style="-fx-background-color: white;" styleClass="border">
+                              <StackPane fx:id="orderTabPane" prefHeight="541.0" prefWidth="567.0" style="-fx-background-color: white;">
                                  <children>
                                     <ScrollPane prefHeight="541.0" prefWidth="549.0" style="-fx-background-color: white; -fx-background: white;">
                                        <content>
@@ -267,7 +267,7 @@
                                        </content>
                                     </ScrollPane>
                                  </children></StackPane>
-                              <StackPane fx:id="listTabPane" prefHeight="541.0" prefWidth="567.0" style="-fx-background-color: white;" styleClass="border">
+                              <StackPane fx:id="listTabPane" prefHeight="541.0" prefWidth="567.0" style="-fx-background-color: white;">
                                  <children>
                                     <ScrollPane prefHeight="541.0" prefWidth="549.0" style="-fx-background: white; -fx-background-color: white;">
                                        <content>
@@ -297,18 +297,18 @@
                                           </Pane>
                                        </children>
                                     </StackPane>
-                                    <SplitPane fx:id="categoryPane" dividerPositions="0.10204081632653061" orientation="VERTICAL" prefHeight="537.0" prefWidth="574.0">
+                                    <SplitPane fx:id="categoryPane" dividerPositions="0.09242144177449169" orientation="VERTICAL" prefHeight="537.0" prefWidth="574.0" styleClass="split-pane-divider">
                                       <items>
-                                        <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="52.0" prefWidth="563.0" styleClass="border">
+                                        <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="52.0" prefWidth="563.0">
                                              <children>
-                                                <FlowPane fx:id="subCategoryFlowPane" layoutX="4.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="563.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0" />
+                                                <FlowPane fx:id="subCategoryFlowPane" layoutX="2.0" layoutY="-2.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="558.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="-2.0" />
                                              </children>
                                           </AnchorPane>
-                                        <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="481.0" prefWidth="563.0" styleClass="border">
+                                        <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="481.0" prefWidth="570.0">
                                              <children>
-                                                <ScrollPane fx:id="productsScrollPane" layoutX="2.0" layoutY="3.0" prefHeight="476.0" prefWidth="557.0">
+                                                <ScrollPane fx:id="productsScrollPane" layoutY="3.0" prefHeight="489.0" prefWidth="565.0">
                                                    <content>
-                                                      <FlowPane fx:id="productFlowPane" prefHeight="479.0" prefWidth="560.0" prefWrapLength="1000.0" rowValignment="TOP" style="-fx-background-color: white;">
+                                                      <FlowPane fx:id="productFlowPane" prefHeight="487.0" prefWidth="560.0" prefWrapLength="1000.0" rowValignment="TOP" style="-fx-background-color: white;">
                                                          <rotationAxis>
                                                             <Point3D />
                                                          </rotationAxis></FlowPane>

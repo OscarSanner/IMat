@@ -20,6 +20,9 @@ public class IMatBackendEngine {
     Button activeCategory;
     Button lastActiveCategory;
 
+    Button activeTab;
+    Button lastActiveTab;
+
 
     static public IMatBackendEngine getInstance(){
         if (instance == null){
@@ -36,19 +39,18 @@ public class IMatBackendEngine {
         savedOrders.remove(order);
     }
 
-
     public void clearActiveSubcategory() {
         if(activeSubcategory != null){
             activeSubcategory.getStyleClass().clear();
             activeSubcategory.getStyleClass().add("button");
-            activeSubcategory.getStyleClass().add("categoryButtons");
+            activeSubcategory.getStyleClass().add("subCategoryButton");
             activeSubcategory = null;
         }
     }
 
     public void setActiveSubcategory(Button button) {
         activeSubcategory = button;
-        button.getStyleClass().add("categoryButtonsSelected");
+        button.getStyleClass().add("subCategoryButtonSelected");
     }
 
     public void setActiveCategory(Button button){
@@ -66,10 +68,23 @@ public class IMatBackendEngine {
         }
     }
 
-
     public void restoreActiveCategory() {
         if(lastActiveCategory != null){
             setActiveCategory(lastActiveCategory);
         }
     }
+
+    public void clearActiveTab(){
+        if(activeTab != null){
+            activeTab.getStyleClass().clear();
+            activeTab.getStyleClass().add("tabButtons");
+            activeTab = null;
+        }
+    }
+    public void setActiveTab(Button button){
+        activeTab = button;
+        button.getStyleClass().add("tabButtonsSelected");
+    }
+
+
 }
