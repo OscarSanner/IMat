@@ -36,6 +36,7 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
     @FXML public Label totalSumLabel;
     @FXML public ImageView escapeHatchImage;
 
+
     //Other
     public PersonalData personalDataPage = new PersonalData(this);
     public iMatBackendController parentBackendController;
@@ -72,6 +73,7 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
         parentBackendController.updateShoppingCart();
 
     }
+
     //================================================================================
     // Escapehatch Hover
     //================================================================================
@@ -96,7 +98,7 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
     public void initShoppingCartFlowPane(){
         shoppingCartFlowPane.setOrientation(Orientation.HORIZONTAL); //NOT VERTICAL
         shoppingCartFlowPane.getChildren().clear();
-        shoppingCartFlowPane.setVgap(7);
+        shoppingCartFlowPane.setVgap(10);
         shoppingCartFlowPane.setPadding(new Insets(9,6,9,6));
         shoppingCart.addShoppingCartListener(scl2);
         shoppingCart.clear();

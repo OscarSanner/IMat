@@ -106,6 +106,18 @@
     -fx-align-content: center;
 }
 
+.dropShadow{
+     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 5, 0, 0, 0);
+
+}
+.cursor-hand{
+     -fx-cursor: pointer;
+     -fx-cursor: hand;
+}
+.cursor-text{
+     -fx-cursor: pointer;
+     -fx-cursor: text;
+}
 
 .gaussianBlurAndOpaque{
     -fx-background-color: pink;

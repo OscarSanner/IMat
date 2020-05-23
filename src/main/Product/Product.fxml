@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="175.0" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="220.0" prefWidth="175.0" styleClass="dropShadow" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane prefHeight="220.0" prefWidth="175.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fx:id="itemImage" fitHeight="132.0" fitWidth="167.0" layoutX="2.0" onMouseClicked="#onClick" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="itemImage" fitHeight="132.0" fitWidth="175.0" onMouseClicked="#onClick" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand" />
             <Label fx:id="itemLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="127.0" prefHeight="17.0" prefWidth="175.0" text="Varunamn" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font size="18.0" />
@@ -31,17 +31,17 @@
                         <Font size="13.0" />
                      </font>
                   </TextField>
-                  <ImageView fx:id="plusImage" fitHeight="40.0" fitWidth="40.0" layoutX="127.0" layoutY="1.0" onMouseClicked="#onPlusButtonPressed" onMouseEntered="#onPlusEnter" onMouseExited="#onPlusExit" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="plusImage" fitHeight="40.0" fitWidth="40.0" layoutX="127.0" layoutY="1.0" onMouseClicked="#onPlusButtonPressed" onMouseEntered="#onPlusEnter" onMouseExited="#onPlusExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
                      <image>
                         <Image url="@../Res/Images/plus.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="minusImage" fitHeight="40.0" fitWidth="40.0" layoutX="4.0" layoutY="1.0" onMouseClicked="#onMinusButtonPressed" onMouseEntered="#onMinusEnter" onMouseExited="#onMinusExit" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="minusImage" fitHeight="40.0" fitWidth="40.0" layoutX="4.0" layoutY="1.0" onMouseClicked="#onMinusButtonPressed" onMouseEntered="#onMinusEnter" onMouseExited="#onMinusExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
                      <image>
                         <Image url="@../Res/Images/minus.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="buyButton" alignment="TOP_CENTER" layoutX="3.0" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onBuyButtonPressed" prefHeight="43.0" prefWidth="167.0" style="-fx-background-color: #FF7575;" text="Köp" textAlignment="CENTER">
+                  <Button fx:id="buyButton" alignment="TOP_CENTER" layoutX="3.0" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onBuyButtonPressed" prefHeight="43.0" prefWidth="167.0" style="-fx-background-color: #FF7575;" styleClass="cursor-hand" text="Köp" textAlignment="CENTER">
                      <font>
                         <Font size="24.0" />
                      </font>

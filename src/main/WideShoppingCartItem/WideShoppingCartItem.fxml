@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="750.0" style="-fx-background-color: pink;" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="750.0" style="-fx-background-color: #F6F6F6;" styleClass="dropShadow" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="itemLabel" layoutX="87.0" layoutY="26.0" prefHeight="35.0" prefWidth="185.0" text="Paprika">
          <font>
@@ -25,17 +25,17 @@
          <font>
             <Font size="22.0" />
          </font></Label>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="264.0" layoutY="23.0" onMouseClicked="#onMinusButtonPressed" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="minusImage" fitHeight="40.0" fitWidth="40.0" layoutX="264.0" layoutY="23.0" onMouseClicked="#onMinusButtonPressed" onMouseEntered="#onMinusEnter" onMouseExited="#onMinusExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
          <image>
             <Image url="@../Res/Images/minus.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="371.0" layoutY="23.0" onMouseClicked="#onPlusButtonPressed" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="plusImage" fitHeight="40.0" fitWidth="40.0" layoutX="371.0" layoutY="23.0" onMouseClicked="#onPlusButtonPressed" onMouseEntered="#onPlusEnter" onMouseExited="#onPlusExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
          <image>
             <Image url="@../Res/Images/plus.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="paperBinImage" fitHeight="45.0" fitWidth="50.0" layoutX="688.0" layoutY="26.0" onMouseClicked="#removeShoppingItem" onMouseEntered="#onPaperBinEnter" onMouseExited="#onPaperBinExit" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="paperBinImage" fitHeight="45.0" fitWidth="50.0" layoutX="688.0" layoutY="26.0" onMouseClicked="#removeShoppingItem" onMouseEntered="#onPaperBinEnter" onMouseExited="#onPaperBinExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
          <image>
             <Image url="@../Res/Images/paperbin.png" />
          </image>

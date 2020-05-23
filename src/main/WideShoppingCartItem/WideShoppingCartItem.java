@@ -30,6 +30,8 @@ public class WideShoppingCartItem extends AnchorPane {
     @FXML Label totalPriceLabel;
     @FXML TextField amountTextField;
     @FXML ImageView paperBinImage;
+    @FXML public ImageView plusImage;
+    @FXML public ImageView minusImage;
 
     public WideShoppingCartItem(ShoppingCart parentController, ShoppingItem shoppingItem ){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("WideShoppingCartItem.fxml"));
@@ -54,6 +56,33 @@ public class WideShoppingCartItem extends AnchorPane {
         this.amountTextField.setText(String.valueOf((int)shoppingItem.getAmount()));
     }
 
+    //================================================================================
+    // +/- Hover
+    //================================================================================
+    @FXML
+    public void onPlusEnter(){
+        plusImage.setImage(new javafx.scene.image.Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/plus_hover.png"
+        ))));
+    }
+    @FXML
+    public void onPlusExit(){
+        plusImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/plus.png"
+        ))));
+    }
+    @FXML
+    public void onMinusEnter(){
+        minusImage.setImage(new javafx.scene.image.Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/minus_hover.png"
+        ))));
+    }
+    @FXML
+    public void onMinusExit(){
+        minusImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/minus.png"
+        ))));
+    }
     //================================================================================
     // Paperbin Hover
     //================================================================================

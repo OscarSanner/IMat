@@ -12,14 +12,14 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="shoppingCartMainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1000.0" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="shoppingCartMainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1000.0" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
             <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="123.0" text="Kundservice &amp; hjälp" />
-                  <ImageView fx:id="escapeHatchImage" fitHeight="98.0" fitWidth="105.0" onMouseClicked="#closeWizard" onMouseEntered="#onEscapeHatchEnter" onMouseExited="#onEscapeHatchExit" pickOnBounds="true" preserveRatio="true" x="26.0">
+                  <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="123.0" styleClass="cursor-hand" text="Kundservice &amp; hjälp" />
+                  <ImageView fx:id="escapeHatchImage" fitHeight="98.0" fitWidth="105.0" onMouseClicked="#closeWizard" onMouseEntered="#onEscapeHatchEnter" onMouseExited="#onEscapeHatchExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand" x="26.0">
                      <image>
                         <Image url="@../Res/Images/escape_hatch.png" />
                      </image>
@@ -68,10 +68,17 @@
                                              <font>
                                                 <Font name="System Bold" size="30.0" />
                                              </font></Label>
-                                          <Button fx:id="saveButton" layoutX="391.0" layoutY="365.0" mnemonicParsing="false" onMouseClicked="#saveAsList" prefHeight="43.0" prefWidth="187.0" text="Spara som inköpslista">
+                                          <Button fx:id="saveButton" layoutX="391.0" layoutY="365.0" mnemonicParsing="false" onMouseClicked="#saveAsList" prefHeight="44.0" prefWidth="226.0" styleClass="cursor-hand" text="Spara som inköpslista">
                                              <font>
                                                 <Font size="16.0" />
-                                             </font></Button>
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Res/Images/inkopslistor.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></Button>
                                           <Label fx:id="totalSumLabel" layoutX="671.0" layoutY="370.0" text="X kr">
                                              <font>
                                                 <Font name="System Bold" size="30.0" />
@@ -85,12 +92,12 @@
                         </Pane>
                         <Pane layoutX="31.0" layoutY="529.0" prefHeight="52.0" prefWidth="763.0" style="-fx-background-color: white;">
                            <children>
-                              <ImageView fitHeight="48.0" fitWidth="190.0" layoutX="566.0" layoutY="2.0" onMouseClicked="#onNextButtonPressed" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="48.0" fitWidth="190.0" layoutX="566.0" layoutY="2.0" onMouseClicked="#onNextButtonPressed" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
                                  <image>
                                     <Image url="@../Res/Images/next.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fitHeight="30.0" fitWidth="170.0" layoutX="14.0" layoutY="11.0" onMouseClicked="#previousStep" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="30.0" fitWidth="170.0" layoutX="14.0" layoutY="11.0" onMouseClicked="#previousStep" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
                                  <image>
                                     <Image url="@../Res/Images/previous.png" />
                                  </image>

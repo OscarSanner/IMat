@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="shuoppingCardItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="72.0" prefWidth="230.0" style="-fx-background-color: #F3F3F3;" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="shuoppingCardItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="72.0" prefWidth="230.0" style="-fx-background-color: #F3F3F3;" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="productNameLabel" layoutX="62.0" layoutY="-7.0" prefHeight="47.0" prefWidth="126.0" text="Ekologisk blandfärs" wrapText="true">
          <font>
@@ -21,17 +21,17 @@
          <font>
             <Font size="14.0" />
          </font></Label>
-      <ImageView fx:id="minusImage" fitHeight="25.0" fitWidth="25.0" layoutX="62.0" layoutY="37.0" onMouseClicked="#onMinusButtonPressed" onMouseEntered="#onMinusEnter" onMouseExited="#onMinusExit" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="minusImage" fitHeight="25.0" fitWidth="25.0" layoutX="62.0" layoutY="37.0" onMouseClicked="#onMinusButtonPressed" onMouseEntered="#onMinusEnter" onMouseExited="#onMinusExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
          <image>
             <Image url="@../Res/Images/minus.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="plusImage" fitHeight="25.0" fitWidth="25.0" layoutX="148.0" layoutY="37.0" onMouseClicked="#onPlusButtonPressed" onMouseEntered="#onPlusEnter" onMouseExited="#onPlusExit" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="plusImage" fitHeight="25.0" fitWidth="25.0" layoutX="148.0" layoutY="37.0" onMouseClicked="#onPlusButtonPressed" onMouseEntered="#onPlusEnter" onMouseExited="#onPlusExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
          <image>
             <Image url="@../Res/Images/plus.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="paperBinImage" fitHeight="25.0" fitWidth="25.0" layoutX="197.0" layoutY="13.0" onMouseClicked="#onPaperbinPressed" onMouseEntered="#onPaperBinEnter" onMouseExited="#onPaperBinExit" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="paperBinImage" fitHeight="25.0" fitWidth="25.0" layoutX="197.0" layoutY="13.0" onMouseClicked="#onPaperbinPressed" onMouseEntered="#onPaperBinEnter" onMouseExited="#onPaperBinExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
          <image>
             <Image url="@../Res/Images/paperbin.png" />
          </image>

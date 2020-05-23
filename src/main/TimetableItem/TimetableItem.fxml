@@ -5,16 +5,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="75.0" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane layoutX="-78.0" layoutY="-74.0" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fx:id="selectedCircleImage" fitHeight="60.0" fitWidth="60.0" layoutX="8.0" layoutY="8.0" onMouseClicked="#deSelectDate" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="selectedCircleImage" fitHeight="60.0" fitWidth="60.0" layoutX="8.0" layoutY="8.0" onMouseClicked="#deSelectDate" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
                <image>
                   <Image url="@../Res/Images/green_circle.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="unselectedCircleImage" fitHeight="60.0" fitWidth="60.0" layoutX="8.0" layoutY="8.0" onMouseClicked="#selectDate" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="unselectedCircleImage" fitHeight="60.0" fitWidth="60.0" layoutX="8.0" layoutY="8.0" onMouseClicked="#selectDate" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
                <image>
                   <Image url="@../Res/Images/gray_circle.png" />
                </image>

@@ -697,6 +697,7 @@ public class iMatBackendController implements Initializable {
             });
             button.setPrefSize(150,35);
             button.getStyleClass().add("subCategoryButton");
+            button.getStyleClass().add("cursor-hand");
             subCategoryFlowPane.getChildren().add(button);
         }
     }

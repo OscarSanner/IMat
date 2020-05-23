@@ -12,14 +12,14 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="personalDataMainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1000.0" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="personalDataMainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1000.0" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
             <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="123.0" text="Button" />
-                  <ImageView fx:id="escapeHatchImage" fitHeight="98.0" fitWidth="105.0" onMouseClicked="#closeWizard" onMouseEntered="#onEscapeHatchEnter" onMouseExited="#onEscapeHatchExit" pickOnBounds="true" preserveRatio="true" x="26.0">
+                  <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="123.0" styleClass="cursor-hand" text="Button" />
+                  <ImageView fx:id="escapeHatchImage" fitHeight="98.0" fitWidth="105.0" onMouseClicked="#closeWizard" onMouseEntered="#onEscapeHatchEnter" onMouseExited="#onEscapeHatchExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand" x="26.0">
                      <image>
                         <Image url="@../Res/Images/escape_hatch.png" />
                      </image>
@@ -87,7 +87,7 @@
                                           <TextField fx:id="emailTextField" layoutX="412.0" layoutY="220.0" onMouseClicked="#errorlabeldisapear7" prefHeight="35.0" prefWidth="245.0" promptText="börjesson@exempel.nu" style="-fx-background-radius: 20;" />
                                           <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="640.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true" />
                                           <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="640.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
-                                          <CheckBox fx:id="personalCheckBox" layoutX="412.0" layoutY="308.0" mnemonicParsing="false" text="Spara mina personuppgifter till nästa köp">
+                                          <CheckBox fx:id="personalCheckBox" layoutX="412.0" layoutY="308.0" mnemonicParsing="false" styleClass="cursor-hand" text="Spara mina personuppgifter till nästa köp">
                                              <font>
                                                 <Font size="17.0" />
                                              </font>
@@ -112,12 +112,12 @@
                         </Pane>
                         <Pane layoutX="31.0" layoutY="529.0" prefHeight="52.0" prefWidth="763.0" style="-fx-background-color: white;">
                            <children>
-                              <ImageView fitHeight="48.0" fitWidth="190.0" layoutX="566.0" layoutY="2.0" onMouseClicked="#onNextButtonPressed" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="48.0" fitWidth="190.0" layoutX="566.0" layoutY="2.0" onMouseClicked="#onNextButtonPressed" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
                                  <image>
                                     <Image url="@../Res/Images/next.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fitHeight="30.0" fitWidth="170.0" layoutX="14.0" layoutY="11.0" onMouseClicked="#previousStep" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="30.0" fitWidth="170.0" layoutX="14.0" layoutY="11.0" onMouseClicked="#previousStep" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
                                  <image>
                                     <Image url="@../Res/Images/previous.png" />
                                  </image>
