@@ -471,6 +471,7 @@ public class iMatBackendController implements Initializable {
         populateProductFlowpane("Mina Favoriter");
         IMatBackendEngine.getInstance().setActiveCategory(favouritesButton);
         populateSubCategoryFlowPane("favourites");
+        shoppingTabPane.toFront();
 
 
         /*
@@ -895,7 +896,6 @@ public class iMatBackendController implements Initializable {
             if(searchBarTextField.getText().equals("Sök miljontals varor...")){
                 resetSearchBarText();
             }
-
 
             String userInput = searchBarTextField.getText();
             searchedItems = dataHandler.findProducts(userInput);

@@ -27,6 +27,8 @@
     -fx-background-color: #BFFDFD;
     -fx-text-align: center;
     -fx-align-content: center;
+     -fx-cursor: pointer;
+     -fx-cursor: hand;
 }
 
 .tabButtonsSelected{
@@ -46,6 +48,8 @@
     -fx-text-align: center;
     -fx-border-color: black;
     -fx-align-content: center;
+     -fx-cursor: pointer;
+     -fx-cursor: hand;
 }
 
 .categoryButtons{
@@ -130,6 +134,21 @@
    -fx-padding: 0 0 0 0;
 }
 
-.san-serif{
-   -fx-font-family: sans-serif;
+.productBuyButton{
+    -fx-background-radius: 30;
+    -fx-border-radius: 15px;
+    -fx-border-width: 167px;
+    -fx-border-height: 43;
+    -fx-background-color: #FF7575;
+
+}
+.productBuyButton:hover{
+    -fx-font-size: 24;
+    -fx-background-color: #ffafaf;
+    -fx-font-weight: bold;
+}
+
+.cursor-info{
+     -fx-cursor: pointer;
+     -fx-cursor: help;
 }

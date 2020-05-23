@@ -15,13 +15,13 @@
       <Pane prefHeight="220.0" prefWidth="175.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fx:id="itemImage" fitHeight="132.0" fitWidth="175.0" onMouseClicked="#onClick" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand" />
-            <Label fx:id="itemLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="127.0" prefHeight="17.0" prefWidth="175.0" styleClass="san-serif" text="Varunamn" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
+            <Label fx:id="itemLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="131.0" prefHeight="17.0" prefWidth="175.0" text="Varunamn" textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
-                  <Font size="18.0" />
+                  <Font name="SansSerif Regular" size="18.0" />
                </font></Label>
-            <Label fx:id="priceLabel" alignment="CENTER" layoutY="148.0" prefHeight="25.0" prefWidth="175.0" styleClass="san-serif" text="pris kr">
+            <Label fx:id="priceLabel" alignment="CENTER" layoutY="149.0" prefHeight="25.0" prefWidth="175.0" text="pris kr">
                <font>
-                  <Font size="16.0" />
+                  <Font name="SansSerif Regular" size="16.0" />
                </font></Label>
             <Pane layoutX="-1.0" layoutY="172.0" prefHeight="43.0" prefWidth="171.0">
                <children>
@@ -42,17 +42,22 @@
                         <Image url="@../Res/Images/minus.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="buyButton" alignment="TOP_CENTER" layoutX="3.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onBuyButtonPressed" prefHeight="43.0" prefWidth="167.0" style="-fx-background-color: #FF7575;" text="Köp" textAlignment="CENTER">
+                  <Button fx:id="buyButton" alignment="TOP_CENTER" layoutX="3.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#onBuyButtonPressed" prefHeight="43.0" prefWidth="167.0" text="Köp" textAlignment="CENTER">
                      <font>
-                        <Font size="24.0" />
+                        <Font name="SansSerif Regular" size="24.0" />
                      </font>
                      <styleClass>
                         <String fx:value="cursor-hand" />
-                        <String fx:value="san-serif" />
+                        <String fx:value="productBuyButton" />
                      </styleClass>
                   </Button>
                </children>
             </Pane>
+            <ImageView fx:id="tooltipImage" fitHeight="24.0" fitWidth="24.0" layoutX="3.0" layoutY="4.0" onMouseClicked="#onClick" pickOnBounds="true" preserveRatio="true" styleClass="cursor-info">
+               <image>
+                  <Image url="@../Res/Images/info_icon.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </children>

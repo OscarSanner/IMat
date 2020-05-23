@@ -9,9 +9,9 @@
 
 <fx:root fx:id="shuoppingCardItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="72.0" prefWidth="230.0" style="-fx-background-color: #F3F3F3;" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="productNameLabel" layoutX="62.0" layoutY="-7.0" prefHeight="47.0" prefWidth="126.0" styleClass="san-serif" text="Ekologisk blandfärs" wrapText="true">
+      <Label fx:id="productNameLabel" layoutX="62.0" layoutY="-7.0" prefHeight="47.0" prefWidth="126.0" text="Ekologisk blandfärs" wrapText="true">
          <font>
-            <Font size="14.0" />
+            <Font name="SansSerif Regular" size="14.0" />
          </font></Label>
       <ImageView fx:id="itemImage" fitHeight="57.0" fitWidth="70.0" layoutX="2.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -36,10 +36,13 @@
             <Image url="@../Res/Images/paperbin.png" />
          </image>
       </ImageView>
-      <Label layoutX="190.0" layoutY="-2.0" styleClass="san-serif" text="Ta bort" />
-      <TextField fx:id="amountTextField" editable="false" layoutX="88.0" layoutY="37.0" prefHeight="30.0" prefWidth="59.0" styleClass="san-serif">
+      <Label layoutX="190.0" layoutY="-1.0" text="Ta bort">
          <font>
-            <Font size="13.0" />
+            <Font name="SansSerif Regular" size="12.0" />
+         </font></Label>
+      <TextField fx:id="amountTextField" editable="false" layoutX="88.0" layoutY="37.0" prefHeight="30.0" prefWidth="59.0">
+         <font>
+            <Font name="SansSerif Regular" size="13.0" />
          </font>
       </TextField>
    </children>

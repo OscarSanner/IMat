@@ -13,22 +13,22 @@
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="820.0" style="-fx-background-color: #F5FFFF;" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="productImage" fitHeight="200.0" fitWidth="220.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="35.0" />
-      <Label fx:id="productNameLabel" layoutX="301.0" layoutY="17.0" prefHeight="70.0" prefWidth="447.0" styleClass="san-serif" text="Varunamn" AnchorPane.topAnchor="17.0">
+      <Label fx:id="productNameLabel" layoutX="301.0" layoutY="17.0" prefHeight="70.0" prefWidth="447.0" text="Varunamn" AnchorPane.topAnchor="17.0">
          <font>
-            <Font size="48.0" />
+            <Font name="SansSerif Regular" size="48.0" />
          </font>
       </Label>
-      <Label fx:id="productCategoryLabel" layoutX="301.0" layoutY="79.0" prefHeight="27.0" prefWidth="395.0" styleClass="san-serif" text="Kategori">
+      <Label fx:id="productCategoryLabel" layoutX="301.0" layoutY="79.0" prefHeight="27.0" prefWidth="395.0" text="Kategori">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="priceLabel" layoutX="335.0" layoutY="102.0" prefHeight="53.0" prefWidth="192.0" styleClass="san-serif" text="X:-">
+      <Label fx:id="priceLabel" layoutX="335.0" layoutY="102.0" prefHeight="53.0" prefWidth="192.0" text="X:-">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label fx:id="quantityLabel" layoutX="362.0" layoutY="164.0" styleClass="san-serif" text="1">
+      <Label fx:id="quantityLabel" layoutX="362.0" layoutY="164.0" text="1">
          <font>
             <Font size="18.0" />
          </font>
@@ -51,7 +51,7 @@
          </styleClass>
       </TextArea>
       <Button fx:id="exitButton" layoutX="761.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#closeDetailedView" prefHeight="45.0" prefWidth="45.0" styleClass="cursor-hand" text="Exit" />
-      <Label fx:id="unitSuffixLabel" layoutX="384.0" layoutY="164.0" styleClass="san-serif" text="st">
+      <Label fx:id="unitSuffixLabel" layoutX="384.0" layoutY="164.0" text="st">
          <font>
             <Font size="18.0" />
          </font>

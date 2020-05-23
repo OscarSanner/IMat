@@ -6,6 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <fx:root animated="false" prefHeight="67.0" prefWidth="463.0" stylesheets="@../Res/styles.css" text=" " type="TitledPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <content>
@@ -18,9 +19,15 @@
    <graphic>
       <Pane prefHeight="58.0" prefWidth="523.0">
          <children>
-            <Label fx:id="nameLabel" layoutX="14.0" layoutY="21.0" prefHeight="17.0" prefWidth="64.0" styleClass="san-serif" text="nameLabel" />
-            <Button layoutX="316.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#addOrderToCart" styleClass="san-serif" text="Lägg till i kundvagn" />
-            <Button layoutX="309.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#removeAsSaved" styleClass="san-serif" text="Ta bort som iköpslista" />
+            <Label fx:id="nameLabel" layoutX="14.0" layoutY="21.0" prefHeight="17.0" prefWidth="64.0" text="nameLabel" />
+            <Button layoutX="316.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#addOrderToCart" text="Lägg till i kundvagn">
+               <font>
+                  <Font name="SansSerif Regular" size="12.0" />
+               </font></Button>
+            <Button layoutX="309.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#removeAsSaved" text="Ta bort som iköpslista">
+               <font>
+                  <Font name="SansSerif Regular" size="12.0" />
+               </font></Button>
          </children>
       </Pane>
    </graphic>

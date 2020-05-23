@@ -16,6 +16,7 @@ import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.ShoppingCart;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
+import javax.tools.Tool;
 import java.awt.*;
 import java.io.IOException;
 import java.util.*;
@@ -30,6 +31,8 @@ public class Product extends AnchorPane {
      @FXML TextField amountTextField;
      @FXML ImageView plusImage;
      @FXML ImageView minusImage;
+     @FXML Button tooltipButton;
+     @FXML ImageView tooltipImage;
 
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     private iMatBackendController parentController;
@@ -56,6 +59,12 @@ public class Product extends AnchorPane {
         this.itemImage.setImage(dataHandler.getFXImage(product));
         this.itemLabel.setText(product.getName());
         this.priceLabel.setText(product.getPrice() + " kr/" + product.getUnitSuffix());
+
+        Tooltip tooltip = new Tooltip("Tryck för mer information");
+        tooltip.setStyle("-fx-font-size: 18");
+        Tooltip.install(tooltipImage, tooltip);
+
+
     }
 
     //================================================================================

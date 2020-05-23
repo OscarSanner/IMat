@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Point3D?>
 <?import javafx.scene.control.Button?>
@@ -54,31 +53,27 @@
                                              <children>
                                                 <Pane layoutX="82.0" layoutY="31.0" prefHeight="215.0" prefWidth="515.0" style="-fx-background-color: #F5F5F5;">
                                                    <children>
-                                                      <Label layoutX="32.0" layoutY="5.0" styleClass="san-serif" text=" Kredit- eller debitkort">
+                                                      <Label layoutX="32.0" layoutY="5.0" text=" Kredit- eller debitkort">
                                                          <font>
-                                                            <Font size="17.0" />
+                                                            <Font name="SansSerif Regular" size="17.0" />
                                                          </font></Label>
-                                                      <TextField fx:id="cardNumberTextField" layoutX="30.0" layoutY="35.0" prefHeight="39.0" prefWidth="422.0" promptText="          Kortnummer" styleClass="san-serif" />
+                                                      <TextField fx:id="cardNumberTextField" layoutX="30.0" layoutY="35.0" prefHeight="39.0" prefWidth="422.0" promptText="          Kortnummer" />
                                                       <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="37.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" />
                                                       <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="37.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" />
-                                                      <TextField fx:id="cvcTextField" layoutX="241.0" layoutY="74.0" prefHeight="39.0" prefWidth="211.0" promptText="          CVC/ CVV" styleClass="san-serif" />
+                                                      <TextField fx:id="cvcTextField" layoutX="241.0" layoutY="74.0" prefHeight="39.0" prefWidth="211.0" promptText="          CVC/ CVV" />
                                                       <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="250.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" />
                                                       <ImageView fitHeight="30.0" fitWidth="49.0" layoutX="32.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true" />
                                                       <ImageView fitHeight="30.0" fitWidth="49.0" layoutX="90.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true" />
                                                       <ImageView fitHeight="30.0" fitWidth="49.0" layoutX="149.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true" />
-                                                      <CheckBox fx:id="checkButtonPayment" layoutX="30.0" layoutY="180.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="329.0" text="Spara mina kortuppgifter till nästa köp">
+                                                      <CheckBox fx:id="checkButtonPayment" layoutX="30.0" layoutY="180.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="329.0" styleClass="cursor-hand" text="Spara mina kortuppgifter till nästa köp">
                                                          <font>
                                                             <Font size="17.0" />
-                                                         </font>
-                                                         <styleClass>
-                                                            <String fx:value="cursor-hand" />
-                                                            <String fx:value="san-serif" />
-                                                         </styleClass></CheckBox>
-                                                      <Label fx:id="cardErrorLabel" layoutX="30.0" layoutY="155.0" prefHeight="17.0" prefWidth="226.0" styleClass="san-serif" text="OBS! Inget fält få vara tomt!" textFill="RED" />
-                                                      <Label fx:id="cardStyleErrorLabel" layoutX="30.0" layoutY="155.0" prefHeight="17.0" prefWidth="226.0" styleClass="san-serif" text="OBS! Fälten få bara innehållla tal!!" textFill="RED" />
-                                                      <Label fx:id="cardAmountErrorLabel" layoutX="30.0" layoutY="155.0" prefHeight="17.0" prefWidth="226.0" styleClass="san-serif" text="OBS! Gå igenom antal siffror vid fälten!" textFill="RED" />
-                                                      <TextField fx:id="yearTextField" layoutX="141.0" layoutY="74.0" prefHeight="39.0" prefWidth="100.0" promptText="          ÅR" styleClass="san-serif" />
-                                                      <TextField fx:id="monthTextField" layoutX="30.0" layoutY="74.0" prefHeight="39.0" prefWidth="100.0" promptText="          MM" styleClass="san-serif" />
+                                                         </font></CheckBox>
+                                                      <Label fx:id="cardErrorLabel" layoutX="30.0" layoutY="155.0" prefHeight="17.0" prefWidth="226.0" text="OBS! Inget fält få vara tomt!" textFill="RED" />
+                                                      <Label fx:id="cardStyleErrorLabel" layoutX="30.0" layoutY="155.0" prefHeight="17.0" prefWidth="226.0" text="OBS! Fälten få bara innehållla tal!!" textFill="RED" />
+                                                      <Label fx:id="cardAmountErrorLabel" layoutX="30.0" layoutY="155.0" prefHeight="17.0" prefWidth="226.0" text="OBS! Gå igenom antal siffror vid fälten!" textFill="RED" />
+                                                      <TextField fx:id="yearTextField" layoutX="141.0" layoutY="74.0" prefHeight="39.0" prefWidth="100.0" promptText="          ÅR" />
+                                                      <TextField fx:id="monthTextField" layoutX="30.0" layoutY="74.0" prefHeight="39.0" prefWidth="100.0" promptText="          MM" />
                                                       <Label layoutX="125.0" layoutY="79.0" prefHeight="28.0" prefWidth="17.0" text="  /">
                                                          <font>
                                                             <Font size="18.0" />
@@ -86,20 +81,16 @@
                                                       </Label>
                                                    </children>
                                                 </Pane>
-                                                <Pane layoutX="253.0" layoutY="254.0" prefHeight="47.0" prefWidth="159.0" style="-fx-background-color: #F5F5F5;" styleClass="san-serif">
+                                                <Pane layoutX="253.0" layoutY="254.0" prefHeight="47.0" prefWidth="159.0" style="-fx-background-color: #F5F5F5;">
                                                    <children>
                                                       <Label layoutX="14.0" layoutY="15.0" text="Totaltbelopp:" />
                                                       <Label layoutX="140.0" layoutY="15.0" text="kr" />
                                                    </children>
                                                 </Pane>
-                                                <Button fx:id="payButton" layoutX="220.0" layoutY="310.0" mnemonicParsing="false" onMouseClicked="#onPayButtonPressed" prefHeight="27.0" prefWidth="226.0" style="-fx-background-color: #FF5E5E;" stylesheets="@../Res/styles.css" text="Slutför köpet">
+                                                <Button fx:id="payButton" layoutX="220.0" layoutY="310.0" mnemonicParsing="false" onMouseClicked="#onPayButtonPressed" prefHeight="27.0" prefWidth="226.0" style="-fx-background-color: #FF5E5E;" styleClass="cursor-hand" stylesheets="@../Res/styles.css" text="Slutför köpet">
                                                    <opaqueInsets>
                                                       <Insets />
                                                    </opaqueInsets>
-                                                   <styleClass>
-                                                      <String fx:value="cursor-hand" />
-                                                      <String fx:value="san-serif" />
-                                                   </styleClass>
                                                 </Button>
                                              </children>
                                           </Pane>
@@ -122,7 +113,7 @@
                         </Pane>
                         <Pane layoutX="23.0" layoutY="24.0" prefHeight="43.0" prefWidth="778.0" style="-fx-background-color: white;">
                            <children>
-                              <Label fx:id="pageNameLabel" layoutX="323.0" layoutY="7.0" styleClass="san-serif" text="Kortuppgifter">
+                              <Label fx:id="pageNameLabel" layoutX="323.0" layoutY="7.0" text="Kortuppgifter">
                                  <font>
                                     <Font size="24.0" />
                                  </font></Label>
