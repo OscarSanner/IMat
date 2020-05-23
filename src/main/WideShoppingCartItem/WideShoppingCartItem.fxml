@@ -9,7 +9,7 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="750.0" style="-fx-background-color: #F6F6F6;" styleClass="dropShadow" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="itemLabel" layoutX="87.0" layoutY="26.0" prefHeight="35.0" prefWidth="185.0" text="Paprika">
+      <Label fx:id="itemLabel" layoutX="87.0" layoutY="26.0" prefHeight="35.0" prefWidth="185.0" styleClass="san-serif" text="Paprika">
          <font>
             <Font size="20.0" />
          </font></Label>
@@ -17,11 +17,11 @@
          <image>
             <Image url="@../Res/Images/chick.png" />
          </image></ImageView>
-      <Label fx:id="totalPriceLabel" layoutX="591.0" layoutY="29.0" prefHeight="32.0" prefWidth="75.0" text="kr" textAlignment="RIGHT">
+      <Label fx:id="totalPriceLabel" layoutX="591.0" layoutY="29.0" prefHeight="32.0" prefWidth="75.0" styleClass="san-serif" text="kr" textAlignment="RIGHT">
          <font>
             <Font size="22.0" />
          </font></Label>
-      <Label fx:id="unitPriceLabel" layoutX="452.0" layoutY="29.0" prefHeight="32.0" prefWidth="103.0" text="kr" textAlignment="RIGHT">
+      <Label fx:id="unitPriceLabel" layoutX="452.0" layoutY="29.0" prefHeight="32.0" prefWidth="103.0" styleClass="san-serif" text="kr" textAlignment="RIGHT">
          <font>
             <Font size="22.0" />
          </font></Label>
@@ -40,11 +40,11 @@
             <Image url="@../Res/Images/paperbin.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="680.0" layoutY="1.0" text="Ta bort">
+      <Label alignment="CENTER" layoutX="680.0" layoutY="1.0" styleClass="san-serif" text="Ta bort">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <TextField fx:id="amountTextField" alignment="CENTER" editable="false" layoutX="314.0" layoutY="21.0" prefHeight="48.0" prefWidth="50.0">
+      <TextField fx:id="amountTextField" alignment="CENTER" editable="false" layoutX="314.0" layoutY="21.0" prefHeight="48.0" prefWidth="50.0" styleClass="san-serif">
          <font>
             <Font size="22.0" />
          </font>

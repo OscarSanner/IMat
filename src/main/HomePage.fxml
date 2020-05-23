@@ -43,51 +43,61 @@
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
+                              <String fx:value="san-serif" />
                            </styleClass></Button>
                         <Button fx:id="offersButton" layoutX="10.0" layoutY="126.0" mnemonicParsing="false" onMouseClicked="#onOffersButtonPressed" prefHeight="44.0" prefWidth="125.0" text="Erbjudanden">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
+                              <String fx:value="san-serif" />
                            </styleClass></Button>
                         <Button fx:id="meatAndFishButton" layoutX="10.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#onMeatAndFishButtonPressed" prefHeight="44.0" prefWidth="125.0" text="Kött &amp; Fisk">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
+                              <String fx:value="san-serif" />
                            </styleClass></Button>
                         <Button fx:id="veggiesButton" layoutX="10.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#onVeggiesButtonPressed" prefHeight="44.0" prefWidth="125.0" text="Frukt &amp; Grönt">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
+                              <String fx:value="san-serif" />
                            </styleClass></Button>
                         <Button fx:id="drinkButton" layoutX="10.0" layoutY="287.0" mnemonicParsing="false" onMouseClicked="#onDrinkButtonPressed" prefHeight="44.0" prefWidth="125.0" text="Dryck">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
+                              <String fx:value="san-serif" />
                            </styleClass></Button>
                         <Button fx:id="dairyButton" layoutX="10.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#onDairyButtonPressed" prefHeight="44.0" prefWidth="125.0" text="Mejeri">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
+                              <String fx:value="san-serif" />
                            </styleClass></Button>
                         <Button fx:id="pantryButton" layoutX="10.0" layoutY="375.0" mnemonicParsing="false" onMouseClicked="#onPantryButtonPressed" prefHeight="44.0" prefWidth="125.0" text="Skafferi">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
+                              <String fx:value="san-serif" />
                            </styleClass></Button>
                         <Button fx:id="spicesButton" layoutX="10.0" layoutY="464.0" mnemonicParsing="false" onMouseClicked="#onSpicesButtonPressed" prefHeight="44.0" prefWidth="125.0" text="Kryddor">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
+                              <String fx:value="san-serif" />
                            </styleClass></Button>
                         <Button fx:id="snacksButton" layoutX="10.0" layoutY="419.0" mnemonicParsing="false" onMouseClicked="#onSnacksButtonPressed" prefHeight="44.0" prefWidth="125.0" text="Snacks">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
+                              <String fx:value="san-serif" />
                            </styleClass></Button>
                         <Button fx:id="breadButton" layoutX="10.0" layoutY="508.0" mnemonicParsing="false" onMouseClicked="#onBreadButtonPressed" prefHeight="44.0" prefWidth="125.0" text="Bröd">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
+                              <String fx:value="san-serif" />
                            </styleClass></Button>
                         <ImageView fitHeight="58.0" fitWidth="135.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -107,10 +117,14 @@
                <children>
                   <AnchorPane layoutX="4.0" layoutY="30.0" prefHeight="577.0" prefWidth="269.0" styleClass="border">
                      <children>
-                        <Button fx:id="checkoutButton" layoutX="6.0" layoutY="494.0" mnemonicParsing="false" onMouseClicked="#onCheckoutButtonPressed" prefHeight="77.0" prefWidth="251.0" style="-fx-background-color: #32FF46;" styleClass="cursor-hand" text="Till kassan" textAlignment="CENTER">
+                        <Button fx:id="checkoutButton" layoutX="6.0" layoutY="494.0" mnemonicParsing="false" onMouseClicked="#onCheckoutButtonPressed" prefHeight="77.0" prefWidth="251.0" style="-fx-background-color: #32FF46;" text="Till kassan" textAlignment="CENTER">
                            <font>
                               <Font size="30.0" />
-                           </font></Button>
+                           </font>
+                           <styleClass>
+                              <String fx:value="cursor-hand" />
+                              <String fx:value="san-serif" />
+                           </styleClass></Button>
                         <Label fx:id="sumLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="97.0" layoutY="459.0" prefHeight="35.0" prefWidth="147.0" text="0 kr" textAlignment="RIGHT">
                            <font>
                               <Font size="24.0" />
@@ -152,6 +166,7 @@
                                  <styleClass>
                                     <String fx:value="tabButtons" />
                                     <String fx:value="cursor-hand" />
+                                    <String fx:value="san-serif" />
                                  </styleClass>
                               </Button>
                               <Button fx:id="orderTab" alignment="CENTER" layoutX="140.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onOrderTabSelect" prefHeight="50.0" prefWidth="117.0" text="Ordar">
@@ -168,6 +183,7 @@
                                  <styleClass>
                                     <String fx:value="tabButtons" />
                                     <String fx:value="cursor-hand" />
+                                    <String fx:value="san-serif" />
                                  </styleClass>
                               </Button>
                               <Button fx:id="listTab" alignment="CENTER" layoutX="260.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onListtabSelect" prefHeight="50.0" prefWidth="164.0" text="Inköpslistor">
@@ -184,6 +200,7 @@
                                  <styleClass>
                                     <String fx:value="tabButtons" />
                                     <String fx:value="cursor-hand" />
+                                    <String fx:value="san-serif" />
                                  </styleClass>
                               </Button>
                               <Button fx:id="myPageTab" alignment="CENTER" layoutX="427.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onMyPageTabSelect" prefHeight="50.0" prefWidth="136.0" text="Min sida">
@@ -200,6 +217,7 @@
                                  <styleClass>
                                     <String fx:value="tabButtons" />
                                     <String fx:value="cursor-hand" />
+                                    <String fx:value="san-serif" />
                                  </styleClass>
                               </Button>
                               <Line endX="507.0" layoutX="102.0" layoutY="61.0" startX="-108.0" strokeWidth="4.0" />

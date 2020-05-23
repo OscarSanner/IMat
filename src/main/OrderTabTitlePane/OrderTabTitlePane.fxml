@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.Pane?>
 
-<fx:root animated="false" prefHeight="67.0" prefWidth="463.0" text=" " type="TitledPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root animated="false" prefHeight="67.0" prefWidth="463.0" stylesheets="@../Res/styles.css" text=" " type="TitledPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <content>
       <AnchorPane fx:id="orderTitleAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="575.0">
          <children>
@@ -18,8 +18,8 @@
    <graphic>
       <Pane prefHeight="58.0" prefWidth="463.0">
          <children>
-            <Label fx:id="dateLabel" layoutX="14.0" layoutY="21.0" prefHeight="17.0" prefWidth="77.0" text="25e Maj 2020" />
-            <Button fx:id="saveButton" layoutX="200.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onSaveButtonPressed" text="Lägg till som iköpslista" />
+            <Label fx:id="dateLabel" layoutX="14.0" layoutY="21.0" prefHeight="17.0" prefWidth="77.0" styleClass="san-serif" text="25e Maj 2020" />
+            <Button fx:id="saveButton" layoutX="200.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#onSaveButtonPressed" styleClass="san-serif" text="Lägg till som iköpslista" />
          </children>
       </Pane>
    </graphic>

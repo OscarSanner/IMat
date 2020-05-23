@@ -81,6 +81,7 @@
     -fx-font-size: 18;
     -fx-text-align: center;
     -fx-align-content: center;
+    -fx-font-family: sans-serif;
 }
 .subCategoryButton:hover{
     -fx-background-color: #cee2f5;
@@ -88,6 +89,7 @@
     -fx-font-size: 18;
     -fx-text-align: center;
     -fx-align-content: center;
+    -fx-font-family: sans-serif;
 }
 .subCategoryButtonSelected{
     -fx-text-fill: white;
@@ -97,6 +99,7 @@
     -fx-font-size: 18;
     -fx-text-align: center;
     -fx-align-content: center;
+    -fx-font-family: sans-serif;
 }
 .subCategoryButtonSelected:hover{
     -fx-background-color: #2FAECD;
@@ -104,11 +107,11 @@
     -fx-font-size: 18;
     -fx-text-align: center;
     -fx-align-content: center;
+    -fx-font-family: sans-serif;
 }
 
 .dropShadow{
      -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 5, 0, 0, 0);
-
 }
 .cursor-hand{
      -fx-cursor: pointer;
@@ -125,4 +128,8 @@
 .split-pane-divider {
    -fx-background-color: white;
    -fx-padding: 0 0 0 0;
+}
+
+.san-serif{
+   -fx-font-family: sans-serif;
 }

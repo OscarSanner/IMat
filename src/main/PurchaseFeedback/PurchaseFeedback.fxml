@@ -5,11 +5,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="600.0" type="AnchorPane" visible="false" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="600.0" stylesheets="@../Res/styles.css" type="AnchorPane" visible="false" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane layoutX="172.0" layoutY="-71.0" prefHeight="70.0" prefWidth="600.0" style="-fx-background-color: #FF7575;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="feedbackLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="18.0" prefHeight="17.0" prefWidth="560.0" text="1 st Paprika har lagts till i varukorgen" textAlignment="RIGHT" textOverrun="CLIP">
+            <Label fx:id="feedbackLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="18.0" prefHeight="17.0" prefWidth="560.0" styleClass="san-serif" text="1 st Paprika har lagts till i varukorgen" textAlignment="RIGHT" textOverrun="CLIP">
                <font>
                   <Font size="24.0" />
                </font>
