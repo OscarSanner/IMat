@@ -1,0 +1,154 @@
+
+.border{
+    -fx-border-width: 2px;
+    -fx-border-color: black;
+    -fx-background-color: white;
+}
+.border-extra{
+    -fx-border-width: 2px;
+    -fx-border-top-color: white;
+}
+
+.tabButtons{
+    -fx-border-color: white;
+    -fx-background-color: #00FFFF;
+    -fx-border-width: 1px;
+    -fx-border-color: #037C99;
+    -fx-font-size: 18;
+
+    -fx-text-align: center;
+    -fx-align-content: center;
+
+}
+
+.tabButtons:hover{
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    -fx-background-color: #BFFDFD;
+    -fx-text-align: center;
+    -fx-align-content: center;
+     -fx-cursor: pointer;
+     -fx-cursor: hand;
+}
+
+.tabButtonsSelected{
+    -fx-background-color: #1A61CC;
+    -fx-text-fill: white;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+    -fx-font-size: 18;
+    -fx-text-align: center;
+    -fx-border-color: black;
+    -fx-align-content: center;
+}
+.tabButtonsSelected:hover{
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    -fx-background-color: #7CA3DF;
+    -fx-text-align: center;
+    -fx-border-color: black;
+    -fx-align-content: center;
+     -fx-cursor: pointer;
+     -fx-cursor: hand;
+}
+
+.categoryButtons{
+    -fx-border-color: white;
+    -fx-border-width: 1px;
+    -fx-background-color: #B1D5F6;
+    -fx-font-size: 15;
+}
+.categoryButtons:hover{
+    -fx-background-color: #cee2f5;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+}
+
+.categoryButtonsSelected{
+    -fx-text-fill: white;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+    -fx-background-color: #037C99;
+    -fx-font-size: 15;
+}
+
+.categoryButtonsSelected:hover{
+    -fx-background-color: #2FAECD;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+}
+
+.subCategoryButton{
+    -fx-border-color: white;
+    -fx-border-width: 1px;
+    -fx-background-color: #B1D5F6;
+    -fx-font-size: 18;
+    -fx-text-align: center;
+    -fx-align-content: center;
+    -fx-font-family: sans-serif;
+}
+.subCategoryButton:hover{
+    -fx-background-color: #cee2f5;
+    -fx-font-weight: bold;
+    -fx-font-size: 18;
+    -fx-text-align: center;
+    -fx-align-content: center;
+    -fx-font-family: sans-serif;
+}
+.subCategoryButtonSelected{
+    -fx-text-fill: white;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+    -fx-background-color: #037C99;
+    -fx-font-size: 18;
+    -fx-text-align: center;
+    -fx-align-content: center;
+    -fx-font-family: sans-serif;
+}
+.subCategoryButtonSelected:hover{
+    -fx-background-color: #2FAECD;
+    -fx-font-weight: bold;
+    -fx-font-size: 18;
+    -fx-text-align: center;
+    -fx-align-content: center;
+    -fx-font-family: sans-serif;
+}
+
+.dropShadow{
+     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 5, 0, 0, 0);
+}
+.cursor-hand{
+     -fx-cursor: pointer;
+     -fx-cursor: hand;
+}
+.cursor-text{
+     -fx-cursor: pointer;
+     -fx-cursor: text;
+}
+
+.gaussianBlurAndOpaque{
+    -fx-background-color: pink;
+}
+.split-pane-divider {
+   -fx-background-color: white;
+   -fx-padding: 0 0 0 0;
+}
+
+.productBuyButton{
+    -fx-background-radius: 30;
+    -fx-border-radius: 15px;
+    -fx-border-width: 167px;
+    -fx-border-height: 43;
+    -fx-background-color: #FF7575;
+
+}
+.productBuyButton:hover{
+    -fx-font-size: 24;
+    -fx-background-color: #ffafaf;
+    -fx-font-weight: bold;
+}
+
+.cursor-info{
+     -fx-cursor: pointer;
+     -fx-cursor: help;
+}

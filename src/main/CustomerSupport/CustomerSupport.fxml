@@ -17,8 +17,16 @@
             <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
                <children>
                   <Button layoutX="26.0" layoutY="14.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="97.0" text="Button" />
-                  <Button fx:id="closeWindowButton" layoutX="801.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#onCloseWindowsButtonPressed" prefHeight="64.0" prefWidth="123.0" text="Button" />
-                  <ImageView fitHeight="81.0" fitWidth="423.0" layoutX="247.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="closeWindowButton" layoutX="801.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#onCloseWindowsButtonPressed" prefHeight="64.0" prefWidth="143.0" text="Button" />
+                  <ImageView fitHeight="49.0" fitWidth="64.0" layoutX="809.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Res/Images/pregunta.png" />
+                     </image></ImageView>
+                  <ImageView fitHeight="113.0" fitWidth="101.0" layoutX="24.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Res/Images/escape_hatch.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
          </top>
@@ -70,6 +78,16 @@
                                              </font>
                                           </Label>
                                           <Label layoutX="51.0" layoutY="331.0" prefHeight="94.0" prefWidth="532.0" text="Label" />
+                                          <ImageView fitHeight="37.0" fitWidth="36.0" layoutX="63.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Res/Images/llamada.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="34.0" fitWidth="39.0" layoutX="65.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Res/Images/correo.png" />
+                                             </image>
+                                          </ImageView>
                                        </children>
                                     </Pane>
                                  </children>
