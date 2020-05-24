@@ -98,6 +98,8 @@
     -fx-text-align: center;
     -fx-align-content: center;
     -fx-font-family: sans-serif;
+         -fx-cursor: pointer;
+         -fx-cursor: hand;
 }
 .subCategoryButtonSelected{
     -fx-text-fill: white;
@@ -116,6 +118,8 @@
     -fx-text-align: center;
     -fx-align-content: center;
     -fx-font-family: sans-serif;
+         -fx-cursor: pointer;
+         -fx-cursor: hand;
 
 }
 
@@ -163,4 +167,64 @@
     -fx-border-color: white;
 }
 
+.till-kassan{
+    -fx-background-color: #32FF46;
+    -fx-font-size: 30;
+    -fx-text-align: center;
+    -fx-align-content: center;
+    -fx-font-family: sans-serif;
+}
+.till-kassan:hover{
 
+    -fx-font-weight: bold;
+    -fx-font-size: 30;
+    -fx-text-align: center;
+    -fx-align-content: center;
+    -fx-font-family: sans-serif;
+
+    -fx-background-color: #A0FFAA;
+
+}
+
+.nextButton{
+
+    -fx-font-size: 20;
+    -fx-text-align: center;
+    -fx-align-content: center;
+    -fx-font-family: sans-serif;
+    -fx-background-color: #32FF46;
+         -fx-cursor: pointer;
+         -fx-cursor: hand;
+}
+.nextButton:hover{
+    -fx-font-weight: bold;
+    -fx-font-size: 20;
+    -fx-text-align: center;
+    -fx-align-content: center;
+    -fx-font-family: sans-serif;
+    -fx-background-color: #A0FFAA;
+         -fx-cursor: pointer;
+         -fx-cursor: hand;
+
+}
+
+.prevButton{
+
+    -fx-font-size: 17;
+    -fx-text-align: center;
+    -fx-align-content: center;
+    -fx-font-family: sans-serif;
+    -fx-background-color: #C4C4C4;
+         -fx-cursor: pointer;
+         -fx-cursor: hand;
+}
+.prevButton:hover{
+    -fx-font-weight: bold;
+    -fx-font-size: 17;
+    -fx-text-align: center;
+    -fx-align-content: center;
+    -fx-font-family: sans-serif;
+    -fx-background-color: #F0F0F0;
+         -fx-cursor: pointer;
+         -fx-cursor: hand;
+}

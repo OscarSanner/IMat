@@ -145,11 +145,15 @@
                            <children>
                               <ImageView fx:id="previousImage" fitHeight="32.0" fitWidth="88.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
                               <ImageView fx:id="nextImage" fitHeight="32.0" fitWidth="88.0" layoutX="661.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
-                              <ImageView fitHeight="30.0" fitWidth="170.0" layoutX="14.0" layoutY="11.0" onMouseClicked="#previousStep" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
-                                 <image>
-                                    <Image url="@../Res/Images/previous.png" />
-                                 </image>
-                              </ImageView>
+                              <Button layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onMouseClicked="#previousStep" prefHeight="42.0" prefWidth="180.0" styleClass="prevButton" text="Fortsätt handla">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                                       <image>
+                                          <Image url="@../Res/Images/next-button.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
                            </children>
                         </Pane>
                         <Pane layoutX="23.0" layoutY="24.0" prefHeight="43.0" prefWidth="778.0" style="-fx-background-color: white;">
