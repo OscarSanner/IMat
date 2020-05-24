@@ -176,6 +176,9 @@
     -fx-font-size: 24;
     -fx-background-color: #ffafaf;
     -fx-font-weight: bold;
+    -fx-text-align: center;
+    -fx-align-content: center;
+    -fx-font-family: sans-serif;
 }
 
 .cursor-info{
