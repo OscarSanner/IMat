@@ -114,7 +114,7 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Button layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onMouseClicked="#closeWizard" prefHeight="42.0" prefWidth="180.0" styleClass="prevButton" text="Fortsätt handla">
+                              <Button layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onMouseClicked="#closeWizard" prefHeight="42.0" prefWidth="185.0" styleClass="prevButton" text="Fortsätt handla">
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
                                        <image>

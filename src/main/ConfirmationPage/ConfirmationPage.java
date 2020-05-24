@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -26,6 +28,8 @@ public class ConfirmationPage extends AnchorPane {
 
     public Payment parentBackendController;
     private Order order;
+
+
 
     public ConfirmationPage(Payment parentBackendController, Date deliveryTime, Order order){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ConfirmationPage.fxml"));
@@ -64,30 +68,27 @@ public class ConfirmationPage extends AnchorPane {
                 "main/Res/Images/escape_hatch.png"
         ))));
     }
-    @FXML public void shutDownApplication(){
-        Platform.exit();
-        IMatDataHandler.getInstance().shutDown();
-    }
+
+
 
     //----------------FAKTISK KOD-----------------
 
-    @FXML Label orderNumberLabel;
-    @FXML Label orderDateLabel;
-    @FXML Label deliveryDateLabel;
-    @FXML Label thankYouLabel;
 
-
+    @FXML TextField orderNumberTextField;
+    @FXML TextField orderDateTextField;
+    @FXML TextField deliveryTimeTextField;
 
     private void setupConfirmationPage(){
 
-        orderNumberLabel.setText("Order No.: " + String.valueOf(order.getOrderNumber()));
+
 
         SimpleDateFormat timeFormat = new SimpleDateFormat("dd MMMM yyyy");
 
-        orderDateLabel.setText("Order datum: " + timeFormat.format(order.getDate()));
+        orderNumberTextField.setText(String.valueOf(order.getOrderNumber()));
+        orderDateTextField.setText(timeFormat.format(order.getDate()));
+        deliveryTimeTextField.setText(timeFormat.format(deliveryTime));
 
-        deliveryDateLabel.setText("Förväntat leveransdatum: " + timeFormat.format(deliveryTime));
 
-        thankYouLabel.setText("Hej " + IMatDataHandler.getInstance().getCustomer().getFirstName() + ", din order har mottagits!");
+
     }
 }
