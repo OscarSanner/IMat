@@ -35,10 +35,10 @@ public class PersonalData extends AnchorPane implements IWizardPage {
     public Timetable timetablePage = new Timetable(this);
     public ShoppingCart parentBackendController;
 
-    @FXML private CheckBox personalCheckBox;
+    @FXML public CheckBox personalCheckBox;
     @FXML public ImageView escapeHatchImage;
 
-   private Customer customer = IMatDataHandler.getInstance().getCustomer();
+    public Customer customer = IMatDataHandler.getInstance().getCustomer();
 
 
     public PersonalData(ShoppingCart parentBackendController){
@@ -55,9 +55,11 @@ public class PersonalData extends AnchorPane implements IWizardPage {
         this.parentBackendController = parentBackendController;
 
        //System.out.println(customer.getFirstName());
-        inputCustomerInfo();
+        //inputCustomerInfo();
        //System.out.println(customer.getFirstName());
         makeLblsInvisible();
+
+        //personalCheckBox.setSelected();
     }
 
     @FXML
@@ -68,8 +70,9 @@ public class PersonalData extends AnchorPane implements IWizardPage {
 
         if (personalCheckBox.isSelected()) {
             setCustomerInfo();
+            checkBoxState = true;
             personalCheckBox.setSelected(true);
-             setCustomerInfo();
+            //setCustomerInfo();
         }
 
         if(allFilledInCorrectly()) {
@@ -77,6 +80,8 @@ public class PersonalData extends AnchorPane implements IWizardPage {
 
         }
     }
+
+    public boolean checkBoxState = false;
 
     @Override
     public void closeWizard() {
@@ -211,7 +216,7 @@ public class PersonalData extends AnchorPane implements IWizardPage {
 
    // sätter kundinfo som skrevs in av kunden
     private void setCustomerInfo() {
-       Customer customer = IMatDataHandler.getInstance().getCustomer();
+       //Customer customer = IMatDataHandler.getInstance().getCustomer();
             customer.setFirstName(firstNameTextField.getText());
             customer.setLastName(lastNameTextField.getText());
             customer.setMobilePhoneNumber(mobileNumberTextField.getText());
@@ -224,7 +229,7 @@ public class PersonalData extends AnchorPane implements IWizardPage {
 
     // fyller i sparade informationen i beatlningssteget
     public void inputCustomerInfo(){
-       Customer customer = IMatDataHandler.getInstance().getCustomer();
+       //Customer customer = IMatDataHandler.getInstance().getCustomer();
 
         emailTextField.setText(customer.getEmail());
         mobileNumberTextField.setText(customer.getMobilePhoneNumber());

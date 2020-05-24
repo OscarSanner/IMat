@@ -91,7 +91,8 @@ public class iMatBackendController implements Initializable {
     public StackPane blurPane = new StackPane();
 
 
-    //public Customer customer = IMatDataHandler.getInstance().getCustomer();
+    public Customer customer = IMatDataHandler.getInstance().getCustomer();
+    public CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
 
     @FXML private javafx.scene.control.TextField firstName;
     @FXML private javafx.scene.control.TextField lastName;
@@ -100,15 +101,18 @@ public class iMatBackendController implements Initializable {
     @FXML private javafx.scene.control.TextField address;
     @FXML private javafx.scene.control.TextField postcode;
     @FXML private javafx.scene.control.TextField area;
-    @FXML private javafx.scene.control.TextField cardNumber;
     @FXML private Label postCodeAmountErrorLabel;
     @FXML private Label mobileAmountErrorLabel;
     @FXML private Label emailStyleErrorLabel;
     @FXML private Label postCodeStyleErrorLabel;
     @FXML private Label mobileStyleErrorLabel;
+    @FXML private javafx.scene.control.TextField cardNumber;
     @FXML private javafx.scene.control.TextField year;
+    @FXML private javafx.scene.control.TextField month;
     @FXML private javafx.scene.control.TextField cvc;
     @FXML private Button saveButton;
+    @FXML private Label paymentAmountErrorLbl;
+    @FXML private Label paymentStyleErrorLbl;
 
     private boolean homepaneIsFront = true;
 
@@ -264,7 +268,7 @@ public class iMatBackendController implements Initializable {
     @FXML
     public void onCheckoutButtonPressed(){
         mainAnchorPane.getChildren().add(shoppingCartPage);
-        saveCustomerInfo();
+        //saveCustomerInfo();
         shoppingCartPage.populateShoppingCartPage();
     }
     @FXML
@@ -325,11 +329,11 @@ public class iMatBackendController implements Initializable {
 
 //------------------------------------------------------------MinSida-----------------------------------------------------------------------//
 
-    Customer customer = IMatDataHandler.getInstance().getCustomer();
+    //Customer customer = IMatDataHandler.getInstance().getCustomer();
 
     @FXML
     private void loadUserInfo(){
-        Customer customer = IMatDataHandler.getInstance().getCustomer();
+        //Customer customer = IMatDataHandler.getInstance().getCustomer();
       // CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
         firstName.setText(customer.getFirstName());
         lastName.setText(customer.getLastName());
@@ -338,13 +342,14 @@ public class iMatBackendController implements Initializable {
         postcode.setText(customer.getPostCode());
         mobileNumber.setText(customer.getMobilePhoneNumber());
         area.setText(customer.getPostAddress());
-       // cardNumber.setText(creditCard.getCardNumber());
-        //year.setText(creditCard.getValidYear() && creditCard.getValidMonth());
-        //cvc.setText(creditCard.getVerificationCode());
+        cardNumber.setText(creditCard.getCardNumber());
+        year.setText(String.valueOf(creditCard.getValidYear()));
+        month.setText(String.valueOf(creditCard.getValidMonth()));
+        cvc.setText(String.valueOf(creditCard.getVerificationCode()));
 
     }
     private void saveCustomerInfo() {
-        Customer customer = IMatDataHandler.getInstance().getCustomer();
+        //Customer customer = IMatDataHandler.getInstance().getCustomer();
         customer.setFirstName(firstName.getText());
         customer.setLastName(lastName.getText());
         customer.setMobilePhoneNumber(mobileNumber.getText());
@@ -352,12 +357,21 @@ public class iMatBackendController implements Initializable {
         customer.setAddress(address.getText());
         customer.setPostAddress(area.getText());
         customer.setPostCode(postcode.getText());
+        creditCard.setCardNumber(cardNumber.getText());
+        creditCard.setVerificationCode(Integer.parseInt(cvc.getText()));
+        creditCard.setValidMonth(Integer.parseInt(month.getText()));
+        creditCard.setValidYear(Integer.parseInt(year.getText()));
+
     }
 
     private boolean isCustomerInfoComplete(){
-        return isInEmailForm(email) && isComplete(mobileNumber,getMinAllowedLength(mobileNumber))
+        return isInEmailForm(email)
                 && containsDigitsOnly(mobileNumber) && containsDigitsOnly(postcode)
-                && isComplete(postcode,getMinAllowedLength(postcode));
+                && isComplete(postcode,getMinAllowedLength(postcode)) && isComplete(mobileNumber,getMinAllowedLength(mobileNumber))
+                && containsDigitsOnly(cardNumber) && containsDigitsOnly(cvc) && containsDigitsOnly(month)
+                && containsDigitsOnly(year) && isComplete(cardNumber, getMinAllowedLength(cardNumber))
+                && isComplete(cvc, getMinAllowedLength(cvc)) && isComplete(month, getMinAllowedLength(month))
+                && isComplete(year, getMinAllowedLength(year));
     }
 
     private boolean isInEmailForm(TextField textField){
@@ -382,6 +396,14 @@ public class iMatBackendController implements Initializable {
             return 10;
         } else if(textField.equals(postcode)){
             return 5;
+        } else if (textField.equals(cardNumber)){
+            return 16;
+        }else if(textField.equals(cvc)) {
+            return 3;
+        } else if(textField.equals(month)){
+            return 2;
+        } else if(textField.equals(year)){
+            return 2;
         } else {
             return 0;
         }
@@ -395,6 +417,8 @@ public class iMatBackendController implements Initializable {
             mobileStyleErrorLabel.setVisible(false);
             postCodeAmountErrorLabel.setVisible(false);
             postCodeStyleErrorLabel.setVisible(false);
+            paymentAmountErrorLbl.setVisible(false);
+            paymentStyleErrorLbl.setVisible(false);
 
             return true;
 
@@ -417,6 +441,17 @@ public class iMatBackendController implements Initializable {
                 postCodeStyleErrorLabel.setVisible(false);
                 postCodeAmountErrorLabel.setVisible(true);
             }
+            if (!containsDigitsOnly(cardNumber) && !(cardNumber.getText().isEmpty())|| !containsDigitsOnly(cvc) && !(cvc.getText().isEmpty())
+                    || !containsDigitsOnly(month) && !(month.getText().isEmpty()) || !containsDigitsOnly(year) && !(year.getText().isEmpty())){
+                paymentAmountErrorLbl.setVisible(false);
+                paymentStyleErrorLbl.setVisible(true);
+            } else if (!isComplete(cardNumber, getMinAllowedLength(cardNumber)) && !(cardNumber.getText().isEmpty())
+                    || !isComplete(cvc, getMinAllowedLength(cvc)) && !(cvc.getText().isEmpty())
+                    || !isComplete(month, getMinAllowedLength(month)) && !(month.getText().isEmpty())
+                    || !isComplete(year, getMinAllowedLength(year)) && !(year.getText().isEmpty())){
+                paymentAmountErrorLbl.setVisible(true);
+                paymentStyleErrorLbl.setVisible(false);
+            }
 
             return false;
         }
@@ -428,6 +463,8 @@ public class iMatBackendController implements Initializable {
         emailStyleErrorLabel.setVisible(false);
         postCodeAmountErrorLabel.setVisible(false);
         postCodeStyleErrorLabel.setVisible(false);
+        paymentAmountErrorLbl.setVisible(false);
+        paymentStyleErrorLbl.setVisible(false);
     }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------//

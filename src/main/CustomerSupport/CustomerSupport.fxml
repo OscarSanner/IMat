@@ -48,51 +48,46 @@
                                  <children>
                                     <Pane layoutX="86.0" layoutY="21.0" prefHeight="61.0" prefWidth="642.0" style="-fx-background-color: #B1D5F6;">
                                        <children>
-                                          <Label layoutX="39.0" layoutY="12.0" prefHeight="38.0" prefWidth="215.0" text="Kundservice &amp; Hjälp">
+                                          <Label layoutX="199.0" layoutY="10.0" prefHeight="38.0" prefWidth="261.0" text="Kundservice &amp; Hjälp" textAlignment="CENTER">
                                              <font>
-                                                <Font size="20.0" />
+                                                <Font size="30.0" />
                                              </font>
                                           </Label>
                                        </children>
                                     </Pane>
                                     <Pane layoutX="86.0" layoutY="123.0" prefHeight="443.0" prefWidth="642.0" style="-fx-background-color: #B1D5F6;">
                                        <children>
-                                          <Label layoutX="27.0" layoutY="-22.0" prefHeight="139.0" prefWidth="565.0" text="Här hittar du svar på vanliga frågor, om du har synpunkter eller behöver hjälp så kan du alltid kontakta vår kundservice.Kontakt uppgifterna hittar du nedan." wrapText="true">
+                                          <Label layoutX="53.0" layoutY="19.0" prefHeight="139.0" prefWidth="552.0" text="Om du har synpunkter eller behöver hjälp så kan du alltid kontakta vår kundservice. Kontaktuppgifterna hittar du nedan." wrapText="true">
                                              <font>
-                                                <Font size="15.0" />
+                                                <Font name="SansSerif Regular" size="20.0" />
                                              </font>
                                           </Label>
-                                          <ImageView fitHeight="41.0" fitWidth="42.0" layoutX="40.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../../../Downloads/icon-2.png" />
-                                             </image>
-                                          </ImageView>
-                                          <ImageView fitHeight="42.0" fitWidth="41.0" layoutX="40.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../../../Downloads/interfaz.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Label layoutX="134.0" layoutY="129.0" text="0765633221" />
-                                          <Label layoutX="122.0" layoutY="202.0" text="galan474@yahoo.es">
+                                          <Label layoutX="121.0" layoutY="247.0" text="0765633221">
                                              <font>
-                                                <Font size="14.0" />
+                                                <Font size="16.0" />
+                                             </font></Label>
+                                          <Label layoutX="121.0" layoutY="315.0" text="galan474@yahoo.es">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="16.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="273.0" layoutY="129.0" text="Vardagar 8:00 - 16:00" />
-                                          <Label layoutX="230.0" layoutY="272.0" prefHeight="31.0" prefWidth="159.0" text="Vanliga Frågor">
+                                          <Label layoutX="121.0" layoutY="178.0" text="Vardagar: 8.00 - 16.00">
                                              <font>
-                                                <Font size="18.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="51.0" layoutY="331.0" prefHeight="94.0" prefWidth="532.0" text="Label" />
-                                          <ImageView fitHeight="37.0" fitWidth="36.0" layoutX="63.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+                                                <Font size="16.0" />
+                                             </font></Label>
+                                          <ImageView fitHeight="37.0" fitWidth="36.0" layoutX="63.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../Res/Images/llamada.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fitHeight="34.0" fitWidth="39.0" layoutX="65.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="34.0" fitWidth="39.0" layoutX="64.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../Res/Images/correo.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView blendMode="DARKEN" fitHeight="39.0" fitWidth="40.0" focusTraversable="true" layoutX="61.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Res/Images/openHours.png" />
                                              </image>
                                           </ImageView>
                                        </children>

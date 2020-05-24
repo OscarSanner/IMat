@@ -57,13 +57,15 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
         }
         initShoppingCartFlowPane();
 
-    }
 
+    }
+    @FXML
     public void onNextButtonPressed(){
         shoppingCartMainAnchorPane.getChildren().add(personalDataPage);
         personalDataPage.inputCustomerInfo();
-
-
+        /*if (personalDataPage.checkBoxState == true){ // funka ej
+            personalDataPage.personalCheckBox.setSelected(true);
+        }*/
     }
 
     @Override

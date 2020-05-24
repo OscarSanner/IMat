@@ -181,8 +181,8 @@
          </right>
          <center>
             <SplitPane dividerPositions="0.10082644628099173" orientation="VERTICAL" prefHeight="607.0" prefWidth="596.0" styleClass="border" BorderPane.alignment="CENTER">
-              <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="59.0" prefWidth="569.0">
+               <items>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="59.0" prefWidth="569.0">
                      <children>
                         <Pane layoutY="9.0" prefHeight="58.0" prefWidth="569.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
@@ -255,15 +255,32 @@
                         </Pane>
                      </children>
                   </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: white;">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: white;">
                      <children>
                         <Pane prefHeight="541.0" prefWidth="569.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
+                              <StackPane fx:id="orderTabPane" prefHeight="595.0" prefWidth="567.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <ScrollPane prefHeight="541.0" prefWidth="549.0" style="-fx-background-color: white; -fx-background: white;">
+                                       <content>
+                                          <Accordion fx:id="orderAccordion" prefHeight="102.0" prefWidth="565.0" style="-fx-background-color: white;" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children></StackPane>
+                              <StackPane fx:id="listTabPane" prefHeight="595.0" prefWidth="567.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <ScrollPane prefHeight="541.0" prefWidth="549.0" style="-fx-background: white; -fx-background-color: white;">
+                                       <content>
+                                          <Accordion fx:id="listAccordion" prefHeight="76.0" prefWidth="565.0" style="-fx-background-color: white;" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </StackPane>
                               <StackPane fx:id="myPageTabPane" prefHeight="595.0" prefWidth="565.0">
                                  <children>
                                     <Pane prefHeight="537.0" prefWidth="576.0" style="-fx-background-color: white;">
                                        <children>
-                                          <Pane layoutX="14.0" layoutY="20.0" prefHeight="330.0" prefWidth="538.0" style="-fx-background-color: lightgrey;">
+                                          <Pane layoutX="14.0" layoutY="20.0" prefHeight="557.0" prefWidth="538.0" style="-fx-background-color: lightgrey;">
                                              <children>
                                                 <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" />
                                                 <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" />
@@ -292,12 +309,12 @@
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="274.0" layoutY="156.0" text="Mobilnummer:">
+                                                <Label layoutX="274.0" layoutY="82.0" text="Mobilnummer:">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="274.0" layoutY="82.0" text="E-mail adress:">
+                                                <Label layoutX="274.0" layoutY="156.0" text="E-mail adress:">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
@@ -306,8 +323,8 @@
                                                 <TextField fx:id="lastName" layoutX="46.0" layoutY="102.0" prefHeight="33.0" prefWidth="180.0" promptText="Börjesson" style="-fx-background-radius: 20;" />
                                                 <TextField fx:id="address" layoutX="46.0" layoutY="176.0" prefHeight="33.0" prefWidth="180.0" promptText="Kantarellslingan 24 " style="-fx-background-radius: 20;" />
                                                 <TextField fx:id="area" layoutX="274.0" layoutY="28.0" prefHeight="33.0" prefWidth="180.0" promptText="Göteborg" style="-fx-background-radius: 20;" />
-                                                <TextField fx:id="email" layoutX="274.0" layoutY="102.0" onMouseClicked="#mySiteErrorLabelDisapear3" prefHeight="33.0" prefWidth="180.0" promptText="+46XXXXXXXXX" style="-fx-background-radius: 20;" />
-                                                <TextField fx:id="mobileNumber" layoutX="274.0" layoutY="176.0" onMouseClicked="#mySiteErrorLabelDisapear2" prefHeight="33.0" prefWidth="180.0" promptText="börjesson@exempel.nu" style="-fx-background-radius: 20;" />
+                                                <TextField fx:id="mobileNumber" layoutX="274.0" layoutY="102.0" onMouseClicked="#mySiteErrorLabelDisapear3" prefHeight="33.0" prefWidth="180.0" promptText="+46XXXXXXXXX" style="-fx-background-radius: 20;" />
+                                                <TextField fx:id="email" layoutX="274.0" layoutY="176.0" onMouseClicked="#mySiteErrorLabelDisapear2" prefHeight="33.0" prefWidth="180.0" promptText="börjesson@exempel.nu" style="-fx-background-radius: 20;" />
                                                 <TextField fx:id="postcode" layoutX="46.0" layoutY="250.0" onMouseClicked="#mySiteErrorLabelDisapear" prefHeight="33.0" prefWidth="180.0" promptText="42011" style="-fx-background-radius: 20;" />
                                                 <Label fx:id="firstNameErrorLbl" layoutX="46.0" layoutY="61.0" textFill="RED">
                                                    <font>
@@ -319,90 +336,95 @@
                                                       <Font size="11.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="emailStyleErrorLabel" layoutX="274.0" layoutY="135.0" text="OBS! Är inte i email form!" textFill="RED">
+                                                <Label fx:id="emailStyleErrorLabel" layoutX="274.0" layoutY="209.0" text="OBS! Är inte i email form!" textFill="RED">
                                                    <font>
                                                       <Font size="11.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="mobileAmountErrorLabel" layoutX="274.0" layoutY="209.0" text="OBS! Mobilnummer få bara innehålla 5 siffror!" textFill="RED">
+                                                <Label fx:id="mobileAmountErrorLabel" layoutX="274.0" layoutY="135.0" text="OBS! Mobilnummer få bara innehålla 10 siffror!" textFill="RED">
                                                    <font>
                                                       <Font size="11.0" />
                                                    </font>
                                                 </Label>
-                                                <Button fx:id="saveButton" layoutX="301.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#onSaveButtonPressed" prefHeight="33.0" prefWidth="115.0" text="Spara" />
+                                                <Button fx:id="saveButton" layoutX="374.0" layoutY="473.0" mnemonicParsing="false" onMouseClicked="#onSaveButtonPressed" prefHeight="47.0" prefWidth="128.0" text="Spara" />
                                                 <Label fx:id="postCodeStyleErrorLabel" layoutX="46.0" layoutY="283.0" text="OBS! Postnummer få bara innehålla syffror!" textFill="RED">
                                                    <font>
                                                       <Font size="11.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="mobileStyleErrorLabel" layoutX="274.0" layoutY="209.0" text="OBS! Mobilnummer få bara innehålla siffror!" textFill="RED">
+                                                <Label fx:id="mobileStyleErrorLabel" layoutX="274.0" layoutY="135.0" text="OBS! Mobilnummer få bara innehålla siffror!" textFill="RED">
                                                    <font>
                                                       <Font size="11.0" />
                                                    </font>
                                                 </Label>
-                                             </children>
-                                          </Pane>
-                                          <Pane layoutX="14.0" layoutY="367.0" prefHeight="180.0" prefWidth="538.0" style="-fx-background-color: lightgrey;">
-                                             <children>
-                                                <Label layoutX="113.0" layoutY="20.0" text="Kredit- eller debitkort">
+                                                <Label layoutX="46.0" layoutY="330.0" text="Kredit- eller debitkort">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <TextField fx:id="cardNumber" layoutX="113.0" layoutY="54.0" prefHeight="35.0" prefWidth="312.0" promptText="           Kortnummer" style="-fx-border-color: black;" />
-                                                <TextField fx:id="year" layoutX="113.0" layoutY="89.0" prefHeight="35.0" prefWidth="156.0" promptText="           MM/ÅR" style="-fx-border-color: black;" />
-                                                <TextField fx:id="cvc" layoutX="269.0" layoutY="89.0" prefHeight="35.0" prefWidth="156.0" promptText="           CVC/CVV" style="-fx-border-color: black;" />
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="121.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="121.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="278.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fitHeight="30.0" fitWidth="50.0" layoutX="113.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fitHeight="30.0" fitWidth="50.0" layoutX="177.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fitHeight="30.0" fitWidth="50.0" layoutX="244.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" />
+                                                <TextField fx:id="cardNumber" layoutX="46.0" layoutY="355.0" prefHeight="35.0" prefWidth="312.0" promptText="           Kortnummer" />
+                                                <TextField fx:id="month" layoutX="46.0" layoutY="390.0" prefHeight="35.0" prefWidth="75.0" promptText="            MM" />
+                                                <TextField fx:id="cvc" layoutX="210.0" layoutY="390.0" prefHeight="35.0" prefWidth="148.0" promptText="           CVC/CVV" />
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="62.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="62.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="62.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fitHeight="40.0" fitWidth="55.0" layoutX="145.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Res/Images/amex.png" />
+                                                   </image></ImageView>
+                                                <ImageView fitHeight="40.0" fitWidth="55.0" layoutX="93.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Res/Images/mastercard.png" />
+                                                   </image></ImageView>
+                                                <ImageView fitHeight="40.0" fitWidth="55.0" layoutX="46.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Res/Images/visa.png" />
+                                                   </image></ImageView>
+                                                <TextField fx:id="year" layoutX="134.0" layoutY="390.0" prefHeight="35.0" prefWidth="75.0" promptText="            ÅR" />
+                                                <Label layoutX="125.0" layoutY="394.0" text="/" textFill="#00000083">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="paymentStyleErrorLbl" layoutX="46.0" layoutY="466.0" text="OBS! Kortuppgifter få bara innehålla siffror!" textFill="RED">
+                                                   <font>
+                                                      <Font size="11.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="paymentAmountErrorLbl" layoutX="46.0" layoutY="466.0" text="OBS! Gå igenom antalet siffor hos Kortuppgifterna!" textFill="RED">
+                                                   <font>
+                                                      <Font size="11.0" />
+                                                   </font>
+                                                </Label>
                                              </children>
                                           </Pane>
                                        </children>
                                     </Pane>
                                  </children>
                               </StackPane>
-                              <StackPane fx:id="orderTabPane" prefHeight="595.0" prefWidth="567.0" style="-fx-background-color: white;">
-                                 <children>
-                                    <ScrollPane prefHeight="541.0" prefWidth="549.0" style="-fx-background-color: white; -fx-background: white;">
-                                       <content>
-                                          <Accordion fx:id="orderAccordion" prefHeight="102.0" prefWidth="565.0" style="-fx-background-color: white;" />
-                                       </content>
-                                    </ScrollPane>
-                                 </children></StackPane>
-                              <StackPane fx:id="listTabPane" prefHeight="595.0" prefWidth="567.0" style="-fx-background-color: white;">
-                                 <children>
-                                    <ScrollPane prefHeight="541.0" prefWidth="549.0" style="-fx-background: white; -fx-background-color: white;">
-                                       <content>
-                                          <Accordion fx:id="listAccordion" prefHeight="76.0" prefWidth="565.0" style="-fx-background-color: white;" />
-                                       </content>
-                                    </ScrollPane>
-                                 </children>
-                              </StackPane>
                               <StackPane fx:id="shoppingTabPane" prefHeight="595.0" prefWidth="570.0" style="-fx-background-color: white;">
                                  <children>
                                     <SplitPane fx:id="categoryPane" dividerPositions="0.09242144177449169" orientation="VERTICAL" prefHeight="591.0" prefWidth="570.0" styleClass="split-pane-divider">
-                                      <items>
-                                        <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="52.0" prefWidth="563.0">
+                                       <items>
+                                          <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="52.0" prefWidth="563.0">
                                              <children>
                                                 <FlowPane fx:id="subCategoryFlowPane" layoutX="2.0" layoutY="-2.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="558.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="-2.0" />
                                              </children>
                                           </AnchorPane>
-                                        <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="481.0" prefWidth="570.0">
+                                          <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="481.0" prefWidth="570.0">
                                              <children>
                                                 <ScrollPane fx:id="productsScrollPane" layoutY="3.0" prefHeight="538.0" prefWidth="565.0" styleClass="scroll-paneShopping">
                                                    <content>
                                                       <FlowPane fx:id="productFlowPane" prefHeight="538.0" prefWidth="560.0" prefWrapLength="1000.0" rowValignment="TOP" style="-fx-background-color: white;">
                                                          <rotationAxis>
                                                             <Point3D />
-                                                         </rotationAxis></FlowPane>
+                                                         </rotationAxis>
+                                                      </FlowPane>
                                                    </content>
                                                 </ScrollPane>
                                              </children>
                                           </AnchorPane>
-                                      </items>
+                                       </items>
                                     </SplitPane>
                                     <StackPane fx:id="homePane" prefHeight="578.0" prefWidth="570.0">
                                        <children>
@@ -457,7 +479,7 @@
                         </Pane>
                      </children>
                   </AnchorPane>
-              </items>
+               </items>
             </SplitPane>
          </center>
       </BorderPane>

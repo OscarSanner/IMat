@@ -71,14 +71,14 @@ public class Payment extends AnchorPane implements IWizardPage {
         finalizePurchase();
         confirmationPage = new ConfirmationPage(this, deliveryTime, order);
 
-        paymentMainAnchorPane.getChildren().add(confirmationPage);
+        //paymentMainAnchorPane.getChildren().add(confirmationPage);
 
 
         if (checkButtonPayment.isSelected()) {
             setPaymentInfo();
         }
         if(allFilledInCorrectly()) {
-            paymentMainAnchorPane.getChildren().add(parentBackendController);
+            paymentMainAnchorPane.getChildren().add(confirmationPage);
         }
     }
 
@@ -134,13 +134,17 @@ public class Payment extends AnchorPane implements IWizardPage {
         yearTextField.setText(String.valueOf(creditCard.getValidYear()));
     }
 
+
     private boolean isPaymentInfoComplete(){
         return isComplete(cardNumberTextField,getMinAllowedLength(cardNumberTextField))
                 && containsDigitsOnly(cardNumberTextField) && containsDigitsOnly(cvcTextField)
                 && containsDigitsOnly(monthTextField) && containsDigitsOnly(yearTextField)
                 && isComplete(cvcTextField,getMinAllowedLength(cvcTextField))
                 && isComplete(monthTextField,getMinAllowedLength(monthTextField))
-                && isComplete(yearTextField,getMinAllowedLength(yearTextField));
+                && isComplete(yearTextField,getMinAllowedLength(yearTextField))
+                && !cardNumberTextField.getText().isEmpty() && !cvcTextField.getText().isEmpty()
+                && !monthTextField.getText().isEmpty() && !yearTextField.getText().isEmpty();
+
     }
 
     private boolean containsDigitsOnly(TextField textField){
@@ -189,7 +193,7 @@ public class Payment extends AnchorPane implements IWizardPage {
                 cardStyleErrorLabel.setVisible(false);
                 cardErrorLabel.setVisible(false);
                 cardAmountErrorLabel.setVisible(true);
-            } else if (!(cardNumberTextField.getText().isEmpty())){
+            } else if ((cardNumberTextField.getText().isEmpty())){
                 cardStyleErrorLabel.setVisible(false);
                 cardErrorLabel.setVisible(true);
                 cardAmountErrorLabel.setVisible(false);
@@ -202,7 +206,7 @@ public class Payment extends AnchorPane implements IWizardPage {
                 cardStyleErrorLabel.setVisible(false);
                 cardErrorLabel.setVisible(false);
                 cardAmountErrorLabel.setVisible(true);
-            } else if (!(cvcTextField.getText().isEmpty())){
+            } else if ((cvcTextField.getText().isEmpty())){
                 cardStyleErrorLabel.setVisible(false);
                 cardErrorLabel.setVisible(true);
                 cardAmountErrorLabel.setVisible(false);
@@ -215,7 +219,7 @@ public class Payment extends AnchorPane implements IWizardPage {
                 cardStyleErrorLabel.setVisible(false);
                 cardErrorLabel.setVisible(false);
                 cardAmountErrorLabel.setVisible(true);
-            } else if (!(monthTextField.getText().isEmpty())){
+            } else if ((monthTextField.getText().isEmpty())){
                 cardStyleErrorLabel.setVisible(false);
                 cardErrorLabel.setVisible(true);
                 cardAmountErrorLabel.setVisible(false);
@@ -228,7 +232,7 @@ public class Payment extends AnchorPane implements IWizardPage {
                 cardStyleErrorLabel.setVisible(false);
                 cardErrorLabel.setVisible(false);
                 cardAmountErrorLabel.setVisible(true);
-            } else if (!(yearTextField.getText().isEmpty())){
+            } else if ((yearTextField.getText().isEmpty())){
                 cardStyleErrorLabel.setVisible(false);
                 cardErrorLabel.setVisible(true);
                 cardAmountErrorLabel.setVisible(false);
