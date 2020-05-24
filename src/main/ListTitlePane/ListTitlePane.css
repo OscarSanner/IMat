@@ -42,3 +42,20 @@
 .content{
     -fx-border-width: 0;
 }
+
+.labeltext{
+    -fx-font-family: sans-serif;
+    -fx-font-size: 22;
+}
+
+.buttons{
+     -fx-background-color: white;
+     -fx-border-color: white;
+     -fx-background-radius: 0
+ }
+
+.buttons:hover{
+    -fx-background-color: e6e6e6;
+    -fx-border-color: e6e6e6;
+    -fx-background-radius: 0
+}
