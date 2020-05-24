@@ -78,13 +78,20 @@ public class IMatBackendEngine {
         if(activeTab != null){
             activeTab.getStyleClass().clear();
             activeTab.getStyleClass().add("tabButtons");
+            activeTab.getStyleClass().add("dropShadows");
+            activeTab.getStyleClass().add("round-corners");
             activeTab = null;
         }
     }
     public void setActiveTab(Button button){
         activeTab = button;
         button.getStyleClass().add("tabButtonsSelected");
+        activeTab.getStyleClass().add("dropShadows");
+        activeTab.getStyleClass().add("round-corners");
+
+        lastActiveTab=button;
     }
+
 
 
 }

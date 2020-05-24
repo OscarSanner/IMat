@@ -162,6 +162,7 @@ public class iMatBackendController implements Initializable {
     }*/
 
 
+
     private void calculateAccordionSize(Accordion accordion) {
         if(accordion.getExpandedPane() == null){
             accordion.setPrefHeight(67 * accordion.getChildrenUnmodifiable().size());
@@ -191,6 +192,9 @@ public class iMatBackendController implements Initializable {
     @FXML Button orderTab;
     @FXML Button listTab;
     @FXML Button myPageTab;
+
+    Button tabs [] = {shoppingTab, orderTab, listTab, myPageTab};
+
 
     @FXML
     public void onOrderTabSelect(){

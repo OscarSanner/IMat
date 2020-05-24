@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -9,42 +10,42 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1050.0" style="-fx-background-color: #D7EBFE;" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #D7EBFE;" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane prefHeight="780.0" prefWidth="1050.0" style="-fx-background-color: #B1D5F6;">
+      <Pane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #B1D5F6;">
          <children>
-            <Label layoutX="389.0" layoutY="526.0" text="Ditt köp finns i &quot;Ordrar&quot;" underline="true">
+            <Label layoutX="465.0" layoutY="525.0" text="Ditt köp finns i &quot;Ordrar&quot;" underline="true">
                <font>
                   <Font name="SansSerif Bold" size="24.0" />
                </font>
             </Label>
             <ImageView fitHeight="87.0" fitWidth="150.0" layoutX="386.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" />
-            <Label alignment="CENTER" layoutX="381.0" layoutY="279.0" prefHeight="50.0" prefWidth="288.0" text="Tack!" textAlignment="CENTER">
+            <Label alignment="CENTER" layoutX="457.0" layoutY="278.0" prefHeight="50.0" prefWidth="288.0" text="Tack!" textAlignment="CENTER">
                <font>
                   <Font name="SansSerif Bold" size="34.0" />
                </font>
             </Label>
             <ImageView fitHeight="87.0" fitWidth="150.0" layoutX="396.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="thankYouLabel" alignment="BOTTOM_LEFT" layoutX="413.0" layoutY="329.0" prefHeight="35.0" prefWidth="384.0" text="Din order har mottagits!" textAlignment="CENTER">
+            <Label fx:id="thankYouLabel" alignment="BOTTOM_LEFT" layoutX="489.0" layoutY="328.0" prefHeight="35.0" prefWidth="384.0" text="Din order har mottagits!" textAlignment="CENTER">
                <font>
                   <Font name="SansSerif Regular" size="24.0" />
                </font>
             </Label>
-            <Pane layoutY="-5.0" prefHeight="276.0" prefWidth="1050.0" style="-fx-background-color: #037C99;">
+            <Pane layoutY="-5.0" prefHeight="276.0" prefWidth="1200.0" style="-fx-background-color: #037C99;" styleClass="dropShadow">
                <children>
-                  <ImageView fitHeight="256.0" fitWidth="256.0" layoutX="397.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="256.0" fitWidth="256.0" layoutX="472.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Res/Images/thumbs_up.png" />
                      </image>
                   </ImageView>
                </children>
             </Pane>
-            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="367.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="446.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Res/Images/checkmark.png" />
                </image>
             </ImageView>
-            <Button alignment="CENTER" layoutX="363.0" layoutY="595.0" mnemonicParsing="false" onMouseClicked="#onGoBackToFrontButtonPressed" prefHeight="77.0" prefWidth="323.0" styleClass="nextButton" text="Tillbaka till startsidan">
+            <Button alignment="CENTER" layoutX="439.0" layoutY="594.0" mnemonicParsing="false" onMouseClicked="#onGoBackToFrontButtonPressed" prefHeight="77.0" prefWidth="323.0" text="Tillbaka till startsidan">
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -52,34 +53,38 @@
                      </image>
                   </ImageView>
                </graphic>
+               <styleClass>
+                  <String fx:value="nextButton" />
+                  <String fx:value="dropShadow" />
+               </styleClass>
             </Button>
-            <Pane layoutX="252.0" layoutY="379.0" prefHeight="135.0" prefWidth="525.0" style="-fx-background-color: #DCEEFF;" />
-            <Label layoutX="405.0" layoutY="390.0" text="Order No.: ">
+            <Pane layoutX="328.0" layoutY="378.0" prefHeight="135.0" prefWidth="525.0" style="-fx-background-color: #DCEEFF;" />
+            <Label layoutX="481.0" layoutY="389.0" text="Order No.: ">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />
                </font>
             </Label>
-            <Label layoutX="379.0" layoutY="431.0" text="Order datum: ">
+            <Label layoutX="455.0" layoutY="430.0" text="Order datum: ">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />
                </font>
             </Label>
-            <Label layoutX="259.0" layoutY="471.0" text="Förväntat leveransdatum: ">
+            <Label layoutX="335.0" layoutY="470.0" text="Förväntat leveransdatum: ">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />
                </font>
             </Label>
-            <TextField fx:id="orderNumberTextField" layoutX="516.0" layoutY="385.0" prefHeight="37.0" prefWidth="220.0">
+            <TextField fx:id="orderNumberTextField" layoutX="592.0" layoutY="384.0" prefHeight="37.0" prefWidth="220.0">
                <font>
                   <Font name="SansSerif Regular" size="20.0" />
                </font>
             </TextField>
-            <TextField fx:id="orderDateTextField" layoutX="516.0" layoutY="426.0" prefHeight="37.0" prefWidth="220.0">
+            <TextField fx:id="orderDateTextField" layoutX="592.0" layoutY="425.0" prefHeight="37.0" prefWidth="220.0">
                <font>
                   <Font name="SansSerif Regular" size="20.0" />
                </font>
             </TextField>
-            <TextField fx:id="deliveryTimeTextField" layoutX="516.0" layoutY="467.0" prefHeight="37.0" prefWidth="220.0">
+            <TextField fx:id="deliveryTimeTextField" layoutX="592.0" layoutY="466.0" prefHeight="37.0" prefWidth="220.0">
                <font>
                   <Font name="SansSerif Regular" size="20.0" />
                </font>
