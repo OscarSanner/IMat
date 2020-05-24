@@ -998,8 +998,8 @@ public class iMatBackendController implements Initializable {
     }
     private void setupPurchaseFeedback(){
         mainAnchorPane.getChildren().add(purchaseFeedback);
-        purchaseFeedback.setLayoutX(145);
-        purchaseFeedback.setLayoutY(36);
+        purchaseFeedback.setLayoutX(210);
+        purchaseFeedback.setLayoutY(50);
     }
     private void setupProductFlowpane(){
         productsScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER); //Removes horizontal scrollPane
@@ -1021,8 +1021,8 @@ public class iMatBackendController implements Initializable {
         detailedViewPage.populateProductDetailedView(product);
         blurBackground();
         mainAnchorPane.getChildren().add(detailedViewPage);
-        detailedViewPage.setLayoutX(85);
-        detailedViewPage.setLayoutY(110);
+        detailedViewPage.setLayoutX(120);
+        detailedViewPage.setLayoutY(130);
         blurPane.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
