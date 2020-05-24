@@ -368,25 +368,6 @@
                               </StackPane>
                               <StackPane fx:id="shoppingTabPane" prefHeight="541.0" prefWidth="570.0" style="-fx-background-color: white;">
                                  <children>
-                                    <StackPane fx:id="homePane" prefHeight="537.0" prefWidth="573.0">
-                                       <children>
-                                          <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gray;">
-                                             <children>
-                                                <ImageView fx:id="offersImage" fitHeight="216.0" fitWidth="248.0" layoutX="60.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fx:id="videoImage" fitHeight="112.0" fitWidth="157.0" layoutX="359.0" layoutY="55.0" onMouseClicked="#onVideoImagePressed" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fx:id="newsImage" fitHeight="112.0" fitWidth="157.0" layoutX="359.0" layoutY="163.0" onMouseClicked="#onNewsImagePressed" pickOnBounds="true" preserveRatio="true" />
-                                                <Label layoutX="262.0" layoutY="314.0" text="Carousel" />
-                                                <Pane layoutX="52.0" layoutY="364.0" prefHeight="162.0" prefWidth="467.0" style="-fx-background-color: purple;">
-                                                   <children>
-                                                      <FlowPane fx:id="carouselFlowPane" prefHeight="162.0" prefWidth="467.0" />
-                                                   </children>
-                                                </Pane>
-                                                <ImageView fx:id="rightArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="522.0" layoutY="421.0" onMouseClicked="#rotateCarouselRight" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fx:id="leftArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="3.0" layoutY="421.0" onMouseClicked="#rotateCarouselLeft" pickOnBounds="true" preserveRatio="true" />
-                                             </children>
-                                          </Pane>
-                                       </children>
-                                    </StackPane>
                                     <SplitPane fx:id="categoryPane" dividerPositions="0.09242144177449169" orientation="VERTICAL" prefHeight="537.0" prefWidth="574.0" styleClass="split-pane-divider">
                                       <items>
                                         <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="52.0" prefWidth="563.0">
@@ -408,6 +389,24 @@
                                           </AnchorPane>
                                       </items>
                                     </SplitPane>
+                                    <StackPane fx:id="homePane" prefHeight="537.0" prefWidth="573.0">
+                                       <children>
+                                          <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gray;">
+                                             <children>
+                                                <ImageView fx:id="offersImage" fitHeight="216.0" fitWidth="248.0" layoutX="60.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="videoImage" fitHeight="112.0" fitWidth="157.0" layoutX="359.0" layoutY="55.0" onMouseClicked="#onVideoImagePressed" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="newsImage" fitHeight="112.0" fitWidth="157.0" layoutX="359.0" layoutY="163.0" onMouseClicked="#onNewsImagePressed" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="rightArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="522.0" layoutY="421.0" onMouseClicked="#rotateCarouselRight" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="leftArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="3.0" layoutY="421.0" onMouseClicked="#rotateCarouselLeft" pickOnBounds="true" preserveRatio="true" />
+                                                <ScrollPane layoutX="16.0" layoutY="298.0" prefHeight="245.0" prefWidth="538.0" vbarPolicy="NEVER">
+                                                   <content>
+                                                      <FlowPane fx:id="carouselFlowPane" prefHeight="229.0" prefWidth="621.0" rowValignment="TOP" style="-fx-background-color: white;" />
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </StackPane>
                                  </children>
                               </StackPane>
                            </children>
