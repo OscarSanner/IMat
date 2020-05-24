@@ -97,42 +97,48 @@ public class ShoppingCartItem extends AnchorPane {
     @FXML
     public void onPlusEnter(){
         plusImage.setImage(new javafx.scene.image.Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
-                "main/Res/Images/plus_hover.png"
+                "main/Res/Images/plus_minus_alt/plus_alt_hover.png"
         ))));
     }
     @FXML
     public void onPlusExit(){
         plusImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
-                "main/Res/Images/plus.png"
+                "main/Res/Images/plus_minus_alt/plus_alt.png"
         ))));
     }
     @FXML
     public void onMinusEnter(){
         minusImage.setImage(new javafx.scene.image.Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
-                "main/Res/Images/minus_hover.png"
+                "main/Res/Images/plus_minus_alt/minus_alt_hover.png"
         ))));
     }
     @FXML
     public void onMinusExit(){
         minusImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
-                "main/Res/Images/minus.png"
+                "main/Res/Images/plus_minus_alt/minus_alt.png"
         ))));
     }
 
     //================================================================================
     // Paperbin Hover
     //================================================================================
+    @FXML Label paperBinLabel;
+
     @FXML
     public void onPaperBinEnter(){
         paperBinImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
-                "main/Res/Images/paperbin_hover.png"
+                "main/Res/Images/paperbin_blue_hover.png"
         ))));
+        paperBinLabel.setStyle("-fx-font-weight: bold;");
+
     }
     @FXML
     public void onPaperBinExit(){
         paperBinImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
-                "main/Res/Images/paperbin.png"
+                "main/Res/Images/paperbin_blue.png"
         ))));
+        paperBinLabel.setStyle("-fx-font-weight: normal;");
+
     }
     @FXML
     public void onPaperbinPressed(){

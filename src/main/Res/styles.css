@@ -13,6 +13,11 @@
     -fx-background-radius: 10;
     -fx-border-radius: 5px;
 }
+.LessRound-corners{
+    -fx-background-radius: 5;
+    -fx-border-radius: 3px;
+}
+
 
 .tabButtons{
     /*-fx-border-color: white;

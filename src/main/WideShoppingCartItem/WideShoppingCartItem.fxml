@@ -35,12 +35,12 @@
             <Image url="@../Res/Images/plus.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="paperBinImage" fitHeight="45.0" fitWidth="50.0" layoutX="688.0" layoutY="26.0" onMouseClicked="#removeShoppingItem" onMouseEntered="#onPaperBinEnter" onMouseExited="#onPaperBinExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
+      <ImageView fx:id="paperBinImage" fitHeight="50.0" fitWidth="50.0" layoutX="684.0" layoutY="28.0" onMouseClicked="#removeShoppingItem" onMouseEntered="#onPaperBinEnter" onMouseExited="#onPaperBinExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
          <image>
-            <Image url="@../Res/Images/paperbin.png" />
+            <Image url="@../Res/Images/paperbin_blue_big.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="680.0" layoutY="1.0" text="Ta bort">
+      <Label fx:id="paperBinLabel" alignment="CENTER" layoutX="677.0" layoutY="1.0" text="Ta bort">
          <font>
             <Font size="18.0" />
          </font></Label>

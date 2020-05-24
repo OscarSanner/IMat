@@ -86,17 +86,20 @@ public class WideShoppingCartItem extends AnchorPane {
     //================================================================================
     // Paperbin Hover
     //================================================================================
+    @FXML Label paperBinLabel;
     @FXML
     public void onPaperBinEnter(){
         paperBinImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
-                "main/Res/Images/paperbin_hover.png"
+                "main/Res/Images/paperbin_blue_big_hover.png"
         ))));
+        paperBinLabel.setStyle("-fx-font-weight: bold;");
     }
     @FXML
     public void onPaperBinExit(){
         paperBinImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
-                "main/Res/Images/paperbin.png"
+                "main/Res/Images/paperbin_blue_big.png"
         ))));
+        paperBinLabel.setStyle("-fx-font-weight: normal;");
     }
     @FXML
     public void removeShoppingItem(){

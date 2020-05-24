@@ -309,7 +309,7 @@ public class iMatBackendController implements Initializable {
         homePane.toFront();
         homepaneIsFront = true;
         populateCarouselFlowPane();
-        theRealResetOfSearchBar();
+       // theRealResetOfSearchBar();
     }
 
     //----------------FAKTISK KOD-----------------
@@ -551,7 +551,8 @@ public class iMatBackendController implements Initializable {
         IMatBackendEngine.getInstance().setActiveCategory(favouritesButton);
         populateSubCategoryFlowPane("favourites");
         shoppingTabPane.toFront();
-        theRealResetOfSearchBar();
+       // theRealResetOfSearchBar();
+        searchResultLabel.setVisible(false);
     }
 
     public void onOffersButtonPressed(){
@@ -562,7 +563,8 @@ public class iMatBackendController implements Initializable {
         productFlowPane.getChildren().removeAll();
         IMatBackendEngine.getInstance().setActiveCategory(offersButton);
         populateSubCategoryFlowPane("Offers");
-        theRealResetOfSearchBar();
+       // theRealResetOfSearchBar();
+        searchResultLabel.setVisible(false);
     }
 
     public void onBreadButtonPressed(){
@@ -575,7 +577,8 @@ public class iMatBackendController implements Initializable {
         populateProductFlowpane("Bröd");
         productsScrollPane.setVvalue(0);
         categoryPane.toFront();
-        theRealResetOfSearchBar();
+       // theRealResetOfSearchBar();
+        searchResultLabel.setVisible(false);
     }
 
     public void onMeatAndFishButtonPressed(){
@@ -588,7 +591,8 @@ public class iMatBackendController implements Initializable {
         populateProductFlowpane("Kött & Fisk");
         productsScrollPane.setVvalue(0); //Resets the scrollpane to the top
         shoppingTabPane.toFront();
-        theRealResetOfSearchBar();
+       // theRealResetOfSearchBar();
+        searchResultLabel.setVisible(false);
     }
 
     public void onVeggiesButtonPressed(){
@@ -601,7 +605,8 @@ public class iMatBackendController implements Initializable {
         populateProductFlowpane("Frukt & Grönt");
         productsScrollPane.setVvalue(0);
         shoppingTabPane.toFront();
-        theRealResetOfSearchBar();
+       // theRealResetOfSearchBar();
+        searchResultLabel.setVisible(false);
     }
 
     public void onDrinkButtonPressed(){
@@ -614,7 +619,8 @@ public class iMatBackendController implements Initializable {
         populateProductFlowpane("Dryck");
         productsScrollPane.setVvalue(0);
         shoppingTabPane.toFront();
-        theRealResetOfSearchBar();
+      //  theRealResetOfSearchBar();
+        searchResultLabel.setVisible(false);
     }
 
     public void onDairyButtonPressed(){
@@ -627,7 +633,8 @@ public class iMatBackendController implements Initializable {
         populateProductFlowpane("Mejeri");
         productsScrollPane.setVvalue(0);
         shoppingTabPane.toFront();
-        theRealResetOfSearchBar();
+        //theRealResetOfSearchBar();
+        searchResultLabel.setVisible(false);
     }
 
     public void onPantryButtonPressed(){
@@ -640,7 +647,8 @@ public class iMatBackendController implements Initializable {
         populateProductFlowpane("Skafferi");
         productsScrollPane.setVvalue(0);
         shoppingTabPane.toFront();
-        theRealResetOfSearchBar();
+       // theRealResetOfSearchBar();
+        searchResultLabel.setVisible(false);
     }
 
     public void onSnacksButtonPressed(){
@@ -653,7 +661,8 @@ public class iMatBackendController implements Initializable {
         populateProductFlowpane("Snacks");
         productsScrollPane.setVvalue(0);
         shoppingTabPane.toFront();
-        theRealResetOfSearchBar();
+      //  theRealResetOfSearchBar();
+        searchResultLabel.setVisible(false);
     }
 
     public void onSpicesButtonPressed(){
@@ -666,7 +675,8 @@ public class iMatBackendController implements Initializable {
         populateProductFlowpane("Kryddor");
         productsScrollPane.setVvalue(0);
         shoppingTabPane.toFront();
-        theRealResetOfSearchBar();
+     //   theRealResetOfSearchBar();
+        searchResultLabel.setVisible(false);
     }
 
     private void populateSubCategoryFlowPane(String category) {
@@ -946,29 +956,30 @@ public class iMatBackendController implements Initializable {
 
     @FXML TextField searchBarTextField;
     List<Product> searchedItems;
+    @FXML Label searchResultLabel;
 
     public void theRealResetOfSearchBar(){
         searchBarTextField.setText("Sök tusentals varor... ");
     }
 
-    public void resetSearchBarText(){ //Nollställer searchbar
-        searchBarTextField.setText("");
-    }
     @FXML
     public void searchBarKeyPressed(javafx.scene.input.KeyEvent evt) {
         //if(evt.getCode() == KeyCode.ENTER) {  //__________________________Keep if you want to search after "ENTER" keypress.
 
             shoppingTabPane.toFront();
             homepaneIsFront = false;
-            if(searchBarTextField.getText().equals("Sök tusentals varor...")){
-                resetSearchBarText();
-            }
+
 
             String userInput = searchBarTextField.getText();
-            searchedItems = dataHandler.findProducts(userInput);
-            if(searchedItems.isEmpty()){
-                
+
+            if(userInput.isEmpty()){
+                homePane.toFront();
+                homepaneIsFront= true;
+
             }else{
+                searchResultLabel.setVisible(true);
+                searchResultLabel.setText("Sökresultat för " + "'" + userInput + "'");
+                searchedItems = dataHandler.findProducts(userInput);
                 updateProductsWithSearch(userInput);
 
             }
@@ -1038,6 +1049,7 @@ public class iMatBackendController implements Initializable {
         homepaneIsFront = true;
         populateCarouselFlowPane();
         carouselScrollPane.setHmax(100);
+        searchResultLabel.setVisible(false);
 
 
         IMatBackendEngine.getInstance().clearActiveTab();

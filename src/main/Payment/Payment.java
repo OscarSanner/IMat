@@ -11,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import main.ConfirmationPage.ConfirmationPage;
 import main.IWizardPage;
+import main.ShoppingCartItem.ShoppingCartItem;
 import main.Timetable.Timetable;
 import se.chalmers.cse.dat216.project.*;
 
@@ -35,6 +36,7 @@ public class Payment extends AnchorPane implements IWizardPage {
     @FXML public Label cardAmountErrorLabel;
     @FXML public CheckBox checkButtonPayment;
     @FXML public ImageView escapeHatchImage;
+    @FXML public Label sumPriceLabel;
 
 
     private CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
@@ -64,6 +66,19 @@ public class Payment extends AnchorPane implements IWizardPage {
         this.parentBackendController = parentBackendController;
         inputPaymentInfo();
         makePaymentLblsInvisible();
+
+
+        double sum = getSum();
+        sumPriceLabel.setText("Totalbelopp: " + String.valueOf(sum) + " kr");
+    }
+
+    private double getSum(){
+        double sum = 0;
+        for(ShoppingItem s: shoppingCart.getItems()){
+            sum += (s.getAmount() * s.getProduct().getPrice());
+            sum = Math.round(sum * 100.0)/100.0;
+        }
+        return sum;
     }
 
     @FXML

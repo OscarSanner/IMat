@@ -43,7 +43,7 @@
                               <Image url="@Res/Images/escape_hatch.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="searchBarTextField" layoutX="306.0" layoutY="35.0" onKeyPressed="#searchBarKeyPressed" prefHeight="25.0" prefWidth="562.0" styleClass="cursor-text" text="Sök tusentals varor...">
+                        <TextField fx:id="searchBarTextField" layoutX="306.0" layoutY="35.0" onKeyTyped="#searchBarKeyPressed" prefHeight="25.0" prefWidth="562.0" promptText="Sök tusentals varor..." styleClass="cursor-text">
                            <font>
                               <Font name="SansSerif Regular" size="16.0" />
                            </font>
@@ -54,7 +54,7 @@
             </Pane>
          </top>
          <left>
-            <Pane prefHeight="687.0" prefWidth="279.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="667.0" prefWidth="264.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                <children>
                   <Pane layoutX="41.0" layoutY="19.0" prefHeight="649.0" prefWidth="169.0" styleClass="dropShadow">
                      <children>
@@ -152,11 +152,11 @@
             <Pane prefHeight="12.0" prefWidth="960.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
          </bottom>
          <right>
-            <Pane prefHeight="687.0" prefWidth="349.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="667.0" prefWidth="361.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane layoutX="33.0" layoutY="26.0" prefHeight="636.0" prefWidth="269.0">
+                  <AnchorPane layoutX="27.0" layoutY="26.0" prefHeight="636.0" prefWidth="300.0">
                      <children>
-                        <Button fx:id="checkoutButton" layoutX="8.0" layoutY="545.0" mnemonicParsing="false" onMouseClicked="#onCheckoutButtonPressed" prefHeight="77.0" prefWidth="251.0" text="Till kassan" textAlignment="CENTER">
+                        <Button fx:id="checkoutButton" layoutX="8.0" layoutY="545.0" mnemonicParsing="false" onMouseClicked="#onCheckoutButtonPressed" prefHeight="77.0" prefWidth="279.0" text="Till kassan" textAlignment="CENTER">
                            <font>
                               <Font name="SansSerif Regular" size="30.0" />
                            </font>
@@ -165,17 +165,17 @@
                               <String fx:value="till-kassan" />
                               <String fx:value="dropShadow" />
                            </styleClass></Button>
-                        <Label fx:id="sumLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="99.0" layoutY="511.0" prefHeight="35.0" prefWidth="147.0" text="0 kr" textAlignment="RIGHT">
+                        <Label fx:id="sumLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="128.0" layoutY="511.0" prefHeight="35.0" prefWidth="147.0" text="0 kr" textAlignment="RIGHT">
                            <font>
                               <Font name="SansSerif Regular" size="24.0" />
                            </font></Label>
-                        <ScrollPane fx:id="shoppingCartScrollPane" hbarPolicy="NEVER" layoutX="3.0" layoutY="72.0" prefHeight="436.0" prefWidth="261.0" style="-fx-background-color: white;" styleClass="dropShadow" vbarPolicy="ALWAYS">
+                        <ScrollPane fx:id="shoppingCartScrollPane" hbarPolicy="NEVER" layoutX="3.0" layoutY="72.0" prefHeight="436.0" prefWidth="288.0" style="-fx-background-color: white;" styleClass="dropShadow" vbarPolicy="ALWAYS">
                            <content>
-                              <FlowPane fx:id="shoppingCartFlowPane" prefHeight="436.0" prefWidth="249.0" style="-fx-background-color: white;" styleClass="dropShadow" />
+                              <FlowPane fx:id="shoppingCartFlowPane" prefHeight="436.0" prefWidth="274.0" style="-fx-background-color: white;" styleClass="dropShadow" />
                            </content>
                         </ScrollPane>
-                        <Line endX="140.0" layoutX="110.0" layoutY="515.0" startX="-100.0" />
-                        <ImageView fitHeight="65.0" fitWidth="264.0" layoutX="1.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" styleClass="dropShadow">
+                        <Line endX="165.0" layoutX="110.0" layoutY="515.0" startX="-100.0" />
+                        <ImageView fitHeight="76.0" fitWidth="288.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true" styleClass="dropShadow">
                            <image>
                               <Image url="@Res/Images/KUNDVAGN_header.png" />
                            </image>
@@ -278,107 +278,11 @@
                         <Pane prefHeight="594.0" prefWidth="570.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
 
-                              <StackPane fx:id="orderTabPane" prefHeight="595.0" prefWidth="570.0" style="-fx-background-color: white;">
-                                 <children>
-                                    <ScrollPane prefHeight="541.0" prefWidth="549.0" style="-fx-background-color: white; -fx-background: white;">
-                                       <content>
-                                          <Accordion fx:id="orderAccordion" prefHeight="102.0" prefWidth="565.0" style="-fx-background-color: white;" />
-                                       </content>
-                                    </ScrollPane>
-                                 </children></StackPane>
-                              <StackPane fx:id="listTabPane" prefHeight="595.0" prefWidth="570.0" style="-fx-background-color: white;">
-                                 <children>
-                                    <ScrollPane prefHeight="541.0" prefWidth="549.0" style="-fx-background: white; -fx-background-color: white;">
-                                       <content>
-                                          <Accordion fx:id="listAccordion" prefHeight="76.0" prefWidth="565.0" style="-fx-background-color: white;" />
-                                       </content>
-                                    </ScrollPane>
-                                 </children>
-                              </StackPane>
-
-                              <StackPane fx:id="shoppingTabPane" prefHeight="595.0" prefWidth="570.0" style="-fx-background-color: white;">
-                                 <children>
-                                    <SplitPane fx:id="categoryPane" dividerPositions="0.09242144177449169" orientation="VERTICAL" prefHeight="591.0" prefWidth="570.0" styleClass="split-pane-divider">
-                                       <items>
-                                          <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="52.0" prefWidth="563.0">
-                                             <children>
-                                                <FlowPane fx:id="subCategoryFlowPane" layoutX="2.0" layoutY="-2.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="558.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="-2.0" />
-                                             </children>
-                                          </AnchorPane>
-                                          <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="481.0" prefWidth="570.0">
-                                             <children>
-                                                <ScrollPane fx:id="productsScrollPane" layoutY="3.0" prefHeight="538.0" prefWidth="565.0" styleClass="scroll-paneShopping">
-                                                   <content>
-                                                      <FlowPane fx:id="productFlowPane" prefHeight="538.0" prefWidth="560.0" prefWrapLength="1000.0" rowValignment="TOP" style="-fx-background-color: white;">
-                                                         <rotationAxis>
-                                                            <Point3D />
-                                                         </rotationAxis>
-                                                      </FlowPane>
-                                                   </content>
-                                                </ScrollPane>
-                                             </children>
-                                          </AnchorPane>
-                                       </items>
-                                    </SplitPane>
-                                    <StackPane fx:id="homePane" prefHeight="578.0" prefWidth="570.0">
-                                       <children>
-                                          <Pane prefHeight="587.0" prefWidth="570.0" style="-fx-background-color: white;">
-                                             <children>
-                                                <ScrollPane fx:id="carouselScrollPane" hbarPolicy="NEVER" layoutX="52.0" layoutY="340.0" prefHeight="234.0" prefWidth="466.0" styleClass="dropShadow" vbarPolicy="NEVER">
-                                                   <content>
-                                                      <FlowPane fx:id="carouselFlowPane" prefHeight="234.0" prefWidth="513.0" rowValignment="TOP" style="-fx-background-color: white;" />
-                                                   </content>
-                                                </ScrollPane>
-                                                <ImageView fx:id="rightArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="520.0" layoutY="418.0" onMouseClicked="#rotateCarouselRight" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
-                                                   <image>
-                                                      <Image url="@Res/Images/next-button.png" />
-                                                   </image>
-                                                </ImageView>
-                                                <ImageView fx:id="leftArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="3.0" layoutY="418.0" onMouseClicked="#rotateCarouselLeft" pickOnBounds="true" preserveRatio="true" rotate="180.0" styleClass="cursor-hand">
-                                                   <image>
-                                                      <Image url="@Res/Images/next-button.png" />
-                                                   </image>
-                                                </ImageView>
-                                                <Label alignment="CENTER" layoutX="147.0" layoutY="291.0" onMouseClicked="#onFavouritesButtonPressed" prefHeight="29.0" prefWidth="276.0" style="-fx-background-color: #B1D5F6;" text="Mina favoriter">
-                                                   <font>
-                                                      <Font name="SansSerif Regular" size="32.0" />
-                                                   </font>
-                                                   <styleClass>
-                                                      <String fx:value="cursor-hand" />
-                                                      <String fx:value="dropShadow" />
-                                                   </styleClass>
-                                                </Label>
-                                                <Pane layoutX="17.0" layoutY="21.0" prefHeight="200.0" prefWidth="537.0" style="-fx-background-color: #EEEDED;" styleClass="LessDropShadow">
-                                                   <children>
-                                                      <Label alignment="CENTER" layoutX="48.0" layoutY="8.0" prefHeight="17.0" prefWidth="414.0" text="Välkommen till iMat" textAlignment="CENTER">
-                                                         <font>
-                                                            <Font name="SansSerif Bold" size="35.0" />
-                                                         </font>
-                                                      </Label>
-                                                      <Label alignment="CENTER" layoutX="25.0" layoutY="57.0" prefHeight="50.0" prefWidth="488.0" text="För att börja handla, vänligen tryck på en kategori till vänster." textAlignment="CENTER" wrapText="true">
-                                                         <font>
-                                                            <Font name="SansSerif Regular" size="18.0" />
-                                                         </font>
-                                                      </Label>
-                                                      <Label alignment="CENTER" layoutX="12.0" layoutY="107.0" prefHeight="65.0" prefWidth="486.0" text="Om du har övriga frågor eller funderingar, tryck på kundservice uppe till höger" textAlignment="CENTER" wrapText="true">
-                                                         <font>
-                                                            <Font name="SansSerif Regular" size="18.0" />
-                                                         </font>
-                                                      </Label>
-                                                   </children>
-                                                </Pane>
-                                             </children>
-                                          </Pane>
-                                       </children>
-                                    </StackPane>
-                                 </children>
-                              </StackPane>
-
                               <StackPane fx:id="myPageTabPane" prefHeight="595.0" prefWidth="570.0">
                                  <children>
                                     <Pane prefHeight="537.0" prefWidth="576.0" style="-fx-background-color: white;">
                                        <children>
-                                          <Pane layoutX="14.0" layoutY="20.0" prefHeight="330.0" prefWidth="538.0" style="-fx-background-color: #F6F9FF;">
+                                          <Pane layoutX="14.0" layoutY="20.0" prefHeight="565.0" prefWidth="538.0" style="-fx-background-color: #F6F9FF;">
 
                                              <children>
                                                 <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" />
@@ -455,58 +359,159 @@
                                                       <Font size="11.0" />
                                                    </font>
                                                 </Label>
-
-                                             </children>
-                                          </Pane>
-                                          <Pane layoutX="16.0" layoutY="371.0" prefHeight="180.0" prefWidth="538.0" style="-fx-background-color: #F6F9FF;">
-                                             <children>
-                                                <Label layoutX="209.0" layoutY="14.0" text="Kredit- eller debitkort">
+                                                <Label layoutX="203.0" layoutY="325.0" text="Kredit- eller debitkort">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <TextField fx:id="cardNumber" layoutX="28.0" layoutY="39.0" prefHeight="35.0" prefWidth="312.0" promptText="           Kortnummer" />
-                                                <TextField fx:id="month" layoutX="28.0" layoutY="74.0" prefHeight="35.0" prefWidth="75.0" promptText="            MM" />
-                                                <TextField fx:id="cvc" layoutX="192.0" layoutY="74.0" prefHeight="35.0" prefWidth="148.0" promptText="           CVC/CVV" />
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="44.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="44.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="44.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fitHeight="40.0" fitWidth="55.0" layoutX="127.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+                                                <TextField fx:id="cardNumber" layoutX="113.0" layoutY="359.0" prefHeight="35.0" prefWidth="312.0" promptText="           Kortnummer" />
+                                                <TextField fx:id="month" layoutX="113.0" layoutY="394.0" prefHeight="35.0" prefWidth="75.0" promptText="            MM" />
+                                                <TextField fx:id="cvc" layoutX="277.0" layoutY="394.0" prefHeight="35.0" prefWidth="148.0" promptText="           CVC/CVV" />
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="129.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="129.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="129.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fitHeight="40.0" fitWidth="55.0" layoutX="212.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@Res/Images/amex.png" />
                                                    </image>
                                                 </ImageView>
-                                                <ImageView fitHeight="40.0" fitWidth="55.0" layoutX="75.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="40.0" fitWidth="55.0" layoutX="160.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@Res/Images/mastercard.png" />
                                                    </image>
                                                 </ImageView>
-                                                <ImageView fitHeight="40.0" fitWidth="55.0" layoutX="28.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="40.0" fitWidth="55.0" layoutX="113.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@Res/Images/visa.png" />
                                                    </image>
                                                 </ImageView>
-                                                <TextField fx:id="year" layoutX="116.0" layoutY="74.0" prefHeight="35.0" prefWidth="75.0" promptText="            ÅR" />
-                                                <Label layoutX="107.0" layoutY="78.0" text="/" textFill="#00000083">
+                                                <TextField fx:id="year" layoutX="201.0" layoutY="394.0" prefHeight="35.0" prefWidth="75.0" promptText="            ÅR" />
+                                                <Label layoutX="192.0" layoutY="398.0" text="/" textFill="#00000083">
                                                    <font>
                                                       <Font size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="paymentStyleErrorLbl" layoutX="28.0" layoutY="150.0" text="OBS! Kortuppgifter få bara innehålla siffror!" textFill="RED">
+                                                <Label fx:id="paymentStyleErrorLbl" layoutX="113.0" layoutY="470.0" text="OBS! Kortuppgifter få bara innehålla siffror!" textFill="RED">
                                                    <font>
                                                       <Font size="11.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="paymentAmountErrorLbl" layoutX="28.0" layoutY="150.0" text="OBS! Gå igenom antalet siffor hos Kortuppgifterna!" textFill="RED">
+                                                <Label fx:id="paymentAmountErrorLbl" layoutX="113.0" layoutY="470.0" text="OBS! Gå igenom antalet siffor hos Kortuppgifterna!" textFill="RED">
                                                    <font>
                                                       <Font size="11.0" />
                                                    </font>
                                                 </Label>
-                                                <Button fx:id="saveButton" layoutX="377.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#onSaveButtonPressed" prefHeight="47.0" prefWidth="128.0" text="Spara" />
+                                                <Button fx:id="saveButton" layoutX="197.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#onSaveButtonPressed" prefHeight="47.0" prefWidth="128.0" text="Spara" />
+                                                <Line endX="248.0" layoutX="277.0" layoutY="503.0" startX="-260.0" />
+
                                              </children>
                                           </Pane>
                                        </children>
                                     </Pane>
+                                 </children>
+                              </StackPane>
+
+                              <StackPane fx:id="orderTabPane" prefHeight="595.0" prefWidth="570.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <ScrollPane prefHeight="541.0" prefWidth="549.0" style="-fx-background-color: white; -fx-background: white;">
+                                       <content>
+                                          <Accordion fx:id="orderAccordion" prefHeight="102.0" prefWidth="565.0" style="-fx-background-color: white;" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children></StackPane>
+                              <StackPane fx:id="listTabPane" prefHeight="595.0" prefWidth="570.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <ScrollPane prefHeight="541.0" prefWidth="549.0" style="-fx-background: white; -fx-background-color: white;">
+                                       <content>
+                                          <Accordion fx:id="listAccordion" prefHeight="76.0" prefWidth="565.0" style="-fx-background-color: white;" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </StackPane>
+
+                              <StackPane fx:id="shoppingTabPane" prefHeight="595.0" prefWidth="570.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <SplitPane fx:id="categoryPane" dividerPositions="0.09242144177449169" orientation="VERTICAL" prefHeight="591.0" prefWidth="570.0" styleClass="split-pane-divider">
+                                       <items>
+                                          <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="52.0" prefWidth="563.0">
+                                             <children>
+                                                <FlowPane fx:id="subCategoryFlowPane" layoutX="2.0" layoutY="-2.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="558.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="-2.0">
+                                                   <children>
+                                                      <Label fx:id="searchResultLabel" disable="true" prefHeight="51.0" prefWidth="327.0" text="Sökresultat för &quot;XX&quot;">
+                                                         <font>
+                                                            <Font name="SansSerif Regular" size="20.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </FlowPane>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="481.0" prefWidth="570.0">
+                                             <children>
+                                                <ScrollPane fx:id="productsScrollPane" layoutY="3.0" prefHeight="538.0" prefWidth="565.0" styleClass="scroll-paneShopping">
+                                                   <content>
+                                                      <FlowPane fx:id="productFlowPane" prefHeight="538.0" prefWidth="560.0" prefWrapLength="1000.0" rowValignment="TOP" style="-fx-background-color: white;">
+                                                         <rotationAxis>
+                                                            <Point3D />
+                                                         </rotationAxis>
+                                                      </FlowPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </items>
+                                    </SplitPane>
+                                    <StackPane fx:id="homePane" prefHeight="578.0" prefWidth="570.0">
+                                       <children>
+                                          <Pane prefHeight="587.0" prefWidth="570.0" style="-fx-background-color: white;">
+                                             <children>
+                                                <ScrollPane fx:id="carouselScrollPane" hbarPolicy="NEVER" layoutX="52.0" layoutY="340.0" prefHeight="234.0" prefWidth="466.0" styleClass="dropShadow" vbarPolicy="NEVER">
+                                                   <content>
+                                                      <FlowPane fx:id="carouselFlowPane" prefHeight="234.0" prefWidth="513.0" rowValignment="TOP" style="-fx-background-color: white;" />
+                                                   </content>
+                                                </ScrollPane>
+                                                <ImageView fx:id="rightArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="520.0" layoutY="418.0" onMouseClicked="#rotateCarouselRight" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
+                                                   <image>
+                                                      <Image url="@Res/Images/next-button.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fx:id="leftArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="3.0" layoutY="418.0" onMouseClicked="#rotateCarouselLeft" pickOnBounds="true" preserveRatio="true" rotate="180.0" styleClass="cursor-hand">
+                                                   <image>
+                                                      <Image url="@Res/Images/next-button.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label alignment="CENTER" layoutX="147.0" layoutY="291.0" onMouseClicked="#onFavouritesButtonPressed" prefHeight="29.0" prefWidth="276.0" style="-fx-background-color: #B1D5F6;" text="Mina favoriter">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="32.0" />
+                                                   </font>
+                                                   <styleClass>
+                                                      <String fx:value="cursor-hand" />
+                                                      <String fx:value="dropShadow" />
+                                                   </styleClass>
+                                                </Label>
+                                                <Pane layoutX="17.0" layoutY="21.0" prefHeight="200.0" prefWidth="537.0" style="-fx-background-color: #EEEDED;" styleClass="LessDropShadow">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="48.0" layoutY="8.0" prefHeight="17.0" prefWidth="414.0" text="Välkommen till iMat" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font name="SansSerif Bold" size="35.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER" layoutX="25.0" layoutY="57.0" prefHeight="50.0" prefWidth="488.0" text="För att börja handla, vänligen tryck på en kategori till vänster." textAlignment="CENTER" wrapText="true">
+                                                         <font>
+                                                            <Font name="SansSerif Regular" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label alignment="CENTER" layoutX="12.0" layoutY="107.0" prefHeight="65.0" prefWidth="486.0" text="Om du har övriga frågor eller funderingar, tryck på kundservice uppe till höger" textAlignment="CENTER" wrapText="true">
+                                                         <font>
+                                                            <Font name="SansSerif Regular" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </Pane>
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </StackPane>
                                  </children>
                               </StackPane>
                            </children>

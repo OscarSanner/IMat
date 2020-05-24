@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.control.*;
+import javafx.util.Duration;
 import main.iMatBackendController;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.ShoppingCart;
@@ -61,6 +62,7 @@ public class Product extends AnchorPane {
         this.priceLabel.setText(product.getPrice() + " kr/" + product.getUnitSuffix());
 
         Tooltip tooltip = new Tooltip("Tryck för mer information");
+        tooltip.setShowDelay(Duration.seconds(0));
         tooltip.setStyle("-fx-font-size: 18");
         Tooltip.install(tooltipImage, tooltip);
 
