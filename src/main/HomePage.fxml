@@ -391,11 +391,16 @@
                                     </SplitPane>
                                     <StackPane fx:id="homePane" prefHeight="537.0" prefWidth="573.0">
                                        <children>
-                                          <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gray;">
+                                          <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: whitte;">
                                              <children>
-                                                <ImageView fx:id="offersImage" fitHeight="216.0" fitWidth="248.0" layoutX="60.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fx:id="videoImage" fitHeight="112.0" fitWidth="157.0" layoutX="359.0" layoutY="55.0" onMouseClicked="#onVideoImagePressed" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fx:id="newsImage" fitHeight="112.0" fitWidth="157.0" layoutX="359.0" layoutY="163.0" onMouseClicked="#onNewsImagePressed" pickOnBounds="true" preserveRatio="true" />
+                                                <ImageView fx:id="offersImage" fitHeight="216.0" fitWidth="248.0" layoutX="60.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Res/Images/Unknown.jpeg" />
+                                                   </image></ImageView>
+                                                <ImageView fx:id="newsImage" fitHeight="112.0" fitWidth="157.0" layoutX="359.0" layoutY="138.0" onMouseClicked="#onNewsImagePressed" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@Res/Images/youtube.png" />
+                                                   </image></ImageView>
                                                 <ImageView fx:id="rightArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="522.0" layoutY="421.0" onMouseClicked="#rotateCarouselRight" pickOnBounds="true" preserveRatio="true" />
                                                 <ImageView fx:id="leftArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="3.0" layoutY="421.0" onMouseClicked="#rotateCarouselLeft" pickOnBounds="true" preserveRatio="true" />
                                                 <ScrollPane layoutX="16.0" layoutY="298.0" prefHeight="245.0" prefWidth="538.0" vbarPolicy="NEVER">
@@ -403,6 +408,25 @@
                                                       <FlowPane fx:id="carouselFlowPane" prefHeight="229.0" prefWidth="621.0" rowValignment="TOP" style="-fx-background-color: white;" />
                                                    </content>
                                                 </ScrollPane>
+                                                <Label layoutX="361.0" layoutY="250.0" text="Så här gör du!">
+                                                   <font>
+                                                      <Font name="SansSerif Bold Italic" size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <Pane layoutX="322.0" layoutY="14.0" prefHeight="118.0" prefWidth="200.0" style="-fx-background-color: #B1D5F6#B1D5F6;">
+                                                   <children>
+                                                      <Label layoutX="70.0" layoutY="23.0" text="Nyheter" textFill="#f5f4f4">
+                                                         <font>
+                                                            <Font name="SansSerif Bold Italic" size="21.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label layoutX="43.0" layoutY="67.0" text="JUST  NU" textFill="#fcf9f9">
+                                                         <font>
+                                                            <Font name="SansSerif Bold Italic" size="25.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </Pane>
                                              </children>
                                           </Pane>
                                        </children>
