@@ -12,8 +12,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -24,16 +27,27 @@
          <top>
             <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="801.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#onCustomerSupportPressed" prefHeight="64.0" prefWidth="123.0" text="Button" />
-                  <TextField fx:id="searchBarTextField" layoutX="164.0" layoutY="32.0" onKeyPressed="#searchBarKeyPressed" prefHeight="25.0" prefWidth="562.0" styleClass="cursor-text" text="Sök miljontals varor...">
+                  <TextField fx:id="searchBarTextField" layoutX="203.0" layoutY="35.0" onKeyPressed="#searchBarKeyPressed" prefHeight="25.0" prefWidth="562.0" styleClass="cursor-text" text="Sök tusentals varor...">
                      <font>
-                        <Font name="SansSerif Regular" size="12.0" />
+                        <Font name="SansSerif Regular" size="16.0" />
                      </font></TextField>
                   <ImageView fx:id="escapeHatchImage" fitHeight="98.0" fitWidth="105.0" onMouseClicked="#onHomeButtonPressed" onMouseEntered="#onEscapeHatchEnter" onMouseExited="#onEscapeHatchExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand" x="26.0">
                      <image>
                         <Image url="@Res/Images/escape_hatch.png" />
                      </image>
                   </ImageView>
+                  <Button layoutX="829.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#onCustomerSupportPressed" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #037C99;" styleClass="cursor-hand" text="Kundservice &amp; Hjälp" textFill="WHITE" wrapText="true">
+                     <graphic>
+                        <ImageView fitHeight="65.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Res/Images/question.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="SansSerif Bold" size="17.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
          </top>
@@ -42,7 +56,7 @@
                <children>
                   <Pane layoutX="5.0" layoutY="18.0" prefHeight="649.0" prefWidth="169.0" styleClass="border">
                      <children>
-                        <Button fx:id="favouritesButton" layoutX="18.0" layoutY="96.0" mnemonicParsing="false" onMouseClicked="#onFavouritesButtonPressed" prefHeight="44.0" prefWidth="125.0" text="Mina favoriter">
+                        <Button fx:id="favouritesButton" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" onMouseClicked="#onFavouritesButtonPressed" prefHeight="50.0" prefWidth="150.0" text="Mina favoriter">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
@@ -50,7 +64,7 @@
                            <font>
                               <Font name="SansSerif Regular" size="12.0" />
                            </font></Button>
-                        <Button fx:id="offersButton" layoutX="18.0" layoutY="140.0" mnemonicParsing="false" onMouseClicked="#onOffersButtonPressed" prefHeight="44.0" prefWidth="125.0" text="Erbjudanden">
+                        <Button fx:id="offersButton" layoutX="10.0" layoutY="143.0" mnemonicParsing="false" onMouseClicked="#onOffersButtonPressed" prefHeight="50.0" prefWidth="150.0" text="Erbjudanden">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
@@ -58,7 +72,7 @@
                            <font>
                               <Font name="SansSerif Regular" size="12.0" />
                            </font></Button>
-                        <Button fx:id="meatAndFishButton" layoutX="18.0" layoutY="213.0" mnemonicParsing="false" onMouseClicked="#onMeatAndFishButtonPressed" prefHeight="44.0" prefWidth="125.0" text="Kött &amp; Fisk">
+                        <Button fx:id="meatAndFishButton" layoutX="10.0" layoutY="210.0" mnemonicParsing="false" onMouseClicked="#onMeatAndFishButtonPressed" prefHeight="50.0" prefWidth="150.0" text="Kött &amp; Fisk">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
@@ -66,7 +80,7 @@
                            <font>
                               <Font name="SansSerif Regular" size="12.0" />
                            </font></Button>
-                        <Button fx:id="veggiesButton" layoutX="18.0" layoutY="257.0" mnemonicParsing="false" onMouseClicked="#onVeggiesButtonPressed" prefHeight="44.0" prefWidth="125.0" text="Frukt &amp; Grönt">
+                        <Button fx:id="veggiesButton" layoutX="10.0" layoutY="260.0" mnemonicParsing="false" onMouseClicked="#onVeggiesButtonPressed" prefHeight="50.0" prefWidth="150.0" text="Frukt &amp; Grönt">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
@@ -74,7 +88,7 @@
                            <font>
                               <Font name="SansSerif Regular" size="12.0" />
                            </font></Button>
-                        <Button fx:id="drinkButton" layoutX="18.0" layoutY="301.0" mnemonicParsing="false" onMouseClicked="#onDrinkButtonPressed" prefHeight="44.0" prefWidth="125.0" text="Dryck">
+                        <Button fx:id="drinkButton" layoutX="10.0" layoutY="310.0" mnemonicParsing="false" onMouseClicked="#onDrinkButtonPressed" prefHeight="50.0" prefWidth="150.0" text="Dryck">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
@@ -82,7 +96,7 @@
                            <font>
                               <Font name="SansSerif Regular" size="12.0" />
                            </font></Button>
-                        <Button fx:id="dairyButton" layoutX="18.0" layoutY="345.0" mnemonicParsing="false" onMouseClicked="#onDairyButtonPressed" prefHeight="44.0" prefWidth="125.0" text="Mejeri">
+                        <Button fx:id="dairyButton" layoutX="10.0" layoutY="360.0" mnemonicParsing="false" onMouseClicked="#onDairyButtonPressed" prefHeight="50.0" prefWidth="150.0" text="Mejeri">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
@@ -90,7 +104,7 @@
                            <font>
                               <Font name="SansSerif Regular" size="12.0" />
                            </font></Button>
-                        <Button fx:id="pantryButton" layoutX="18.0" layoutY="389.0" mnemonicParsing="false" onMouseClicked="#onPantryButtonPressed" prefHeight="44.0" prefWidth="125.0" text="Skafferi">
+                        <Button fx:id="pantryButton" layoutX="10.0" layoutY="411.0" mnemonicParsing="false" onMouseClicked="#onPantryButtonPressed" prefHeight="50.0" prefWidth="150.0" text="Skafferi">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
@@ -98,7 +112,7 @@
                            <font>
                               <Font name="SansSerif Regular" size="12.0" />
                            </font></Button>
-                        <Button fx:id="spicesButton" layoutX="18.0" layoutY="478.0" mnemonicParsing="false" onMouseClicked="#onSpicesButtonPressed" prefHeight="44.0" prefWidth="125.0" text="Kryddor">
+                        <Button fx:id="spicesButton" layoutX="10.0" layoutY="511.0" mnemonicParsing="false" onMouseClicked="#onSpicesButtonPressed" prefHeight="50.0" prefWidth="150.0" text="Kryddor">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
@@ -106,7 +120,7 @@
                            <font>
                               <Font name="SansSerif Regular" size="12.0" />
                            </font></Button>
-                        <Button fx:id="snacksButton" layoutX="18.0" layoutY="433.0" mnemonicParsing="false" onMouseClicked="#onSnacksButtonPressed" prefHeight="44.0" prefWidth="125.0" text="Snacks">
+                        <Button fx:id="snacksButton" layoutX="10.0" layoutY="461.0" mnemonicParsing="false" onMouseClicked="#onSnacksButtonPressed" prefHeight="50.0" prefWidth="150.0" text="Snacks">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
@@ -114,7 +128,7 @@
                            <font>
                               <Font name="SansSerif Regular" size="12.0" />
                            </font></Button>
-                        <Button fx:id="breadButton" layoutX="18.0" layoutY="522.0" mnemonicParsing="false" onMouseClicked="#onBreadButtonPressed" prefHeight="44.0" prefWidth="125.0" text="Bröd">
+                        <Button fx:id="breadButton" layoutX="10.0" layoutY="561.0" mnemonicParsing="false" onMouseClicked="#onBreadButtonPressed" prefHeight="50.0" prefWidth="150.0" text="Bröd">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
@@ -122,7 +136,7 @@
                            <font>
                               <Font name="SansSerif Regular" size="12.0" />
                            </font></Button>
-                        <ImageView fitHeight="67.0" fitWidth="361.0" layoutX="3.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="67.0" fitWidth="361.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Res/Images/KATEGORIER_header.png" />
                            </image>
@@ -150,7 +164,7 @@
                            </font></Label>
                         <ScrollPane fx:id="shoppingCartScrollPane" hbarPolicy="NEVER" layoutX="3.0" layoutY="72.0" prefHeight="436.0" prefWidth="261.0" style="-fx-background-color: white;" vbarPolicy="ALWAYS">
                            <content>
-                              <FlowPane fx:id="shoppingCartFlowPane" prefHeight="436.0" prefWidth="242.0" style="-fx-background-color: white;" />
+                              <FlowPane fx:id="shoppingCartFlowPane" prefHeight="436.0" prefWidth="249.0" style="-fx-background-color: white;" />
                            </content>
                         </ScrollPane>
                         <Line endX="140.0" layoutX="110.0" layoutY="514.0" startX="-100.0" />
@@ -248,7 +262,7 @@
                                  <children>
                                     <Pane prefHeight="537.0" prefWidth="576.0" style="-fx-background-color: white;">
                                        <children>
-                                          <Pane layoutX="14.0" layoutY="19.0" prefHeight="302.0" prefWidth="538.0" style="-fx-background-color: lightgrey;">
+                                          <Pane layoutX="14.0" layoutY="20.0" prefHeight="330.0" prefWidth="538.0" style="-fx-background-color: lightgrey;">
                                              <children>
                                                 <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" />
                                                 <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" />
@@ -327,7 +341,7 @@
                                                 </Label>
                                              </children>
                                           </Pane>
-                                          <Pane layoutX="16.0" layoutY="340.0" prefHeight="180.0" prefWidth="538.0" style="-fx-background-color: lightgrey;">
+                                          <Pane layoutX="14.0" layoutY="367.0" prefHeight="180.0" prefWidth="538.0" style="-fx-background-color: lightgrey;">
                                              <children>
                                                 <Label layoutX="113.0" layoutY="20.0" text="Kredit- eller debitkort">
                                                    <font>
@@ -393,40 +407,109 @@
                                        <children>
                                           <Pane prefHeight="587.0" prefWidth="570.0" style="-fx-background-color: white;">
                                              <children>
-                                                <ImageView fx:id="offersImage" fitHeight="216.0" fitWidth="248.0" layoutX="60.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@Res/Images/Unknown.jpeg" />
-                                                   </image></ImageView>
-                                                <ImageView fx:id="newsImage" fitHeight="112.0" fitWidth="157.0" layoutX="359.0" layoutY="138.0" onMouseClicked="#onNewsImagePressed" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@Res/Images/youtube.png" />
-                                                   </image></ImageView>
-                                                <ImageView fx:id="rightArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="522.0" layoutY="421.0" onMouseClicked="#rotateCarouselRight" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fx:id="leftArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="3.0" layoutY="421.0" onMouseClicked="#rotateCarouselLeft" pickOnBounds="true" preserveRatio="true" />
-                                                <ScrollPane layoutX="16.0" layoutY="344.0" prefHeight="245.0" prefWidth="538.0" vbarPolicy="NEVER">
+                                                <ScrollPane fx:id="carouselScrollPane" hbarPolicy="NEVER" layoutX="52.0" layoutY="352.0" prefHeight="234.0" prefWidth="466.0" vbarPolicy="NEVER">
                                                    <content>
-                                                      <FlowPane fx:id="carouselFlowPane" prefHeight="229.0" prefWidth="621.0" rowValignment="TOP" style="-fx-background-color: white;" />
+                                                      <FlowPane fx:id="carouselFlowPane" prefHeight="234.0" prefWidth="551.0" rowValignment="TOP" style="-fx-background-color: white;" />
                                                    </content>
                                                 </ScrollPane>
-                                                <Label layoutX="361.0" layoutY="250.0" text="Så här gör du!">
+                                                <GridPane layoutX="3.0" layoutY="9.0" prefHeight="293.0" prefWidth="563.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="354.0" minWidth="10.0" prefWidth="354.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="276.0" minWidth="10.0" prefWidth="209.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints maxHeight="326.0" minHeight="10.0" prefHeight="326.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints maxHeight="201.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints maxHeight="64.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <GridPane prefHeight="293.0" prefWidth="249.0" GridPane.columnIndex="1">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="281.0" minWidth="10.0" prefWidth="281.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.0" minWidth="0.0" prefWidth="0.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints maxHeight="197.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints maxHeight="240.0" minHeight="4.0" prefHeight="147.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints maxHeight="178.0" minHeight="0.0" prefHeight="178.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <Pane prefHeight="92.0" prefWidth="277.0" style="-fx-background-color: #EEEDED;" GridPane.rowIndex="1">
+                                                               <children>
+                                                                  <Label layoutX="37.0" layoutY="23.0" text="Nyheter" textFill="#5563ff">
+                                                                     <font>
+                                                                        <Font name="SansSerif Bold" size="36.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                                  <Label layoutX="47.0" layoutY="65.0" text="JUST  NU" textFill="#5563ff">
+                                                                     <font>
+                                                                        <Font name="SansSerif Bold" size="25.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                               <styleClass>
+                                                                  <String fx:value="features" />
+                                                                  <String fx:value="cursor-hand" />
+                                                               </styleClass>
+                                                            </Pane>
+                                                            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #EEEDED;" GridPane.rowIndex="2">
+                                                               <children>
+                                                                  <ImageView fitHeight="137.0" fitWidth="133.0" layoutX="40.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@Res/Images/youtube.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <Label alignment="CENTER" layoutX="6.0" layoutY="122.0" prefHeight="30.0" prefWidth="208.0" text="Så handlar du">
+                                                                     <font>
+                                                                        <Font name="SansSerif Bold" size="25.0" />
+                                                                     </font>
+                                                                  </Label>
+                                                               </children>
+                                                               <styleClass>
+                                                                  <String fx:value="features" />
+                                                                  <String fx:value="cursor-hand" />
+                                                               </styleClass>
+                                                            </Pane>
+                                                         </children>
+                                                      </GridPane>
+                                                      <Pane prefHeight="293.0" prefWidth="311.0" style="-fx-background-color: #FF545E;">
+                                                         <children>
+                                                            <Label layoutX="10.0" layoutY="40.0" rotate="-5.2" style="-fx-background-color: WHITE;" text="VECKANS ERBJUDANDEN" textFill="RED">
+                                                               <font>
+                                                                  <Font name="SansSerif Bold" size="26.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label alignment="CENTER" layoutX="57.0" layoutY="172.0" prefHeight="69.0" prefWidth="241.0" style="-fx-background-color: WHITE;" text="KLICKA HÄR!" textFill="RED">
+                                                               <font>
+                                                                  <Font name="SansSerif Bold" size="34.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label layoutX="15.0" layoutY="85.0" prefHeight="27.0" prefWidth="325.0" rotate="-4.8" style="-fx-background-color: WHITE;" text="NYA ERBJUDANDEN VARJE MÅNDAG!" textFill="RED">
+                                                               <font>
+                                                                  <Font name="SansSerif Bold" size="17.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                         <styleClass>
+                                                            <String fx:value="features" />
+                                                            <String fx:value="cursor-hand" />
+                                                         </styleClass>
+                                                      </Pane>
+                                                   </children>
+                                                </GridPane>
+                                                <ImageView fx:id="rightArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="522.0" layoutY="434.0" onMouseClicked="#rotateCarouselRight" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
+                                                   <image>
+                                                      <Image url="@Res/Images/next-button.png" />
+                                                   </image></ImageView>
+                                                <ImageView fx:id="leftArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="3.0" layoutY="434.0" onMouseClicked="#rotateCarouselLeft" pickOnBounds="true" preserveRatio="true" rotate="180.0" styleClass="cursor-hand">
+                                                   <image>
+                                                      <Image url="@Res/Images/next-button.png" />
+                                                   </image></ImageView>
+                                                <Label alignment="CENTER" layoutX="147.0" layoutY="312.0" onMouseClicked="#onFavouritesButtonPressed" prefHeight="29.0" prefWidth="276.0" style="-fx-background-color: #B1D5F6;" styleClass="cursor-hand" text="Mina favoriter">
                                                    <font>
-                                                      <Font name="SansSerif Bold Italic" size="16.0" />
+                                                      <Font name="SansSerif Regular" size="32.0" />
                                                    </font>
                                                 </Label>
-                                                <Pane layoutX="322.0" layoutY="14.0" prefHeight="118.0" prefWidth="200.0" style="-fx-background-color: #B1D5F6#B1D5F6;">
-                                                   <children>
-                                                      <Label layoutX="70.0" layoutY="23.0" text="Nyheter" textFill="#f5f4f4">
-                                                         <font>
-                                                            <Font name="SansSerif Bold Italic" size="21.0" />
-                                                         </font>
-                                                      </Label>
-                                                      <Label layoutX="43.0" layoutY="67.0" text="JUST  NU" textFill="#fcf9f9">
-                                                         <font>
-                                                            <Font name="SansSerif Bold Italic" size="25.0" />
-                                                         </font>
-                                                      </Label>
-                                                   </children>
-                                                </Pane>
                                              </children>
                                           </Pane>
                                        </children>
