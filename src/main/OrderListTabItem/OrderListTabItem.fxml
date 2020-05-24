@@ -7,22 +7,18 @@
 
 <fx:root prefHeight="60.0" prefWidth="536.0" style="-fx-background-color: white; -fx-border-width: 3px; -fx-border-color: #F0F0F0;" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="itemName" layoutX="88.0" layoutY="22.0" prefHeight="17.0" prefWidth="56.0" text="Paprika">
+      <Label fx:id="itemName" layoutX="71.0" layoutY="17.0" prefHeight="27.0" prefWidth="193.0" text="Ekologisk Blandfärs">
          <font>
-            <Font name="SansSerif Regular" size="12.0" />
+            <Font name="SansSerif Regular" size="18.0" />
          </font></Label>
       <ImageView fx:id="itemImage" fitHeight="45.0" fitWidth="45.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="unitPriceLabel" layoutX="157.0" layoutY="15.0" prefHeight="30.0" prefWidth="56.0" text="styckpris" textAlignment="RIGHT">
+      <Label fx:id="amountLabel" layoutX="268.0" layoutY="15.0" prefHeight="30.0" prefWidth="120.0" text="antal:" textAlignment="RIGHT">
          <font>
-            <Font name="SansSerif Regular" size="12.0" />
+            <Font name="SansSerif Regular" size="18.0" />
          </font></Label>
-      <Label fx:id="amountLabel" layoutX="268.0" layoutY="15.0" prefHeight="30.0" prefWidth="33.0" text="antal:" textAlignment="RIGHT">
+      <Label fx:id="totalPriceLabel" layoutX="388.0" layoutY="20.0" text="Totalpris: 12.95">
          <font>
-            <Font name="SansSerif Regular" size="12.0" />
-         </font></Label>
-      <Label fx:id="totalPriceLabel" layoutX="461.0" layoutY="23.0" text="Totalpris">
-         <font>
-            <Font name="SansSerif Regular" size="12.0" />
+            <Font name="SansSerif Regular" size="18.0" />
          </font></Label>
    </children>
 </fx:root>

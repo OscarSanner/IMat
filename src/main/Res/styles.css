@@ -228,3 +228,7 @@
          -fx-cursor: pointer;
          -fx-cursor: hand;
 }
+
+.scroll-paneShopping{
+    -fx-background-color: transparent;
+}

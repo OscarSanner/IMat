@@ -20,8 +20,6 @@ public class OrderListTabItem extends AnchorPane {
     @FXML
     Label itemName;
     @FXML
-    Label unitPriceLabel;
-    @FXML
     Label amountLabel;
     @FXML
     Label totalPriceLabel;
@@ -45,8 +43,7 @@ public class OrderListTabItem extends AnchorPane {
         Image productImage = IMatDataHandler.getInstance().getFXImage(product);
         itemImage.setImage(productImage);
         itemName.setText(product.getName());
-        unitPriceLabel.setText("Styckpris: " + total/amount);
-        amountLabel.setText("Antal köpta: " + amount);
-        totalPriceLabel.setText("Totalt: " + total);
+        amountLabel.setText(amount + " " + product.getUnitSuffix());
+        totalPriceLabel.setText("Totalt: " + total + " kr");
     }
 }

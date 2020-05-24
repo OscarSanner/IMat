@@ -392,7 +392,7 @@
                                           </AnchorPane>
                                         <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="481.0" prefWidth="570.0">
                                              <children>
-                                                <ScrollPane fx:id="productsScrollPane" layoutY="3.0" prefHeight="538.0" prefWidth="565.0">
+                                                <ScrollPane fx:id="productsScrollPane" layoutY="3.0" prefHeight="538.0" prefWidth="565.0" styleClass="scroll-paneShopping">
                                                    <content>
                                                       <FlowPane fx:id="productFlowPane" prefHeight="538.0" prefWidth="560.0" prefWrapLength="1000.0" rowValignment="TOP" style="-fx-background-color: white;">
                                                          <rotationAxis>
