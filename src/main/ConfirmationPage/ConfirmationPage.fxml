@@ -2,64 +2,88 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1050.0" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1050.0" style="-fx-background-color: #D7EBFE;" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane layoutX="9.0" layoutY="15.0" prefHeight="780.0" prefWidth="1050.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane prefHeight="780.0" prefWidth="1050.0" style="-fx-background-color: #B1D5F6;">
          <children>
-            <Pane layoutX="71.0" layoutY="50.0" prefHeight="680.0" prefWidth="909.0" style="-fx-background-color: #B1D5F6;">
+            <Label layoutX="389.0" layoutY="526.0" text="Ditt köp finns i &quot;Ordrar&quot;" underline="true">
+               <font>
+                  <Font name="SansSerif Bold" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="87.0" fitWidth="150.0" layoutX="386.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" />
+            <Label alignment="CENTER" layoutX="381.0" layoutY="279.0" prefHeight="50.0" prefWidth="288.0" text="Tack!" textAlignment="CENTER">
+               <font>
+                  <Font name="SansSerif Bold" size="34.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="87.0" fitWidth="150.0" layoutX="396.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="thankYouLabel" alignment="BOTTOM_LEFT" layoutX="413.0" layoutY="329.0" prefHeight="35.0" prefWidth="384.0" text="Din order har mottagits!" textAlignment="CENTER">
+               <font>
+                  <Font name="SansSerif Regular" size="24.0" />
+               </font>
+            </Label>
+            <Pane layoutY="-5.0" prefHeight="276.0" prefWidth="1050.0" style="-fx-background-color: #037C99;">
                <children>
-                  <Label layoutX="336.0" layoutY="354.0" text="Ditt köp finns i &quot;Ordrar&quot;">
-                     <font>
-                        <Font name="SansSerif Regular" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="326.0" layoutY="470.0" text="Tack för att du handlar hos oss!">
-                     <font>
-                        <Font name="SansSerif Regular" size="19.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="87.0" fitWidth="150.0" layoutX="386.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button layoutX="274.0" layoutY="522.0" mnemonicParsing="false" onMouseClicked="#shutDownApplication" prefHeight="69.0" prefWidth="80.0" text="Stäng iMat" />
-                  <Button layoutX="581.0" layoutY="522.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="140.0" />
-                  <ImageView fx:id="escapeHatchImage" fitHeight="98.0" fitWidth="105.0" layoutX="383.0" layoutY="514.0" onMouseClicked="#onGoBackToFrontButtonPressed" onMouseEntered="#onEscapeHatchEnter" onMouseExited="#onEscapeHatchExit" pickOnBounds="true" preserveRatio="true" x="26.0">
+                  <ImageView fitHeight="256.0" fitWidth="256.0" layoutX="397.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Res/Images/escape_hatch.png" />
+                        <Image url="@../Res/Images/thumbs_up.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" layoutX="317.0" layoutY="68.0" prefHeight="50.0" prefWidth="288.0" style="-fx-background-color: white;" text="Köp genomfört!" textAlignment="CENTER">
-                     <font>
-                        <Font name="SansSerif Bold" size="34.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="87.0" fitWidth="150.0" layoutX="396.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label fx:id="orderNumberLabel" alignment="CENTER" layoutX="340.0" layoutY="195.0" prefHeight="35.0" prefWidth="263.0" text="Order No.: XXXXX   " textAlignment="CENTER">
-                     <font>
-                        <Font name="SansSerif Regular" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="orderDateLabel" alignment="CENTER" layoutX="304.0" layoutY="238.0" prefHeight="35.0" prefWidth="335.0" text="Order datum: XX maj 2020">
-                     <font>
-                        <Font name="SansSerif Regular" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="deliveryDateLabel" alignment="CENTER" layoutX="224.0" layoutY="284.0" prefHeight="35.0" prefWidth="495.0" text="Förväntat leveransdatum: XX maj 2020">
-                     <font>
-                        <Font name="SansSerif Regular" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="thankYouLabel" alignment="CENTER" layoutX="241.0" layoutY="144.0" prefHeight="35.0" prefWidth="440.0" text="Hej NAMN, din order har mottagits!" textAlignment="CENTER">
-                     <font>
-                        <Font name="SansSerif Regular" size="24.0" />
-                     </font>
-                  </Label>
                </children>
             </Pane>
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="367.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Res/Images/checkmark.png" />
+               </image>
+            </ImageView>
+            <Button alignment="CENTER" layoutX="363.0" layoutY="595.0" mnemonicParsing="false" onMouseClicked="#onGoBackToFrontButtonPressed" prefHeight="77.0" prefWidth="323.0" styleClass="nextButton" text="Tillbaka till startsidan">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Res/Images/house.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Pane layoutX="252.0" layoutY="379.0" prefHeight="135.0" prefWidth="525.0" style="-fx-background-color: #DCEEFF;" />
+            <Label layoutX="405.0" layoutY="390.0" text="Order No.: ">
+               <font>
+                  <Font name="SansSerif Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="379.0" layoutY="431.0" text="Order datum: ">
+               <font>
+                  <Font name="SansSerif Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="259.0" layoutY="471.0" text="Förväntat leveransdatum: ">
+               <font>
+                  <Font name="SansSerif Regular" size="22.0" />
+               </font>
+            </Label>
+            <TextField fx:id="orderNumberTextField" layoutX="516.0" layoutY="385.0" prefHeight="37.0" prefWidth="220.0">
+               <font>
+                  <Font name="SansSerif Regular" size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="orderDateTextField" layoutX="516.0" layoutY="426.0" prefHeight="37.0" prefWidth="220.0">
+               <font>
+                  <Font name="SansSerif Regular" size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="deliveryTimeTextField" layoutX="516.0" layoutY="467.0" prefHeight="37.0" prefWidth="220.0">
+               <font>
+                  <Font name="SansSerif Regular" size="20.0" />
+               </font>
+            </TextField>
          </children>
       </Pane>
    </children>

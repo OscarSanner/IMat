@@ -188,7 +188,7 @@
 
 .nextButton{
 
-    -fx-font-size: 20;
+    -fx-font-size: 22;
     -fx-text-align: center;
     -fx-align-content: center;
     -fx-font-family: sans-serif;
@@ -198,7 +198,7 @@
 }
 .nextButton:hover{
     -fx-font-weight: bold;
-    -fx-font-size: 20;
+    -fx-font-size: 22;
     -fx-text-align: center;
     -fx-align-content: center;
     -fx-font-family: sans-serif;
@@ -209,7 +209,6 @@
 }
 
 .prevButton{
-
     -fx-font-size: 17;
     -fx-text-align: center;
     -fx-align-content: center;
@@ -227,4 +226,11 @@
     -fx-background-color: #F0F0F0;
          -fx-cursor: pointer;
          -fx-cursor: hand;
+}
+
+.text-area{
+    -fx-font-size: 22;
+    -fx-text-align: center;
+    -fx-align-content: center;
+    -fx-font-family: sans-serif;
 }
