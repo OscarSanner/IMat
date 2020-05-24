@@ -18,42 +18,47 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.iMatBackendController">
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.iMatBackendController">
    <children>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1050.0" stylesheets="@Res/styles.css">
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@Res/styles.css">
          <top>
-            <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="121.0" prefWidth="1200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                <children>
-                  <TextField fx:id="searchBarTextField" layoutX="203.0" layoutY="35.0" onKeyPressed="#searchBarKeyPressed" prefHeight="25.0" prefWidth="562.0" styleClass="cursor-text" text="Sök tusentals varor...">
-                     <font>
-                        <Font name="SansSerif Regular" size="16.0" />
-                     </font></TextField>
-                  <ImageView fx:id="escapeHatchImage" fitHeight="98.0" fitWidth="105.0" onMouseClicked="#onHomeButtonPressed" onMouseEntered="#onEscapeHatchEnter" onMouseExited="#onEscapeHatchExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand" x="26.0">
-                     <image>
-                        <Image url="@Res/Images/escape_hatch.png" />
-                     </image>
-                  </ImageView>
-                  <Button layoutX="829.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#onCustomerSupportPressed" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #037C99;" styleClass="cursor-hand" text="Kundservice &amp; Hjälp" textFill="WHITE" wrapText="true">
-                     <graphic>
-                        <ImageView fitHeight="65.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                  <Pane prefHeight="108.0" prefWidth="1200.0" style="-fx-background-color: #037C99;" styleClass="dropShadow">
+                     <children>
+                        <Button layoutX="977.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#onCustomerSupportPressed" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #037C99;" styleClass="cursor-hand" text="Kundservice &amp; Hjälp" textFill="WHITE" wrapText="true">
+                           <graphic>
+                              <ImageView fitHeight="65.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Res/Images/question.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font name="SansSerif Bold" size="17.0" />
+                           </font>
+                        </Button>
+                        <ImageView fx:id="escapeHatchImage" fitHeight="98.0" fitWidth="105.0" layoutX="54.0" layoutY="2.0" onMouseClicked="#onHomeButtonPressed" onMouseEntered="#onEscapeHatchEnter" onMouseExited="#onEscapeHatchExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand" x="26.0">
                            <image>
-                              <Image url="@Res/Images/question.png" />
+                              <Image url="@Res/Images/escape_hatch.png" />
                            </image>
                         </ImageView>
-                     </graphic>
-                     <font>
-                        <Font name="SansSerif Bold" size="17.0" />
-                     </font>
-                  </Button>
+                        <TextField fx:id="searchBarTextField" layoutX="306.0" layoutY="35.0" onKeyPressed="#searchBarKeyPressed" prefHeight="25.0" prefWidth="562.0" styleClass="cursor-text" text="Sök tusentals varor...">
+                           <font>
+                              <Font name="SansSerif Regular" size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </Pane>
                </children>
             </Pane>
          </top>
          <left>
-            <Pane prefHeight="667.0" prefWidth="185.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="687.0" prefWidth="279.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                <children>
-                  <Pane layoutX="5.0" layoutY="18.0" prefHeight="649.0" prefWidth="169.0" styleClass="border">
+                  <Pane layoutX="41.0" layoutY="19.0" prefHeight="649.0" prefWidth="169.0" styleClass="dropShadow">
                      <children>
-                        <Button fx:id="favouritesButton" layoutX="10.0" layoutY="93.0" mnemonicParsing="false" onMouseClicked="#onFavouritesButtonPressed" prefHeight="50.0" prefWidth="150.0" text="Mina favoriter">
+                        <Button fx:id="favouritesButton" layoutX="10.0" layoutY="92.0" mnemonicParsing="false" onMouseClicked="#onFavouritesButtonPressed" prefHeight="50.0" prefWidth="150.0" text="Mina favoriter">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
@@ -109,7 +114,7 @@
                            <font>
                               <Font name="SansSerif Regular" size="12.0" />
                            </font></Button>
-                        <Button fx:id="spicesButton" layoutX="10.0" layoutY="511.0" mnemonicParsing="false" onMouseClicked="#onSpicesButtonPressed" prefHeight="50.0" prefWidth="150.0" text="Kryddor">
+                        <Button fx:id="spicesButton" layoutX="10.0" layoutY="512.0" mnemonicParsing="false" onMouseClicked="#onSpicesButtonPressed" prefHeight="50.0" prefWidth="150.0" text="Kryddor">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
@@ -125,7 +130,7 @@
                            <font>
                               <Font name="SansSerif Regular" size="12.0" />
                            </font></Button>
-                        <Button fx:id="breadButton" layoutX="10.0" layoutY="561.0" mnemonicParsing="false" onMouseClicked="#onBreadButtonPressed" prefHeight="50.0" prefWidth="150.0" text="Bröd">
+                        <Button fx:id="breadButton" layoutX="10.0" layoutY="563.0" mnemonicParsing="false" onMouseClicked="#onBreadButtonPressed" prefHeight="50.0" prefWidth="150.0" text="Bröd">
                            <styleClass>
                               <String fx:value="categoryButtons" />
                               <String fx:value="cursor-hand" />
@@ -147,9 +152,9 @@
             <Pane prefHeight="12.0" prefWidth="960.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER" />
          </bottom>
          <right>
-            <Pane prefHeight="667.0" prefWidth="290.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="687.0" prefWidth="349.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane layoutX="8.0" layoutY="30.0" prefHeight="636.0" prefWidth="269.0" styleClass="border">
+                  <AnchorPane layoutX="33.0" layoutY="26.0" prefHeight="636.0" prefWidth="269.0">
                      <children>
                         <Button fx:id="checkoutButton" layoutX="8.0" layoutY="545.0" mnemonicParsing="false" onMouseClicked="#onCheckoutButtonPressed" prefHeight="77.0" prefWidth="251.0" text="Till kassan" textAlignment="CENTER">
                            <font>
@@ -158,18 +163,19 @@
                            <styleClass>
                               <String fx:value="cursor-hand" />
                               <String fx:value="till-kassan" />
+                              <String fx:value="dropShadow" />
                            </styleClass></Button>
-                        <Label fx:id="sumLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="99.0" layoutY="510.0" prefHeight="35.0" prefWidth="147.0" text="0 kr" textAlignment="RIGHT">
+                        <Label fx:id="sumLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="99.0" layoutY="511.0" prefHeight="35.0" prefWidth="147.0" text="0 kr" textAlignment="RIGHT">
                            <font>
                               <Font name="SansSerif Regular" size="24.0" />
                            </font></Label>
-                        <ScrollPane fx:id="shoppingCartScrollPane" hbarPolicy="NEVER" layoutX="3.0" layoutY="72.0" prefHeight="436.0" prefWidth="261.0" style="-fx-background-color: white;" vbarPolicy="ALWAYS">
+                        <ScrollPane fx:id="shoppingCartScrollPane" hbarPolicy="NEVER" layoutX="3.0" layoutY="72.0" prefHeight="436.0" prefWidth="261.0" style="-fx-background-color: white;" styleClass="dropShadow" vbarPolicy="ALWAYS">
                            <content>
-                              <FlowPane fx:id="shoppingCartFlowPane" prefHeight="436.0" prefWidth="249.0" style="-fx-background-color: white;" />
+                              <FlowPane fx:id="shoppingCartFlowPane" prefHeight="436.0" prefWidth="249.0" style="-fx-background-color: white;" styleClass="dropShadow" />
                            </content>
                         </ScrollPane>
-                        <Line endX="140.0" layoutX="110.0" layoutY="514.0" startX="-100.0" />
-                        <ImageView fitHeight="58.0" fitWidth="244.0" layoutX="13.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                        <Line endX="140.0" layoutX="110.0" layoutY="515.0" startX="-100.0" />
+                        <ImageView fitHeight="65.0" fitWidth="264.0" layoutX="1.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" styleClass="dropShadow">
                            <image>
                               <Image url="@Res/Images/KUNDVAGN_header.png" />
                            </image>
@@ -180,13 +186,13 @@
             </Pane>
          </right>
          <center>
-            <SplitPane dividerPositions="0.10082644628099173" orientation="VERTICAL" prefHeight="607.0" prefWidth="596.0" styleClass="border" BorderPane.alignment="CENTER">
+            <SplitPane dividerPositions="0.10082644628099173" orientation="VERTICAL" prefHeight="607.0" prefWidth="596.0" styleClass="LessDropShadow" BorderPane.alignment="CENTER">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="59.0" prefWidth="569.0">
                      <children>
                         <Pane layoutY="9.0" prefHeight="58.0" prefWidth="569.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Button fx:id="shoppingTab" alignment="CENTER" layoutX="5.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onShoppingTabSelect" prefHeight="50.0" prefWidth="132.0" text="Handla">
+                              <Button fx:id="shoppingTab" alignment="CENTER" layoutX="3.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onShoppingTabSelect" prefHeight="50.0" prefWidth="132.0" text="Handla">
                                  <graphic>
                                     <ImageView fitHeight="37.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -200,9 +206,11 @@
                                  <styleClass>
                                     <String fx:value="tabButtons" />
                                     <String fx:value="cursor-hand" />
+                                    <String fx:value="round-corners" />
+                                    <String fx:value="LessDropShadow" />
                                  </styleClass>
                               </Button>
-                              <Button fx:id="orderTab" alignment="CENTER" layoutX="140.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onOrderTabSelect" prefHeight="50.0" prefWidth="117.0" text="Ordar">
+                              <Button fx:id="orderTab" alignment="CENTER" layoutX="141.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onOrderTabSelect" prefHeight="50.0" prefWidth="117.0" text="Ordar">
                                  <graphic>
                                     <ImageView fitHeight="37.0" fitWidth="32.0" onMouseClicked="#onOrderTabSelect" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -216,9 +224,11 @@
                                  <styleClass>
                                     <String fx:value="tabButtons" />
                                     <String fx:value="cursor-hand" />
+                                    <String fx:value="round-corners" />
+                                    <String fx:value="LessDropShadow" />
                                  </styleClass>
                               </Button>
-                              <Button fx:id="listTab" alignment="CENTER" layoutX="260.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onListtabSelect" prefHeight="50.0" prefWidth="164.0" text="Inköpslistor">
+                              <Button fx:id="listTab" alignment="CENTER" layoutX="263.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onListtabSelect" prefHeight="50.0" prefWidth="164.0" text="Inköpslistor">
                                  <font>
                                     <Font name="SansSerif Regular" size="18.0" />
                                  </font>
@@ -232,9 +242,11 @@
                                  <styleClass>
                                     <String fx:value="tabButtons" />
                                     <String fx:value="cursor-hand" />
+                                    <String fx:value="round-corners" />
+                                    <String fx:value="LessDropShadow" />
                                  </styleClass>
                               </Button>
-                              <Button fx:id="myPageTab" alignment="CENTER" layoutX="427.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onMyPageTabSelect" prefHeight="50.0" prefWidth="136.0" text="Min sida">
+                              <Button fx:id="myPageTab" alignment="CENTER" layoutX="431.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onMyPageTabSelect" prefHeight="50.0" prefWidth="136.0" text="Min sida">
                                  <font>
                                     <Font name="SansSerif Regular" size="18.0" />
                                  </font>
@@ -248,22 +260,24 @@
                                  <styleClass>
                                     <String fx:value="tabButtons" />
                                     <String fx:value="cursor-hand" />
+                                    <String fx:value="round-corners" />
+                                    <String fx:value="LessDropShadow" />
                                  </styleClass>
                               </Button>
-                              <Line endX="507.0" layoutX="102.0" layoutY="61.0" startX="-108.0" strokeWidth="4.0" />
+                              <Line endX="507.0" layoutX="102.0" layoutY="61.0" startX="-108.0" styleClass="LessDropShadow" />
                            </children>
                         </Pane>
                      </children>
                   </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: white;">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="585.0" prefWidth="570.0" style="-fx-background-color: white;">
                      <children>
-                        <Pane prefHeight="541.0" prefWidth="569.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <Pane prefHeight="594.0" prefWidth="570.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <StackPane fx:id="myPageTabPane" prefHeight="595.0" prefWidth="565.0">
+                              <StackPane fx:id="myPageTabPane" prefHeight="595.0" prefWidth="570.0">
                                  <children>
                                     <Pane prefHeight="537.0" prefWidth="576.0" style="-fx-background-color: white;">
                                        <children>
-                                          <Pane layoutX="14.0" layoutY="20.0" prefHeight="330.0" prefWidth="538.0" style="-fx-background-color: lightgrey;">
+                                          <Pane layoutX="14.0" layoutY="20.0" prefHeight="330.0" prefWidth="538.0" style="-fx-background-color: #F6F9FF;">
                                              <children>
                                                 <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" />
                                                 <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" />
@@ -342,7 +356,7 @@
                                                 </Label>
                                              </children>
                                           </Pane>
-                                          <Pane layoutX="14.0" layoutY="367.0" prefHeight="180.0" prefWidth="538.0" style="-fx-background-color: lightgrey;">
+                                          <Pane layoutX="14.0" layoutY="367.0" prefHeight="180.0" prefWidth="538.0" style="-fx-background-color: #F6F9FF;">
                                              <children>
                                                 <Label layoutX="113.0" layoutY="20.0" text="Kredit- eller debitkort">
                                                    <font>
@@ -364,7 +378,7 @@
                                     </Pane>
                                  </children>
                               </StackPane>
-                              <StackPane fx:id="orderTabPane" prefHeight="595.0" prefWidth="567.0" style="-fx-background-color: white;">
+                              <StackPane fx:id="orderTabPane" prefHeight="595.0" prefWidth="570.0" style="-fx-background-color: white;">
                                  <children>
                                     <ScrollPane prefHeight="541.0" prefWidth="549.0" style="-fx-background-color: white; -fx-background: white;">
                                        <content>
@@ -372,7 +386,7 @@
                                        </content>
                                     </ScrollPane>
                                  </children></StackPane>
-                              <StackPane fx:id="listTabPane" prefHeight="595.0" prefWidth="567.0" style="-fx-background-color: white;">
+                              <StackPane fx:id="listTabPane" prefHeight="595.0" prefWidth="570.0" style="-fx-background-color: white;">
                                  <children>
                                     <ScrollPane prefHeight="541.0" prefWidth="549.0" style="-fx-background: white; -fx-background-color: white;">
                                        <content>
@@ -408,9 +422,9 @@
                                        <children>
                                           <Pane prefHeight="587.0" prefWidth="570.0" style="-fx-background-color: white;">
                                              <children>
-                                                <ScrollPane fx:id="carouselScrollPane" hbarPolicy="NEVER" layoutX="52.0" layoutY="340.0" prefHeight="234.0" prefWidth="466.0" vbarPolicy="NEVER">
+                                                <ScrollPane fx:id="carouselScrollPane" hbarPolicy="NEVER" layoutX="52.0" layoutY="340.0" prefHeight="234.0" prefWidth="466.0" styleClass="dropShadow" vbarPolicy="NEVER">
                                                    <content>
-                                                      <FlowPane fx:id="carouselFlowPane" prefHeight="234.0" prefWidth="551.0" rowValignment="TOP" style="-fx-background-color: white;" />
+                                                      <FlowPane fx:id="carouselFlowPane" prefHeight="234.0" prefWidth="513.0" rowValignment="TOP" style="-fx-background-color: white;" />
                                                    </content>
                                                 </ScrollPane>
                                                 <ImageView fx:id="rightArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="520.0" layoutY="418.0" onMouseClicked="#rotateCarouselRight" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
@@ -423,12 +437,16 @@
                                                       <Image url="@Res/Images/next-button.png" />
                                                    </image>
                                                 </ImageView>
-                                                <Label alignment="CENTER" layoutX="147.0" layoutY="291.0" onMouseClicked="#onFavouritesButtonPressed" prefHeight="29.0" prefWidth="276.0" style="-fx-background-color: #B1D5F6;" styleClass="cursor-hand" text="Mina favoriter">
+                                                <Label alignment="CENTER" layoutX="147.0" layoutY="291.0" onMouseClicked="#onFavouritesButtonPressed" prefHeight="29.0" prefWidth="276.0" style="-fx-background-color: #B1D5F6;" text="Mina favoriter">
                                                    <font>
                                                       <Font name="SansSerif Regular" size="32.0" />
                                                    </font>
+                                                   <styleClass>
+                                                      <String fx:value="cursor-hand" />
+                                                      <String fx:value="dropShadow" />
+                                                   </styleClass>
                                                 </Label>
-                                                <Pane layoutX="17.0" layoutY="21.0" prefHeight="200.0" prefWidth="537.0" style="-fx-background-color: #EEEDED;">
+                                                <Pane layoutX="17.0" layoutY="21.0" prefHeight="200.0" prefWidth="537.0" style="-fx-background-color: #EEEDED;" styleClass="LessDropShadow">
                                                    <children>
                                                       <Label alignment="CENTER" layoutX="48.0" layoutY="8.0" prefHeight="17.0" prefWidth="414.0" text="Välkommen till iMat" textAlignment="CENTER">
                                                          <font>

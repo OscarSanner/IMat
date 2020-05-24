@@ -9,11 +9,16 @@
     -fx-border-top-color: white;
 }
 
+.round-corners{
+    -fx-background-radius: 10;
+    -fx-border-radius: 5px;
+}
+
 .tabButtons{
-    -fx-border-color: white;
-    -fx-background-color: #00FFFF;
+    /*-fx-border-color: white;
     -fx-border-width: 1px;
-    -fx-border-color: #037C99;
+    -fx-border-color: #037C99;*/
+    -fx-background-color: #00FFFF;
     -fx-font-size: 18;
 
     -fx-text-align: center;
@@ -29,27 +34,35 @@
     -fx-align-content: center;
      -fx-cursor: pointer;
      -fx-cursor: hand;
+
 }
 
 .tabButtonsSelected{
     -fx-background-color: #1A61CC;
     -fx-text-fill: white;
-    -fx-border-color: black;
+
+    /*-fx-border-color: black;
     -fx-border-width: 1px;
+    -fx-border-color: black;*/
+
     -fx-font-size: 18;
     -fx-text-align: center;
-    -fx-border-color: black;
     -fx-align-content: center;
+
+
 }
 .tabButtonsSelected:hover{
     -fx-font-size: 18;
     -fx-font-weight: bold;
     -fx-background-color: #7CA3DF;
     -fx-text-align: center;
-    -fx-border-color: black;
+
+    /*-fx-border-color: black;*/
     -fx-align-content: center;
      -fx-cursor: pointer;
      -fx-cursor: hand;
+
+
 }
 
 .categoryButtons{
@@ -125,6 +138,9 @@
 
 .dropShadow{
      -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 5, 0, 0, 0);
+}
+.LessDropShadow{
+     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 2, 0, 0, 0);
 }
 .cursor-hand{
      -fx-cursor: pointer;
