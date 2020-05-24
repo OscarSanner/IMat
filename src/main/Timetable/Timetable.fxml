@@ -56,16 +56,27 @@
                         </Pane>
                         <Pane layoutX="31.0" layoutY="529.0" prefHeight="52.0" prefWidth="763.0" style="-fx-background-color: white;">
                            <children>
-                              <ImageView fitHeight="48.0" fitWidth="190.0" layoutX="566.0" layoutY="2.0" onMouseClicked="#onNextButtonPressed" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
-                                 <image>
-                                    <Image url="@../Res/Images/next.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="30.0" fitWidth="170.0" layoutX="14.0" layoutY="11.0" onMouseClicked="#previousStep" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
-                                 <image>
-                                    <Image url="@../Res/Images/previous.png" />
-                                 </image>
-                              </ImageView>
+                              <Button contentDisplay="RIGHT" layoutX="572.0" mnemonicParsing="false" onMouseClicked="#onNextButtonPressed" prefHeight="36.0" prefWidth="175.0" styleClass="nextButton" text="Gå vidare">
+                                 <font>
+                                    <Font name="SansSerif Regular" size="22.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Res/Images/next-button.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onMouseClicked="#previousStep" prefHeight="42.0" prefWidth="180.0" styleClass="prevButton" text="Fortsätt handla">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                                       <image>
+                                          <Image url="@../Res/Images/next-button.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
                            </children>
                         </Pane>
                         <AnchorPane layoutX="23.0" layoutY="101.0" prefHeight="416.0" prefWidth="781.0">
