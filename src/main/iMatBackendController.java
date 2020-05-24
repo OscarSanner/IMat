@@ -114,7 +114,7 @@ public class iMatBackendController implements Initializable {
     @FXML private Label paymentAmountErrorLbl;
     @FXML private Label paymentStyleErrorLbl;
 
-    private boolean homepaneIsFront = true;
+    public boolean homepaneIsFront = true;
 
     //Resets the other unselected tabs
     /*public void resetSelectedTab(String currentTab){
@@ -271,9 +271,13 @@ public class iMatBackendController implements Initializable {
 
     @FXML
     public void onCheckoutButtonPressed(){
-        mainAnchorPane.getChildren().add(shoppingCartPage);
-        //saveCustomerInfo();
-        shoppingCartPage.populateShoppingCartPage();
+
+        if(!shoppingCart.getItems().isEmpty()){
+            mainAnchorPane.getChildren().add(shoppingCartPage);
+            //saveCustomerInfo();
+            shoppingCartPage.populateShoppingCartPage();
+        }
+
     }
     @FXML
     public void onSaveButtonPressed(){
@@ -876,6 +880,12 @@ public class iMatBackendController implements Initializable {
 
         sumLabel.setText(sum + " kr");
 
+        if(!shoppingCart.getItems().isEmpty()){
+            IMatBackendEngine.getInstance().morePliancyNext(checkoutButton);
+        }else{
+            IMatBackendEngine.getInstance().lessPliancyNext(checkoutButton);
+        }
+
     }
     //================================================================================
     // Functions connected to backend
@@ -1050,6 +1060,8 @@ public class iMatBackendController implements Initializable {
         populateCarouselFlowPane();
         carouselScrollPane.setHmax(100);
         searchResultLabel.setVisible(false);
+        IMatBackendEngine.getInstance().lessPliancyNext(checkoutButton);
+
 
 
         IMatBackendEngine.getInstance().clearActiveTab();

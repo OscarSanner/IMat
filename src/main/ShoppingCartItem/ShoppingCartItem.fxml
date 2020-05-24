@@ -11,7 +11,7 @@
 
 <fx:root fx:id="shuoppingCardItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="72.0" prefWidth="260.0" style="-fx-background-color: #F3F3F3;" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="productNameLabel" layoutX="2.0" layoutY="-5.0" prefHeight="47.0" prefWidth="201.0" text="Ekologisk blandfärs" wrapText="true">
+      <Label fx:id="productNameLabel" layoutX="6.0" layoutY="-5.0" prefHeight="47.0" prefWidth="201.0" text="Ekologisk blandfärs" wrapText="true">
          <font>
             <Font name="SansSerif Regular" size="17.0" />
          </font></Label>

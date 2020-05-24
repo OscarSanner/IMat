@@ -73,7 +73,7 @@
                                     <String fx:value="LessDropShadow" />
                                  </styleClass>
                               </Button>
-                              <Button layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onMouseClicked="#previousStep" prefHeight="42.0" prefWidth="185.0" text="Fortsätt handla">
+                              <Button layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onMouseClicked="#previousStep" prefHeight="42.0" prefWidth="145.0" text="Tillbaka">
                                  <graphic>
                                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
                                        <image>

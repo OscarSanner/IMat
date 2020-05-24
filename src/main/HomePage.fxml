@@ -156,7 +156,7 @@
                <children>
                   <AnchorPane layoutX="27.0" layoutY="26.0" prefHeight="636.0" prefWidth="300.0">
                      <children>
-                        <Button fx:id="checkoutButton" layoutX="8.0" layoutY="545.0" mnemonicParsing="false" onMouseClicked="#onCheckoutButtonPressed" prefHeight="77.0" prefWidth="279.0" text="Till kassan" textAlignment="CENTER">
+                        <Button fx:id="checkoutButton" alignment="CENTER" layoutX="8.0" layoutY="545.0" mnemonicParsing="false" onMouseClicked="#onCheckoutButtonPressed" prefHeight="77.0" prefWidth="279.0" text="Till kassan" textAlignment="CENTER">
                            <font>
                               <Font name="SansSerif Regular" size="30.0" />
                            </font>

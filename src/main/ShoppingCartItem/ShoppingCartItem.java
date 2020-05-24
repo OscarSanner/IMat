@@ -66,7 +66,12 @@ public class ShoppingCartItem extends AnchorPane {
             }
         }
         parentController.updateShoppingCart();
-        parentController.updateProductFlowpane(parentController.currentCategory);
+        if(parentController.homepaneIsFront){
+            parentController.populateCarouselFlowPane();
+        }else{
+            parentController.updateProductFlowpane(parentController.currentCategory);
+
+        }
     }
     @FXML
     protected void onMinusButtonPressed(){
@@ -84,7 +89,12 @@ public class ShoppingCartItem extends AnchorPane {
             }
         }
         parentController.updateShoppingCart();
-        parentController.updateProductFlowpane(parentController.currentCategory);
+        if(parentController.homepaneIsFront){
+            parentController.populateCarouselFlowPane();
+        }else{
+            parentController.updateProductFlowpane(parentController.currentCategory);
+
+        }
 
     }
 
@@ -144,7 +154,12 @@ public class ShoppingCartItem extends AnchorPane {
     public void onPaperbinPressed(){
         dataHandler.getShoppingCart().removeItem(shoppingItem);
         parentController.updateShoppingCart();
-        parentController.updateProductFlowpane(parentController.currentCategory);
 
+        if(parentController.homepaneIsFront){
+            parentController.populateCarouselFlowPane();
+        }else{
+            parentController.updateProductFlowpane(parentController.currentCategory);
+
+        }
     }
 }

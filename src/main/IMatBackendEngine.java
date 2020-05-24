@@ -24,6 +24,7 @@ public class IMatBackendEngine {
     Button lastActiveTab;
 
 
+
     static public IMatBackendEngine getInstance(){
         if (instance == null){
             instance = new IMatBackendEngine();
@@ -78,7 +79,7 @@ public class IMatBackendEngine {
         if(activeTab != null){
             activeTab.getStyleClass().clear();
             activeTab.getStyleClass().add("tabButtons");
-            activeTab.getStyleClass().add("dropShadows");
+            activeTab.getStyleClass().add("LessDropShadow");
             activeTab.getStyleClass().add("round-corners");
             activeTab = null;
         }
@@ -86,12 +87,24 @@ public class IMatBackendEngine {
     public void setActiveTab(Button button){
         activeTab = button;
         button.getStyleClass().add("tabButtonsSelected");
-        activeTab.getStyleClass().add("dropShadows");
+        activeTab.getStyleClass().add("LessDropShadow");
         activeTab.getStyleClass().add("round-corners");
 
         lastActiveTab=button;
     }
 
 
+    public void lessPliancyNext(Button button){
+        button.getStyleClass().clear();
+        button.getStyleClass().add("till-kassan-empty");
+        button.getStyleClass().add("dropShadow");
+
+    }
+    public void morePliancyNext(Button button){
+        button.getStyleClass().clear();
+        button.getStyleClass().add("cursor-hand");
+        button.getStyleClass().add("till-kassan");
+        button.getStyleClass().add("dropShadow");
+    }
 
 }
