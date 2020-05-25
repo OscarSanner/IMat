@@ -49,6 +49,7 @@
                      <styleClass>
                         <String fx:value="cursor-hand" />
                         <String fx:value="productBuyButton" />
+                        <String fx:value="LessDropShadow" />
                      </styleClass>
                   </Button>
                </children>

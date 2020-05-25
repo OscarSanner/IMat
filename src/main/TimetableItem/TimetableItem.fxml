@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,15 +10,23 @@
    <children>
       <Pane layoutX="-78.0" layoutY="-74.0" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fx:id="selectedCircleImage" fitHeight="60.0" fitWidth="60.0" layoutX="8.0" layoutY="8.0" onMouseClicked="#deSelectDate" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
+            <ImageView fx:id="selectedCircleImage" fitHeight="60.0" fitWidth="60.0" layoutX="8.0" layoutY="8.0" onMouseClicked="#deSelectDate" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Res/Images/green_circle.png" />
                </image>
+               <styleClass>
+                  <String fx:value="cursor-hand" />
+                  <String fx:value="LessDropShadow" />
+               </styleClass>
             </ImageView>
-            <ImageView fx:id="unselectedCircleImage" fitHeight="60.0" fitWidth="60.0" layoutX="8.0" layoutY="8.0" onMouseClicked="#selectDate" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
+            <ImageView fx:id="unselectedCircleImage" fitHeight="60.0" fitWidth="60.0" layoutX="8.0" layoutY="8.0" onMouseClicked="#selectDate" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Res/Images/gray_circle.png" />
                </image>
+               <styleClass>
+                  <String fx:value="cursor-hand" />
+                  <String fx:value="LessDropShadow" />
+               </styleClass>
             </ImageView>
          </children>
       </Pane>

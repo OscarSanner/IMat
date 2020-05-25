@@ -34,6 +34,8 @@ public class TimetableItem extends AnchorPane {
         }
 
         this.timeTableController = timeTableController;
+        unselectedCircleImage.setVisible(true);
+        selectedCircleImage.setVisible(false);
     }
 
     //----------------FAKTISK KOD-----------------
@@ -43,14 +45,16 @@ public class TimetableItem extends AnchorPane {
     private void selectDate(){
         timeTableController.clear();
         timeTableController.onDatePress(selectedDate);
-        selectedCircleImage.toFront();
+        unselectedCircleImage.setVisible(false);
+        selectedCircleImage.setVisible(true);
 
 
     }
     @FXML
     public void deSelectDate(){
         timeTableController.onDatePress(null);
-        unselectedCircleImage.toFront();
+        unselectedCircleImage.setVisible(true);
+        selectedCircleImage.setVisible(false);
     }
 
 }
