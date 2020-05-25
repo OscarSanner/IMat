@@ -90,51 +90,51 @@
                         </Pane>
                         <AnchorPane layoutX="23.0" layoutY="101.0" prefHeight="359.0" prefWidth="781.0">
                            <children>
-                              <Pane prefHeight="387.0" prefWidth="781.0" style="-fx-background-color: white;" styleClass="LessDropShadow">
+                              <Pane prefHeight="387.0" prefWidth="786.0" style="-fx-background-color: white;" styleClass="LessDropShadow">
                                  <children>
-                                    <Label layoutX="16.0" layoutY="81.0" text="8.00-10.00">
+                                    <Label layoutX="3.0" layoutY="81.0" text="8.00-10.00">
                                        <font>
-                                          <Font name="SansSerif Regular" size="12.0" />
+                                          <Font name="SansSerif Regular" size="15.0" />
                                        </font></Label>
-                                    <Label layoutX="13.0" layoutY="168.0" text="10.00-12.00">
+                                    <Label layoutY="168.0" text="10.00-12.00">
                                        <font>
-                                          <Font name="SansSerif Regular" size="12.0" />
+                                          <Font name="SansSerif Regular" size="15.0" />
                                        </font></Label>
-                                    <Label layoutX="13.0" layoutY="251.0" text="12.00-14.00">
+                                    <Label layoutY="251.0" text="12.00-14.00">
                                        <font>
-                                          <Font name="SansSerif Regular" size="12.0" />
+                                          <Font name="SansSerif Regular" size="15.0" />
                                        </font></Label>
-                                    <Label layoutX="13.0" layoutY="340.0" text="14.00-16.00">
+                                    <Label layoutY="340.0" text="14.00-16.00">
                                        <font>
-                                          <Font name="SansSerif Regular" size="12.0" />
+                                          <Font name="SansSerif Regular" size="15.0" />
                                        </font></Label>
-                                    <Label fx:id="date1Label" alignment="CENTER" layoutX="113.0" layoutY="24.0" text="date 1">
+                                    <Label fx:id="date1Label" alignment="CENTER" layoutX="98.0" layoutY="14.0" text="date 1">
                                        <font>
-                                          <Font name="SansSerif Regular" size="12.0" />
+                                          <Font name="SansSerif Regular" size="20.0" />
                                        </font></Label>
-                                    <Label fx:id="date2Label" layoutX="213.0" layoutY="24.0" text="date 2">
+                                    <Label fx:id="date2Label" layoutX="198.0" layoutY="14.0" text="date 2">
                                        <font>
-                                          <Font name="SansSerif Regular" size="12.0" />
+                                          <Font name="SansSerif Regular" size="20.0" />
                                        </font></Label>
-                                    <Label fx:id="date3Label" layoutX="313.0" layoutY="24.0" text="date 3">
+                                    <Label fx:id="date3Label" layoutX="298.0" layoutY="14.0" text="date 3">
                                        <font>
-                                          <Font name="SansSerif Regular" size="12.0" />
+                                          <Font name="SansSerif Regular" size="20.0" />
                                        </font></Label>
-                                    <Label fx:id="date4Label" layoutX="413.0" layoutY="24.0" text="date 4">
+                                    <Label fx:id="date4Label" layoutX="398.0" layoutY="14.0" text="date 4">
                                        <font>
-                                          <Font name="SansSerif Regular" size="12.0" />
+                                          <Font name="SansSerif Regular" size="20.0" />
                                        </font></Label>
-                                    <Label fx:id="date5Label" layoutX="513.0" layoutY="24.0" text="date 5">
+                                    <Label fx:id="date5Label" layoutX="498.0" layoutY="14.0" text="date 5">
                                        <font>
-                                          <Font name="SansSerif Regular" size="12.0" />
+                                          <Font name="SansSerif Regular" size="20.0" />
                                        </font></Label>
-                                    <Label fx:id="date6Label" layoutX="613.0" layoutY="24.0" text="date 6">
+                                    <Label fx:id="date6Label" layoutX="598.0" layoutY="14.0" text="date 6">
                                        <font>
-                                          <Font name="SansSerif Regular" size="12.0" />
+                                          <Font name="SansSerif Regular" size="20.0" />
                                        </font></Label>
-                                    <Label fx:id="date7Label" layoutX="713.0" layoutY="24.0" text="date 7">
+                                    <Label fx:id="date7Label" layoutX="698.0" layoutY="14.0" text="date 7">
                                        <font>
-                                          <Font name="SansSerif Regular" size="12.0" />
+                                          <Font name="SansSerif Regular" size="20.0" />
                                        </font></Label>
                                     <FlowPane fx:id="timeTableFlowPane" layoutX="88.0" layoutY="52.0" prefHeight="335.0" prefWidth="676.0" />
                                     <Line endX="-99.99998474121094" endY="354.0" layoutX="276.2" layoutY="33.0" startX="-100.0" startY="-33.0" />
@@ -143,7 +143,7 @@
                                     <Line endX="-99.99995422363281" endY="354.0" layoutX="575.8" layoutY="33.0" startX="-100.0" startY="-33.0" />
                                     <Line endX="-100.0" endY="354.0" layoutX="676.0" layoutY="33.0" startX="-100.0" startY="-33.0" />
                                     <Line endX="-100.0" endY="354.0" layoutX="775.0" layoutY="33.0" startX="-100.0" startY="-33.0" />
-                                    <Line endX="-100.0" endY="352.5" layoutX="181.0" layoutY="33.0" startX="-100.0" startY="-33.0" />
+                                    <Line endX="-100.0" endY="352.5" layoutX="182.0" layoutY="33.0" startX="-100.0" startY="-33.0" />
                                     <Line endX="680.0" layoutX="101.0" layoutY="133.0" startX="-100.0" />
                                     <Line endX="680.0" layoutX="101.0" layoutY="219.0" startX="-100.0" />
                                     <Line endX="680.0" layoutX="101.0" layoutY="305.0" startX="-100.0" />

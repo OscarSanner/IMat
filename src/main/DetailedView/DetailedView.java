@@ -117,7 +117,12 @@ public class DetailedView extends AnchorPane {
     @FXML
     public void closeDetailedView(){
         parentController.closeDetailedView();
-        parentController.updateProductFlowpane(parentController.currentCategory);
+        if(parentController.homepaneIsFront){
+            parentController.populateCarouselFlowPane();
+        }else{
+            parentController.updateProductFlowpane(parentController.currentCategory);
+
+        }
     }
     @FXML
     public void addToShoppingCart(){

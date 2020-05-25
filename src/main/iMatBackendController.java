@@ -311,6 +311,7 @@ public class iMatBackendController implements Initializable {
 
     public void onHomeButtonPressed(){
         homePane.toFront();
+        shoppingTabPane.toFront();
         homepaneIsFront = true;
         populateCarouselFlowPane();
        // theRealResetOfSearchBar();

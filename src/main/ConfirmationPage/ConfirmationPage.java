@@ -51,6 +51,7 @@ public class ConfirmationPage extends AnchorPane {
 
     public void onGoBackToFrontButtonPressed(){
         parentBackendController.closeWizard();
+
     }
 
     //================================================================================
