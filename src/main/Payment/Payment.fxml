@@ -63,34 +63,21 @@
                                        <children>
                                           <Pane layoutX="41.0" layoutY="11.0" prefHeight="436.0" prefWidth="700.0" style="-fx-background-color: white;" styleClass="dropShadow">
                                              <children>
-                                                <Label layoutX="150.0" layoutY="24.0" text=" Kredit- eller debitkort">
+                                                <Label layoutX="127.0" layoutY="34.0" text=" Kredit- eller debitkort">
                                                    <font>
-                                                      <Font name="SansSerif Regular" size="17.0" />
+                                                      <Font name="SansSerif Regular" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <TextField fx:id="cardNumberTextField" layoutX="129.0" layoutY="67.0" prefHeight="49.0" prefWidth="445.0" promptText="          Kortnummer">
+                                                <TextField fx:id="yearTextField" layoutX="260.0" layoutY="128.0" prefHeight="39.0" prefWidth="103.0" promptText="ÅR">
                                                    <font>
                                                       <Font name="SansSerif Regular" size="12.0" />
                                                    </font>
                                                 </TextField>
-                                                <TextField fx:id="yearTextField" layoutX="255.0" layoutY="128.0" prefHeight="39.0" prefWidth="100.0" promptText="          ÅR">
+                                                <TextField fx:id="monthTextField" layoutX="129.0" layoutY="128.0" prefHeight="39.0" prefWidth="103.0" promptText="MM">
                                                    <font>
                                                       <Font name="SansSerif Regular" size="12.0" />
                                                    </font>
                                                 </TextField>
-                                                <TextField fx:id="monthTextField" layoutX="129.0" layoutY="128.0" prefHeight="39.0" prefWidth="100.0" promptText="          MM">
-                                                   <font>
-                                                      <Font name="SansSerif Regular" size="12.0" />
-                                                   </font>
-                                                </TextField>
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="138.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" />
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="138.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true" />
-                                                <TextField fx:id="cvcTextField" layoutX="358.0" layoutY="128.0" prefHeight="39.0" prefWidth="211.0" promptText="          CVC/ CVV">
-                                                   <font>
-                                                      <Font name="SansSerif Regular" size="12.0" />
-                                                   </font>
-                                                </TextField>
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="367.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true" />
                                                 <ImageView fitHeight="39.0" fitWidth="51.0" layoutX="129.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@../Res/Images/visa.png" />
@@ -106,9 +93,9 @@
                                                       <Image url="@../Res/Images/amex.png" />
                                                    </image>
                                                 </ImageView>
-                                                <CheckBox fx:id="checkButtonPayment" layoutX="127.0" layoutY="228.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="329.0" styleClass="cursor-hand" text="Spara mina kortuppgifter till nästa köp">
+                                                <CheckBox fx:id="checkButtonPayment" layoutX="127.0" layoutY="243.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="345.0" styleClass="cursor-hand" text="Spara mina kortuppgifter till nästa köp">
                                                    <font>
-                                                      <Font name="SansSerif Regular" size="17.0" />
+                                                      <Font name="SansSerif Regular" size="18.0" />
                                                    </font>
                                                 </CheckBox>
                                                 <Label fx:id="cardErrorLabel" layoutX="127.0" layoutY="203.0" prefHeight="17.0" prefWidth="226.0" text="OBS! Inget fält få vara tomt!" textFill="RED">
@@ -126,21 +113,21 @@
                                                       <Font name="SansSerif Regular" size="12.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="231.0" layoutY="134.0" prefHeight="28.0" prefWidth="17.0" text="  /">
+                                                <Label layoutX="234.0" layoutY="131.0" opacity="0.5" prefHeight="28.0" prefWidth="17.0" text="  /">
                                                    <font>
-                                                      <Font size="18.0" />
+                                                      <Font size="22.0" />
                                                    </font>
                                                 </Label>
-                                                <Pane layoutX="202.0" layoutY="262.0" prefHeight="52.0" prefWidth="297.0" style="-fx-background-color: #F5F5F5;" styleClass="LessDropShadow">
+                                                <Pane layoutX="220.0" layoutY="294.0" prefHeight="50.0" prefWidth="275.0" style="-fx-background-color: #F5F5F5;" styleClass="LessDropShadow">
                                                    <children>
-                                                      <Label fx:id="sumPriceLabel" alignment="CENTER" layoutX="1.0" layoutY="14.0" prefHeight="25.0" prefWidth="296.0" text="Totalbelopp:">
+                                                      <Label fx:id="sumPriceLabel" alignment="CENTER" layoutX="-21.0" layoutY="12.0" prefHeight="25.0" prefWidth="296.0" text="Totalbelopp:">
                                                          <font>
                                                             <Font name="SansSerif Bold" size="21.0" />
                                                          </font>
                                                       </Label>
                                                    </children>
                                                 </Pane>
-                                                <Button fx:id="payButton" layoutX="183.0" layoutY="325.0" mnemonicParsing="false" onMouseClicked="#onPayButtonPressed" prefHeight="81.0" prefWidth="351.0" style="-fx-background-color: #FF5E5E;" styleClass="cursor-hand" stylesheets="@../Res/styles.css" text="Slutför köpet" textFill="WHITE">
+                                                <Button fx:id="payButton" layoutX="206.0" layoutY="353.0" mnemonicParsing="false" onMouseClicked="#onPayButtonPressed" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: #FF5E5E;" styleClass="cursor-hand" stylesheets="@../Res/styles.css" text="Slutför köpet" textFill="WHITE">
                                                    <opaqueInsets>
                                                       <Insets />
                                                    </opaqueInsets>
@@ -148,6 +135,30 @@
                                                       <Font name="SansSerif Bold" size="22.0" />
                                                    </font>
                                                 </Button>
+                                                <ImageView fitHeight="40.0" fitWidth="57.0" layoutX="82.0" layoutY="79.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Res/Images/60378.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="35.0" fitWidth="57.0" layoutX="88.0" layoutY="130.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Res/Images/calenderIcon.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <ImageView blendMode="HARD_LIGHT" fitHeight="30.0" fitWidth="63.0" layoutX="360.0" layoutY="132.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Res/Images/lockIcon.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                                <TextField fx:id="cvcTextField" layoutX="406.0" layoutY="129.0" prefHeight="39.0" prefWidth="194.0" promptText="CVC/ CVV">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="12.0" />
+                                                   </font>
+                                                </TextField>
+                                                <TextField fx:id="cardNumberTextField1" layoutX="129.0" layoutY="83.0" prefHeight="39.0" prefWidth="117.0" promptText="XXXX" />
+                                                <TextField fx:id="cardNumberTextField2" layoutX="247.0" layoutY="83.0" prefHeight="39.0" prefWidth="117.0" promptText="XXXX" />
+                                                <TextField fx:id="cardNumberTextField3" layoutX="365.0" layoutY="83.0" prefHeight="39.0" prefWidth="117.0" promptText="XXXX" />
+                                                <TextField fx:id="cardNumberTextField4" layoutX="483.0" layoutY="83.0" prefHeight="39.0" prefWidth="117.0" promptText="XXXX" />
                                              </children>
                                           </Pane>
                                        </children>

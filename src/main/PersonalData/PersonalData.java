@@ -41,6 +41,9 @@ public class PersonalData extends AnchorPane implements IWizardPage {
     public Customer customer = IMatDataHandler.getInstance().getCustomer();
 
 
+    public boolean checkBoxState;
+
+
     public PersonalData(ShoppingCart parentBackendController){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("PersonalData.fxml"));
         fxmlLoader.setRoot(this);
@@ -53,26 +56,17 @@ public class PersonalData extends AnchorPane implements IWizardPage {
         }
 
         this.parentBackendController = parentBackendController;
-
-       //System.out.println(customer.getFirstName());
         //inputCustomerInfo();
-       //System.out.println(customer.getFirstName());
         makeLblsInvisible();
-
-        //personalCheckBox.setSelected();
     }
 
     @FXML
     public void onNextButtonPressed(){
 
-       // Customer customer = IMatDataHandler.getInstance().getCustomer();
-        //System.out.println(customer.getFirstName());
-
         if (personalCheckBox.isSelected()) {
             setCustomerInfo();
-            checkBoxState = true;
             personalCheckBox.setSelected(true);
-            //setCustomerInfo();
+
         }
 
         if(allFilledInCorrectly()) {
@@ -81,7 +75,6 @@ public class PersonalData extends AnchorPane implements IWizardPage {
         }
     }
 
-    public boolean checkBoxState = false;
 
     @Override
     public void closeWizard() {
@@ -239,17 +232,11 @@ public class PersonalData extends AnchorPane implements IWizardPage {
         addressTextField.setText(customer.getAddress());
         areaTextField.setText(customer.getPostAddress());
 
-
-    /*
-        emailTextField.textProperty().setValue(customer.getEmail());
-        mobileNumberTextField.textProperty().setValue(customer.getMobilePhoneNumber());
-        postcodeTextField.textProperty().setValue(customer.getPostCode());
-        lastNameTextField.textProperty().setValue(customer.getLastName());
-        firstNameTextField.textProperty().setValue(customer.getFirstName());
-        addressTextField.textProperty().setValue(customer.getAddress());
-        areaTextField.textProperty().setValue(customer.getPostAddress());
-                */
-
+        if(isCustomerInfoComplete()) {
+            personalCheckBox.setSelected(true);
+        } else {
+            personalCheckBox.setSelected(false);
+        }
     }
 
     private boolean isCustomerInfoComplete(){
@@ -387,63 +374,5 @@ public class PersonalData extends AnchorPane implements IWizardPage {
         postCodeAmountErrorLbl.setVisible(false);
     }
 
-    /* public void errorMeasureIfEmpty(TextField textField){
-        if(textField.equals(firstNameTextField)){
-            firstNameErrorLbl.setStyle("-fx-border-width: 3px; -fx-border-color: #FF0000;");
-            firstNameErrorLbl.setText("Fältet kan inte vara tomt");
-        } else if(textField.equals(lastNameTextField)){
-            lastNameErrorLbl.setText("Fältet kan inte vara tomt");
-        }else if(textField.equals(addressTextField)){
-            adressErrorLbl.setText("Fältet kan inte vara tomt");
-        }else if(textField.equals(postcodeTextField)){
-            postCodeErrorLbl.setText("Fältet kan inte vara tomt");
-        }else if(textField.equals(areaTextField)){
-            areaErrorLbl.setText("Fältet kan inte vara tomt");
-        }else if(textField.equals(mobileNumberTextField)){
-            mobileErrorLbl.setText("Fältet kan inte vara tomt");
-        }else if(textField.equals(emailTextField)){
-            emailErrorLbl.setText("Fältet kan inte vara tomt");
-            emailErrorLbl.setVisible(true);
-        } else{
-            textField.setStyle("");
-        }
-    }*/
-
-   /*
-    private void setErrorMessageOnIcon(Node node){
-        StringBuilder messageBuilder = new StringBuilder();
-
-        if(node instanceof TextField) {
-
-            TextField textField = (TextField) node;
-
-            if (isEmpty(textField)) {
-                messageBuilder.append("Fältet kan inte vara tomt\n");
-            }
-            if (textField.equals(mobileNumberTextField) || textField.equals(postcodeTextField)) {
-                if (!containsDigitsOnly(textField)) {
-                    messageBuilder.append("Fältet får endast innehålla siffror, bindestreck och mellanslag\n");
-                }
-
-                if(!isComplete(textField,getMinAllowedLength(textField))){
-                    messageBuilder.append("Fältet måste innehålla minst " + String.valueOf(getMinAllowedLength(textField)) + " siffror\n");
-                }
-            }
-
-            if (textField.equals(emailTextField)) {
-                if (!isInEmailForm(textField)) {
-                    messageBuilder.append("Fältet måste ha formen: email@email.com\n");
-                }
-            }
-        } else if(node instanceof ComboBox){
-
-            ComboBox comboBox = (ComboBox) node;
-
-            if(comboBox.getSelectionModel().isEmpty()){
-                messageBuilder.append("Fältet kan inte vara tomt\n");
-            }
-        }
-
-*/
 
 }

@@ -65,8 +65,9 @@ public class Timetable extends AnchorPane implements IWizardPage {
     }
 
     public void onNextButtonPressed(){
-        paymentPage = new Payment(this, deliveryTime);
+       paymentPage = new Payment(this, deliveryTime);
         timetableMainAnchorPane.getChildren().add(paymentPage);
+        paymentPage.inputPaymentInfo();
     }
 
     @Override

@@ -22,6 +22,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 import main.CustomerSupport.CustomerSupport;
 import main.DetailedView.DetailedView;
 
@@ -106,7 +107,11 @@ public class iMatBackendController implements Initializable {
     @FXML private Label emailStyleErrorLabel;
     @FXML private Label postCodeStyleErrorLabel;
     @FXML private Label mobileStyleErrorLabel;
-    @FXML private javafx.scene.control.TextField cardNumber;
+    //@FXML private javafx.scene.control.TextField cardNumber;
+    @FXML private javafx.scene.control.TextField cardNumber1;
+    @FXML private javafx.scene.control.TextField cardNumber2;
+    @FXML private javafx.scene.control.TextField cardNumber3;
+    @FXML private javafx.scene.control.TextField cardNumber4;
     @FXML private javafx.scene.control.TextField year;
     @FXML private javafx.scene.control.TextField month;
     @FXML private javafx.scene.control.TextField cvc;
@@ -115,6 +120,8 @@ public class iMatBackendController implements Initializable {
     @FXML private Label paymentStyleErrorLbl;
 
     public boolean homepaneIsFront = true;
+
+    Integer placeholder = null;
 
     //Resets the other unselected tabs
     /*public void resetSelectedTab(String currentTab){
@@ -283,7 +290,6 @@ public class iMatBackendController implements Initializable {
     public void onSaveButtonPressed(){
         if(allFilledInCorrectly()) {
             saveCustomerInfo();
-            System.out.println(customer.getFirstName());
         }
     }
     @FXML
@@ -338,12 +344,9 @@ public class iMatBackendController implements Initializable {
 
 //------------------------------------------------------------MinSida-----------------------------------------------------------------------//
 
-    //Customer customer = IMatDataHandler.getInstance().getCustomer();
 
     @FXML
     private void loadUserInfo(){
-        //Customer customer = IMatDataHandler.getInstance().getCustomer();
-      // CreditCard creditCard = IMatDataHandler.getInstance().getCreditCard();
         firstName.setText(customer.getFirstName());
         lastName.setText(customer.getLastName());
         email.setText(customer.getEmail());
@@ -351,14 +354,34 @@ public class iMatBackendController implements Initializable {
         postcode.setText(customer.getPostCode());
         mobileNumber.setText(customer.getMobilePhoneNumber());
         area.setText(customer.getPostAddress());
-        cardNumber.setText(creditCard.getCardNumber());
-        year.setText(String.valueOf(creditCard.getValidYear()));
-        month.setText(String.valueOf(creditCard.getValidMonth()));
-        cvc.setText(String.valueOf(creditCard.getVerificationCode()));
+        //cardNumber1.setText(creditCard.getCardNumber());
+        fillCreditCardNumberTextField();
+
+
+        if(creditCard.getVerificationCode() != 0) {
+            cvc.setText(String.valueOf(creditCard.getVerificationCode()));
+        } else {
+            cvc.setText("");
+            cvc.setPromptText("CVC/CVV");
+        }
+
+        if(creditCard.getValidMonth() != 0) {
+            month.setText(String.valueOf(creditCard.getValidMonth()));
+        } else {
+            month.setText("");
+            month.setPromptText("MM");
+        }
+
+        if(creditCard.getValidYear() != 0) {
+            year.setText(String.valueOf(creditCard.getValidYear()));
+        } else {
+            year.setText("");
+            year.setPromptText("ÅR");
+        }
 
     }
+
     private void saveCustomerInfo() {
-        //Customer customer = IMatDataHandler.getInstance().getCustomer();
         customer.setFirstName(firstName.getText());
         customer.setLastName(lastName.getText());
         customer.setMobilePhoneNumber(mobileNumber.getText());
@@ -366,21 +389,56 @@ public class iMatBackendController implements Initializable {
         customer.setAddress(address.getText());
         customer.setPostAddress(area.getText());
         customer.setPostCode(postcode.getText());
-        creditCard.setCardNumber(cardNumber.getText());
-        creditCard.setVerificationCode(Integer.parseInt(cvc.getText()));
-        creditCard.setValidMonth(Integer.parseInt(month.getText()));
-        creditCard.setValidYear(Integer.parseInt(year.getText()));
+        //creditCard.setCardNumber(cardNumber.getText());
+        creditCard.setCardNumber(saveCardNumber());
 
+        if(!cvc.getText().isEmpty()) {
+            creditCard.setVerificationCode(Integer.valueOf(cvc.getText()));
+        } else {
+            creditCard.setVerificationCode(0);
+            cvc.setText("");
+            cvc.setPromptText("CVC/CVV");
+        }
+
+        if(!month.getText().isEmpty()) {
+            creditCard.setValidMonth(Integer.valueOf(month.getText()));
+        } else {
+            creditCard.setValidMonth(0);
+            month.setText("");
+            month.setPromptText("MM");
+        }
+
+        if(!year.getText().isEmpty()) {
+            creditCard.setValidYear(Integer.valueOf(year.getText()));
+        } else {
+            creditCard.setValidYear(0);
+            year.setText("");
+            year.setPromptText("ÅR");
+        }
     }
+
 
     private boolean isCustomerInfoComplete(){
         return isInEmailForm(email)
-                && containsDigitsOnly(mobileNumber) && containsDigitsOnly(postcode)
-                && isComplete(postcode,getMinAllowedLength(postcode)) && isComplete(mobileNumber,getMinAllowedLength(mobileNumber))
-                && containsDigitsOnly(cardNumber) && containsDigitsOnly(cvc) && containsDigitsOnly(month)
-                && containsDigitsOnly(year) && isComplete(cardNumber, getMinAllowedLength(cardNumber))
-                && isComplete(cvc, getMinAllowedLength(cvc)) && isComplete(month, getMinAllowedLength(month))
-                && isComplete(year, getMinAllowedLength(year));
+                && containsDigitsOnly(mobileNumber)
+                && containsDigitsOnly(postcode)
+                && isComplete(postcode,getMinAllowedLength(postcode))
+                && isComplete(mobileNumber,getMinAllowedLength(mobileNumber))
+                && containsDigitsOnly(cvc)
+                && containsDigitsOnly(month)
+                && containsDigitsOnly(year)
+                && isComplete(cvc, getMinAllowedLength(cvc))
+                && isComplete(month, getMinAllowedLength(month))
+                && isComplete(year, getMinAllowedLength(year))
+                && containsDigitsOnly(cardNumber1)
+                && containsDigitsOnly(cardNumber2)
+                && containsDigitsOnly(cardNumber3)
+                && containsDigitsOnly(cardNumber4)
+                && isComplete(cardNumber1,getMinAllowedLength(cardNumber1))
+                && isComplete(cardNumber2,getMinAllowedLength(cardNumber2))
+                && isComplete(cardNumber3,getMinAllowedLength(cardNumber3))
+                && isComplete(cardNumber4,getMinAllowedLength(cardNumber4));
+
     }
 
     private boolean isInEmailForm(TextField textField){
@@ -405,8 +463,8 @@ public class iMatBackendController implements Initializable {
             return 10;
         } else if(textField.equals(postcode)){
             return 5;
-        } else if (textField.equals(cardNumber)){
-            return 16;
+        } else if (textField.equals(textField.equals(cardNumber1) || textField.equals(cardNumber2) ||textField.equals(cardNumber3) ||textField.equals(cardNumber4))){
+            return 4;
         }else if(textField.equals(cvc)) {
             return 3;
         } else if(textField.equals(month)){
@@ -431,11 +489,28 @@ public class iMatBackendController implements Initializable {
 
             return true;
 
-        } else{
+        } else if(email.getText().isEmpty() || mobileNumber.getText().isEmpty()
+                || postcode.getText().isEmpty() || cardNumber1.getText().isEmpty()
+                || cardNumber2.getText().isEmpty() || cardNumber3.getText().isEmpty() || cardNumber4.getText().isEmpty()
+                || cvc.getText().isEmpty() || month.getText().isEmpty()) {
+
+            emailStyleErrorLabel.setVisible(false);
+            mobileAmountErrorLabel.setVisible(false);
+            mobileStyleErrorLabel.setVisible(false);
+            postCodeAmountErrorLabel.setVisible(false);
+            postCodeStyleErrorLabel.setVisible(false);
+            paymentAmountErrorLbl.setVisible(false);
+            paymentStyleErrorLbl.setVisible(false);
+
+            return true;
+
+
+    } else {
 
             if (!(email.getText().isEmpty()) && !(isInEmailForm(email))){//*|| !isInEmailForm(emailTextField)*//*) {
                 emailStyleErrorLabel.setVisible(true);
             }
+
             if (!containsDigitsOnly(mobileNumber) && !(mobileNumber.getText().isEmpty())) {
                 mobileAmountErrorLabel.setVisible(false);
                 mobileStyleErrorLabel.setVisible(true);
@@ -443,6 +518,7 @@ public class iMatBackendController implements Initializable {
                 mobileAmountErrorLabel.setVisible(true);
                 mobileStyleErrorLabel.setVisible(false);
             }
+
             if (!containsDigitsOnly(postcode) && !(postcode.getText().isEmpty())) {
                 postCodeStyleErrorLabel.setVisible(true);
                 postCodeAmountErrorLabel.setVisible(false);
@@ -450,17 +526,66 @@ public class iMatBackendController implements Initializable {
                 postCodeStyleErrorLabel.setVisible(false);
                 postCodeAmountErrorLabel.setVisible(true);
             }
-            if (!containsDigitsOnly(cardNumber) && !(cardNumber.getText().isEmpty())|| !containsDigitsOnly(cvc) && !(cvc.getText().isEmpty())
-                    || !containsDigitsOnly(month) && !(month.getText().isEmpty()) || !containsDigitsOnly(year) && !(year.getText().isEmpty())){
+
+            if (!containsDigitsOnly(cardNumber1) && !(cardNumber1.getText().isEmpty())) {
                 paymentAmountErrorLbl.setVisible(false);
                 paymentStyleErrorLbl.setVisible(true);
-            } else if (!isComplete(cardNumber, getMinAllowedLength(cardNumber)) && !(cardNumber.getText().isEmpty())
-                    || !isComplete(cvc, getMinAllowedLength(cvc)) && !(cvc.getText().isEmpty())
+            } else if (!isComplete(cardNumber1, getMinAllowedLength(cardNumber1)) && !(cardNumber1.getText().isEmpty())) {
+                paymentAmountErrorLbl.setVisible(true);
+                paymentStyleErrorLbl.setVisible(false);
+            }
+
+            if (!containsDigitsOnly(cardNumber2) && !(cardNumber2.getText().isEmpty())) {
+                paymentAmountErrorLbl.setVisible(false);
+                paymentStyleErrorLbl.setVisible(true);
+            } else if (!isComplete(cardNumber2, getMinAllowedLength(cardNumber2)) && !(cardNumber2.getText().isEmpty())) {
+                paymentAmountErrorLbl.setVisible(true);
+                paymentStyleErrorLbl.setVisible(false);
+            }
+
+            if (!containsDigitsOnly(cardNumber3) && !(cardNumber3.getText().isEmpty())) {
+                paymentAmountErrorLbl.setVisible(false);
+                paymentStyleErrorLbl.setVisible(true);
+            } else if (!isComplete(cardNumber3, getMinAllowedLength(cardNumber3)) && !(cardNumber3.getText().isEmpty())) {
+                paymentAmountErrorLbl.setVisible(true);
+                paymentStyleErrorLbl.setVisible(false);
+            }
+
+            if (!containsDigitsOnly(cardNumber4) && !(cardNumber4.getText().isEmpty())) {
+                paymentAmountErrorLbl.setVisible(false);
+                paymentStyleErrorLbl.setVisible(true);
+            } else if (!isComplete(cardNumber4, getMinAllowedLength(cardNumber4)) && !(cardNumber4.getText().isEmpty())) {
+                paymentAmountErrorLbl.setVisible(true);
+                paymentStyleErrorLbl.setVisible(false);
+            }
+
+            if (!containsDigitsOnly(cvc) && !(cvc.getText().isEmpty()) || !containsDigitsOnly(month)
+                    && !(month.getText().isEmpty()) || !containsDigitsOnly(year) && !(year.getText().isEmpty())) {
+                paymentAmountErrorLbl.setVisible(false);
+                paymentStyleErrorLbl.setVisible(true);
+            } else if (!isComplete(cvc, getMinAllowedLength(cvc)) && !(cvc.getText().isEmpty())
                     || !isComplete(month, getMinAllowedLength(month)) && !(month.getText().isEmpty())
                     || !isComplete(year, getMinAllowedLength(year)) && !(year.getText().isEmpty())){
                 paymentAmountErrorLbl.setVisible(true);
                 paymentStyleErrorLbl.setVisible(false);
             }
+
+           /* if(!containsDigitsOnly(cardNumber1) && !(cardNumber1.getText().isEmpty())
+                    || !containsDigitsOnly(cardNumber2) && !(cardNumber2.getText().isEmpty())
+                    || !containsDigitsOnly(cardNumber3) && !(cardNumber3.getText().isEmpty())
+                    || !containsDigitsOnly(cardNumber4) && !(cardNumber4.getText().isEmpty())) {
+                paymentAmountErrorLbl.setVisible(false);
+                paymentStyleErrorLbl.setVisible(true);
+            } else if(!isComplete(cardNumber1, getMinAllowedLength(cardNumber1)) && !(cardNumber1.getText().isEmpty())
+                    || !isComplete(cardNumber2, getMinAllowedLength(cardNumber2)) && !(cardNumber2.getText().isEmpty())
+                    || !isComplete(cardNumber3, getMinAllowedLength(cardNumber3)) && !(cardNumber3.getText().isEmpty())
+                    || !isComplete(cardNumber4, getMinAllowedLength(cardNumber4)) && !(cardNumber4.getText().isEmpty())) {
+                paymentAmountErrorLbl.setVisible(true);
+                paymentStyleErrorLbl.setVisible(false);
+            }*/
+
+
+
 
             return false;
         }
@@ -474,6 +599,61 @@ public class iMatBackendController implements Initializable {
         postCodeStyleErrorLabel.setVisible(false);
         paymentAmountErrorLbl.setVisible(false);
         paymentStyleErrorLbl.setVisible(false);
+    }
+
+    private void fillCreditCardNumberTextField(){
+        if(!creditCard.getCardNumber().isEmpty()) {
+            int length = creditCard.getCardNumber().length();
+
+            if (length >= 4){
+                cardNumber1.setText(creditCard.getCardNumber().substring(0, 4));
+            }
+            if (length >= 8){
+                cardNumber2.setText(creditCard.getCardNumber().substring(4, 8));
+            }
+            if (length >= 12){
+                cardNumber3.setText(creditCard.getCardNumber().substring(8, 12));
+            }
+            if (length >= 16){
+                cardNumber4.setText(creditCard.getCardNumber().substring(12, 16));
+            }
+        } else {
+            cardNumber1.clear();
+            cardNumber2.clear();
+            cardNumber3.clear();
+            cardNumber4.clear();
+        }
+    }
+
+    private String saveCardNumber(){
+        StringBuilder number = new StringBuilder();
+        number.append(cardNumber1.getText());
+        number.append(cardNumber2.getText());
+        number.append(cardNumber3.getText());
+        number.append(cardNumber4.getText());
+
+        return number.toString();
+    }
+
+    public boolean CvcIsEmpty() {
+        if(cvc.getText().isEmpty()) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean MonthIsEmpty() {
+        if(month.getText().isEmpty()) {
+            return true;
+        }
+        return false;
+    }
+
+    public boolean YearIsEmpty() {
+        if(year.getText().isEmpty()) {
+            return true;
+        }
+        return false;
     }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------//
