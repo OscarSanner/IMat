@@ -10,7 +10,7 @@
    <children>
       <Pane layoutX="-78.0" layoutY="-74.0" prefHeight="75.0" prefWidth="75.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fx:id="selectedCircleImage" fitHeight="60.0" fitWidth="60.0" layoutX="8.0" layoutY="8.0" onMouseClicked="#deSelectDate" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="selectedCircleImage" fitHeight="60.0" fitWidth="60.0" layoutX="8.0" layoutY="8.0" onMouseClicked="#deSelectDate" onMouseEntered="#onSelectedEnter" onMouseExited="#onSelectedExit" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Res/Images/green_circle.png" />
                </image>
@@ -19,7 +19,7 @@
                   <String fx:value="LessDropShadow" />
                </styleClass>
             </ImageView>
-            <ImageView fx:id="unselectedCircleImage" fitHeight="60.0" fitWidth="60.0" layoutX="8.0" layoutY="8.0" onMouseClicked="#selectDate" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="unselectedCircleImage" fitHeight="60.0" fitWidth="60.0" layoutX="8.0" layoutY="8.0" onMouseClicked="#selectDate" onMouseEntered="#onUnselectedEnter" onMouseExited="#onUnselectedExit" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Res/Images/gray_circle.png" />
                </image>
