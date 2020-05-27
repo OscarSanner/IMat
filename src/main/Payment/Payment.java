@@ -16,6 +16,7 @@ import main.Timetable.Timetable;
 import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
@@ -132,7 +133,7 @@ public class Payment extends AnchorPane implements IWizardPage {
 
     private void finalizePurchase(){
         order = dataHandler.placeOrder();
-        order.setDate(deliveryTime);
+        //order.setDate(deliveryTime);
         shoppingCart.clear();
 
     }
