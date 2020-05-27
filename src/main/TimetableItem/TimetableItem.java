@@ -2,12 +2,14 @@ package main.TimetableItem;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import main.Timetable.Timetable;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.Objects;
 
 public class TimetableItem extends AnchorPane {
 
@@ -39,7 +41,33 @@ public class TimetableItem extends AnchorPane {
     }
 
     //----------------FAKTISK KOD-----------------
-
+    //================================================================================
+    // Timetable Hover
+    //================================================================================
+    @FXML
+    public void onUnselectedEnter(){
+        unselectedCircleImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/gray_circle_hover.png"
+        ))));
+    }
+    @FXML
+    public void onUnselectedExit(){
+        unselectedCircleImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/gray_circle.png"
+        ))));
+    }
+    @FXML
+    public void onSelectedEnter(){
+        selectedCircleImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/green_circle_hover.png"
+        ))));
+    }
+    @FXML
+    public void onSelectedExit(){
+        selectedCircleImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/green_circle.png"
+        ))));
+    }
 
     @FXML
     private void selectDate(){
