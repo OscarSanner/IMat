@@ -273,3 +273,9 @@
     -fx-font-family: sans-serif;
 }
 
+.accordion > .titled-pane {
+    -fx-padding: 0 0 1em 0;
+}
+
+
+
