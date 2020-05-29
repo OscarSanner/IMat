@@ -54,7 +54,7 @@
                   </Button>
                </children>
             </Pane>
-            <ImageView fx:id="tooltipImage" fitHeight="24.0" fitWidth="24.0" layoutX="3.0" layoutY="4.0" onMouseClicked="#onClick" pickOnBounds="true" preserveRatio="true" styleClass="cursor-info">
+            <ImageView fx:id="tooltipImage" fitHeight="24.0" fitWidth="24.0" layoutX="3.0" layoutY="4.0" onMouseClicked="#onClick" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
                <image>
                   <Image url="@../Res/Images/info_icon.png" />
                </image>
