@@ -13,37 +13,37 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="820.0" style="-fx-background-color: #F5FFFF;" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="productImage" fitHeight="200.0" fitWidth="220.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="35.0" />
-      <Label fx:id="productNameLabel" layoutX="301.0" layoutY="17.0" prefHeight="70.0" prefWidth="447.0" text="Varunamn" AnchorPane.topAnchor="17.0">
+      <ImageView fx:id="productImage" fitHeight="200.0" fitWidth="220.0" layoutX="25.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="35.0" />
+      <Label fx:id="productNameLabel" layoutX="286.0" layoutY="17.0" prefHeight="70.0" prefWidth="447.0" text="Varunamn" AnchorPane.topAnchor="17.0">
          <font>
             <Font name="SansSerif Regular" size="48.0" />
          </font>
       </Label>
-      <Label fx:id="productCategoryLabel" layoutX="301.0" layoutY="79.0" prefHeight="27.0" prefWidth="395.0" text="Kategori">
+      <Label fx:id="productCategoryLabel" layoutX="286.0" layoutY="79.0" prefHeight="27.0" prefWidth="395.0" text="Kategori">
          <font>
             <Font name="SansSerif Regular" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="priceLabel" layoutX="335.0" layoutY="102.0" prefHeight="53.0" prefWidth="192.0" text="X:-">
+      <Label fx:id="priceLabel" layoutX="320.0" layoutY="102.0" prefHeight="53.0" prefWidth="192.0" text="X:-">
          <font>
             <Font name="SansSerif Regular" size="36.0" />
          </font>
       </Label>
-      <Label layoutX="67.0" layoutY="270.0" styleClass="san-serif" text="Produktinformation:">
+      <Label layoutX="54.0" layoutY="270.0" styleClass="san-serif" text="Produktinformation:">
          <font>
             <Font name="SansSerif Italic" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="addButton" layoutX="288.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#addToShoppingCart" prefHeight="58.0" prefWidth="192.0" text="Köp">
+      <Button fx:id="addButton" layoutX="273.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#addToShoppingCart" prefHeight="58.0" prefWidth="192.0" text="Köp">
          <styleClass>
             <String fx:value="cursor-hand" />
             <String fx:value="productBuyButton" />
-            <String fx:value="dropShadow" />
+            <String fx:value="LessDropShadow" />
          </styleClass>
          <font>
             <Font name="SansSerif Regular" size="31.0" />
          </font></Button>
-      <TextArea fx:id="productTextArea" layoutX="67.0" layoutY="323.0" prefHeight="152.0" prefWidth="613.0" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. " wrapText="true">
+      <TextArea fx:id="productTextArea" layoutX="54.0" layoutY="323.0" prefHeight="152.0" prefWidth="613.0" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. " wrapText="true">
          <font>
             <Font name="SansSerif Regular" size="18.0" />
          </font>
@@ -52,18 +52,18 @@
             <String fx:value="san-serif" />
          </styleClass>
       </TextArea>
-      <Label fx:id="unitSuffixLabel" layoutX="398.0" layoutY="164.0" text="st">
+      <Label fx:id="unitSuffixLabel" layoutX="383.0" layoutY="164.0" text="st">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <ImageView fx:id="organicImage" fitHeight="50.0" fitWidth="50.0" layoutX="202.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="organicImage" fitHeight="50.0" fitWidth="50.0" layoutX="187.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Res/Images/eko.jpg" />
          </image>
       </ImageView>
       <Line endX="180.0" layoutX="400.0" layoutY="148.0" startX="-100.0" />
-      <ImageView fx:id="favouriteImage" fitHeight="65.0" fitWidth="65.0" layoutX="655.0" layoutY="20.0" onMouseClicked="#onFavouriteClicked" onMouseEntered="#onFavouriteEnter" onMouseExited="#onFavouriteExit" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="favouriteImage" fitHeight="65.0" fitWidth="65.0" layoutX="640.0" layoutY="20.0" onMouseClicked="#onFavouriteClicked" onMouseEntered="#onFavouriteEnter" onMouseExited="#onFavouriteExit" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Res/Images/favourite.png" />
          </image>
@@ -72,22 +72,22 @@
             <String fx:value="LessDropShadow" />
          </styleClass>
       </ImageView>
-      <ImageView fitHeight="65.0" fitWidth="125.0" layoutX="688.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="83.0" fitWidth="160.0" layoutX="662.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Res/Images/favourite_input_hint.png" />
+            <Image url="@../Res/Images/spara_som_favorit.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="286.0" layoutY="155.0" onMouseClicked="#decreaseQuantity" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
+      <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="271.0" layoutY="155.0" onMouseClicked="#decreaseQuantity" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
          <image>
             <Image url="@../Res/Images/minus.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="435.0" layoutY="155.0" onMouseClicked="#increaseQuantity" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
+      <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="420.0" layoutY="155.0" onMouseClicked="#increaseQuantity" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
          <image>
             <Image url="@../Res/Images/plus.png" />
          </image>
       </ImageView>
-      <TextField fx:id="quantityTextField" alignment="CENTER" layoutX="336.0" layoutY="161.0" prefHeight="33.0" prefWidth="56.0" text="1">
+      <TextField fx:id="quantityTextField" alignment="CENTER" layoutX="321.0" layoutY="161.0" prefHeight="33.0" prefWidth="56.0" text="1">
          <font>
             <Font name="SansSerif Regular" size="18.0" />
          </font>
