@@ -1,17 +1,18 @@
 .titled-pane:collapsed > .title
 {
-    -fx-background-color: #B1D5F6;
+    -fx-background-color: #5C88C4;
     -fx-background-insets: 0, 1, 2;
     -fx-background-radius: 7;
     -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
     -fx-border-width: 0px;
     -fx-border-color: white;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 5, 0, 0, 0);
+    -fx-text-fill: white;
 }
 
 .titled-pane > .title
 {
-    -fx-background-color: #037C99;
+    -fx-background-color: #496d9e;
     -fx-background-insets: 0, 1, 2;
 //-fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
     -fx-background-radius: 7;
@@ -19,27 +20,28 @@
     -fx-border-width: 0px;
     -fx-border-color: white;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 5, 0, 0, 0);
+    -fx-text-fill: white;
 }
 
 .titled-pane:hover > .title
 {
-    -fx-background-color: #2FAECD;
+    -fx-background-color: #83a0c9;
     -fx-background-insets: 0, 1, 2;
     -fx-background-radius: 7;
     -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
     -fx-border-width: 0px;
     -fx-border-color: white;
-
+    -fx-text-fill: white;
 }
 
-.titled-pane:collapsed:hover > .title
-{
-    -fx-background-color: #cee2f5;
+.titled-pane:collapsed:hover > .title {
+    -fx-background-color: #7a9dcc;
     -fx-background-insets: 0, 1, 2;
     -fx-background-radius: 7;
     -fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
     -fx-border-width: 0px;
     -fx-border-color: white;
+    -fx-text-fill: white;
 }
 
 .content{

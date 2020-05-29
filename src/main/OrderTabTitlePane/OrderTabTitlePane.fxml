@@ -19,7 +19,7 @@
    <graphic>
       <Pane prefHeight="58.0" prefWidth="463.0">
          <children>
-            <Label fx:id="dateLabel" layoutY="16.0" prefHeight="26.0" prefWidth="157.0" styleClass="labeltext" text="25e Maj 2020">
+            <Label fx:id="dateLabel" layoutY="16.0" prefHeight="26.0" prefWidth="157.0" styleClass="labeltext" text="25e Maj 2020" textFill="WHITE">
                <font>
                   <Font name="SansSerif Regular" size="12.0" />
                </font></Label>

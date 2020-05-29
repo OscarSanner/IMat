@@ -6,6 +6,7 @@ import se.chalmers.cse.dat216.project.Order;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class IMatBackendEngine {
 
@@ -33,7 +34,7 @@ public class IMatBackendEngine {
     }
 
     public void addSavedOrder(Order order){
-        savedOrders.put(order, ("Inköpslista " + savedOrders.size()));
+        savedOrders.put(order, ("Inköpslista " + (savedOrders.size() + 1)));
     }
 
     public void removeSavedOrder(Order order) {
@@ -106,5 +107,4 @@ public class IMatBackendEngine {
         button.getStyleClass().add("till-kassan");
         button.getStyleClass().add("dropShadow");
     }
-
 }
