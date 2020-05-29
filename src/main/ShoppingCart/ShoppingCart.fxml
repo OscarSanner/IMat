@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <fx:root fx:id="shoppingCartMainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
@@ -80,11 +81,11 @@
                                              <font>
                                                 <Font name="SansSerif Regular" size="24.0" />
                                              </font></Label>
-                                          <Label layoutX="451.0" layoutY="392.0" text="Totalbelopp">
+                                          <Label layoutX="397.0" layoutY="392.0" text="Totalbelopp">
                                              <font>
                                                 <Font name="SansSerif Bold" size="30.0" />
                                              </font></Label>
-                                          <Label fx:id="totalSumLabel" layoutX="671.0" layoutY="392.0" text="X kr">
+                                          <Label fx:id="totalSumLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="596.0" layoutY="392.0" prefHeight="36.0" prefWidth="152.0" text="X kr">
                                              <font>
                                                 <Font name="SansSerif Bold" size="30.0" />
                                              </font></Label>
@@ -104,6 +105,7 @@
                                                 <String fx:value="subCategoryButton" />
                                              </styleClass>
                                           </Button>
+                                          <Line endX="199.0" layoutX="549.0" layoutY="432.0" startX="-148.0" />
                                        </children>
                                     </AnchorPane>
                                  </children>
