@@ -19,10 +19,7 @@ import main.iMatBackendController;
 import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class ShoppingCart extends AnchorPane implements IWizardPage {
 
@@ -44,6 +41,8 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
     public se.chalmers.cse.dat216.project.ShoppingCart shoppingCart = IMatDataHandler.getInstance().getShoppingCart();
 
     Customer customer = IMatDataHandler.getInstance().getCustomer();
+
+    private Stack<WideShoppingCartItem> temporaryStack = new Stack<>();
 
     public ShoppingCart(iMatBackendController backendController){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ShoppingCart.fxml"));
@@ -115,13 +114,23 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
             populateShoppingCartPage();
         }
     };
+
+
     public void populateShoppingCartPage(){
         shoppingCartFlowPane.getChildren().clear();
 
-        int sum = 0;
+        int iterations = 0;
+        double sum = 0;
         for(ShoppingItem s: shoppingCart.getItems()){
-            shoppingCartFlowPane.getChildren().add(new WideShoppingCartItem(this, s));
-            sum += (int)(s.getAmount() * s.getProduct().getPrice());
+            iterations++;
+            temporaryStack.push(new WideShoppingCartItem(this, s));
+
+            sum += (s.getAmount() * s.getProduct().getPrice());
+        }
+        for(int i = 0; i <= iterations; i++){
+            if(!temporaryStack.isEmpty()){
+                shoppingCartFlowPane.getChildren().add(temporaryStack.pop());
+            }
         }
 
         totalSumLabel.setText(String.valueOf(sum) + " kr");
