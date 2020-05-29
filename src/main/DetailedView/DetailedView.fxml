@@ -38,6 +38,7 @@
          <styleClass>
             <String fx:value="cursor-hand" />
             <String fx:value="productBuyButton" />
+            <String fx:value="dropShadow" />
          </styleClass>
          <font>
             <Font name="SansSerif Regular" size="31.0" />
@@ -51,7 +52,6 @@
             <String fx:value="san-serif" />
          </styleClass>
       </TextArea>
-      <Button fx:id="exitButton" layoutX="761.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#closeDetailedView" prefHeight="45.0" prefWidth="45.0" styleClass="cursor-hand" text="Exit" />
       <Label fx:id="unitSuffixLabel" layoutX="398.0" layoutY="164.0" text="st">
          <font>
             <Font size="18.0" />
@@ -63,10 +63,14 @@
          </image>
       </ImageView>
       <Line endX="180.0" layoutX="400.0" layoutY="148.0" startX="-100.0" />
-      <ImageView fx:id="favouriteImage" fitHeight="65.0" fitWidth="65.0" layoutX="655.0" layoutY="20.0" onMouseClicked="#onFavouriteClicked" onMouseEntered="#onFavouriteEnter" onMouseExited="#onFavouriteExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
+      <ImageView fx:id="favouriteImage" fitHeight="65.0" fitWidth="65.0" layoutX="655.0" layoutY="20.0" onMouseClicked="#onFavouriteClicked" onMouseEntered="#onFavouriteEnter" onMouseExited="#onFavouriteExit" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Res/Images/favourite.png" />
          </image>
+         <styleClass>
+            <String fx:value="cursor-hand" />
+            <String fx:value="LessDropShadow" />
+         </styleClass>
       </ImageView>
       <ImageView fitHeight="65.0" fitWidth="125.0" layoutX="688.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -88,5 +92,14 @@
             <Font name="SansSerif Regular" size="18.0" />
          </font>
       </TextField>
+      <ImageView fx:id="exitImage" fitHeight="40.0" fitWidth="40.0" layoutX="757.0" layoutY="23.0" onMouseClicked="#closeDetailedView" onMouseEntered="#onExitEnter" onMouseExited="#onExitExit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Res/Images/exit.png" />
+         </image>
+         <styleClass>
+            <String fx:value="cursor-hand" />
+            <String fx:value="dropShadow" />
+         </styleClass>
+      </ImageView>
    </children>
 </fx:root>
