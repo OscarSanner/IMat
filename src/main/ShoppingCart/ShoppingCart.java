@@ -69,6 +69,7 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
         parentBackendController.mainAnchorPane.getChildren().remove(this);
         parentBackendController.updateProductFlowpane(parentBackendController.currentCategory);
         parentBackendController.updateShoppingCart();
+        parentBackendController.populateCarouselFlowPane();
         saveAsListButton.setStyle("");
         saveAsListButton.getStyleClass().add("button");
         saveAsListButton.getStyleClass().add("subCategoryButton");

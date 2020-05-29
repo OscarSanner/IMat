@@ -19,7 +19,7 @@
    <children>
       <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="800.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <Pane prefHeight="101.0" prefWidth="960.0" styleClass="topBar" BorderPane.alignment="CENTER">
+            <Pane prefHeight="108.0" prefWidth="960.0" styleClass="topBar" BorderPane.alignment="CENTER">
                <children>
                   <ImageView fitHeight="81.0" fitWidth="423.0" layoutX="247.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="escapeHatchImage" fitHeight="98.0" fitWidth="105.0" layoutX="54.0" layoutY="2.0" onMouseClicked="#closeWizard" onMouseEntered="#onEscapeHatchEnter" onMouseExited="#onEscapeHatchExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand" x="26.0">
@@ -177,9 +177,9 @@
                         </Pane>
                         <Pane layoutX="23.0" layoutY="24.0" prefHeight="43.0" prefWidth="778.0">
                            <children>
-                              <Label fx:id="pageNameLabel" layoutX="323.0" layoutY="7.0" text="Kortuppgifter" textFill="WHITE">
+                              <Label fx:id="pageNameLabel" layoutX="286.0" layoutY="-2.0" text="Kortuppgifter" textFill="WHITE">
                                  <font>
-                                    <Font name="SansSerif Regular" size="24.0" />
+                                    <Font name="SansSerif Regular" size="36.0" />
                                  </font></Label>
                            </children>
                            <styleClass>
