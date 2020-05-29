@@ -228,7 +228,7 @@
                      <children>
                         <Pane layoutY="9.0" prefHeight="58.0" prefWidth="569.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Button fx:id="shoppingTab" alignment="CENTER" layoutX="3.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onShoppingTabSelect" prefHeight="50.0" prefWidth="132.0" text="Handla">
+                              <Button fx:id="shoppingTab" alignment="CENTER" layoutX="5.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onShoppingTabSelect" prefHeight="50.0" prefWidth="133.0" text="Handla">
                                  <graphic>
                                     <ImageView fitHeight="37.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -246,9 +246,9 @@
                                     <String fx:value="LessDropShadow" />
                                  </styleClass>
                               </Button>
-                              <Button fx:id="orderTab" alignment="CENTER" layoutX="141.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onOrderTabSelect" prefHeight="50.0" prefWidth="117.0" text="Ordar">
+                              <Button fx:id="orderTab" alignment="CENTER" layoutX="143.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onOrderTabSelect" prefHeight="50.0" prefWidth="117.0" text="Ordar">
                                  <graphic>
-                                    <ImageView fitHeight="37.0" fitWidth="32.0" onMouseClicked="#onOrderTabSelect" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="32.0" fitWidth="40.0" onMouseClicked="#onOrderTabSelect" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@Res/Images/Order.png" />
                                        </image>
@@ -264,7 +264,7 @@
                                     <String fx:value="LessDropShadow" />
                                  </styleClass>
                               </Button>
-                              <Button fx:id="listTab" alignment="CENTER" layoutX="263.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onListtabSelect" prefHeight="50.0" prefWidth="164.0" text="Inköpslistor">
+                              <Button fx:id="listTab" alignment="CENTER" layoutX="265.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onListtabSelect" prefHeight="50.0" prefWidth="164.0" text="Inköpslistor">
                                  <font>
                                     <Font name="SansSerif Regular" size="18.0" />
                                  </font>
@@ -282,12 +282,12 @@
                                     <String fx:value="LessDropShadow" />
                                  </styleClass>
                               </Button>
-                              <Button fx:id="myPageTab" alignment="CENTER" layoutX="431.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onMyPageTabSelect" prefHeight="50.0" prefWidth="136.0" text="Min sida">
+                              <Button fx:id="myPageTab" alignment="CENTER" layoutX="434.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#onMyPageTabSelect" prefHeight="50.0" prefWidth="134.0" text="Min sida">
                                  <font>
                                     <Font name="SansSerif Regular" size="18.0" />
                                  </font>
                                  <graphic>
-                                    <ImageView fitHeight="37.0" fitWidth="32.0" onMouseClicked="#onOrderTabSelect" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="32.0" fitWidth="38.0" onMouseClicked="#onOrderTabSelect" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@Res/Images/min_sida.png" />
                                        </image>
