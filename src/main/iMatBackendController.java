@@ -1063,7 +1063,7 @@ public class iMatBackendController implements Initializable {
         }
     };
 
-    private List<ShoppingCartItem> visualShoppingItems = new ArrayList<>();
+    private Stack<ShoppingCartItem> temporaryStack = new Stack<>();
 
     //================================================================================
     // FlowPane
@@ -1081,16 +1081,20 @@ public class iMatBackendController implements Initializable {
     public void updateShoppingCart(){
 
         shoppingCartFlowPane.getChildren().clear();
-        visualShoppingItems.clear();
+        temporaryStack.clear();
 
+        int iterations = 0;
         double sum = 0;
         for(ShoppingItem s: shoppingCart.getItems()){
-            visualShoppingItems.add(new ShoppingCartItem(this, s));
+            iterations++;
+            temporaryStack.push(new ShoppingCartItem(this, s));
             sum += (s.getAmount() * s.getProduct().getPrice());
             sum = Math.round(sum * 100.0)/100.0;
         }
-        for(ShoppingCartItem sI: visualShoppingItems){
-            shoppingCartFlowPane.getChildren().add(sI);
+        for(int i = 0; i <= iterations; i++){
+            if(!temporaryStack.isEmpty()){
+                shoppingCartFlowPane.getChildren().add(temporaryStack.pop());
+            }
         }
 
         sumLabel.setText(sum + " kr");

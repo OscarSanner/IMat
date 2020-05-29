@@ -47,9 +47,9 @@
                               <Image url="@Res/Images/escape_hatch.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="searchBarTextField" layoutX="306.0" layoutY="35.0" onKeyTyped="#searchBarKeyPressed" prefHeight="25.0" prefWidth="562.0" promptText="Sök tusentals varor..." styleClass="cursor-text">
+                        <TextField fx:id="searchBarTextField" layoutX="270.0" layoutY="35.0" onKeyTyped="#searchBarKeyPressed" prefHeight="25.0" prefWidth="562.0" promptText="Sök tusentals varor..." styleClass="cursor-text">
                            <font>
-                              <Font name="SansSerif Regular" size="16.0" />
+                              <Font name="SansSerif Regular" size="19.0" />
                            </font>
                         </TextField>
                      </children>
