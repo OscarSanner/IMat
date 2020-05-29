@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Orientation;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -45,6 +46,7 @@ public class Timetable extends AnchorPane implements IWizardPage {
     @FXML private Label date6Label;
     @FXML private Label date7Label;
     @FXML private FlowPane timeTableFlowPane;
+    @FXML private Button nextButton;
 
 
     public Timetable(PersonalData parentBackendController){
@@ -59,6 +61,7 @@ public class Timetable extends AnchorPane implements IWizardPage {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+        nextButton.setDisable(true);
         initDateLabels();
         updateTimeTable();
 
@@ -175,6 +178,11 @@ public class Timetable extends AnchorPane implements IWizardPage {
 
     public void onDatePress(Date date){ //Selects the date
         deliveryTime = date;
+        if(date == null){
+            nextButton.setDisable(true);
+        }else{
+            nextButton.setDisable(false);
+        }
     }
 
     //================================================================================
