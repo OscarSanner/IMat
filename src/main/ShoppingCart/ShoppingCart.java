@@ -132,7 +132,7 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
         order.setItems(items);
         order.setDate(new Date());
         IMatBackendEngine.getInstance().addSavedOrder(order);
-        parentBackendController.onListtabSelect();
+        //parentBackendController.onListtabSelect();
     }
 }
 
