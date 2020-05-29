@@ -78,17 +78,17 @@
                   <Font name="SansSerif Regular" size="22.0" />
                </font>
             </Label>
-            <TextField fx:id="orderNumberTextField" layoutX="592.0" layoutY="384.0" prefHeight="37.0" prefWidth="220.0">
+            <TextField fx:id="orderNumberTextField" editable="false" layoutX="592.0" layoutY="384.0" prefHeight="37.0" prefWidth="220.0">
                <font>
                   <Font name="SansSerif Regular" size="20.0" />
                </font>
             </TextField>
-            <TextField fx:id="orderDateTextField" layoutX="592.0" layoutY="425.0" prefHeight="37.0" prefWidth="220.0">
+            <TextField fx:id="orderDateTextField" editable="false" layoutX="592.0" layoutY="425.0" prefHeight="37.0" prefWidth="220.0">
                <font>
                   <Font name="SansSerif Regular" size="20.0" />
                </font>
             </TextField>
-            <TextField fx:id="deliveryTimeTextField" layoutX="592.0" layoutY="466.0" prefHeight="37.0" prefWidth="220.0">
+            <TextField fx:id="deliveryTimeTextField" editable="false" layoutX="592.0" layoutY="466.0" prefHeight="37.0" prefWidth="220.0">
                <font>
                   <Font name="SansSerif Regular" size="20.0" />
                </font>
