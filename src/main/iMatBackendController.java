@@ -288,7 +288,7 @@ public class iMatBackendController implements Initializable {
     }
     @FXML
     public void onSaveButtonPressed(){
-        if(allFilledInCorrectly()) {
+        if(checkCardNumber() && checkCVC() && checkEmail() && checkMobile() && checkMonth() && checkPostCode() && checkYear()) { //allFilledInCorrectly()
             saveCustomerInfo();
         }
     }
@@ -463,8 +463,8 @@ public class iMatBackendController implements Initializable {
             return 10;
         } else if(textField.equals(postcode)){
             return 5;
-        } else if (textField.equals(textField.equals(cardNumber1) || textField.equals(cardNumber2) ||textField.equals(cardNumber3) ||textField.equals(cardNumber4))){
-            return 4;
+        /*} else if (textField.equals(textField.equals(cardNumber1) || textField.equals(cardNumber2) ||textField.equals(cardNumber3) ||textField.equals(cardNumber4))){
+            return 4;*/
         }else if(textField.equals(cvc)) {
             return 3;
         } else if(textField.equals(month)){
@@ -476,120 +476,141 @@ public class iMatBackendController implements Initializable {
         }
     }
 
-    private boolean allFilledInCorrectly() {
+    private boolean checkPostCode() {
 
-        if (isCustomerInfoComplete()) {
-            emailStyleErrorLabel.setVisible(false);
-            mobileAmountErrorLabel.setVisible(false);
-            mobileStyleErrorLabel.setVisible(false);
+        boolean check = true;
+        if (postcode.getText().isEmpty()) {
             postCodeAmountErrorLabel.setVisible(false);
             postCodeStyleErrorLabel.setVisible(false);
-            paymentAmountErrorLbl.setVisible(false);
-            paymentStyleErrorLbl.setVisible(false);
+            check = true;
+        } else if (!containsDigitsOnly(postcode) && !(postcode.getText().isEmpty())) {
+            postCodeStyleErrorLabel.setVisible(true);
+            postCodeAmountErrorLabel.setVisible(false);
+            check = false;
+        } else if (!isComplete(postcode, getMinAllowedLength(postcode)) && !(postcode.getText().isEmpty())) {
+            postCodeStyleErrorLabel.setVisible(false);
+            postCodeAmountErrorLabel.setVisible(true);
+            check = false;
+        }
+       return check;
+    }
 
-            return true;
+    private boolean checkMobile() {
 
-        } else if(email.getText().isEmpty() || mobileNumber.getText().isEmpty()
-                || postcode.getText().isEmpty() || cardNumber1.getText().isEmpty()
-                || cardNumber2.getText().isEmpty() || cardNumber3.getText().isEmpty() || cardNumber4.getText().isEmpty()
-                || cvc.getText().isEmpty() || month.getText().isEmpty()) {
+        boolean check = true;
 
-            emailStyleErrorLabel.setVisible(false);
+        if (mobileNumber.getText().isEmpty()) {
             mobileAmountErrorLabel.setVisible(false);
             mobileStyleErrorLabel.setVisible(false);
-            postCodeAmountErrorLabel.setVisible(false);
-            postCodeStyleErrorLabel.setVisible(false);
-            paymentAmountErrorLbl.setVisible(false);
-            paymentStyleErrorLbl.setVisible(false);
+            check = true;
+        } else if (!containsDigitsOnly(mobileNumber) && !(mobileNumber.getText().isEmpty())) {
+            mobileAmountErrorLabel.setVisible(false);
+            mobileStyleErrorLabel.setVisible(true);
+            check = false;
+        } else if (!isComplete(mobileNumber, getMinAllowedLength(mobileNumber)) && !(mobileNumber.getText().isEmpty())) {
+            mobileAmountErrorLabel.setVisible(true);
+            mobileStyleErrorLabel.setVisible(false);
+            check = false;
+        }
+        return check;
+    }
 
+    private boolean checkEmail() {
+
+        boolean check = true;
+
+        if (email.getText().isEmpty()) {
+            emailStyleErrorLabel.setVisible(false);
+            check = true;
+        } else if (!(email.getText().isEmpty()) && !(isInEmailForm(email))) {//*|| !isInEmailForm(emailTextField)*//*) {
+            emailStyleErrorLabel.setVisible(true);
+            check = false;
+        }
+        return check;
+    }
+
+    private boolean checkCardNumber() {
+
+        if (cardNumber1.getText().isEmpty() && cardNumber2.getText().isEmpty() && cardNumber3.getText().isEmpty() && cardNumber4.getText().isEmpty()) {
             return true;
-
-
-    } else {
-
-            if (!(email.getText().isEmpty()) && !(isInEmailForm(email))){//*|| !isInEmailForm(emailTextField)*//*) {
-                emailStyleErrorLabel.setVisible(true);
-            }
-
-            if (!containsDigitsOnly(mobileNumber) && !(mobileNumber.getText().isEmpty())) {
-                mobileAmountErrorLabel.setVisible(false);
-                mobileStyleErrorLabel.setVisible(true);
-            } else if (!isComplete(mobileNumber, getMinAllowedLength(mobileNumber)) && !(mobileNumber.getText().isEmpty())) {
-                mobileAmountErrorLabel.setVisible(true);
-                mobileStyleErrorLabel.setVisible(false);
-            }
-
-            if (!containsDigitsOnly(postcode) && !(postcode.getText().isEmpty())) {
-                postCodeStyleErrorLabel.setVisible(true);
-                postCodeAmountErrorLabel.setVisible(false);
-            } else if (!isComplete(postcode, getMinAllowedLength(postcode)) && !(postcode.getText().isEmpty())) {
-                postCodeStyleErrorLabel.setVisible(false);
-                postCodeAmountErrorLabel.setVisible(true);
-            }
-
-            if (!containsDigitsOnly(cardNumber1) && !(cardNumber1.getText().isEmpty())) {
-                paymentAmountErrorLbl.setVisible(false);
-                paymentStyleErrorLbl.setVisible(true);
-            } else if (!isComplete(cardNumber1, getMinAllowedLength(cardNumber1)) && !(cardNumber1.getText().isEmpty())) {
-                paymentAmountErrorLbl.setVisible(true);
-                paymentStyleErrorLbl.setVisible(false);
-            }
-
-            if (!containsDigitsOnly(cardNumber2) && !(cardNumber2.getText().isEmpty())) {
-                paymentAmountErrorLbl.setVisible(false);
-                paymentStyleErrorLbl.setVisible(true);
-            } else if (!isComplete(cardNumber2, getMinAllowedLength(cardNumber2)) && !(cardNumber2.getText().isEmpty())) {
-                paymentAmountErrorLbl.setVisible(true);
-                paymentStyleErrorLbl.setVisible(false);
-            }
-
-            if (!containsDigitsOnly(cardNumber3) && !(cardNumber3.getText().isEmpty())) {
-                paymentAmountErrorLbl.setVisible(false);
-                paymentStyleErrorLbl.setVisible(true);
-            } else if (!isComplete(cardNumber3, getMinAllowedLength(cardNumber3)) && !(cardNumber3.getText().isEmpty())) {
-                paymentAmountErrorLbl.setVisible(true);
-                paymentStyleErrorLbl.setVisible(false);
-            }
-
-            if (!containsDigitsOnly(cardNumber4) && !(cardNumber4.getText().isEmpty())) {
-                paymentAmountErrorLbl.setVisible(false);
-                paymentStyleErrorLbl.setVisible(true);
-            } else if (!isComplete(cardNumber4, getMinAllowedLength(cardNumber4)) && !(cardNumber4.getText().isEmpty())) {
-                paymentAmountErrorLbl.setVisible(true);
-                paymentStyleErrorLbl.setVisible(false);
-            }
-
-            if (!containsDigitsOnly(cvc) && !(cvc.getText().isEmpty()) || !containsDigitsOnly(month)
-                    && !(month.getText().isEmpty()) || !containsDigitsOnly(year) && !(year.getText().isEmpty())) {
-                paymentAmountErrorLbl.setVisible(false);
-                paymentStyleErrorLbl.setVisible(true);
-            } else if (!isComplete(cvc, getMinAllowedLength(cvc)) && !(cvc.getText().isEmpty())
-                    || !isComplete(month, getMinAllowedLength(month)) && !(month.getText().isEmpty())
-                    || !isComplete(year, getMinAllowedLength(year)) && !(year.getText().isEmpty())){
-                paymentAmountErrorLbl.setVisible(true);
-                paymentStyleErrorLbl.setVisible(false);
-            }
-
-           /* if(!containsDigitsOnly(cardNumber1) && !(cardNumber1.getText().isEmpty())
-                    || !containsDigitsOnly(cardNumber2) && !(cardNumber2.getText().isEmpty())
-                    || !containsDigitsOnly(cardNumber3) && !(cardNumber3.getText().isEmpty())
-                    || !containsDigitsOnly(cardNumber4) && !(cardNumber4.getText().isEmpty())) {
-                paymentAmountErrorLbl.setVisible(false);
-                paymentStyleErrorLbl.setVisible(true);
-            } else if(!isComplete(cardNumber1, getMinAllowedLength(cardNumber1)) && !(cardNumber1.getText().isEmpty())
-                    || !isComplete(cardNumber2, getMinAllowedLength(cardNumber2)) && !(cardNumber2.getText().isEmpty())
-                    || !isComplete(cardNumber3, getMinAllowedLength(cardNumber3)) && !(cardNumber3.getText().isEmpty())
-                    || !isComplete(cardNumber4, getMinAllowedLength(cardNumber4)) && !(cardNumber4.getText().isEmpty())) {
-                paymentAmountErrorLbl.setVisible(true);
-                paymentStyleErrorLbl.setVisible(false);
-            }*/
-
-
-
-
+        } else if (containsDigitsOnly(cardNumber1) && containsDigitsOnly(cardNumber2) && containsDigitsOnly(cardNumber3)
+                && containsDigitsOnly(cardNumber4) && isComplete(cardNumber1, 4)
+                && isComplete(cardNumber2, 4) && isComplete(cardNumber3, 4)
+                && isComplete(cardNumber4, 4)) {
+            return true;
+        } else {
+            paymentAmountErrorLbl.setVisible(true);
+            paymentStyleErrorLbl.setVisible(false);
             return false;
         }
+
     }
+
+    private boolean checkMonth() {
+        boolean check = true;
+
+        if (month.getText().isEmpty()) {
+            paymentAmountErrorLbl.setVisible(false);
+            paymentStyleErrorLbl.setVisible(false);
+            check = true;
+
+        } else if (!containsDigitsOnly(month) && !(month.getText().isEmpty())) {
+            paymentAmountErrorLbl.setVisible(false);
+            paymentStyleErrorLbl.setVisible(true);
+            check = false;
+        } else if (!isComplete(month, getMinAllowedLength(month)) && !(month.getText().isEmpty())) {
+            paymentAmountErrorLbl.setVisible(true);
+            paymentStyleErrorLbl.setVisible(false);
+            check = false;
+        }
+
+        return check;
+    }
+
+    private boolean checkYear() {
+
+        boolean check = true;
+
+        if (year.getText().isEmpty()) {
+            paymentAmountErrorLbl.setVisible(false);
+            paymentStyleErrorLbl.setVisible(false);
+            check = true;
+
+        } else if (!containsDigitsOnly(year) && !(year.getText().isEmpty())) {
+            paymentAmountErrorLbl.setVisible(false);
+            paymentStyleErrorLbl.setVisible(true);
+            check = false;
+
+        } else if (!isComplete(year, 2) && !(year.getText().isEmpty())) {
+            paymentAmountErrorLbl.setVisible(true);
+            paymentStyleErrorLbl.setVisible(false);
+            check = false;
+            System.out.println("mocha");
+        }
+        return check;
+
+    }
+
+    private boolean checkCVC() {
+       boolean check = true;
+
+        if (cvc.getText().isEmpty()) {
+            paymentAmountErrorLbl.setVisible(false);
+            paymentStyleErrorLbl.setVisible(false);
+            check = true;
+
+    } else if (!containsDigitsOnly(cvc) && !(cvc.getText().isEmpty())) {
+            paymentAmountErrorLbl.setVisible(false);
+            paymentStyleErrorLbl.setVisible(true);
+            check = false;
+        } else if (!isComplete(cvc, getMinAllowedLength(cvc)) && !(cvc.getText().isEmpty())) {
+            paymentAmountErrorLbl.setVisible(true);
+            paymentStyleErrorLbl.setVisible(false);
+            check = false;
+        }
+        return check;
+    }
+
 
     private void makeLblsInvisible() {
         mobileStyleErrorLabel.setVisible(false);
