@@ -120,7 +120,6 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
         }
 
         totalSumLabel.setText(String.valueOf(sum) + " kr");
-
     }
 
     public void saveAsList(){
@@ -135,5 +134,3 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
         //parentBackendController.onListtabSelect();
     }
 }
-
-

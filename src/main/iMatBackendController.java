@@ -1172,6 +1172,8 @@ public class iMatBackendController implements Initializable {
                 searchResultLabel.setText("Sökresultat för " + "'" + userInput + "'");
                 searchedItems = dataHandler.findProducts(userInput);
                 updateProductsWithSearch(userInput);
+                populateSubCategoryFlowPane("search");
+
 
             }
       //  }
