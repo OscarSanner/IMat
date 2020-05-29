@@ -146,12 +146,7 @@
                            <font>
                               <Font name="SansSerif Regular" size="12.0" />
                            </font></Button>
-                        <ImageView fitHeight="67.0" fitWidth="361.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Res/Images/KATEGORIER_header.png" />
-                           </image>
-                        </ImageView>
-                        <Pane layoutY="1.0" prefHeight="78.0" prefWidth="170.0" style="-fx-border-color: white; -fx-border-width: 2px;">
+                        <Pane prefHeight="78.0" prefWidth="170.0" style="-fx-border-color: white; -fx-border-width: 2px;" styleClass="wizBar">
                            <children>
                               <Label layoutX="15.0" layoutY="22.0" text="KATEGORIER" textFill="WHITE">
                                  <font>
@@ -159,10 +154,6 @@
                                  </font>
                               </Label>
                            </children>
-                           <styleClass>
-                              <String fx:value="wizBar" />
-                              <String fx:value="dropShadow" />
-                           </styleClass>
                         </Pane>
                      </children>
                   </Pane>
