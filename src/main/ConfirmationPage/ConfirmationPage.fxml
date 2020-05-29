@@ -12,7 +12,7 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #D7EBFE;" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane prefHeight="800.0" prefWidth="1200.0" styleClass="confBackground">
+      <Pane prefHeight="800.0" prefWidth="1200.0" styleClass="favs">
          <children>
             <Label layoutX="465.0" layoutY="525.0" text="Ditt köp finns i &quot;Ordrar&quot;" underline="true">
                <font>
@@ -62,7 +62,7 @@
                   <String fx:value="dropShadow" />
                </styleClass>
             </Button>
-            <Pane layoutX="328.0" layoutY="378.0" prefHeight="135.0" prefWidth="525.0" style="-fx-background-color: #DCEEFF;" />
+            <Pane layoutX="328.0" layoutY="378.0" prefHeight="135.0" prefWidth="525.0" styleClass="favs" />
             <Label layoutX="481.0" layoutY="389.0" text="Order No.: ">
                <font>
                   <Font name="SansSerif Regular" size="22.0" />

@@ -304,7 +304,7 @@
 }
 
 .tabButtonsSelected{
-    -fx-background-color: #83A8DB
+    -fx-background-color: #5e83b5
 }
 
 .categoryButtons:hover, .subCategoryButton:hover{

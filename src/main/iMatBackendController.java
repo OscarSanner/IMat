@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
+import javafx.geometry.Pos;
 import javafx.scene.control.*;
 
 import javafx.scene.control.Button;
@@ -946,9 +947,11 @@ public class iMatBackendController implements Initializable {
                     IMatBackendEngine.getInstance().setActiveSubcategory(button);
                 }
             });
-            button.setPrefSize(10 * button.getText().length() + 30,35);
+            button.setPrefSize(10 * button.getText().length() + 30,60);
             button.getStyleClass().add("subCategoryButton");
             button.getStyleClass().add("cursor-hand");
+            button.setAlignment(Pos.CENTER);
+            button.setPadding(new Insets(0, 0, 15, 0));
             subCategoryFlowPane.getChildren().add(button);
         }
     }

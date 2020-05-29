@@ -140,7 +140,7 @@
                         </Pane>
                         <Pane layoutX="23.0" layoutY="24.0" prefHeight="43.0" prefWidth="778.0">
                            <children>
-                              <Label fx:id="pageNameLabel" layoutX="292.0" layoutY="-1.0" text="KUNDVAGN">
+                              <Label fx:id="pageNameLabel" layoutX="292.0" layoutY="-1.0" text="KUNDVAGN" textFill="WHITE">
                                  <font>
                                     <Font name="SansSerif Regular" size="36.0" />
                                  </font></Label>

@@ -218,7 +218,7 @@
                         </Pane>
                         <Pane layoutX="23.0" layoutY="24.0" prefHeight="43.0" prefWidth="778.0">
                            <children>
-                              <Label fx:id="pageNameLabel" layoutX="296.0" layoutY="5.0" text="Personuppgifter">
+                              <Label fx:id="pageNameLabel" layoutX="296.0" layoutY="5.0" text="Personuppgifter" textFill="WHITE">
                                  <font>
                                     <Font name="SansSerif Regular" size="24.0" />
                                  </font></Label>
