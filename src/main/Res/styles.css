@@ -270,10 +270,9 @@
     -fx-padding: 0 0 1em 0;
 }
 
+----------COLORS-----------------------------------
 
-----------------------------COLORS---------------------------
-
-.categoryButtons, .subCategoryButton, .wizBar, .confBackground,{
+.categoryButtons, .subCategoryButton, .wizBar, .confBackground{
     -fx-background-color: #3D6BAA;
 }
 

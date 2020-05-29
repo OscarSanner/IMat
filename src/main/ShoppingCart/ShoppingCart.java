@@ -35,6 +35,7 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
     @FXML public FlowPane shoppingCartFlowPane;
     @FXML public Label totalSumLabel;
     @FXML public ImageView escapeHatchImage;
+    @FXML public Button saveAsListButton;
 
 
     //Other
@@ -56,8 +57,6 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
             throw new RuntimeException(exception);
         }
         initShoppingCartFlowPane();
-
-
     }
     @FXML
     public void onNextButtonPressed(){
@@ -71,6 +70,12 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
         parentBackendController.mainAnchorPane.getChildren().remove(this);
         parentBackendController.updateProductFlowpane(parentBackendController.currentCategory);
         parentBackendController.updateShoppingCart();
+        saveAsListButton.setStyle("");
+        saveAsListButton.getStyleClass().add("button");
+        saveAsListButton.getStyleClass().add("subCategoryButton");
+        saveAsListButton.setStyle("-fx-border-width: 0; -fx-background-radius: 30; -fx-border-width: 0");
+        saveAsListButton.setText("Spara som inköpslista");
+        saveAsListButton.setDisable(false);
 
     }
 
@@ -132,5 +137,8 @@ public class ShoppingCart extends AnchorPane implements IWizardPage {
         order.setDate(new Date());
         IMatBackendEngine.getInstance().addSavedOrder(order);
         //parentBackendController.onListtabSelect();
+        saveAsListButton.setStyle("-fx-background-color: green; -fx-border-width: 0; -fx-background-radius: 30; -fx-border-width: 0");
+        saveAsListButton.setText("Inköpslista tillagd!");
+        saveAsListButton.setDisable(true);
     }
 }

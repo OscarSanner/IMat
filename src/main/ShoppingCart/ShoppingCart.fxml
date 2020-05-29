@@ -80,11 +80,15 @@
                                              <font>
                                                 <Font name="SansSerif Regular" size="24.0" />
                                              </font></Label>
-                                          <Label layoutX="35.0" layoutY="386.0" text="Totalbelopp">
+                                          <Label layoutX="451.0" layoutY="392.0" text="Totalbelopp">
                                              <font>
                                                 <Font name="SansSerif Bold" size="30.0" />
                                              </font></Label>
-                                          <Button fx:id="saveButton" layoutX="363.0" layoutY="388.0" mnemonicParsing="false" onMouseClicked="#saveAsList" prefHeight="44.0" prefWidth="226.0" styleClass="cursor-hand" text="Spara som inköpslista">
+                                          <Label fx:id="totalSumLabel" layoutX="671.0" layoutY="392.0" text="X kr">
+                                             <font>
+                                                <Font name="SansSerif Bold" size="30.0" />
+                                             </font></Label>
+                                          <Button fx:id="saveAsListButton" layoutX="20.0" layoutY="388.0" mnemonicParsing="false" onMouseClicked="#saveAsList" prefHeight="44.0" prefWidth="252.0" style="-fx-background-radius: 30; -fx-border-width: 0;" text="Spara som inköpslista">
                                              <font>
                                                 <Font name="SansSerif Regular" size="16.0" />
                                              </font>
@@ -94,11 +98,12 @@
                                                       <Image url="@../Res/Images/inkopslistor.png" />
                                                    </image>
                                                 </ImageView>
-                                             </graphic></Button>
-                                          <Label fx:id="totalSumLabel" layoutX="671.0" layoutY="392.0" text="X kr">
-                                             <font>
-                                                <Font name="SansSerif Bold" size="30.0" />
-                                             </font></Label>
+                                             </graphic>
+                                             <styleClass>
+                                                <String fx:value="cursor-hand" />
+                                                <String fx:value="subCategoryButton" />
+                                             </styleClass>
+                                          </Button>
                                        </children>
                                     </AnchorPane>
                                  </children>
