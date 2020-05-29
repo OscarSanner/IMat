@@ -283,12 +283,12 @@
 }
 
 .wizBar, .confBackground{
-    -fx-background-color: #3D6BAA;
+    -fx-background-color: #5C88C4;
     -fx-text-fill: white;
 }
 
 .categoryButtonsSelected, .subCategoryButtonSelected{
-    -fx-background-color: #235599;
+    -fx-background-color: #14335c;
 }
 
 .topBar{
@@ -308,7 +308,7 @@
 }
 
 .categoryButtons:hover, .subCategoryButton:hover{
-    -fx-background-color: #477fcc;
+    -fx-background-color: #1e5194;
 
 }
 
