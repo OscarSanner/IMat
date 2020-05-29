@@ -760,6 +760,7 @@ public class iMatBackendController implements Initializable {
         shoppingTabPane.toFront();
        // theRealResetOfSearchBar();
         searchResultLabel.setVisible(false);
+        onShoppingTabSelect();
     }
 
     public void onOffersButtonPressed(){
@@ -772,6 +773,7 @@ public class iMatBackendController implements Initializable {
         populateSubCategoryFlowPane("Offers");
        // theRealResetOfSearchBar();
         searchResultLabel.setVisible(false);
+        onShoppingTabSelect();
     }
 
     public void onBreadButtonPressed(){
@@ -786,6 +788,7 @@ public class iMatBackendController implements Initializable {
         categoryPane.toFront();
        // theRealResetOfSearchBar();
         searchResultLabel.setVisible(false);
+        onShoppingTabSelect();
     }
 
     public void onMeatAndFishButtonPressed(){
@@ -800,6 +803,7 @@ public class iMatBackendController implements Initializable {
         shoppingTabPane.toFront();
        // theRealResetOfSearchBar();
         searchResultLabel.setVisible(false);
+        onShoppingTabSelect();
     }
 
     public void onVeggiesButtonPressed(){
@@ -814,6 +818,7 @@ public class iMatBackendController implements Initializable {
         shoppingTabPane.toFront();
        // theRealResetOfSearchBar();
         searchResultLabel.setVisible(false);
+        onShoppingTabSelect();
     }
 
     public void onDrinkButtonPressed(){
@@ -828,6 +833,7 @@ public class iMatBackendController implements Initializable {
         shoppingTabPane.toFront();
       //  theRealResetOfSearchBar();
         searchResultLabel.setVisible(false);
+        onShoppingTabSelect();
     }
 
     public void onDairyButtonPressed(){
@@ -842,6 +848,7 @@ public class iMatBackendController implements Initializable {
         shoppingTabPane.toFront();
         //theRealResetOfSearchBar();
         searchResultLabel.setVisible(false);
+        onShoppingTabSelect();
     }
 
     public void onPantryButtonPressed(){
@@ -856,6 +863,7 @@ public class iMatBackendController implements Initializable {
         shoppingTabPane.toFront();
        // theRealResetOfSearchBar();
         searchResultLabel.setVisible(false);
+        onShoppingTabSelect();
     }
 
     public void onSnacksButtonPressed(){
@@ -870,6 +878,7 @@ public class iMatBackendController implements Initializable {
         shoppingTabPane.toFront();
       //  theRealResetOfSearchBar();
         searchResultLabel.setVisible(false);
+        onShoppingTabSelect();
     }
 
     public void onSpicesButtonPressed(){
@@ -884,6 +893,7 @@ public class iMatBackendController implements Initializable {
         shoppingTabPane.toFront();
      //   theRealResetOfSearchBar();
         searchResultLabel.setVisible(false);
+        onShoppingTabSelect();
     }
 
     private void populateSubCategoryFlowPane(String category) {
@@ -968,7 +978,7 @@ public class iMatBackendController implements Initializable {
                     IMatBackendEngine.getInstance().setActiveSubcategory(button);
                 }
             });
-            button.setPrefSize(10 * button.getText().length() + 30,60);
+            button.setPrefSize(10 * button.getText().length() + 50,60);
             button.getStyleClass().add("subCategoryButton");
             button.getStyleClass().add("cursor-hand");
             button.setAlignment(Pos.CENTER);

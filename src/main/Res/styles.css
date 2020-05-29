@@ -174,11 +174,6 @@
     -fx-font-family: sans-serif;
 }
 
-.cursor-info{
-     -fx-cursor: pointer;
-     -fx-cursor: help;
-}
-
 .features{
     -fx-border-width: 7px;
     -fx-border-color: white;
