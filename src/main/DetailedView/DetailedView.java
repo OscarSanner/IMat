@@ -43,6 +43,7 @@ public class DetailedView extends AnchorPane {
     @FXML private Label unitLabel;
     @FXML private Label unitSuffixLabel;
     @FXML private TextField quantityTextField;
+    @FXML private ImageView exitImage;
 
     //Frontend elements
     @FXML private Label quantityLabel;
@@ -112,6 +113,22 @@ public class DetailedView extends AnchorPane {
         }
 
 
+    }
+
+    //================================================================================
+    // Exit Hover
+    //================================================================================
+    @FXML
+    public void onExitEnter(){
+        exitImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/exit_hover.png"
+        ))));
+    }
+    @FXML
+    public void onExitExit(){
+        exitImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
+                "main/Res/Images/exit.png"
+        ))));
     }
 
     @FXML
@@ -216,7 +233,7 @@ public class DetailedView extends AnchorPane {
         this.unitSuffixLabel.setText(product.getUnitSuffix());
 
         //Product information is missing
-        this.productTextArea.setText("PRODUCT INFORMATION IS MISSING.--> Product.java");
+        this.productTextArea.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in dignissim ligula. Quisque ac gravida libero. Ut in lectus tortor. Praesent sed tincidunt ante. Sed sed finibus velit. Duis id.");
 
         onFavouriteExit(); //Resets favourite icon
 
