@@ -19,7 +19,7 @@
    <children>
       <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="800.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="101.0" prefWidth="960.0" styleClass="topBar" BorderPane.alignment="CENTER">
                <children>
                   <ImageView fitHeight="81.0" fitWidth="423.0" layoutX="247.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="escapeHatchImage" fitHeight="98.0" fitWidth="105.0" layoutX="54.0" layoutY="2.0" onMouseClicked="#closeWizard" onMouseEntered="#onEscapeHatchEnter" onMouseExited="#onEscapeHatchExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand" x="26.0">
@@ -35,7 +35,7 @@
                         <Point3D />
                      </rotationAxis>
                   </ImageView>
-                  <Button layoutX="977.0" layoutY="11.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #037C99;" styleClass="cursor-hand" text="Kundservice &amp; Hjälp" textFill="WHITE" wrapText="true">
+                  <Button layoutX="977.0" layoutY="11.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="Kundservice &amp; Hjälp" textFill="WHITE" wrapText="true">
                      <graphic>
                         <ImageView fitHeight="65.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -46,6 +46,10 @@
                      <font>
                         <Font name="SansSerif Bold" size="17.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="topBar" />
+                        <String fx:value="cursor-hand" />
+                     </styleClass>
                   </Button>
                </children>
             </Pane>
@@ -171,13 +175,17 @@
                               </StackPane>
                            </children>
                         </Pane>
-                        <Pane layoutX="23.0" layoutY="24.0" prefHeight="43.0" prefWidth="778.0" style="-fx-background-color: #B1D5F6;" styleClass="border">
+                        <Pane layoutX="23.0" layoutY="24.0" prefHeight="43.0" prefWidth="778.0">
                            <children>
                               <Label fx:id="pageNameLabel" layoutX="323.0" layoutY="7.0" text="Kortuppgifter">
                                  <font>
                                     <Font name="SansSerif Regular" size="24.0" />
                                  </font></Label>
                            </children>
+                           <styleClass>
+                              <String fx:value="border" />
+                              <String fx:value="wizBar" />
+                           </styleClass>
                         </Pane>
                      </children>
                   </Pane>

@@ -12,7 +12,7 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #D7EBFE;" stylesheets="@../Res/styles.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #B1D5F6;">
+      <Pane prefHeight="800.0" prefWidth="1200.0" styleClass="confBackground">
          <children>
             <Label layoutX="465.0" layoutY="525.0" text="Ditt köp finns i &quot;Ordrar&quot;" underline="true">
                <font>
@@ -31,7 +31,7 @@
                   <Font name="SansSerif Regular" size="24.0" />
                </font>
             </Label>
-            <Pane layoutY="-5.0" prefHeight="276.0" prefWidth="1200.0" style="-fx-background-color: #037C99;" styleClass="dropShadow">
+            <Pane layoutY="-5.0" prefHeight="276.0" prefWidth="1200.0">
                <children>
                   <ImageView fitHeight="256.0" fitWidth="256.0" layoutX="472.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -39,6 +39,10 @@
                      </image>
                   </ImageView>
                </children>
+               <styleClass>
+                  <String fx:value="dropShadow" />
+                  <String fx:value="topBar" />
+               </styleClass>
             </Pane>
             <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="446.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
                <image>

@@ -73,7 +73,6 @@
 .categoryButtons{
     -fx-border-color: white;
     -fx-border-width: 1px;
-    -fx-background-color: #B1D5F6;
     -fx-font-size: 18;
 }
 .categoryButtons:hover{
@@ -88,12 +87,10 @@
     -fx-text-fill: white;
     -fx-border-color: black;
     -fx-border-width: 1px;
-    -fx-background-color: #037C99;
     -fx-font-size: 18;
 }
 
 .categoryButtonsSelected:hover{
-    -fx-background-color: #2FAECD;
     -fx-font-weight: bold;
     -fx-font-size: 18;
     -fx-cursor: pointer;
@@ -103,14 +100,12 @@
 .subCategoryButton{
     -fx-border-color: white;
     -fx-border-width: 1px;
-    -fx-background-color: #B1D5F6;
     -fx-font-size: 18;
     -fx-text-align: center;
     -fx-align-content: center;
     -fx-font-family: sans-serif;
 }
 .subCategoryButton:hover{
-    -fx-background-color: #cee2f5;
     -fx-font-weight: bold;
     -fx-font-size: 18;
     -fx-text-align: center;
@@ -123,14 +118,12 @@
     -fx-text-fill: white;
     -fx-border-color: black;
     -fx-border-width: 1px;
-    -fx-background-color: #037C99;
     -fx-font-size: 18;
     -fx-text-align: center;
     -fx-align-content: center;
     -fx-font-family: sans-serif;
 }
 .subCategoryButtonSelected:hover{
-    -fx-background-color: #2FAECD;
     -fx-font-weight: bold;
     -fx-font-size: 18;
     -fx-text-align: center;
@@ -278,4 +271,52 @@
 }
 
 
+----------------------------COLORS---------------------------
 
+.categoryButtons, .subCategoryButton, .wizBar, .confBackground,{
+    -fx-background-color: #3D6BAA;
+}
+
+.categoryButtons, .subCategoryButton{
+    -fx-background-color: #3D6BAA;
+    -fx-text-fill: white;
+}
+
+.wizBar, .confBackground{
+    -fx-background-color: #3D6BAA;
+    -fx-text-fill: white;
+}
+
+.categoryButtonsSelected, .subCategoryButtonSelected{
+    -fx-background-color: #235599;
+}
+
+.topBar{
+    -fx-background-color: #5C88C4;
+}
+
+.tabButtons{
+    -fx-background-color: #B4CDEF;;
+}
+
+.favs{
+    -fx-background-color: #B4CDEF;
+}
+
+.tabButtonsSelected{
+    -fx-background-color: #83A8DB
+}
+
+.categoryButtons:hover, .subCategoryButton:hover{
+    -fx-background-color: #477fcc;
+
+}
+
+.tabButtons:hover{
+    -fx-background-color: #bfdaff;
+
+}
+
+.tabButtonsSelected:hover{
+    -fx-background-color: #94c1ff;
+}

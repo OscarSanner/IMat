@@ -14,6 +14,7 @@ import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -44,7 +45,8 @@ public class OrderTabTitlePane extends TitledPane implements ICustomTitledPane {
         }
         this.order = order;
         populatePane(order.getItems());
-        dateLabel.setText("25e maj");
+        SimpleDateFormat timeFormat = new SimpleDateFormat("dd MMMM yyyy");
+        dateLabel.setText(timeFormat.format(order.getDate()));
     }
 
     public void populatePane(List<ShoppingItem> items){

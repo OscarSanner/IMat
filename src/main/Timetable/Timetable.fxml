@@ -16,9 +16,9 @@
    <children>
       <BorderPane prefHeight="800.0" prefWidth="1200.0">
          <top>
-            <Pane prefHeight="101.0" prefWidth="960.0" style="-fx-background-color: #037C99;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="101.0" prefWidth="960.0" styleClass="topBar" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="977.0" layoutY="11.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #037C99;" styleClass="cursor-hand" text="Kundservice &amp; Hjälp" textFill="WHITE" wrapText="true">
+                  <Button layoutX="977.0" layoutY="11.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="Kundservice &amp; Hjälp" textFill="WHITE" wrapText="true">
                      <graphic>
                         <ImageView fitHeight="65.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -28,7 +28,11 @@
                      </graphic>
                      <font>
                         <Font name="SansSerif Bold" size="17.0" />
-                     </font></Button>
+                     </font>
+                     <styleClass>
+                        <String fx:value="topBar" />
+                        <String fx:value="cursor-hand" />
+                     </styleClass></Button>
                   <ImageView fx:id="escapeHatchImage" fitHeight="98.0" fitWidth="105.0" layoutX="54.0" layoutY="2.0" onMouseClicked="#closeWizard" onMouseEntered="#onEscapeHatchEnter" onMouseExited="#onEscapeHatchExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand" x="26.0">
                      <image>
                         <Image url="@../Res/Images/escape_hatch.png" />
@@ -47,13 +51,17 @@
                <children>
                   <Pane layoutX="187.0" layoutY="55.0" prefHeight="590.0" prefWidth="826.0" style="-fx-background-color: white;" styleClass="dropShadow">
                      <children>
-                        <Pane layoutX="23.0" layoutY="24.0" prefHeight="43.0" prefWidth="778.0" style="-fx-background-color: #B1D5F6;" styleClass="border">
+                        <Pane layoutX="23.0" layoutY="24.0" prefHeight="43.0" prefWidth="778.0">
                            <children>
                               <Label fx:id="pageNameLabel" layoutX="269.0" layoutY="-1.0" text="Välj leveranstid">
                                  <font>
                                     <Font name="SansSerif Regular" size="36.0" />
                                  </font></Label>
                            </children>
+                           <styleClass>
+                              <String fx:value="border" />
+                              <String fx:value="wizBar" />
+                           </styleClass>
                         </Pane>
                         <Pane layoutX="31.0" layoutY="529.0" prefHeight="52.0" prefWidth="763.0" style="-fx-background-color: white;">
                            <children>

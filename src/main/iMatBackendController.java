@@ -177,7 +177,7 @@ public class iMatBackendController implements Initializable {
             System.out.println(accordion.getChildrenUnmodifiable().size());
             ICustomTitledPane activePane = (ICustomTitledPane) accordion.getExpandedPane();
             System.out.println(activePane.getOrder().getItems().size());
-            accordion.setPrefHeight((67 * accordion.getChildrenUnmodifiable().size()) + (60 * activePane.getOrder().getItems().size()));
+            accordion.setPrefHeight((72 * accordion.getChildrenUnmodifiable().size()) + (60 * activePane.getOrder().getItems().size()));
         }
     }
 

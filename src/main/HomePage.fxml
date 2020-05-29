@@ -24,9 +24,9 @@
          <top>
             <Pane prefHeight="121.0" prefWidth="1200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                <children>
-                  <Pane prefHeight="108.0" prefWidth="1200.0" style="-fx-background-color: #037C99;" styleClass="dropShadow">
+                  <Pane prefHeight="108.0" prefWidth="1200.0">
                      <children>
-                        <Button layoutX="977.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#onCustomerSupportPressed" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: #037C99;" styleClass="cursor-hand" text="Kundservice &amp; Hjälp" textFill="WHITE" wrapText="true">
+                        <Button layoutX="977.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#onCustomerSupportPressed" prefHeight="60.0" prefWidth="200.0" text="Kundservice &amp; Hjälp" textFill="WHITE" wrapText="true">
                            <graphic>
                               <ImageView fitHeight="65.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -37,6 +37,10 @@
                            <font>
                               <Font name="SansSerif Bold" size="17.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="cursor-hand" />
+                              <String fx:value="topBar" />
+                           </styleClass>
                         </Button>
                         <ImageView fx:id="escapeHatchImage" fitHeight="98.0" fitWidth="105.0" layoutX="54.0" layoutY="2.0" onMouseClicked="#onHomeButtonPressed" onMouseEntered="#onEscapeHatchEnter" onMouseExited="#onEscapeHatchExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand" x="26.0">
                            <image>
@@ -49,6 +53,10 @@
                            </font>
                         </TextField>
                      </children>
+                     <styleClass>
+                        <String fx:value="topBar" />
+                        <String fx:value="dropShadow" />
+                     </styleClass>
                   </Pane>
                </children>
             </Pane>
@@ -143,6 +151,19 @@
                               <Image url="@Res/Images/KATEGORIER_header.png" />
                            </image>
                         </ImageView>
+                        <Pane layoutY="1.0" prefHeight="78.0" prefWidth="170.0" style="-fx-border-color: white; -fx-border-width: 2px;">
+                           <children>
+                              <Label layoutX="15.0" layoutY="22.0" text="KATEGORIER" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="23.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <styleClass>
+                              <String fx:value="wizBar" />
+                              <String fx:value="dropShadow" />
+                           </styleClass>
+                        </Pane>
                      </children>
                   </Pane>
                </children>
@@ -180,6 +201,19 @@
                               <Image url="@Res/Images/KUNDVAGN_header.png" />
                            </image>
                         </ImageView>
+                        <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="71.0" prefWidth="295.0" style="-fx-border-color: white; -fx-border-width: 2px;">
+                           <children>
+                              <Label layoutX="77.0" layoutY="19.0" text="KUNDVAGN" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="23.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <styleClass>
+                              <String fx:value="wizBar" />
+                              <String fx:value="dropShadow" />
+                           </styleClass>
+                        </Pane>
                      </children>
                   </AnchorPane>
                </children>
@@ -497,11 +531,12 @@
                                                       <Image url="@Res/Images/next-button.png" />
                                                    </image>
                                                 </ImageView>
-                                                <Label alignment="CENTER" layoutX="147.0" layoutY="291.0" onMouseClicked="#onFavouritesButtonPressed" prefHeight="29.0" prefWidth="276.0" style="-fx-background-color: #B1D5F6;" text="Mina favoriter">
+                                                <Label alignment="CENTER" layoutX="147.0" layoutY="291.0" onMouseClicked="#onFavouritesButtonPressed" prefHeight="29.0" prefWidth="276.0" text="Mina favoriter">
                                                    <font>
                                                       <Font name="SansSerif Regular" size="32.0" />
                                                    </font>
                                                    <styleClass>
+                                                      <String fx:value="favs" />
                                                       <String fx:value="cursor-hand" />
                                                       <String fx:value="dropShadow" />
                                                    </styleClass>

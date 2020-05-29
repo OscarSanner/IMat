@@ -12,7 +12,7 @@
    <content>
       <AnchorPane fx:id="orderTitleAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="575.0">
          <children>
-            <FlowPane fx:id="orderTitlePaneFlowPane" layoutX="16.0" layoutY="-2.0" prefHeight="0.0" prefWidth="536.0" style="-fx-background-color: gray;" />
+            <FlowPane fx:id="orderTitlePaneFlowPane" layoutX="16.0" layoutY="-2.0" prefHeight="0.0" prefWidth="536.0" style="-fx-background-color: gray;" styleClass="titleFlowPane" />
          </children>
       </AnchorPane>
    </content>
