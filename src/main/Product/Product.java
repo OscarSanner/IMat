@@ -121,7 +121,7 @@ public class Product extends AnchorPane {
         buyButton.setVisible(false);    //Hides the button temporarily to show the +/- buttons underneath.
 
         parentController.purchaseFeedback.startAnimation(product, "1", product.getUnitSuffix());
-
+        parentController.shoppingCartScrollPane.setVvalue( parentController.shoppingCartScrollPane.getPrefViewportHeight());
     }
 
     @FXML
