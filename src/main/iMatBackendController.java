@@ -322,6 +322,7 @@ public class iMatBackendController implements Initializable {
         homepaneIsFront = true;
         populateCarouselFlowPane();
        // theRealResetOfSearchBar();
+        IMatBackendEngine.getInstance().clearActiveCategory();
     }
 
     //----------------FAKTISK KOD-----------------

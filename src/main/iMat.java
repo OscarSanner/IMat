@@ -27,7 +27,7 @@ public class iMat extends Application {
         stage.setScene(scene);
         stage.show();
         stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream(
-                "main/Res/Images/398569911007576065.png"
+                "main/Res/Images/shop.png"
         ))));
 
 
