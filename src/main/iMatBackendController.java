@@ -1032,7 +1032,6 @@ public class iMatBackendController implements Initializable {
                 }
 
                 listofProducts.add(temporaryProduct);
-                //listofProducts.add(new main.Product.Product(this, p));
 
             }
             //BubbleSort
@@ -1058,9 +1057,8 @@ public class iMatBackendController implements Initializable {
 
 
     public void showPurchaseFeedback(Product product, String quantity, String unitSuffix){
-        //purchaseFeedback.setFeedbackLabel(quantity + " " + unitSuffix + " " + product.getName() + " har lagts till i varukorgen");
-        purchaseFeedback.setFeedbackLabel(product.getName() + " har lagts till i varukorgen");
-        purchaseFeedback.setVisible(true);
+        //purchaseFeedback.setFeedbackLabel(product.getName() + " har lagts till i varukorgen");
+        //purchaseFeedback.setVisible(true);
 
         System.out.println(purchaseFeedback.isVisible()
         );

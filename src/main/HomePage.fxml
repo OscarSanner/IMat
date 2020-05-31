@@ -507,9 +507,9 @@
                                        <children>
                                           <Pane prefHeight="587.0" prefWidth="570.0" style="-fx-background-color: white;">
                                              <children>
-                                                <ScrollPane fx:id="carouselScrollPane" hbarPolicy="NEVER" layoutX="52.0" layoutY="340.0" prefHeight="234.0" prefWidth="466.0" styleClass="dropShadow" vbarPolicy="NEVER">
+                                                <ScrollPane fx:id="carouselScrollPane" accessibleRole="IMAGE_VIEW" focusTraversable="false" hbarPolicy="NEVER" layoutX="52.0" layoutY="340.0" prefHeight="234.0" prefWidth="466.0" styleClass="dropShadow" vbarPolicy="NEVER">
                                                    <content>
-                                                      <FlowPane fx:id="carouselFlowPane" prefHeight="234.0" prefWidth="513.0" rowValignment="TOP" style="-fx-background-color: white;" />
+                                                      <FlowPane fx:id="carouselFlowPane" prefHeight="234.0" prefWidth="464.0" rowValignment="TOP" style="-fx-background-color: white;" />
                                                    </content>
                                                 </ScrollPane>
                                                 <ImageView fx:id="rightArrowImage" fitHeight="45.0" fitWidth="45.0" layoutX="520.0" layoutY="418.0" onMouseClicked="#rotateCarouselRight" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
