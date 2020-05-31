@@ -277,7 +277,7 @@ public class Payment extends AnchorPane implements IWizardPage {
             return true;
 
         } else{
-                if(!cardNumberTextField1.getText().isEmpty()) {
+                /*if(!cardNumberTextField1.getText().isEmpty())*/ {
             /*if (!containsDigitsOnly(cardNumberTextField)) {
                 cardStyleErrorLabel.setVisible(true);
                 cardErrorLabel.setVisible(false);
@@ -290,7 +290,7 @@ public class Payment extends AnchorPane implements IWizardPage {
                 cardStyleErrorLabel.setVisible(false);
                 cardErrorLabel.setVisible(true);
                 cardAmountErrorLabel.setVisible(false);*/
-                    if (!containsDigitsOnly(cardNumberTextField1)) {
+            if (!containsDigitsOnly(cardNumberTextField1)) {
                         cardStyleErrorLabel.setVisible(true);
                         cardErrorLabel.setVisible(false);
                         cardAmountErrorLabel.setVisible(false);
@@ -304,7 +304,7 @@ public class Payment extends AnchorPane implements IWizardPage {
                         cardAmountErrorLabel.setVisible(false);
                     }
                 }
-             if(!cardNumberTextField2.getText().isEmpty()) {
+//             if(!cardNumberTextField2.getText().isEmpty()) {
                  if (!containsDigitsOnly(cardNumberTextField2)) {
                      cardStyleErrorLabel.setVisible(true);
                      cardErrorLabel.setVisible(false);
@@ -319,7 +319,7 @@ public class Payment extends AnchorPane implements IWizardPage {
                      cardAmountErrorLabel.setVisible(false);
                  }
              }
-            if(!cardNumberTextField3.getText().isEmpty()) {
+            /*if(!cardNumberTextField3.getText().isEmpty())*/ {
                 if (!containsDigitsOnly(cardNumberTextField3)) {
                     cardStyleErrorLabel.setVisible(true);
                     cardErrorLabel.setVisible(false);
@@ -334,7 +334,7 @@ public class Payment extends AnchorPane implements IWizardPage {
                     cardAmountErrorLabel.setVisible(false);
                 }
             }
-            if(!cardNumberTextField4.getText().isEmpty()) {
+            /*if(!cardNumberTextField4.getText().isEmpty())*/ {
                 if (!containsDigitsOnly(cardNumberTextField4)) {
                     cardStyleErrorLabel.setVisible(true);
                     cardErrorLabel.setVisible(false);
@@ -349,7 +349,7 @@ public class Payment extends AnchorPane implements IWizardPage {
                     cardAmountErrorLabel.setVisible(false);
                 }
             }
-            if(!cvcTextField.getText().isEmpty()) {
+            /*if(!cvcTextField.getText().isEmpty())*/ {
                 if (!containsDigitsOnly(cvcTextField)) {
                     cardStyleErrorLabel.setVisible(true);
                     cardErrorLabel.setVisible(false);
@@ -364,7 +364,7 @@ public class Payment extends AnchorPane implements IWizardPage {
                     cardAmountErrorLabel.setVisible(false);
                 }
             }
-            if(!monthTextField.getText().isEmpty()) {
+            /*if(!monthTextField.getText().isEmpty())*/ {
                 if (!containsDigitsOnly(monthTextField)) {
                     cardStyleErrorLabel.setVisible(true);
                     cardErrorLabel.setVisible(false);
@@ -379,7 +379,7 @@ public class Payment extends AnchorPane implements IWizardPage {
                     cardAmountErrorLabel.setVisible(false);
                 }
             }
-            if(!yearTextField.getText().isEmpty()) {
+            /*if(!yearTextField.getText().isEmpty())*/ {
                 if (!containsDigitsOnly(yearTextField)) {
                     cardStyleErrorLabel.setVisible(true);
                     cardErrorLabel.setVisible(false);
@@ -397,7 +397,6 @@ public class Payment extends AnchorPane implements IWizardPage {
 
             return false;
         }
-    }
 
     private void makePaymentLblsInvisible() {
         cardStyleErrorLabel.setVisible(false);
