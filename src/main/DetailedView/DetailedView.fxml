@@ -82,7 +82,7 @@
             <Image url="@../Res/Images/minus.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="412.0" layoutY="155.0" onMouseClicked="#increaseQuantity" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
+      <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="422.0" layoutY="155.0" onMouseClicked="#increaseQuantity" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
          <image>
             <Image url="@../Res/Images/plus.png" />
          </image>
