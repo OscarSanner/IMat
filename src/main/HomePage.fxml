@@ -522,7 +522,7 @@
                                                       <Image url="@Res/Images/next-button.png" />
                                                    </image>
                                                 </ImageView>
-                                                <Label alignment="CENTER" layoutX="147.0" layoutY="291.0" onMouseClicked="#onFavouritesButtonPressed" prefHeight="29.0" prefWidth="276.0" text="Mina favoriter">
+                                                <Label alignment="CENTER" layoutX="147.0" layoutY="291.0" onMouseClicked="#onOffersButtonPressed" prefHeight="29.0" prefWidth="276.0" text="Erbjudanden">
                                                    <font>
                                                       <Font name="SansSerif Regular" size="32.0" />
                                                    </font>

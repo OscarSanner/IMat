@@ -707,7 +707,7 @@ public class iMatBackendController implements Initializable {
 
         main.Product.Product temporaryProduct;
         List<main.Product.Product> listofProducts = new ArrayList<>();
-        for (Product p: ProductHandler.getProductsFromCategory("Mina Favoriter")){
+        for (Product p: ProductHandler.getProductsFromCategory("Bär")){
             temporaryProduct = new main.Product.Product(this, p);
 
             for(ShoppingItem s: dataHandler.getShoppingCart().getItems()){
@@ -771,6 +771,8 @@ public class iMatBackendController implements Initializable {
         homepaneIsFront = false;
         subCategoryFlowPane.getChildren().removeAll();
         productFlowPane.getChildren().removeAll();
+        populateProductFlowpane("Bär");
+
         IMatBackendEngine.getInstance().setActiveCategory(offersButton);
         populateSubCategoryFlowPane("Offers");
        // theRealResetOfSearchBar();
