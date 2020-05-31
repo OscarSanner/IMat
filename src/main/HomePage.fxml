@@ -473,6 +473,36 @@
 
                               <StackPane fx:id="shoppingTabPane" prefHeight="595.0" prefWidth="570.0" style="-fx-background-color: white;">
                                  <children>
+                                    <SplitPane fx:id="categoryPane" dividerPositions="0.09242144177449169" orientation="VERTICAL" prefHeight="591.0" prefWidth="570.0" styleClass="split-pane-divider">
+                                       <items>
+                                          <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="52.0" prefWidth="563.0">
+                                             <children>
+                                                <FlowPane fx:id="subCategoryFlowPane" layoutX="2.0" layoutY="-2.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="558.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="-2.0">
+                                                   <children>
+                                                      <Label fx:id="searchResultLabel" disable="true" prefHeight="51.0" prefWidth="327.0" text="Sökresultat för &quot;XX&quot;">
+                                                         <font>
+                                                            <Font name="SansSerif Regular" size="20.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </FlowPane>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="481.0" prefWidth="570.0">
+                                             <children>
+                                                <ScrollPane fx:id="productsScrollPane" layoutY="3.0" prefHeight="538.0" prefWidth="571.0" styleClass="scroll-paneShopping">
+                                                   <content>
+                                                      <FlowPane fx:id="productFlowPane" prefHeight="538.0" prefWidth="568.0" prefWrapLength="1000.0" rowValignment="TOP" style="-fx-background-color: white;">
+                                                         <rotationAxis>
+                                                            <Point3D />
+                                                         </rotationAxis>
+                                                      </FlowPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </items>
+                                    </SplitPane>
                                     <StackPane fx:id="homePane" prefHeight="578.0" prefWidth="570.0">
                                        <children>
                                           <Pane prefHeight="587.0" prefWidth="570.0" style="-fx-background-color: white;">
@@ -525,36 +555,6 @@
                                           </Pane>
                                        </children>
                                     </StackPane>
-                                    <SplitPane fx:id="categoryPane" dividerPositions="0.09242144177449169" orientation="VERTICAL" prefHeight="591.0" prefWidth="570.0" styleClass="split-pane-divider">
-                                       <items>
-                                          <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="52.0" prefWidth="563.0">
-                                             <children>
-                                                <FlowPane fx:id="subCategoryFlowPane" layoutX="2.0" layoutY="-2.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="48.0" prefWidth="558.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="-2.0">
-                                                   <children>
-                                                      <Label fx:id="searchResultLabel" disable="true" prefHeight="51.0" prefWidth="327.0" text="Sökresultat för &quot;XX&quot;">
-                                                         <font>
-                                                            <Font name="SansSerif Regular" size="20.0" />
-                                                         </font>
-                                                      </Label>
-                                                   </children>
-                                                </FlowPane>
-                                             </children>
-                                          </AnchorPane>
-                                          <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="481.0" prefWidth="570.0">
-                                             <children>
-                                                <ScrollPane fx:id="productsScrollPane" layoutY="3.0" prefHeight="538.0" prefWidth="571.0" styleClass="scroll-paneShopping">
-                                                   <content>
-                                                      <FlowPane fx:id="productFlowPane" prefHeight="538.0" prefWidth="568.0" prefWrapLength="1000.0" rowValignment="TOP" style="-fx-background-color: white;">
-                                                         <rotationAxis>
-                                                            <Point3D />
-                                                         </rotationAxis>
-                                                      </FlowPane>
-                                                   </content>
-                                                </ScrollPane>
-                                             </children>
-                                          </AnchorPane>
-                                       </items>
-                                    </SplitPane>
                                  </children>
                               </StackPane>
                            </children>
