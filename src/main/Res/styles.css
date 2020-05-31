@@ -314,3 +314,14 @@
 .tabButtonsSelected:hover{
     -fx-background-color: #94c1ff;
 }
+
+.promDoneButton{
+    -fx-background-color:  #FF5E5E;
+    -fx-font-weight: bold;
+    -fx-font-size: 22;
+}
+.promDoneButton:hover{
+    -fx-background-color:  #FFA8A8;
+    -fx-font-weight: bold;
+    -fx-font-size: 24;
+}

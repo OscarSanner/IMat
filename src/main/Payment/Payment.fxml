@@ -115,7 +115,7 @@
                                                       </Label>
                                                    </children>
                                                 </Pane>
-                                                <Button fx:id="payButton" layoutX="141.0" layoutY="359.0" mnemonicParsing="false" onMouseClicked="#onPayButtonPressed" prefHeight="60.0" prefWidth="425.0" style="-fx-background-color: #FF5E5E;" stylesheets="@../Res/styles.css" text="Slutför köpet" textFill="WHITE">
+                                                <Button fx:id="payButton" layoutX="141.0" layoutY="359.0" mnemonicParsing="false" onMouseClicked="#onPayButtonPressed" prefHeight="60.0" prefWidth="425.0" stylesheets="@../Res/styles.css" text="Slutför köpet" textFill="WHITE">
                                                    <opaqueInsets>
                                                       <Insets />
                                                    </opaqueInsets>
@@ -125,6 +125,7 @@
                                                    <styleClass>
                                                       <String fx:value="cursor-hand" />
                                                       <String fx:value="dropShadow" />
+                                                      <String fx:value="promDoneButton" />
                                                    </styleClass>
                                                 </Button>
                                                 <ImageView fitHeight="40.0" fitWidth="57.0" layoutX="82.0" layoutY="79.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">

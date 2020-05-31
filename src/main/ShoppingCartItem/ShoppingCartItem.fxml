@@ -13,7 +13,7 @@
    <children>
       <Label fx:id="productNameLabel" layoutX="6.0" layoutY="-5.0" prefHeight="47.0" prefWidth="201.0" text="Ekologisk blandfärs" wrapText="true">
          <font>
-            <Font name="SansSerif Regular" size="17.0" />
+            <Font name="SansSerif Regular" size="18.0" />
          </font></Label>
       <ImageView fx:id="itemImage" fitHeight="55.0" fitWidth="55.0" layoutX="143.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
@@ -21,7 +21,7 @@
          </image></ImageView>
       <Label fx:id="priceLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="128.0" layoutY="36.0" prefHeight="25.0" prefWidth="71.0" styleClass="san-serif" text="kr" textAlignment="CENTER" underline="true">
          <font>
-            <Font name="SansSerif Regular" size="15.0" />
+            <Font name="SansSerif Regular" size="16.0" />
          </font></Label>
       <ImageView fx:id="minusImage" fitHeight="25.0" fitWidth="25.0" layoutX="9.0" layoutY="36.0" onMouseClicked="#onMinusButtonPressed" onMouseEntered="#onMinusEnter" onMouseExited="#onMinusExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
          <image>
@@ -33,21 +33,23 @@
             <Image url="@../Res/Images/plus_minus_alt/plus_alt.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="paperBinImage" fitHeight="32.0" fitWidth="32.0" layoutX="217.0" layoutY="27.0" onMouseClicked="#onPaperbinPressed" onMouseEntered="#onPaperBinEnter" onMouseExited="#onPaperBinExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
+      <ImageView fx:id="paperBinImage" fitHeight="32.0" fitWidth="32.0" layoutX="218.0" layoutY="27.0" onMouseClicked="#onPaperbinPressed" onMouseEntered="#onPaperBinEnter" onMouseExited="#onPaperBinExit" pickOnBounds="true" preserveRatio="true" styleClass="cursor-hand">
          <image>
             <Image url="@../Res/Images/paperbin_blue.png" />
          </image>
       </ImageView>
-      <Label fx:id="paperBinLabel" layoutX="207.0" layoutY="6.0" text="Ta bort">
+      <Label fx:id="paperBinLabel" layoutX="208.0" layoutY="6.0" text="Ta bort">
          <font>
             <Font name="SansSerif Regular" size="15.0" />
          </font></Label>
       <TextField fx:id="amountTextField" alignment="CENTER" editable="false" layoutX="38.0" layoutY="36.0" prefHeight="30.0" prefWidth="63.0">
          <font>
-            <Font name="SansSerif Regular" size="14.0" />
+            <Font name="SansSerif Regular" size="15.0" />
          </font>
       </TextField>
-      <Line endX="-5.50006103515625" endY="32.0" layoutX="210.0" layoutY="28.0" startX="-5.5" startY="-16.0" />
+      <Line endX="-5.5" endY="-5.0" layoutX="211.0" layoutY="28.0" opacity="0.2" startX="-5.5" startY="-16.0" stroke="#3a72ff" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="3.5" />
+      <Line endX="-5.5" endY="-5.0" layoutX="211.0" layoutY="45.0" opacity="0.2" startX="-5.5" startY="-16.0" stroke="#3a72ff" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="3.5" />
+      <Line endX="-5.5" endY="-5.0" layoutX="211.0" layoutY="63.0" opacity="0.2" startX="-5.5" startY="-16.0" stroke="#3a72ff" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="3.5" />
    </children>
    <styleClass>
       <String fx:value="LessDropShadow" />

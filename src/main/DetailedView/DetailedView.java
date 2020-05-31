@@ -162,6 +162,7 @@ public class DetailedView extends AnchorPane {
             if(Integer.parseInt(quantityTextField.getText()) == 0){
                 // Do nothing
                 System.out.println("zerooo");
+
             }
            else if(!alreadyAdded){
                 shoppingItem.setAmount(Double.parseDouble(quantityTextField.getText()));
