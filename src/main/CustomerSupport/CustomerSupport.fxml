@@ -17,12 +17,12 @@
          <top>
             <Pane prefHeight="101.0" prefWidth="960.0" styleClass="topBar" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="113.0" fitWidth="101.0" layoutX="24.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="113.0" fitWidth="101.0" layoutX="24.0" layoutY="3.0" onMouseClicked="#onCloseWindowsButtonPressed" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Res/Images/escape_hatch.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="829.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#onCloseWindowsButtonPressed" prefHeight="60.0" prefWidth="200.0" text="Kundservice &amp; Hjälp" textFill="WHITE" wrapText="true">
+                  <Button layoutX="973.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#onCloseWindowsButtonPressed" prefHeight="60.0" prefWidth="200.0" text="Kundservice &amp; Hjälp" textFill="WHITE" wrapText="true">
                      <graphic>
                         <ImageView fitHeight="65.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -50,51 +50,74 @@
                            <children>
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
                                  <children>
-                                    <Pane layoutX="86.0" layoutY="21.0" prefHeight="61.0" prefWidth="642.0" styleClass="wizBar" stylesheets="@../Res/styles.css">
+                                    <Pane layoutX="86.0" layoutY="123.0" prefHeight="443.0" prefWidth="642.0" style="-fx-background-color: white;">
                                        <children>
-                                          <Label layoutX="199.0" layoutY="10.0" prefHeight="38.0" prefWidth="261.0" text="Kundservice &amp; Hjälp" textAlignment="CENTER">
+                                          <Label layoutX="64.0" layoutY="75.0" text="0765633221">
                                              <font>
-                                                <Font size="30.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </Pane>
-                                    <Pane layoutX="86.0" layoutY="123.0" prefHeight="443.0" prefWidth="642.0" styleClass="wizBar">
-                                       <children>
-                                          <Label layoutX="53.0" layoutY="19.0" prefHeight="139.0" prefWidth="552.0" text="Om du har synpunkter eller behöver hjälp så kan du alltid kontakta vår kundservice. Kontaktuppgifterna hittar du nedan." wrapText="true">
-                                             <font>
-                                                <Font name="SansSerif Regular" size="20.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="121.0" layoutY="247.0" text="0765633221">
-                                             <font>
-                                                <Font size="16.0" />
+                                                <Font name="SansSerif Regular" size="24.0" />
                                              </font></Label>
-                                          <Label layoutX="121.0" layoutY="315.0" text="galan474@yahoo.es">
+                                          <Label layoutX="59.0" layoutY="312.0" prefHeight="27.0" prefWidth="255.0" text="kundservice@iMat.se">
                                              <font>
-                                                <Font name="SansSerif Regular" size="16.0" />
+                                                <Font name="SansSerif Regular" size="24.0" />
                                              </font>
                                           </Label>
-                                          <Label layoutX="121.0" layoutY="178.0" text="Vardagar: 8.00 - 16.00">
+                                          <Label layoutX="66.0" layoutY="190.0" text="Vardagar: 8.00 - 16.00">
                                              <font>
-                                                <Font size="16.0" />
+                                                <Font name="SansSerif Regular" size="24.0" />
                                              </font></Label>
-                                          <ImageView fitHeight="37.0" fitWidth="36.0" layoutX="63.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="37.0" fitWidth="36.0" layoutX="25.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../Res/Images/llamada.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fitHeight="34.0" fitWidth="39.0" layoutX="64.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="34.0" fitWidth="39.0" layoutX="26.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../Res/Images/correo.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView blendMode="DARKEN" fitHeight="39.0" fitWidth="40.0" focusTraversable="true" layoutX="61.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView blendMode="DARKEN" fitHeight="39.0" fitWidth="40.0" focusTraversable="true" layoutX="24.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../Res/Images/openHours.png" />
                                              </image>
                                           </ImageView>
+                                          <Label layoutX="74.0" layoutY="26.0" text="Telefon">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="34.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="74.0" layoutY="139.0" text="Öppettider">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="34.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="74.0" layoutY="258.0" text="E-post">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="34.0" />
+                                             </font>
+                                          </Label>
+                                          <ImageView fitHeight="216.0" fitWidth="477.0" layoutX="406.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Res/Images/contact.png" />
+                                             </image>
+                                          </ImageView>
                                        </children>
+                                       <styleClass>
+                                          <String fx:value="wizBar" />
+                                          <String fx:value="LessDropShadow" />
+                                       </styleClass>
+                                    </Pane>
+                                    <Pane layoutX="23.0" layoutY="24.0" prefHeight="43.0" prefWidth="778.0">
+                                       <children>
+                                          <Label fx:id="pageNameLabel" layoutX="262.0" layoutY="-2.0" text="Kundservice" textFill="WHITE">
+                                             <font>
+                                                <Font name="SansSerif Regular" size="36.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <styleClass>
+                                          <String fx:value="wizBar" />
+                                          <String fx:value="border" />
+                                       </styleClass>
                                     </Pane>
                                  </children>
                               </Pane>

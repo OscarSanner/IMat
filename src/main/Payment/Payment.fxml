@@ -35,22 +35,6 @@
                         <Point3D />
                      </rotationAxis>
                   </ImageView>
-                  <Button layoutX="977.0" layoutY="11.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="Kundservice &amp; Hjälp" textFill="WHITE" wrapText="true">
-                     <graphic>
-                        <ImageView fitHeight="65.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Res/Images/question.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font name="SansSerif Bold" size="17.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="topBar" />
-                        <String fx:value="cursor-hand" />
-                     </styleClass>
-                  </Button>
                </children>
             </Pane>
          </top>
