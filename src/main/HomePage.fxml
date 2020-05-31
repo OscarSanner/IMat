@@ -321,93 +321,125 @@
                                  </children>
                               </StackPane>
 
-                              <StackPane fx:id="myPageTabPane" prefHeight="595.0" prefWidth="570.0">
+                                    <StackPane fx:id="myPageTabPane" prefHeight="595.0" prefWidth="570.0">
                                  <children>
                                     <Pane prefHeight="537.0" prefWidth="576.0" style="-fx-background-color: white;">
                                        <children>
                                           <Pane layoutX="14.0" layoutY="20.0" prefHeight="565.0" prefWidth="538.0" style="-fx-background-color: #F6F9FF;">
 
-                                             <children>
+                                                   <children>
                                                 <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" />
                                                 <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" />
-                                                <Label layoutX="46.0" layoutY="6.0" text="Förnamn:">
+                                                <Label layoutX="31.0" layoutY="6.0" text="Förnamn:">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="31.0" layoutY="80.0" text="Efternamn:">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="31.0" layoutY="154.0" text="Gatuadress:">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="31.0" layoutY="228.0" text="Postnummer:">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="259.0" layoutY="6.0" text="Postort:">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="259.0" layoutY="80.0" text="Mobilnummer:">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="259.0" layoutY="154.0" text="E-mail adress:">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <TextField fx:id="firstName" layoutX="31.0" layoutY="28.0" onAction="#loadUserInfo" prefHeight="33.0" prefWidth="200.0" promptText="Nicklas" style="-fx-background-radius: 20;">
                                                    <font>
                                                       <Font name="SansSerif Regular" size="16.0" />
                                                    </font>
-                                                </Label>
-                                                <Label layoutX="46.0" layoutY="80.0" text="Efternamn:">
+                                                </TextField>
+                                                <TextField fx:id="lastName" layoutX="31.0" layoutY="102.0" prefHeight="33.0" prefWidth="200.0" promptText="Börjesson" style="-fx-background-radius: 20;">
                                                    <font>
                                                       <Font name="SansSerif Regular" size="16.0" />
                                                    </font>
-                                                </Label>
-                                                <Label layoutX="46.0" layoutY="154.0" text="Gatuadress:">
+                                                </TextField>
+                                                <TextField fx:id="address" layoutX="31.0" layoutY="176.0" prefHeight="33.0" prefWidth="200.0" promptText="Kantarellslingan 24 " style="-fx-background-radius: 20;">
                                                    <font>
                                                       <Font name="SansSerif Regular" size="16.0" />
                                                    </font>
-                                                </Label>
-                                                <Label layoutX="46.0" layoutY="228.0" text="Postnummer:">
+                                                </TextField>
+                                                <TextField fx:id="area" layoutX="259.0" layoutY="28.0" prefHeight="33.0" prefWidth="200.0" promptText="Göteborg" style="-fx-background-radius: 20;">
                                                    <font>
                                                       <Font name="SansSerif Regular" size="16.0" />
                                                    </font>
-                                                </Label>
-                                                <Label layoutX="274.0" layoutY="6.0" text="Postort:">
+                                                </TextField>
+                                                <TextField fx:id="mobileNumber" layoutX="259.0" layoutY="102.0" onMouseClicked="#mySiteErrorLabelDisapear3" prefHeight="33.0" prefWidth="200.0" promptText="+46XXXXXXXXX" style="-fx-background-radius: 20;">
                                                    <font>
                                                       <Font name="SansSerif Regular" size="16.0" />
                                                    </font>
-                                                </Label>
-                                                <Label layoutX="274.0" layoutY="80.0" text="Mobilnummer:">
+                                                </TextField>
+                                                <TextField fx:id="email" layoutX="259.0" layoutY="176.0" onMouseClicked="#mySiteErrorLabelDisapear2" prefHeight="33.0" prefWidth="200.0" promptText="börjesson@exempel.nu" style="-fx-background-radius: 20;">
                                                    <font>
                                                       <Font name="SansSerif Regular" size="16.0" />
                                                    </font>
-                                                </Label>
-                                                <Label layoutX="274.0" layoutY="154.0" text="E-mail adress:">
+                                                </TextField>
+                                                <TextField fx:id="postcode" layoutX="31.0" layoutY="250.0" onMouseClicked="#mySiteErrorLabelDisapear" prefHeight="33.0" prefWidth="200.0" promptText="42011" style="-fx-background-radius: 20;">
                                                    <font>
                                                       <Font name="SansSerif Regular" size="16.0" />
                                                    </font>
-                                                </Label>
-                                                <TextField fx:id="firstName" layoutX="46.0" layoutY="28.0" onAction="#loadUserInfo" prefHeight="33.0" prefWidth="180.0" promptText="Nicklas" style="-fx-background-radius: 20;" />
-                                                <TextField fx:id="lastName" layoutX="46.0" layoutY="102.0" prefHeight="33.0" prefWidth="180.0" promptText="Börjesson" style="-fx-background-radius: 20;" />
-                                                <TextField fx:id="address" layoutX="46.0" layoutY="176.0" prefHeight="33.0" prefWidth="180.0" promptText="Kantarellslingan 24 " style="-fx-background-radius: 20;" />
-                                                <TextField fx:id="area" layoutX="274.0" layoutY="28.0" prefHeight="33.0" prefWidth="180.0" promptText="Göteborg" style="-fx-background-radius: 20;" />
-                                                <TextField fx:id="mobileNumber" layoutX="274.0" layoutY="102.0" onMouseClicked="#mySiteErrorLabelDisapear3" prefHeight="33.0" prefWidth="180.0" promptText="+46XXXXXXXXX" style="-fx-background-radius: 20;" />
-                                                <TextField fx:id="email" layoutX="274.0" layoutY="176.0" onMouseClicked="#mySiteErrorLabelDisapear2" prefHeight="33.0" prefWidth="180.0" promptText="börjesson@exempel.nu" style="-fx-background-radius: 20;" />
-                                                <TextField fx:id="postcode" layoutX="46.0" layoutY="250.0" onMouseClicked="#mySiteErrorLabelDisapear" prefHeight="33.0" prefWidth="180.0" promptText="42011" style="-fx-background-radius: 20;" />
+                                                </TextField>
                                                 <Label fx:id="firstNameErrorLbl" layoutX="46.0" layoutY="61.0" textFill="RED">
                                                    <font>
                                                       <Font size="11.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="postCodeAmountErrorLabel" layoutX="46.0" layoutY="283.0" text="OBS! Postnummer få bara innehålla 5 siffror!" textFill="RED">
+                                                <Label fx:id="postCodeAmountErrorLabel" layoutX="16.0" layoutY="283.0" text="OBS! Postnummer få bara innehålla 5 siffror!" textFill="RED">
                                                    <font>
-                                                      <Font size="11.0" />
+                                                      <Font name="SansSerif Regular" size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="emailStyleErrorLabel" layoutX="274.0" layoutY="209.0" text="OBS! Är inte i email form!" textFill="RED">
+                                                <Label fx:id="emailStyleErrorLabel" layoutX="244.0" layoutY="209.0" text="OBS! Är inte i email form!" textFill="RED">
                                                    <font>
-                                                      <Font size="11.0" />
+                                                      <Font name="SansSerif Regular" size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="mobileAmountErrorLabel" layoutX="274.0" layoutY="135.0" text="OBS! Mobilnummer få bara innehålla 10 siffror!" textFill="RED">
+                                                <Label fx:id="mobileAmountErrorLabel" layoutX="244.0" layoutY="135.0" text="OBS! Mobilnummer få bara innehålla 10 siffror!" textFill="RED">
                                                    <font>
-                                                      <Font size="11.0" />
+                                                      <Font name="SansSerif Regular" size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="postCodeStyleErrorLabel" layoutX="46.0" layoutY="283.0" text="OBS! Postnummer få bara innehålla syffror!" textFill="RED">
+                                                <Label fx:id="postCodeStyleErrorLabel" layoutX="16.0" layoutY="283.0" text="OBS! Postnummer få bara innehålla syffror!" textFill="RED">
                                                    <font>
-                                                      <Font size="11.0" />
+                                                      <Font name="SansSerif Regular" size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="mobileStyleErrorLabel" layoutX="274.0" layoutY="135.0" text="OBS! Mobilnummer få bara innehålla siffror!" textFill="RED">
+                                                <Label fx:id="mobileStyleErrorLabel" layoutX="244.0" layoutY="135.0" text="OBS! Mobilnummer få bara innehålla siffror!" textFill="RED">
                                                    <font>
-                                                      <Font size="11.0" />
+                                                      <Font name="SansSerif Regular" size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="203.0" layoutY="325.0" text="Kredit- eller debitkort">
+                                                <Label layoutX="198.0" layoutY="324.0" text="Kredit- eller debitkort">
                                                    <font>
-                                                      <Font name="SansSerif Regular" size="16.0" />
+                                                      <Font name="SansSerif Regular" size="19.0" />
                                                    </font>
                                                 </Label>
-                                                <TextField fx:id="month" layoutX="110.0" layoutY="394.0" onMouseClicked="#errorBoarderDisapear6" prefHeight="35.0" prefWidth="75.0" promptText="MM" />
+                                                <TextField fx:id="month" layoutX="110.0" layoutY="394.0" onMouseClicked="#errorBoarderDisapear6" prefHeight="35.0" prefWidth="75.0" promptText="MM">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="17.0" />
+                                                   </font>
+                                                </TextField>
                                                 <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="129.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true" />
                                                 <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="129.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true" />
                                                 <ImageView fitHeight="40.0" fitWidth="55.0" layoutX="212.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true">
@@ -425,7 +457,11 @@
                                                       <Image url="@Res/Images/visa.png" />
                                                    </image>
                                                 </ImageView>
-                                                <TextField fx:id="year" layoutX="201.0" layoutY="394.0" onMouseClicked="#errorBoarderDisapear7" prefHeight="35.0" prefWidth="75.0" promptText="ÅR" />
+                                                <TextField fx:id="year" layoutX="201.0" layoutY="394.0" onMouseClicked="#errorBoarderDisapear7" prefHeight="35.0" prefWidth="75.0" promptText="ÅR">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="17.0" />
+                                                   </font>
+                                                </TextField>
                                                 <Label layoutX="189.0" layoutY="398.0" text="/" textFill="#00000083">
                                                    <font>
                                                       <Font size="20.0" />
@@ -433,18 +469,19 @@
                                                 </Label>
                                                 <Label fx:id="paymentStyleErrorLbl" layoutX="113.0" layoutY="470.0" text="OBS! Kortuppgifter få bara innehålla siffror!" textFill="RED">
                                                    <font>
-                                                      <Font size="11.0" />
+                                                      <Font name="SansSerif Regular" size="14.0" />
                                                    </font>
                                                 </Label>
                                                 <Label fx:id="paymentAmountErrorLbl" layoutX="113.0" layoutY="470.0" text="OBS! Gå igenom antalet siffor hos Kortuppgifterna!" textFill="RED">
                                                    <font>
-                                                      <Font size="11.0" />
+                                                      <Font name="SansSerif Regular" size="14.0" />
                                                    </font>
                                                 </Label>
                                                 <Button fx:id="saveButton" layoutX="197.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#onSaveButtonPressed" prefHeight="47.0" prefWidth="128.0" text="Spara">
                                                    <font>
                                                       <Font name="SansSerif Regular" size="16.0" />
-                                                   </font></Button>
+                                                   </font>
+                                                </Button>
                                                 <Line endX="248.0" layoutX="277.0" layoutY="503.0" startX="-260.0" />
                                                 <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="69.0" layoutY="394.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -461,13 +498,33 @@
                                                       <Image url="@Res/Images/lockIcon.jpg" />
                                                    </image>
                                                 </ImageView>
-                                                <TextField fx:id="cvc" layoutX="314.0" layoutY="394.0" onMouseClicked="#errorBoarderDisapear5" prefHeight="35.0" prefWidth="151.0" promptText="CVC/CVV" />
-                                                <TextField fx:id="cardNumber1" layoutX="110.0" layoutY="351.0" onMouseClicked="#errorBoarderDisapear1" prefHeight="35.0" prefWidth="88.0" promptText="XXXX" />
-                                                <TextField fx:id="cardNumber2" layoutX="199.0" layoutY="351.0" onMouseClicked="#errorBoarderDisapear2" prefHeight="35.0" prefWidth="88.0" promptText="XXXX" />
-                                                <TextField fx:id="cardNumber3" layoutX="288.0" layoutY="351.0" onMouseClicked="#errorBoarderDisapear3" prefHeight="35.0" prefWidth="88.0" promptText="XXXX" />
-                                                <TextField fx:id="cardNumber4" layoutX="377.0" layoutY="351.0" onMouseClicked="#errorBoarderDisapear4" prefHeight="35.0" prefWidth="88.0" promptText="XXXX" />
+                                                <TextField fx:id="cvc" layoutX="314.0" layoutY="394.0" onMouseClicked="#errorBoarderDisapear5" prefHeight="35.0" prefWidth="151.0" promptText="CVC/CVV">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="17.0" />
+                                                   </font>
+                                                </TextField>
+                                                <TextField fx:id="cardNumber1" layoutX="110.0" layoutY="351.0" onMouseClicked="#errorBoarderDisapear1" prefHeight="35.0" prefWidth="88.0" promptText="XXXX">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="17.0" />
+                                                   </font>
+                                                </TextField>
+                                                <TextField fx:id="cardNumber2" layoutX="199.0" layoutY="351.0" onMouseClicked="#errorBoarderDisapear2" prefHeight="35.0" prefWidth="88.0" promptText="XXXX">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="17.0" />
+                                                   </font>
+                                                </TextField>
+                                                <TextField fx:id="cardNumber3" layoutX="288.0" layoutY="351.0" onMouseClicked="#errorBoarderDisapear3" prefHeight="35.0" prefWidth="88.0" promptText="XXXX">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="17.0" />
+                                                   </font>
+                                                </TextField>
+                                                <TextField fx:id="cardNumber4" layoutX="377.0" layoutY="351.0" onMouseClicked="#errorBoarderDisapear4" prefHeight="35.0" prefWidth="88.0" promptText="XXXX">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="17.0" />
+                                                   </font>
+                                                </TextField>
 
-                                             </children>
+                                                   </children>
                                           </Pane>
                                        </children>
                                     </Pane>
@@ -537,19 +594,14 @@
                                                 </Label>
                                                 <Pane layoutX="17.0" layoutY="21.0" prefHeight="200.0" prefWidth="537.0" style="-fx-background-color: #EEEDED;" styleClass="LessDropShadow">
                                                    <children>
-                                                      <Label alignment="CENTER" layoutX="48.0" layoutY="8.0" prefHeight="17.0" prefWidth="414.0" text="Välkommen till iMat" textAlignment="CENTER">
+                                                      <Label alignment="CENTER" layoutX="48.0" layoutY="22.0" prefHeight="17.0" prefWidth="414.0" text="Välkommen till iMat" textAlignment="CENTER">
                                                          <font>
-                                                            <Font name="SansSerif Bold" size="35.0" />
+                                                            <Font name="SansSerif Bold" size="37.0" />
                                                          </font>
                                                       </Label>
-                                                      <Label alignment="CENTER" layoutX="25.0" layoutY="57.0" prefHeight="50.0" prefWidth="488.0" text="För att börja handla, vänligen tryck på en kategori till vänster." textAlignment="CENTER" wrapText="true">
+                                                      <Label alignment="CENTER" layoutX="10.0" layoutY="89.0" prefHeight="50.0" prefWidth="518.0" text="För att börja handla, vänligen tryck på en kategori till vänster." textAlignment="CENTER" wrapText="true">
                                                          <font>
-                                                            <Font name="SansSerif Regular" size="18.0" />
-                                                         </font>
-                                                      </Label>
-                                                      <Label alignment="CENTER" layoutX="12.0" layoutY="107.0" prefHeight="65.0" prefWidth="486.0" text="Om du har övriga frågor eller funderingar, tryck på kundservice uppe till höger" textAlignment="CENTER" wrapText="true">
-                                                         <font>
-                                                            <Font name="SansSerif Regular" size="18.0" />
+                                                            <Font name="SansSerif Regular" size="19.0" />
                                                          </font>
                                                       </Label>
                                                    </children>

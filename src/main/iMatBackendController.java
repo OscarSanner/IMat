@@ -1166,8 +1166,8 @@ public class iMatBackendController implements Initializable {
 
 
     public void showPurchaseFeedback(Product product, String quantity, String unitSuffix){
-        //purchaseFeedback.setFeedbackLabel(product.getName() + " har lagts till i varukorgen");
-        //purchaseFeedback.setVisible(true);
+        purchaseFeedback.setFeedbackLabel(product.getName() + " har lagts till i varukorgen");
+        purchaseFeedback.setVisible(true);
 
         System.out.println(purchaseFeedback.isVisible()
         );

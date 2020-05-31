@@ -58,12 +58,12 @@
                                                 </Label>
                                                 <TextField fx:id="yearTextField" layoutX="260.0" layoutY="128.0" onMouseClicked="#errorBoarderdisapear7" prefHeight="39.0" prefWidth="103.0" promptText="ÅR">
                                                    <font>
-                                                      <Font name="SansSerif Regular" size="12.0" />
+                                                      <Font name="SansSerif Regular" size="17.0" />
                                                    </font>
                                                 </TextField>
                                                 <TextField fx:id="monthTextField" layoutX="129.0" layoutY="128.0" onMouseClicked="#errorBoarderdisapear6" prefHeight="39.0" prefWidth="103.0" promptText="MM">
                                                    <font>
-                                                      <Font name="SansSerif Regular" size="12.0" />
+                                                      <Font name="SansSerif Regular" size="17.0" />
                                                    </font>
                                                 </TextField>
                                                 <ImageView fitHeight="39.0" fitWidth="51.0" layoutX="129.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
@@ -86,19 +86,19 @@
                                                       <Font name="SansSerif Regular" size="18.0" />
                                                    </font>
                                                 </CheckBox>
-                                                <Label fx:id="cardErrorLabel" layoutX="127.0" layoutY="203.0" prefHeight="17.0" prefWidth="226.0" text="OBS! Inget fält få vara tomt!" textFill="RED">
+                                                <Label fx:id="cardErrorLabel" layoutX="127.0" layoutY="203.0" prefHeight="17.0" prefWidth="260.0" text="OBS! Inget fält få vara tomt!" textFill="RED">
                                                    <font>
-                                                      <Font name="SansSerif Regular" size="12.0" />
+                                                      <Font name="SansSerif Regular" size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="cardStyleErrorLabel" layoutX="127.0" layoutY="203.0" prefHeight="17.0" prefWidth="226.0" text="OBS! Fälten få bara innehållla tal!!" textFill="RED">
+                                                <Label fx:id="cardStyleErrorLabel" layoutX="127.0" layoutY="203.0" prefHeight="17.0" prefWidth="260.0" text="OBS! Fälten få bara innehållla tal!!" textFill="RED">
                                                    <font>
-                                                      <Font name="SansSerif Regular" size="12.0" />
+                                                      <Font name="SansSerif Regular" size="14.0" />
                                                    </font>
                                                 </Label>
-                                                <Label fx:id="cardAmountErrorLabel" layoutX="127.0" layoutY="203.0" prefHeight="17.0" prefWidth="226.0" text="OBS! Gå igenom antal siffror vid fälten!" textFill="RED">
+                                                <Label fx:id="cardAmountErrorLabel" layoutX="127.0" layoutY="203.0" prefHeight="17.0" prefWidth="260.0" text="OBS! Gå igenom antal siffror vid fälten!" textFill="RED">
                                                    <font>
-                                                      <Font name="SansSerif Regular" size="12.0" />
+                                                      <Font name="SansSerif Regular" size="14.0" />
                                                    </font>
                                                 </Label>
                                                 <Label layoutX="234.0" layoutY="131.0" opacity="0.5" prefHeight="32.0" prefWidth="26.0" text="  /">
@@ -115,7 +115,7 @@
                                                       </Label>
                                                    </children>
                                                 </Pane>
-                                                <Button fx:id="payButton" layoutX="141.0" layoutY="353.0" mnemonicParsing="false" onMouseClicked="#onPayButtonPressed" prefHeight="60.0" prefWidth="425.0" style="-fx-background-color: #FF5E5E;" stylesheets="@../Res/styles.css" text="Slutför köpet" textFill="WHITE">
+                                                <Button fx:id="payButton" layoutX="141.0" layoutY="359.0" mnemonicParsing="false" onMouseClicked="#onPayButtonPressed" prefHeight="60.0" prefWidth="425.0" style="-fx-background-color: #FF5E5E;" stylesheets="@../Res/styles.css" text="Slutför köpet" textFill="WHITE">
                                                    <opaqueInsets>
                                                       <Insets />
                                                    </opaqueInsets>
@@ -144,13 +144,25 @@
                                                 </ImageView>
                                                 <TextField fx:id="cvcTextField" layoutX="406.0" layoutY="129.0" onMouseClicked="#errorBoarderdisapear5" prefHeight="39.0" prefWidth="194.0" promptText="CVC/ CVV">
                                                    <font>
-                                                      <Font name="SansSerif Regular" size="12.0" />
+                                                      <Font name="SansSerif Regular" size="17.0" />
                                                    </font>
                                                 </TextField>
-                                                <TextField fx:id="cardNumberTextField1" layoutX="129.0" layoutY="83.0" onMouseClicked="#errorBoarderdisapear1" prefHeight="39.0" prefWidth="117.0" promptText="XXXX" />
-                                                <TextField fx:id="cardNumberTextField2" layoutX="247.0" layoutY="83.0" onMouseClicked="#errorBoarderdisapear2" prefHeight="39.0" prefWidth="117.0" promptText="XXXX" />
-                                                <TextField fx:id="cardNumberTextField3" layoutX="365.0" layoutY="83.0" onMouseClicked="#errorBoarderdisapear3" prefHeight="39.0" prefWidth="117.0" promptText="XXXX" />
-                                                <TextField fx:id="cardNumberTextField4" layoutX="483.0" layoutY="83.0" onMouseClicked="#errorBoarderdisapear4" prefHeight="39.0" prefWidth="117.0" promptText="XXXX" />
+                                                <TextField fx:id="cardNumberTextField1" layoutX="129.0" layoutY="83.0" onMouseClicked="#errorBoarderdisapear1" prefHeight="39.0" prefWidth="117.0" promptText="XXXX">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="17.0" />
+                                                   </font></TextField>
+                                                <TextField fx:id="cardNumberTextField2" layoutX="247.0" layoutY="83.0" onMouseClicked="#errorBoarderdisapear2" prefHeight="39.0" prefWidth="117.0" promptText="XXXX">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="17.0" />
+                                                   </font></TextField>
+                                                <TextField fx:id="cardNumberTextField3" layoutX="365.0" layoutY="83.0" onMouseClicked="#errorBoarderdisapear3" prefHeight="39.0" prefWidth="117.0" promptText="XXXX">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="17.0" />
+                                                   </font></TextField>
+                                                <TextField fx:id="cardNumberTextField4" layoutX="483.0" layoutY="83.0" onMouseClicked="#errorBoarderdisapear4" prefHeight="39.0" prefWidth="117.0" promptText="XXXX">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="17.0" />
+                                                   </font></TextField>
                                              </children>
                                           </Pane>
                                        </children>
