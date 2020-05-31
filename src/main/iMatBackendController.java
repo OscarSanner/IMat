@@ -761,6 +761,8 @@ public class iMatBackendController implements Initializable {
        // theRealResetOfSearchBar();
         searchResultLabel.setVisible(false);
         onShoppingTabSelect();
+
+        hideSubCategories();
     }
 
     public void onOffersButtonPressed(){
@@ -774,6 +776,8 @@ public class iMatBackendController implements Initializable {
        // theRealResetOfSearchBar();
         searchResultLabel.setVisible(false);
         onShoppingTabSelect();
+
+        hideSubCategories();
     }
 
     public void onBreadButtonPressed(){
@@ -789,6 +793,8 @@ public class iMatBackendController implements Initializable {
        // theRealResetOfSearchBar();
         searchResultLabel.setVisible(false);
         onShoppingTabSelect();
+
+        //hideSubCategories();
     }
 
     public void onMeatAndFishButtonPressed(){
@@ -804,6 +810,8 @@ public class iMatBackendController implements Initializable {
        // theRealResetOfSearchBar();
         searchResultLabel.setVisible(false);
         onShoppingTabSelect();
+
+        showSubCategories();
     }
 
     public void onVeggiesButtonPressed(){
@@ -819,6 +827,8 @@ public class iMatBackendController implements Initializable {
        // theRealResetOfSearchBar();
         searchResultLabel.setVisible(false);
         onShoppingTabSelect();
+
+        showSubCategories();
     }
 
     public void onDrinkButtonPressed(){
@@ -834,6 +844,8 @@ public class iMatBackendController implements Initializable {
       //  theRealResetOfSearchBar();
         searchResultLabel.setVisible(false);
         onShoppingTabSelect();
+
+        showSubCategories();
     }
 
     public void onDairyButtonPressed(){
@@ -849,6 +861,8 @@ public class iMatBackendController implements Initializable {
         //theRealResetOfSearchBar();
         searchResultLabel.setVisible(false);
         onShoppingTabSelect();
+
+        //hideSubCategories();
     }
 
     public void onPantryButtonPressed(){
@@ -864,6 +878,8 @@ public class iMatBackendController implements Initializable {
        // theRealResetOfSearchBar();
         searchResultLabel.setVisible(false);
         onShoppingTabSelect();
+
+        showSubCategories();
     }
 
     public void onSnacksButtonPressed(){
@@ -879,6 +895,8 @@ public class iMatBackendController implements Initializable {
       //  theRealResetOfSearchBar();
         searchResultLabel.setVisible(false);
         onShoppingTabSelect();
+
+        showSubCategories();
     }
 
     public void onSpicesButtonPressed(){
@@ -1268,6 +1286,20 @@ public class iMatBackendController implements Initializable {
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
 
+    public void hideSubCategories(){
+        categoryPane.setDividerPositions(0.0051);
+        categoryPane.setPrefHeight(591);
+        productFlowPane.setPrefHeight(588);
+        productsScrollPane.setPrefHeight(588);
+
+    }
+    public void showSubCategories(){
+        categoryPane.setDividerPositions(0.0924);
+        categoryPane.setPrefHeight(591);
+        productFlowPane.setPrefHeight(538);
+        productsScrollPane.setPrefHeight(538);
+    }
+
     //================================================================================
     // Init
     //================================================================================
@@ -1291,6 +1323,9 @@ public class iMatBackendController implements Initializable {
         // To test favourite section.
         /*dataHandler.addFavorite(70);
         dataHandler.addFavorite(32);*/
+        for(Double d: categoryPane.getDividerPositions()){
+            System.out.println(d);
+        }
     }
 
     private void setUpCarousel(){
@@ -1331,6 +1366,7 @@ public class iMatBackendController implements Initializable {
                 closeDetailedView();
             }
         });
+
     }
 
     private void blurBackground() {
