@@ -330,39 +330,39 @@
                                              <children>
                                                 <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true" />
                                                 <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="458.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" />
-                                                <Label layoutX="46.0" layoutY="8.0" text="Förnamn:">
+                                                <Label layoutX="46.0" layoutY="6.0" text="Förnamn:">
                                                    <font>
-                                                      <Font size="14.0" />
+                                                      <Font name="SansSerif Regular" size="16.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="46.0" layoutY="82.0" text="Efternamn:">
+                                                <Label layoutX="46.0" layoutY="80.0" text="Efternamn:">
                                                    <font>
-                                                      <Font size="14.0" />
+                                                      <Font name="SansSerif Regular" size="16.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="46.0" layoutY="156.0" text="Gatuadress:">
+                                                <Label layoutX="46.0" layoutY="154.0" text="Gatuadress:">
                                                    <font>
-                                                      <Font size="14.0" />
+                                                      <Font name="SansSerif Regular" size="16.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="46.0" layoutY="230.0" text="Postnummer:">
+                                                <Label layoutX="46.0" layoutY="228.0" text="Postnummer:">
                                                    <font>
-                                                      <Font size="14.0" />
+                                                      <Font name="SansSerif Regular" size="16.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="274.0" layoutY="8.0" text="Postort:">
+                                                <Label layoutX="274.0" layoutY="6.0" text="Postort:">
                                                    <font>
-                                                      <Font size="14.0" />
+                                                      <Font name="SansSerif Regular" size="16.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="274.0" layoutY="82.0" text="Mobilnummer:">
+                                                <Label layoutX="274.0" layoutY="80.0" text="Mobilnummer:">
                                                    <font>
-                                                      <Font size="14.0" />
+                                                      <Font name="SansSerif Regular" size="16.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="274.0" layoutY="156.0" text="E-mail adress:">
+                                                <Label layoutX="274.0" layoutY="154.0" text="E-mail adress:">
                                                    <font>
-                                                      <Font size="14.0" />
+                                                      <Font name="SansSerif Regular" size="16.0" />
                                                    </font>
                                                 </Label>
                                                 <TextField fx:id="firstName" layoutX="46.0" layoutY="28.0" onAction="#loadUserInfo" prefHeight="33.0" prefWidth="180.0" promptText="Nicklas" style="-fx-background-radius: 20;" />
@@ -404,10 +404,10 @@
                                                 </Label>
                                                 <Label layoutX="203.0" layoutY="325.0" text="Kredit- eller debitkort">
                                                    <font>
-                                                      <Font size="14.0" />
+                                                      <Font name="SansSerif Regular" size="16.0" />
                                                    </font>
                                                 </Label>
-                                                <TextField fx:id="month" layoutX="110.0" layoutY="394.0" prefHeight="35.0" prefWidth="75.0" promptText="MM" />
+                                                <TextField fx:id="month" layoutX="110.0" layoutY="394.0" onMouseClicked="#errorBoarderDisapear6" prefHeight="35.0" prefWidth="75.0" promptText="MM" />
                                                 <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="129.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true" />
                                                 <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="129.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true" />
                                                 <ImageView fitHeight="40.0" fitWidth="55.0" layoutX="212.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true">
@@ -425,7 +425,7 @@
                                                       <Image url="@Res/Images/visa.png" />
                                                    </image>
                                                 </ImageView>
-                                                <TextField fx:id="year" layoutX="201.0" layoutY="394.0" prefHeight="35.0" prefWidth="75.0" promptText="ÅR" />
+                                                <TextField fx:id="year" layoutX="201.0" layoutY="394.0" onMouseClicked="#errorBoarderDisapear7" prefHeight="35.0" prefWidth="75.0" promptText="ÅR" />
                                                 <Label layoutX="189.0" layoutY="398.0" text="/" textFill="#00000083">
                                                    <font>
                                                       <Font size="20.0" />
@@ -441,7 +441,10 @@
                                                       <Font size="11.0" />
                                                    </font>
                                                 </Label>
-                                                <Button fx:id="saveButton" layoutX="197.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#onSaveButtonPressed" prefHeight="47.0" prefWidth="128.0" text="Spara" />
+                                                <Button fx:id="saveButton" layoutX="197.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#onSaveButtonPressed" prefHeight="47.0" prefWidth="128.0" text="Spara">
+                                                   <font>
+                                                      <Font name="SansSerif Regular" size="16.0" />
+                                                   </font></Button>
                                                 <Line endX="248.0" layoutX="277.0" layoutY="503.0" startX="-260.0" />
                                                 <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="69.0" layoutY="394.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -458,11 +461,11 @@
                                                       <Image url="@Res/Images/lockIcon.jpg" />
                                                    </image>
                                                 </ImageView>
-                                                <TextField fx:id="cvc" layoutX="314.0" layoutY="394.0" prefHeight="35.0" prefWidth="151.0" promptText="CVC/CVV" />
-                                                <TextField fx:id="cardNumber1" layoutX="110.0" layoutY="351.0" prefHeight="35.0" prefWidth="88.0" promptText="XXXX" />
-                                                <TextField fx:id="cardNumber2" layoutX="199.0" layoutY="351.0" prefHeight="35.0" prefWidth="88.0" promptText="XXXX" />
-                                                <TextField fx:id="cardNumber3" layoutX="288.0" layoutY="351.0" prefHeight="35.0" prefWidth="88.0" promptText="XXXX" />
-                                                <TextField fx:id="cardNumber4" layoutX="377.0" layoutY="351.0" prefHeight="35.0" prefWidth="88.0" promptText="XXXX" />
+                                                <TextField fx:id="cvc" layoutX="314.0" layoutY="394.0" onMouseClicked="#errorBoarderDisapear5" prefHeight="35.0" prefWidth="151.0" promptText="CVC/CVV" />
+                                                <TextField fx:id="cardNumber1" layoutX="110.0" layoutY="351.0" onMouseClicked="#errorBoarderDisapear1" prefHeight="35.0" prefWidth="88.0" promptText="XXXX" />
+                                                <TextField fx:id="cardNumber2" layoutX="199.0" layoutY="351.0" onMouseClicked="#errorBoarderDisapear2" prefHeight="35.0" prefWidth="88.0" promptText="XXXX" />
+                                                <TextField fx:id="cardNumber3" layoutX="288.0" layoutY="351.0" onMouseClicked="#errorBoarderDisapear3" prefHeight="35.0" prefWidth="88.0" promptText="XXXX" />
+                                                <TextField fx:id="cardNumber4" layoutX="377.0" layoutY="351.0" onMouseClicked="#errorBoarderDisapear4" prefHeight="35.0" prefWidth="88.0" promptText="XXXX" />
 
                                              </children>
                                           </Pane>

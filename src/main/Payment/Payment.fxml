@@ -56,12 +56,12 @@
                                                       <Font name="SansSerif Regular" size="20.0" />
                                                    </font>
                                                 </Label>
-                                                <TextField fx:id="yearTextField" layoutX="260.0" layoutY="128.0" prefHeight="39.0" prefWidth="103.0" promptText="ÅR">
+                                                <TextField fx:id="yearTextField" layoutX="260.0" layoutY="128.0" onMouseClicked="#errorBoarderdisapear7" prefHeight="39.0" prefWidth="103.0" promptText="ÅR">
                                                    <font>
                                                       <Font name="SansSerif Regular" size="12.0" />
                                                    </font>
                                                 </TextField>
-                                                <TextField fx:id="monthTextField" layoutX="129.0" layoutY="128.0" prefHeight="39.0" prefWidth="103.0" promptText="MM">
+                                                <TextField fx:id="monthTextField" layoutX="129.0" layoutY="128.0" onMouseClicked="#errorBoarderdisapear6" prefHeight="39.0" prefWidth="103.0" promptText="MM">
                                                    <font>
                                                       <Font name="SansSerif Regular" size="12.0" />
                                                    </font>
@@ -142,15 +142,15 @@
                                                       <Image url="@../Res/Images/lockIcon.jpg" />
                                                    </image>
                                                 </ImageView>
-                                                <TextField fx:id="cvcTextField" layoutX="406.0" layoutY="129.0" prefHeight="39.0" prefWidth="194.0" promptText="CVC/ CVV">
+                                                <TextField fx:id="cvcTextField" layoutX="406.0" layoutY="129.0" onMouseClicked="#errorBoarderdisapear5" prefHeight="39.0" prefWidth="194.0" promptText="CVC/ CVV">
                                                    <font>
                                                       <Font name="SansSerif Regular" size="12.0" />
                                                    </font>
                                                 </TextField>
-                                                <TextField fx:id="cardNumberTextField1" layoutX="129.0" layoutY="83.0" prefHeight="39.0" prefWidth="117.0" promptText="XXXX" />
-                                                <TextField fx:id="cardNumberTextField2" layoutX="247.0" layoutY="83.0" prefHeight="39.0" prefWidth="117.0" promptText="XXXX" />
-                                                <TextField fx:id="cardNumberTextField3" layoutX="365.0" layoutY="83.0" prefHeight="39.0" prefWidth="117.0" promptText="XXXX" />
-                                                <TextField fx:id="cardNumberTextField4" layoutX="483.0" layoutY="83.0" prefHeight="39.0" prefWidth="117.0" promptText="XXXX" />
+                                                <TextField fx:id="cardNumberTextField1" layoutX="129.0" layoutY="83.0" onMouseClicked="#errorBoarderdisapear1" prefHeight="39.0" prefWidth="117.0" promptText="XXXX" />
+                                                <TextField fx:id="cardNumberTextField2" layoutX="247.0" layoutY="83.0" onMouseClicked="#errorBoarderdisapear2" prefHeight="39.0" prefWidth="117.0" promptText="XXXX" />
+                                                <TextField fx:id="cardNumberTextField3" layoutX="365.0" layoutY="83.0" onMouseClicked="#errorBoarderdisapear3" prefHeight="39.0" prefWidth="117.0" promptText="XXXX" />
+                                                <TextField fx:id="cardNumberTextField4" layoutX="483.0" layoutY="83.0" onMouseClicked="#errorBoarderdisapear4" prefHeight="39.0" prefWidth="117.0" promptText="XXXX" />
                                              </children>
                                           </Pane>
                                        </children>

@@ -9,16 +9,23 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Border;
+import javafx.scene.paint.Color;
 import main.ConfirmationPage.ConfirmationPage;
 import main.IWizardPage;
 import main.ShoppingCartItem.ShoppingCartItem;
 import main.Timetable.Timetable;
 import se.chalmers.cse.dat216.project.*;
 
+import javax.swing.*;
+import javax.swing.border.LineBorder;
+import java.awt.*;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
+
+import static javafx.scene.paint.Color.RED;
 
 public class Payment extends AnchorPane implements IWizardPage {
 
@@ -94,11 +101,11 @@ public class Payment extends AnchorPane implements IWizardPage {
         //paymentMainAnchorPane.getChildren().add(confirmationPage);
 
 
-        if (checkButtonPayment.isSelected()) {
-            setPaymentInfo();
-        }
         if(allFilledInCorrectly()) {
             paymentMainAnchorPane.getChildren().add(confirmationPage);
+        }
+        if (checkButtonPayment.isSelected()) {
+            setPaymentInfo();
         }
     }
 
@@ -130,6 +137,42 @@ public class Payment extends AnchorPane implements IWizardPage {
     }
 
     //----------------FAKTISK KOD-----------------
+
+    @FXML
+    public void errorBoarderdisapear1() {
+
+        cardNumberTextField1.setStyle("");
+    }
+    @FXML
+    public void errorBoarderdisapear2() {
+
+        cardNumberTextField2.setStyle("");
+    }
+    @FXML
+    public void errorBoarderdisapear3() {
+
+        cardNumberTextField3.setStyle("");
+    }
+    @FXML
+    public void errorBoarderdisapear4() {
+
+        cardNumberTextField4.setStyle("");
+    }
+    @FXML
+    public void errorBoarderdisapear5() {
+
+        cvcTextField.setStyle("");
+    }
+    @FXML
+    public void errorBoarderdisapear6() {
+
+        monthTextField.setStyle("");
+    }
+    @FXML
+    public void errorBoarderdisapear7() {
+
+        yearTextField.setStyle("");
+    }
 
     private void finalizePurchase(){
         order = dataHandler.placeOrder();
@@ -294,14 +337,20 @@ public class Payment extends AnchorPane implements IWizardPage {
                         cardStyleErrorLabel.setVisible(true);
                         cardErrorLabel.setVisible(false);
                         cardAmountErrorLabel.setVisible(false);
+                        errorMessagePayment(cardNumberTextField1,4);
+
                     } else if (!isComplete(cardNumberTextField1, getMinAllowedLength(cardNumberTextField1)) && !(cardNumberTextField1.getText().isEmpty())) {
                         cardStyleErrorLabel.setVisible(false);
                         cardErrorLabel.setVisible(false);
                         cardAmountErrorLabel.setVisible(true);
+                errorMessagePayment(cardNumberTextField1,4);
+
                     } else if ((cardNumberTextField1.getText().isEmpty())) {
                         cardStyleErrorLabel.setVisible(false);
                         cardErrorLabel.setVisible(true);
                         cardAmountErrorLabel.setVisible(false);
+                errorMessagePayment(cardNumberTextField1,4);
+
                     }
                 }
 //             if(!cardNumberTextField2.getText().isEmpty()) {
@@ -309,14 +358,19 @@ public class Payment extends AnchorPane implements IWizardPage {
                      cardStyleErrorLabel.setVisible(true);
                      cardErrorLabel.setVisible(false);
                      cardAmountErrorLabel.setVisible(false);
+                     errorMessagePayment(cardNumberTextField2,4);
                  } else if (!isComplete(cardNumberTextField2, getMinAllowedLength(cardNumberTextField2)) && !(cardNumberTextField2.getText().isEmpty())) {
                      cardStyleErrorLabel.setVisible(false);
                      cardErrorLabel.setVisible(false);
                      cardAmountErrorLabel.setVisible(true);
+                     errorMessagePayment(cardNumberTextField2,4);
+
                  } else if ((cardNumberTextField2.getText().isEmpty())) {
                      cardStyleErrorLabel.setVisible(false);
                      cardErrorLabel.setVisible(true);
                      cardAmountErrorLabel.setVisible(false);
+                     errorMessagePayment(cardNumberTextField2,4);
+
                  }
              }
             /*if(!cardNumberTextField3.getText().isEmpty())*/ {
@@ -324,14 +378,20 @@ public class Payment extends AnchorPane implements IWizardPage {
                     cardStyleErrorLabel.setVisible(true);
                     cardErrorLabel.setVisible(false);
                     cardAmountErrorLabel.setVisible(false);
+                    errorMessagePayment(cardNumberTextField3,4);
+
                 } else if (!isComplete(cardNumberTextField3, getMinAllowedLength(cardNumberTextField3)) && !(cardNumberTextField3.getText().isEmpty())) {
                     cardStyleErrorLabel.setVisible(false);
                     cardErrorLabel.setVisible(false);
                     cardAmountErrorLabel.setVisible(true);
+                    errorMessagePayment(cardNumberTextField3,4);
+
                 } else if ((cardNumberTextField3.getText().isEmpty())) {
                     cardStyleErrorLabel.setVisible(false);
                     cardErrorLabel.setVisible(true);
                     cardAmountErrorLabel.setVisible(false);
+                    errorMessagePayment(cardNumberTextField3,4);
+
                 }
             }
             /*if(!cardNumberTextField4.getText().isEmpty())*/ {
@@ -339,14 +399,20 @@ public class Payment extends AnchorPane implements IWizardPage {
                     cardStyleErrorLabel.setVisible(true);
                     cardErrorLabel.setVisible(false);
                     cardAmountErrorLabel.setVisible(false);
+                    errorMessagePayment(cardNumberTextField4,4);
+
                 } else if (!isComplete(cardNumberTextField4, getMinAllowedLength(cardNumberTextField4)) && !(cardNumberTextField4.getText().isEmpty())) {
                     cardStyleErrorLabel.setVisible(false);
                     cardErrorLabel.setVisible(false);
                     cardAmountErrorLabel.setVisible(true);
+                    errorMessagePayment(cardNumberTextField4,4);
+
                 } else if ((cardNumberTextField4.getText().isEmpty())) {
                     cardStyleErrorLabel.setVisible(false);
                     cardErrorLabel.setVisible(true);
                     cardAmountErrorLabel.setVisible(false);
+                    errorMessagePayment(cardNumberTextField4,4);
+
                 }
             }
             /*if(!cvcTextField.getText().isEmpty())*/ {
@@ -354,14 +420,20 @@ public class Payment extends AnchorPane implements IWizardPage {
                     cardStyleErrorLabel.setVisible(true);
                     cardErrorLabel.setVisible(false);
                     cardAmountErrorLabel.setVisible(false);
+                    errorMessagePayment(cvcTextField,3);
+
                 } else if (!isComplete(cvcTextField, getMinAllowedLength(cvcTextField)) && !(cvcTextField.getText().isEmpty())) {
                     cardStyleErrorLabel.setVisible(false);
                     cardErrorLabel.setVisible(false);
                     cardAmountErrorLabel.setVisible(true);
+                    errorMessagePayment(cvcTextField,3);
+
                 } else if ((cvcTextField.getText().isEmpty())) {
                     cardStyleErrorLabel.setVisible(false);
                     cardErrorLabel.setVisible(true);
                     cardAmountErrorLabel.setVisible(false);
+                    errorMessagePayment(cvcTextField,3);
+
                 }
             }
             /*if(!monthTextField.getText().isEmpty())*/ {
@@ -369,14 +441,20 @@ public class Payment extends AnchorPane implements IWizardPage {
                     cardStyleErrorLabel.setVisible(true);
                     cardErrorLabel.setVisible(false);
                     cardAmountErrorLabel.setVisible(false);
+                    errorMessagePayment(monthTextField,2);
+
                 } else if (!isComplete(monthTextField, getMinAllowedLength(monthTextField)) && !(monthTextField.getText().isEmpty())) {
                     cardStyleErrorLabel.setVisible(false);
                     cardErrorLabel.setVisible(false);
                     cardAmountErrorLabel.setVisible(true);
+                    errorMessagePayment(monthTextField,2);
+
                 } else if ((monthTextField.getText().isEmpty())) {
                     cardStyleErrorLabel.setVisible(false);
                     cardErrorLabel.setVisible(true);
                     cardAmountErrorLabel.setVisible(false);
+                    errorMessagePayment(monthTextField,2);
+
                 }
             }
             /*if(!yearTextField.getText().isEmpty())*/ {
@@ -384,14 +462,20 @@ public class Payment extends AnchorPane implements IWizardPage {
                     cardStyleErrorLabel.setVisible(true);
                     cardErrorLabel.setVisible(false);
                     cardAmountErrorLabel.setVisible(false);
+                    errorMessagePayment(yearTextField,2);
+
                 } else if (!isComplete(yearTextField, getMinAllowedLength(yearTextField)) && !(yearTextField.getText().isEmpty())) {
                     cardStyleErrorLabel.setVisible(false);
                     cardErrorLabel.setVisible(false);
                     cardAmountErrorLabel.setVisible(true);
+                    errorMessagePayment(yearTextField,2);
+
                 } else if ((yearTextField.getText().isEmpty())) {
                     cardStyleErrorLabel.setVisible(false);
                     cardErrorLabel.setVisible(true);
                     cardAmountErrorLabel.setVisible(false);
+                    errorMessagePayment(yearTextField,2);
+
                 }
             }
 
@@ -402,6 +486,14 @@ public class Payment extends AnchorPane implements IWizardPage {
         cardStyleErrorLabel.setVisible(false);
         cardAmountErrorLabel.setVisible(false);
         cardErrorLabel.setVisible(false);
+    }
+
+    public void errorMessagePayment(TextField textField, int completeLength){
+        if(!containsDigitsOnly(textField) || textField.getText().isEmpty() || !isComplete(textField, completeLength)){
+            textField.setStyle("-fx-border-width: 3px; -fx-border-color: #FF0000;");
+        } else {
+            textField.setStyle("");
+        }
     }
 
     }

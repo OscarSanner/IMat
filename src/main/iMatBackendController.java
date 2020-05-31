@@ -346,6 +346,41 @@ public class iMatBackendController implements Initializable {
 
 //------------------------------------------------------------MinSida-----------------------------------------------------------------------//
 
+    @FXML
+    public void errorBoarderDisapear1() {
+
+        cardNumber1.setStyle("");
+    }
+    @FXML
+    public void errorBoarderDisapear2() {
+
+        cardNumber2.setStyle("");
+    }
+    @FXML
+    public void errorBoarderDisapear3() {
+
+        cardNumber3.setStyle("");
+    }
+    @FXML
+    public void errorBoarderDisapear4() {
+
+        cardNumber4.setStyle("");
+    }
+    @FXML
+    public void errorBoarderDisapear5() {
+
+        cvc.setStyle("");
+    }
+    @FXML
+    public void errorBoarderDisapear6() {
+
+        month.setStyle("");
+    }
+    @FXML
+    public void errorBoarderDisapear7() {
+
+        year.setStyle("");
+    }
 
     @FXML
     private void loadUserInfo(){
@@ -488,6 +523,7 @@ public class iMatBackendController implements Initializable {
         } else if (!containsDigitsOnly(postcode) && !(postcode.getText().isEmpty())) {
             postCodeStyleErrorLabel.setVisible(true);
             postCodeAmountErrorLabel.setVisible(false);
+
             check = false;
         } else if (!isComplete(postcode, getMinAllowedLength(postcode)) && !(postcode.getText().isEmpty())) {
             postCodeStyleErrorLabel.setVisible(false);
@@ -532,20 +568,71 @@ public class iMatBackendController implements Initializable {
     }
 
     private boolean checkCardNumber() {
+        boolean check = true;
 
         if (cardNumber1.getText().isEmpty() && cardNumber2.getText().isEmpty() && cardNumber3.getText().isEmpty() && cardNumber4.getText().isEmpty()) {
-            return true;
+            check = true;
+            errorMessageMyPage(cardNumber1,4);
+            errorMessageMyPage(cardNumber2,4);
+            errorMessageMyPage(cardNumber3,4);
+            errorMessageMyPage(cardNumber4,4);
+            paymentStyleErrorLbl.setVisible(false);
+            paymentAmountErrorLbl.setVisible(false);
+
         } else if (containsDigitsOnly(cardNumber1) && containsDigitsOnly(cardNumber2) && containsDigitsOnly(cardNumber3)
                 && containsDigitsOnly(cardNumber4) && isComplete(cardNumber1, 4)
                 && isComplete(cardNumber2, 4) && isComplete(cardNumber3, 4)
                 && isComplete(cardNumber4, 4)) {
-            return true;
-        } else {
+            check = true;
+            errorMessageMyPage(cardNumber1,4);
+            errorMessageMyPage(cardNumber2,4);
+            errorMessageMyPage(cardNumber3,4);
+            errorMessageMyPage(cardNumber4,4);
+            paymentStyleErrorLbl.setVisible(false);
+            paymentAmountErrorLbl.setVisible(false);
+
+        } else if (!containsDigitsOnly(cardNumber1) && !cardNumber1.getText().isEmpty()
+                || !containsDigitsOnly(cardNumber2) && !cardNumber2.getText().isEmpty()
+                || !containsDigitsOnly(cardNumber3) && !cardNumber3.getText().isEmpty()
+                || !containsDigitsOnly(cardNumber4) && !cardNumber4.getText().isEmpty()) {
+            paymentAmountErrorLbl.setVisible(false);
+            paymentStyleErrorLbl.setVisible(true);
+            if (!containsDigitsOnly(cardNumber1)){
+                errorMessageMyPage(cardNumber1,4);
+            }
+            if (!containsDigitsOnly(cardNumber2)){
+                errorMessageMyPage(cardNumber2,4);
+            }
+            if (!containsDigitsOnly(cardNumber3)){
+                errorMessageMyPage(cardNumber3,4);
+            }
+            if (!containsDigitsOnly(cardNumber4)){
+                errorMessageMyPage(cardNumber4,4);
+            }
+            check = false;
+        }
+        else if (isComplete(cardNumber1, 4) && !cardNumber1.getText().isEmpty()
+                || isComplete(cardNumber2, 4) && !cardNumber2.getText().isEmpty()
+                || isComplete(cardNumber3, 4) && !cardNumber3.getText().isEmpty()
+                || isComplete(cardNumber4, 4) && !cardNumber4.getText().isEmpty()){
             paymentAmountErrorLbl.setVisible(true);
             paymentStyleErrorLbl.setVisible(false);
-            return false;
-        }
 
+            if (!isComplete(cardNumber1, 4)){
+                errorMessageMyPage(cardNumber1,4);
+            }
+            if (!isComplete(cardNumber2, 4)){
+                errorMessageMyPage(cardNumber2,4);
+            }
+            if (!isComplete(cardNumber3, 4)){
+                errorMessageMyPage(cardNumber3,4);
+            }
+            if (!containsDigitsOnly(cardNumber4) || !isComplete(cardNumber4, 4)){
+                errorMessageMyPage(cardNumber4,4);
+            }
+            check =  false;
+        }
+        return check;
     }
 
     private boolean checkMonth() {
@@ -554,15 +641,20 @@ public class iMatBackendController implements Initializable {
         if (month.getText().isEmpty()) {
             paymentAmountErrorLbl.setVisible(false);
             paymentStyleErrorLbl.setVisible(false);
+            errorMessageMyPage(month,2);
+
             check = true;
 
         } else if (!containsDigitsOnly(month) && !(month.getText().isEmpty())) {
             paymentAmountErrorLbl.setVisible(false);
             paymentStyleErrorLbl.setVisible(true);
+            errorMessageMyPage(month,2);
             check = false;
         } else if (!isComplete(month, getMinAllowedLength(month)) && !(month.getText().isEmpty())) {
             paymentAmountErrorLbl.setVisible(true);
             paymentStyleErrorLbl.setVisible(false);
+            errorMessageMyPage(month,2);
+
             check = false;
         }
 
@@ -576,18 +668,22 @@ public class iMatBackendController implements Initializable {
         if (year.getText().isEmpty()) {
             paymentAmountErrorLbl.setVisible(false);
             paymentStyleErrorLbl.setVisible(false);
+            errorMessageMyPage(year,2);
+
             check = true;
 
         } else if (!containsDigitsOnly(year) && !(year.getText().isEmpty())) {
             paymentAmountErrorLbl.setVisible(false);
             paymentStyleErrorLbl.setVisible(true);
+            errorMessageMyPage(year,2);
+
             check = false;
 
         } else if (!isComplete(year, 2) && !(year.getText().isEmpty())) {
             paymentAmountErrorLbl.setVisible(true);
             paymentStyleErrorLbl.setVisible(false);
+            errorMessageMyPage(year,2);
             check = false;
-            System.out.println("mocha");
         }
         return check;
 
@@ -599,15 +695,21 @@ public class iMatBackendController implements Initializable {
         if (cvc.getText().isEmpty()) {
             paymentAmountErrorLbl.setVisible(false);
             paymentStyleErrorLbl.setVisible(false);
+            errorMessageMyPage(cvc,3);
+
             check = true;
 
     } else if (!containsDigitsOnly(cvc) && !(cvc.getText().isEmpty())) {
             paymentAmountErrorLbl.setVisible(false);
             paymentStyleErrorLbl.setVisible(true);
+            errorMessageMyPage(cvc,3);
+
             check = false;
         } else if (!isComplete(cvc, getMinAllowedLength(cvc)) && !(cvc.getText().isEmpty())) {
             paymentAmountErrorLbl.setVisible(true);
             paymentStyleErrorLbl.setVisible(false);
+            errorMessageMyPage(cvc,3);
+
             check = false;
         }
         return check;
@@ -656,6 +758,13 @@ public class iMatBackendController implements Initializable {
         number.append(cardNumber4.getText());
 
         return number.toString();
+    }
+    public void errorMessageMyPage(TextField textField, int completeLength){
+        if(!containsDigitsOnly(textField) && !textField.getText().isEmpty() || !isComplete(textField, completeLength) && !textField.getText().isEmpty()){
+            textField.setStyle("-fx-border-width: 3px; -fx-border-color: #FF0000;");
+        } else {
+            textField.setStyle("");
+        }
     }
 
     public boolean CvcIsEmpty() {
