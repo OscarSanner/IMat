@@ -119,6 +119,8 @@ public class iMatBackendController implements Initializable {
     @FXML private Button saveButton;
     @FXML private Label paymentAmountErrorLbl;
     @FXML private Label paymentStyleErrorLbl;
+    @FXML private Label aboutListLabel;
+    @FXML private Label aboutOrderLabel;
 
     public boolean homepaneIsFront = true;
 
@@ -214,6 +216,9 @@ public class iMatBackendController implements Initializable {
         homepaneIsFront = false;
         populateOrderPane();
         calculateAccordionSize(orderAccordion);
+        if(!(orderAccordion.getChildrenUnmodifiable().size() == 0)){
+            aboutOrderLabel.setText("");
+        }
         //resetSelectedTab("order");
         IMatBackendEngine.getInstance().clearActiveCategory();
         IMatBackendEngine.getInstance().clearActiveTab();
@@ -244,12 +249,19 @@ public class iMatBackendController implements Initializable {
     public void onListtabSelect(){
         listTabPane.toFront();
         homepaneIsFront = false;
+        //IMatBackendEngine.getInstance().sordListOfSaved();
         populateListPane();
         calculateAccordionSize(listAccordion);
+        if(!listAccordion.getChildrenUnmodifiable().isEmpty()){
+            aboutListLabel.setText(" ");
+        }
         //resetSelectedTab("inkop");
         IMatBackendEngine.getInstance().clearActiveCategory();
         IMatBackendEngine.getInstance().clearActiveTab();
         IMatBackendEngine.getInstance().setActiveTab(listTab);
+        if(listAccordion.getChildrenUnmodifiable().isEmpty()){
+
+        }
     }
 
     private void populateListPane() {

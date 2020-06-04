@@ -107,4 +107,24 @@ public class IMatBackendEngine {
         button.getStyleClass().add("till-kassan");
         button.getStyleClass().add("dropShadow");
     }
+
+    public void sordListOfSaved(){
+        HashMap<Order, String> sortingMap = new HashMap<>();
+        StringBuilder sb = new StringBuilder();
+        int i = 1;
+        while (i < savedOrders.size() - 1) {
+            for (Map.Entry<Order, String> entry : savedOrders.entrySet()){
+                sb.append(entry.getValue().substring("Inköpslista ".length()));
+                if(Integer.parseInt(sb.toString()) == i){
+                    sortingMap.put(entry.getKey(), entry.getValue());
+                    i++;
+                }
+            sb.setLength(0);
+            }
+        }
+        savedOrders.clear();
+        for (Map.Entry<Order, String> entry : sortingMap.entrySet()){
+            savedOrders.put(entry.getKey(), entry.getValue());
+        }
+    }
 }

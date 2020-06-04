@@ -310,6 +310,11 @@
                                           <Accordion fx:id="orderAccordion" prefHeight="102.0" prefWidth="565.0" style="-fx-background-color: white;" />
                                        </content>
                                     </ScrollPane>
+                                    <Label fx:id="aboutOrderLabel" prefHeight="114.0" prefWidth="485.0" text="Här kommer dina tidigare köp visas när du börjat handla hos oss!" textAlignment="CENTER" textFill="#6b6b6b" wrapText="true">
+                                       <font>
+                                          <Font size="26.0" />
+                                       </font>
+                                    </Label>
                                  </children></StackPane>
                               <StackPane fx:id="listTabPane" prefHeight="595.0" prefWidth="570.0" style="-fx-background-color: white;">
                                  <children>
@@ -318,6 +323,11 @@
                                           <Accordion fx:id="listAccordion" prefHeight="76.0" prefWidth="565.0" style="-fx-background-color: white;" />
                                        </content>
                                     </ScrollPane>
+                                    <Label fx:id="aboutListLabel" prefHeight="256.0" prefWidth="485.0" text="Här kommer dina sparade inköpslistor visas. Inköpslistor kan sparas genom att klicka på &quot;Till Kassan&quot; om du börjat handla, eller &quot;Ordrar&quot; om du har handlat tidigare." textAlignment="CENTER" textFill="#6b6b6b" wrapText="true">
+                                       <font>
+                                          <Font size="26.0" />
+                                       </font>
+                                    </Label>
                                  </children>
                               </StackPane>
 
