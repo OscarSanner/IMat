@@ -101,31 +101,31 @@
                                        <font>
                                           <Font name="SansSerif Regular" size="15.0" />
                                        </font></Label>
-                                    <Label fx:id="date1Label" alignment="CENTER" layoutX="98.0" layoutY="14.0" text="date 1">
+                                    <Label fx:id="date1Label" alignment="CENTER" layoutX="88.0" layoutY="14.0" text="date 1">
                                        <font>
                                           <Font name="SansSerif Regular" size="20.0" />
                                        </font></Label>
-                                    <Label fx:id="date2Label" layoutX="198.0" layoutY="14.0" text="date 2">
+                                    <Label fx:id="date2Label" layoutX="182.0" layoutY="14.0" text="date 2">
                                        <font>
                                           <Font name="SansSerif Regular" size="20.0" />
                                        </font></Label>
-                                    <Label fx:id="date3Label" layoutX="298.0" layoutY="14.0" text="date 3">
+                                    <Label fx:id="date3Label" layoutX="282.0" layoutY="14.0" text="date 3">
                                        <font>
                                           <Font name="SansSerif Regular" size="20.0" />
                                        </font></Label>
-                                    <Label fx:id="date4Label" layoutX="398.0" layoutY="14.0" text="date 4">
+                                    <Label fx:id="date4Label" layoutX="382.0" layoutY="14.0" text="date 4">
                                        <font>
                                           <Font name="SansSerif Regular" size="20.0" />
                                        </font></Label>
-                                    <Label fx:id="date5Label" layoutX="498.0" layoutY="14.0" text="date 5">
+                                    <Label fx:id="date5Label" layoutX="481.0" layoutY="14.0" text="date 5">
                                        <font>
                                           <Font name="SansSerif Regular" size="20.0" />
                                        </font></Label>
-                                    <Label fx:id="date6Label" layoutX="598.0" layoutY="14.0" text="date 6">
+                                    <Label fx:id="date6Label" layoutX="584.0" layoutY="14.0" text="date 6">
                                        <font>
                                           <Font name="SansSerif Regular" size="20.0" />
                                        </font></Label>
-                                    <Label fx:id="date7Label" layoutX="698.0" layoutY="14.0" text="date 7">
+                                    <Label fx:id="date7Label" layoutX="680.0" layoutY="14.0" text="date 7">
                                        <font>
                                           <Font name="SansSerif Regular" size="20.0" />
                                        </font></Label>

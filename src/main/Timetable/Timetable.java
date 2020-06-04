@@ -207,7 +207,19 @@ public class Timetable extends AnchorPane implements IWizardPage {
         c.setTime(currentDate);
 
         for(int i = 0; i<=7; i++){
-            dates.add(convertDateToReadable(c.getTime(), timeFormat));
+            String day;
+            switch (i){
+                case 0: day = "Fr "; break;
+                case 1: day = "Lö "; break;
+                case 2: day = "Sö "; break;
+                case 3: day = "Må "; break;
+                case 4: day = "Ti "; break;
+                case 5: day = "On "; break;
+                case 6: day = "To "; break;
+                default: day = "ANTILOPERNA TAR ÖVER";
+            }
+            String date = day + convertDateToReadable(c.getTime(), timeFormat);
+            dates.add(date);
             c.add(Calendar.DATE, 1); //Incrementing date by one
         }
 
