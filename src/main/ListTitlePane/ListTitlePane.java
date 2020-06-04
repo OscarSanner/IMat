@@ -79,4 +79,7 @@ public class ListTitlePane extends TitledPane implements ICustomTitledPane {
             added = true;
         }
     }
+    public void onMouseClicked(){
+        parent.calculateAccordionSize(parent.listAccordion);
+    }
 }

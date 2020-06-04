@@ -10,6 +10,7 @@ import javafx.scene.layout.FlowPane;
 import main.ICustomTitledPane;
 import main.IMatBackendEngine;
 import main.OrderListTabItem.OrderListTabItem;
+import main.iMatBackendController;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
@@ -30,10 +31,11 @@ public class OrderTabTitlePane extends TitledPane implements ICustomTitledPane {
     Label dateLabel;
     @FXML
     Button saveButton;
+    private iMatBackendController parent;
 
     Order order;
 
-    public OrderTabTitlePane(Order order){
+    public OrderTabTitlePane(Order order, iMatBackendController parent){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("OrderTabTitlePane.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -47,6 +49,7 @@ public class OrderTabTitlePane extends TitledPane implements ICustomTitledPane {
         populatePane(order.getItems());
         SimpleDateFormat timeFormat = new SimpleDateFormat("dd MMMM yyyy");
         dateLabel.setText(timeFormat.format(order.getDate()));
+        this.parent = parent;
     }
 
     public void populatePane(List<ShoppingItem> items){
@@ -67,5 +70,9 @@ public class OrderTabTitlePane extends TitledPane implements ICustomTitledPane {
 
     public Order getOrder(){
         return this.order;
+    }
+
+    public void onMouseClicked(){
+        parent.calculateAccordionSize(parent.listAccordion);
     }
 }

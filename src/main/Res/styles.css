@@ -262,7 +262,7 @@
 }
 
 .accordion > .titled-pane {
-    -fx-padding: 0 0 1em 0;
+    -fx-padding: 0 0 12px 0;
 }
 
 ----------COLORS-----------------------------------

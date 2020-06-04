@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root animated="false" prefHeight="67.0" prefWidth="463.0" stylesheets="@OrderTabTitlePane.css" text=" " type="TitledPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root animated="false" onMouseClicked="#onMouseClicked" prefHeight="67.0" prefWidth="463.0" stylesheets="@OrderTabTitlePane.css" text=" " type="TitledPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <content>
       <AnchorPane fx:id="orderTitleAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="575.0">
          <children>

@@ -171,21 +171,25 @@ public class iMatBackendController implements Initializable {
 
 
 
-    private void calculateAccordionSize(Accordion accordion) {
+    public void calculateAccordionSize(Accordion accordion) {
         if(accordion.getExpandedPane() == null){
-            accordion.setPrefHeight(67 * accordion.getChildrenUnmodifiable().size());
+            accordion.setPrefHeight((67 + 8) * accordion.getChildrenUnmodifiable().size());
+            System.out.print("Checked for no child accordion = ");
+            System.out.println(accordion.getPrefHeight());
         }else{
             System.out.println(accordion.getChildrenUnmodifiable().size());
             ICustomTitledPane activePane = (ICustomTitledPane) accordion.getExpandedPane();
             System.out.println(activePane.getOrder().getItems().size());
-            accordion.setPrefHeight((72 * accordion.getChildrenUnmodifiable().size()) + (60 * activePane.getOrder().getItems().size()));
+            accordion.setPrefHeight(((67 + 8) * accordion.getChildrenUnmodifiable().size()) + (60 * activePane.getOrder().getItems().size()));
+            System.out.print("Checked with expanded pane = ");
+            System.out.println(accordion.getPrefHeight());
         }
     }
 
     private void populateOrderPane() {
         orderAccordion.getPanes().clear();
         for(Order o : IMatDataHandler.getInstance().getOrders()){
-            OrderTabTitlePane ot = new OrderTabTitlePane(o);
+            OrderTabTitlePane ot = new OrderTabTitlePane(o, this);
             orderAccordion.getPanes().add(ot);
             ot.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
